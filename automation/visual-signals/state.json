@@ -4,11 +4,12 @@
   "last_run_id": "setup-2026-W43",
   "base_git_sha": "96d47191627725ac1a9b98f44aba9192f887d131",
   "input_sha256": {
-    "automation/visual-signals/RUNBOOK.md": "e832d0ae12ba7f071752806165fd7e696918b924642dee680c6636d8c865ec4b",
+    "automation/visual-signals/RUNBOOK.md": "016cd936f1ccfc42c16ee23b453ae1924ed53853b3512ee5bcd2898e6554460a",
     "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
-    "automation/visual-signals/config.json": "5d196a725f5da8e089f21d94fdd94c4d640e5386eedd725b180eb2aa5ef0e499",
+    "automation/visual-signals/config.json": "fa577b25b287baeaa2189c704d3d38d8b322b6a8132899dd2f02ca7342288c75",
     "automation/visual-signals/scripts/fetch_sources.py": "6e6d070e444979c044941f4811a75d965f4a8c1cfff4c0c74c958436c72b2fe7",
-    "automation/visual-signals/scripts/workflow.py": "b2af97538f6c87140378779993245406d739ea113f3afb546080bbcedc7180ee",
+    "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
+    "automation/visual-signals/scripts/workflow.py": "524f408b350bc5ca757edeb4af3e2719340d05cda443b505b3329d65de312043",
     "automation/visual-signals/sources.json": "a94d9603c945527e0f7a64d42879fe592c231805d1d100c4303e85cfa22c68c4",
     "automation/visual-signals/tests/test_workflow.py": "77bfd578fe563bfd8f79605a068febba27908c258b8f5390a781db8895fed41a"
   },

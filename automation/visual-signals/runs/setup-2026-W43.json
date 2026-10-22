@@ -13,7 +13,7 @@
   "capabilities": {
     "cloud_filesystem": true,
     "connected_github_read": true,
-    "github_write": "to be proven by atomic publication",
+    "github_write": "proven: connected GitHub atomic create_tree/create_commit/update_ref with expected parent and force=false",
     "current_search_and_primary_open": true,
     "actual_image_view": "tools.view_image saw BUCK Alegria and Creative Bloq CHAIMERA image pixels",
     "motion": "not checked; static claims only",
@@ -1408,7 +1408,8 @@
     "producer_unit_tests": "42 passed; exit 0",
     "existing_consumer_tests": "18 passed, node --test scripts/test_current_signals.mjs; exit 0",
     "package_check": "python scripts/check_package.py; version 1.3.0, 51 relative links, 0 errors; exit 0",
-    "dry_run": "Initial plan caught privacy-guard self-match in its own regex source; regex expressed without literal user paths. Re-run passed without remote writes."
+    "dry_run": "Initial plan caught privacy-guard self-match in its own regex source; regex expressed without literal user paths. Re-run passed without remote writes.",
+    "clean_cloud_reconstruction": "Fresh anonymous clone at the published SHA, validation, 42 producer tests and package check all passed; no prior cache or author filesystem used."
   },
   "pending": [
     {
@@ -1843,15 +1844,33 @@
   "publication": {
     "intent": "atomic tree/commit/CAS on main, followed by exact-SHA and canonical helper readback",
     "parent_sha": "96d47191627725ac1a9b98f44aba9192f887d131",
-    "post_commit_verification": "See executor result; this prepared commit cannot attest a later readback."
+    "post_commit_verification": "See executor result; this prepared commit cannot attest a later readback.",
+    "initial_commit": "662c9076a685e3d00d68e56051d81a414824b571",
+    "initial_readback": {
+      "all_new_blob_hashes_and_modes_matched": 13,
+      "unchanged_prior_files": 36,
+      "consumer_state_report_exact_content": true,
+      "canonical_consumer": "source remote; active/fresh; exact normalized body and six metadata fields; raw SHA256 4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543"
+    }
   },
   "input_sha256": {
-    "automation/visual-signals/RUNBOOK.md": "e832d0ae12ba7f071752806165fd7e696918b924642dee680c6636d8c865ec4b",
+    "automation/visual-signals/RUNBOOK.md": "016cd936f1ccfc42c16ee23b453ae1924ed53853b3512ee5bcd2898e6554460a",
     "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
-    "automation/visual-signals/config.json": "5d196a725f5da8e089f21d94fdd94c4d640e5386eedd725b180eb2aa5ef0e499",
+    "automation/visual-signals/config.json": "fa577b25b287baeaa2189c704d3d38d8b322b6a8132899dd2f02ca7342288c75",
     "automation/visual-signals/scripts/fetch_sources.py": "6e6d070e444979c044941f4811a75d965f4a8c1cfff4c0c74c958436c72b2fe7",
-    "automation/visual-signals/scripts/workflow.py": "b2af97538f6c87140378779993245406d739ea113f3afb546080bbcedc7180ee",
+    "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
+    "automation/visual-signals/scripts/workflow.py": "524f408b350bc5ca757edeb4af3e2719340d05cda443b505b3329d65de312043",
     "automation/visual-signals/sources.json": "a94d9603c945527e0f7a64d42879fe592c231805d1d100c4303e85cfa22c68c4",
     "automation/visual-signals/tests/test_workflow.py": "77bfd578fe563bfd8f79605a068febba27908c258b8f5390a781db8895fed41a"
+  },
+  "scheduler": {
+    "task_id": "6ada8c3520f481919f5beeed4ce5b44c",
+    "mode": "ChatGPT Work cloud task",
+    "timezone": "Europe/Moscow",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Europe/Moscow:20261026T100000\nRRULE:FREQ=WEEKLY;BYDAY=MO;BYHOUR=10;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+    "enabled": true,
+    "next_run_reported": null,
+    "next_run_calculated": "2026-10-26T07:00:00Z",
+    "run_now": "not started yet"
   }
 }

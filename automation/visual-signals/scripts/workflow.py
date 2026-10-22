@@ -94,7 +94,7 @@ def git(root, *args):
 
 def protected_hashes(root):
     names = [str(BASE / p) for p in ['config.json', 'sources.json', 'RUNBOOK.md', 'SCHEDULED_PROMPT.txt']]
-    names += [str(p.relative_to(root)) for p in (root / BASE / 'scripts').glob('*.py')]
+    names += [str(p.relative_to(root)) for p in (root / BASE / 'scripts').glob('*') if p.is_file() and p.suffix in ['.py','.mjs']]
     names += [str(p.relative_to(root)) for p in (root / BASE / 'tests').glob('*.py')]
     return {p: sha256((root / p).read_bytes()) for p in sorted(names)}
 

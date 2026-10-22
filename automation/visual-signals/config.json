@@ -43,7 +43,11 @@
     "title": "Visual No-Slop Weekly",
     "timezone": "Europe/Moscow",
     "rrule": "FREQ=WEEKLY;BYDAY=MO;BYHOUR=10;BYMINUTE=0;BYSECOND=0",
-    "task_id": null,
-    "verified_executor_run": null
+    "task_id": "6ada8c3520f481919f5beeed4ce5b44c",
+    "verified_executor_run": null,
+    "next_run_reported": null,
+    "next_run_calculated": "2026-10-26T10:00:00+03:00",
+    "next_run_utc_calculated": "2026-10-26T07:00:00Z",
+    "next_run_basis": "DTSTART and RRULE verified; the service did not populate next_run_time at creation."
   }
 }
