@@ -10,7 +10,7 @@ schedule have not been deployed by this release.
 The dependency-free consumer tests pass on Node.js 24.19.0: 18 tests covering
 metadata, UTF-8 and size limits, bounded HTTPS transport, weekly refresh,
 24-hour failure backoff, offline operation, expiry, corrupt state, preservation
-of usable data, concurrent lock ownership and recovery. Network responses in
+of usable data, concurrent refresh transactions and recovery after process exit. Network responses in
 these tests are controlled fixtures, not live research results.
 
 The package checker passes, including local links, version and license

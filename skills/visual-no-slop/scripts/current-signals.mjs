@@ -1,18 +1,12 @@
 #!/usr/bin/env node
 
 import { TextDecoder } from 'node:util';
-import { randomBytes } from 'node:crypto';
 import { homedir, platform } from 'node:os';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import https from 'node:https';
-import {
-  mkdir,
-  open,
-  rename,
-  unlink,
-  writeFile,
-} from 'node:fs/promises';
+import { DatabaseSync } from 'node:sqlite';
+import { chmod, mkdir, open, realpath, stat } from 'node:fs/promises';
 
 export const CANONICAL_URL =
   'https://raw.githubusercontent.com/kirillgotovtsev/visual-no-slop/main/skills/visual-no-slop/references/current-signals.md';
@@ -25,12 +19,11 @@ export const FAILURE_BACKOFF_MS = 24 * 60 * 60 * 1000;
 export const REQUEST_TIMEOUT_MS = 10_000;
 // Five minutes covers small host clock drift without making future revisions current indefinitely.
 export const CLOCK_SKEW_MS = 5 * 60 * 1000;
-export const LOCK_ABANDONED_MS = 60_000;
 
 const STATE_VERSION = 1;
-const MAX_STATE_BYTES = MAX_DOCUMENT_BYTES * 2 + 16 * 1024;
-const STATE_FILE = 'current-signals-state.json';
-const LOCK_FILE = 'current-signals.lock';
+const STATE_FILE = 'current-signals-state.sqlite';
+const MAX_DATABASE_BYTES = 512 * 1024;
+const MAX_DATABASE_PAGES = 128;
 const EXPECTED_KEYS = new Set([
   'schema_version',
   'status',
@@ -288,269 +281,174 @@ function parseStateTimestamp(value, nowMs, field, issues) {
   return valueMs;
 }
 
+const CREATE_STATE_TABLE = `
+  CREATE TABLE IF NOT EXISTS current_signals_state (
+    id INTEGER PRIMARY KEY CHECK (id = 1),
+    version INTEGER NOT NULL CHECK (version = 1),
+    last_attempt_at TEXT,
+    last_success_at TEXT,
+    last_failure_at TEXT,
+    payload TEXT,
+    CHECK (payload IS NULL OR length(CAST(payload AS BLOB)) <= ${MAX_DOCUMENT_BYTES})
+  )`;
+
+const READ_STATE = `
+  SELECT version, last_attempt_at, last_success_at, last_failure_at, payload
+  FROM current_signals_state
+  WHERE id = 1`;
+
+const WRITE_STATE = `
+  INSERT INTO current_signals_state (
+    id, version, last_attempt_at, last_success_at, last_failure_at, payload
+  ) VALUES (1, ?, ?, ?, ?, ?)
+  ON CONFLICT(id) DO UPDATE SET
+    version = excluded.version,
+    last_attempt_at = excluded.last_attempt_at,
+    last_success_at = excluded.last_success_at,
+    last_failure_at = excluded.last_failure_at,
+    payload = excluded.payload`;
+
+function isBusyError(error) {
+  return error?.errcode === 5 || error?.errcode === 6;
+}
+
+function configureDatabase(database) {
+  database.exec(`
+    PRAGMA busy_timeout = 0;
+    PRAGMA journal_mode = DELETE;
+    PRAGMA synchronous = FULL;
+    PRAGMA temp_store = MEMORY;
+    PRAGMA trusted_schema = OFF;
+    PRAGMA page_size = 4096;
+  `);
+  const pageSize = database.prepare('PRAGMA page_size').get().page_size;
+  if (pageSize !== 4096) throw new Error('Unsupported cache database page size');
+  const maxPages = database
+    .prepare(`PRAGMA max_page_count = ${MAX_DATABASE_PAGES}`)
+    .get().max_page_count;
+  if (maxPages !== MAX_DATABASE_PAGES) {
+    throw new Error('Could not apply the cache database size limit');
+  }
+}
+
+function stateFromRow(row, nowMs) {
+  if (!row) return { state: null, issue: null };
+  if (row.version !== STATE_VERSION) throw new Error('Unknown state schema');
+  if (row.payload !== null && typeof row.payload !== 'string') {
+    throw new Error('payload must be a string or null');
+  }
+  if (row.payload !== null && Buffer.byteLength(row.payload, 'utf8') > MAX_DOCUMENT_BYTES) {
+    throw new Error('payload is too large');
+  }
+  const issues = [];
+  const state = {
+    version: STATE_VERSION,
+    lastAttemptAt: row.last_attempt_at,
+    lastSuccessAt: row.last_success_at,
+    lastFailureAt: row.last_failure_at,
+    payload: row.payload,
+    lastAttemptMs: parseStateTimestamp(row.last_attempt_at, nowMs, 'lastAttemptAt', issues),
+    lastSuccessMs: parseStateTimestamp(row.last_success_at, nowMs, 'lastSuccessAt', issues),
+    lastFailureMs: parseStateTimestamp(row.last_failure_at, nowMs, 'lastFailureAt', issues),
+  };
+  return { state, issue: issues[0] ?? null };
+}
+
+function readStateFromDatabase(database, nowMs) {
+  return stateFromRow(database.prepare(READ_STATE).get(), nowMs);
+}
+
 export async function readState(cacheDir, options = {}) {
   const nowMs = toNowMs(options.now);
   const path = join(cacheDir, STATE_FILE);
-  let bytes;
   try {
-    bytes = await readLimitedFile(path, MAX_STATE_BYTES);
+    const info = await stat(path);
+    if (!info.isFile() || info.size > MAX_DATABASE_BYTES) {
+      return { state: null, issue: 'state-read-failed' };
+    }
   } catch (error) {
     if (error?.code === 'ENOENT') return { state: null, issue: null };
     return { state: null, issue: 'state-read-failed' };
   }
 
+  let database;
   try {
-    const text = utf8.decode(bytes);
-    const parsed = JSON.parse(text);
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
-      throw new Error('State must be an object');
-    }
-    const allowed = new Set([
-      'version',
-      'lastAttemptAt',
-      'lastSuccessAt',
-      'lastFailureAt',
-      'payload',
-    ]);
-    if (
-      Object.keys(parsed).length !== allowed.size ||
-      Object.keys(parsed).some((key) => !allowed.has(key)) ||
-      [...allowed].some((key) => !Object.hasOwn(parsed, key)) ||
-      parsed.version !== STATE_VERSION
-    ) {
-      throw new Error('Unknown state schema');
-    }
-    if (parsed.payload !== null && typeof parsed.payload !== 'string') {
-      throw new Error('payload must be a string or null');
-    }
-    if (
-      parsed.payload !== null &&
-      Buffer.byteLength(parsed.payload, 'utf8') > MAX_DOCUMENT_BYTES
-    ) {
-      throw new Error('payload is too large');
-    }
-    const issues = [];
-    const state = {
-      version: STATE_VERSION,
-      lastAttemptAt: parsed.lastAttemptAt ?? null,
-      lastSuccessAt: parsed.lastSuccessAt ?? null,
-      lastFailureAt: parsed.lastFailureAt ?? null,
-      payload: parsed.payload ?? null,
-      lastAttemptMs: parseStateTimestamp(
-        parsed.lastAttemptAt ?? null,
-        nowMs,
-        'lastAttemptAt',
-        issues,
-      ),
-      lastSuccessMs: parseStateTimestamp(
-        parsed.lastSuccessAt ?? null,
-        nowMs,
-        'lastSuccessAt',
-        issues,
-      ),
-      lastFailureMs: parseStateTimestamp(
-        parsed.lastFailureAt ?? null,
-        nowMs,
-        'lastFailureAt',
-        issues,
-      ),
-    };
-    return { state, issue: issues[0] ?? null };
-  } catch {
-    return { state: null, issue: 'state-invalid' };
-  }
-}
-
-function serializeState(state) {
-  const serializable = {
-    version: STATE_VERSION,
-    lastAttemptAt: state.lastAttemptAt,
-    lastSuccessAt: state.lastSuccessAt,
-    lastFailureAt: state.lastFailureAt,
-    payload: state.payload,
-  };
-  const text = `${JSON.stringify(serializable)}\n`;
-  if (Buffer.byteLength(text, 'utf8') > MAX_STATE_BYTES) {
-    throw new Error('Serialized state exceeds its size limit');
-  }
-  return text;
-}
-
-export async function writeStateAtomic(cacheDir, state) {
-  await mkdir(cacheDir, { recursive: true, mode: 0o700 });
-  const target = join(cacheDir, STATE_FILE);
-  const temporary = join(
-    cacheDir,
-    `.${STATE_FILE}.${process.pid}.${randomBytes(6).toString('hex')}.tmp`,
-  );
-  try {
-    await writeFile(temporary, serializeState(state), {
-      encoding: 'utf8',
-      flag: 'wx',
-      mode: 0o600,
-    });
-    await rename(temporary, target);
-  } finally {
-    await unlink(temporary).catch(() => {});
-  }
-}
-
-function createLockToken() {
-  return randomBytes(16).toString('hex');
-}
-
-async function tryCreateLock(lockPath, nowMs, token) {
-  const handle = await open(lockPath, 'wx', 0o600);
-  try {
-    await handle.writeFile(`${JSON.stringify({ token, createdAt: iso(nowMs) })}\n`, 'utf8');
-  } finally {
-    await handle.close();
-  }
-}
-
-async function inspectLock(lockPath) {
-  const handle = await open(lockPath, 'r');
-  try {
-    const info = await handle.stat();
-    const buffer = Buffer.alloc(513);
-    const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0);
-    let token = null;
-    if (bytesRead <= 512) {
-      try {
-        const parsed = JSON.parse(utf8.decode(buffer.subarray(0, bytesRead)));
-        if (parsed && /^[a-f0-9]{32}$/.test(parsed.token)) token = parsed.token;
-      } catch {
-        // Invalid stale locks remain recoverable by age; fresh ones remain protected.
-      }
-    }
-    return { dev: info.dev, ino: info.ino, mtimeMs: info.mtimeMs, token };
-  } finally {
-    await handle.close();
-  }
-}
-
-async function restoreClaimedLock(claimPath, lockPath) {
-  let bytes;
-  try {
-    bytes = await readLimitedFile(claimPath, 512);
-  } catch {
-    await unlink(claimPath).catch(() => {});
-    return;
-  }
-  let handle;
-  try {
-    handle = await open(lockPath, 'wx', 0o600);
-    await handle.writeFile(bytes);
+    database = new DatabaseSync(path, { readOnly: true });
+    database.exec('PRAGMA busy_timeout = 0; PRAGMA query_only = ON;');
+    return readStateFromDatabase(database, nowMs);
   } catch (error) {
-    if (error?.code !== 'EEXIST') throw error;
+    return {
+      state: null,
+      issue: isBusyError(error) ? 'state-busy' : 'state-invalid',
+    };
   } finally {
-    await handle?.close();
-    await unlink(claimPath).catch(() => {});
+    database?.close();
   }
 }
 
-export async function acquireLock(cacheDir, options = {}) {
-  const nowMs = toNowMs(options.now);
-  const lockPath = join(cacheDir, LOCK_FILE);
-  const token = createLockToken();
+function writeStateToDatabase(database, state) {
+  if (state.payload !== null && Buffer.byteLength(state.payload, 'utf8') > MAX_DOCUMENT_BYTES) {
+    throw new Error('payload is too large');
+  }
+  database
+    .prepare(WRITE_STATE)
+    .run(
+      STATE_VERSION,
+      state.lastAttemptAt,
+      state.lastSuccessAt,
+      state.lastFailureAt,
+      state.payload,
+    );
+}
+
+async function beginStateTransaction(cacheDir, nowMs) {
+  const path = join(cacheDir, STATE_FILE);
+  let database;
   try {
     await mkdir(cacheDir, { recursive: true, mode: 0o700 });
-  } catch {
-    return { acquired: false, recovered: false, reason: 'lock-error', path: lockPath };
-  }
-  try {
-    await tryCreateLock(lockPath, nowMs, token);
-    return { acquired: true, recovered: false, path: lockPath, token };
-  } catch (error) {
-    if (error?.code !== 'EEXIST') {
-      return { acquired: false, recovered: false, reason: 'lock-error', path: lockPath };
-    }
-  }
-
-  let candidate;
-  try {
-    candidate = await inspectLock(lockPath);
-  } catch (error) {
-    if (error?.code === 'ENOENT') {
-      try {
-        await tryCreateLock(lockPath, nowMs, token);
-        return { acquired: true, recovered: false, path: lockPath, token };
-      } catch (createError) {
-        return {
-          acquired: false,
-          recovered: false,
-          reason: createError?.code === 'EEXIST' ? 'lock-contended' : 'lock-error',
-          path: lockPath,
-        };
+    try {
+      const info = await stat(path);
+      if (!info.isFile() || info.size > MAX_DATABASE_BYTES) {
+        throw new Error('Cache database exceeds its size limit');
       }
+    } catch (error) {
+      if (error?.code !== 'ENOENT') throw error;
     }
-    return { acquired: false, recovered: false, reason: 'lock-error', path: lockPath };
-  }
-  const age = nowMs - candidate.mtimeMs;
-  const abandoned = age > LOCK_ABANDONED_MS || age < -CLOCK_SKEW_MS;
-  if (!abandoned) {
-    return { acquired: false, recovered: false, reason: 'lock-contended', path: lockPath };
-  }
-
-  await options.afterStaleStat?.();
-  const claimPath = join(cacheDir, `.${LOCK_FILE}.${token}.stale`);
-  try {
-    await rename(lockPath, claimPath);
-  } catch (error) {
-    if (error?.code === 'ENOENT') {
-      try {
-        await tryCreateLock(lockPath, nowMs, token);
-        return { acquired: true, recovered: true, path: lockPath, token };
-      } catch (createError) {
-        return {
-          acquired: false,
-          recovered: false,
-          reason: createError?.code === 'EEXIST' ? 'lock-contended' : 'lock-error',
-          path: lockPath,
-        };
-      }
+    database = new DatabaseSync(path);
+    await chmod(path, 0o600);
+    configureDatabase(database);
+    database.exec('BEGIN IMMEDIATE');
+    database.exec(CREATE_STATE_TABLE);
+    let stateRead;
+    try {
+      stateRead = readStateFromDatabase(database, nowMs);
+    } catch {
+      stateRead = { state: null, issue: 'state-invalid' };
     }
     return {
-      acquired: false,
-      recovered: false,
-      reason: 'lock-error',
-      path: lockPath,
+      database,
+      stateRead,
     };
-  }
-
-  try {
-    const claimed = await inspectLock(claimPath);
-    if (claimed.dev !== candidate.dev || claimed.ino !== candidate.ino) {
-      await restoreClaimedLock(claimPath, lockPath);
-      return {
-        acquired: false,
-        recovered: false,
-        reason: 'lock-contended',
-        path: lockPath,
-      };
-    }
-    await unlink(claimPath);
-    await tryCreateLock(lockPath, nowMs, token);
-    return { acquired: true, recovered: true, path: lockPath, token };
   } catch (error) {
-    await restoreClaimedLock(claimPath, lockPath).catch(() => {});
+    try {
+      database?.exec('ROLLBACK');
+    } catch {}
+    database?.close();
     return {
-      acquired: false,
-      recovered: false,
-      reason: error?.code === 'EEXIST' ? 'lock-contended' : 'lock-error',
-      path: lockPath,
+      database: null,
+      stateRead: null,
+      issue: isBusyError(error) ? 'state-busy' : 'state-open-failed',
     };
   }
 }
 
-export async function releaseLock(lock) {
-  if (lock?.acquired) {
-    try {
-      const current = await inspectLock(lock.path);
-      if (current.token === lock.token) await unlink(lock.path);
-    } catch {
-      // A missing or replaced lock is no longer owned by this caller.
-    }
+function finishStateTransaction(transaction, commit) {
+  if (!transaction.database) return;
+  try {
+    transaction.database.exec(commit ? 'COMMIT' : 'ROLLBACK');
+  } finally {
+    transaction.database.close();
+    transaction.database = null;
   }
 }
 
@@ -619,26 +517,27 @@ function outputFor(document, source, refresh, detail = null, cacheIssue = null) 
   };
 }
 
-function chooseFallback(cached, bundled) {
-  if (!cached) return bundled ? { document: bundled, source: 'bundled' } : null;
-  if (!bundled) return { document: cached, source: 'cache' };
-  if (cached.status !== bundled.status) {
-    return cached.status === 'active'
-      ? { document: cached, source: 'cache' }
-      : { document: bundled, source: 'bundled' };
+function chooseCandidate(first, second) {
+  if (!first) return second;
+  if (!second) return first;
+  if (first.document.status !== second.document.status) {
+    return first.document.status === 'active' ? first : second;
   }
-  if (cached.status === 'active') {
-    const cachedUpdated = Date.parse(cached.metadata.updated_at);
-    const bundledUpdated = Date.parse(bundled.metadata.updated_at);
-    if (bundledUpdated > cachedUpdated) {
-      return { document: bundled, source: 'bundled' };
+  if (first.document.status === 'active') {
+    const firstUpdated = Date.parse(first.document.metadata.updated_at);
+    const secondUpdated = Date.parse(second.document.metadata.updated_at);
+    if (secondUpdated > firstUpdated) {
+      return second;
     }
   }
-  return { document: cached, source: 'cache' };
+  return first;
 }
 
 function fallbackOutput(cached, bundled, refresh, detail, cacheIssue) {
-  const selected = chooseFallback(cached, bundled);
+  const selected = chooseCandidate(
+    cached ? { document: cached, source: 'cache' } : null,
+    bundled ? { document: bundled, source: 'bundled' } : null,
+  );
   if (selected) {
     return outputFor(selected.document, selected.source, refresh, detail, cacheIssue);
   }
@@ -729,7 +628,7 @@ function stateForRefreshDecision(state, cachedPayloadIsValid) {
   return { ...state, lastSuccessMs: null };
 }
 
-function stateForSuccess(state, raw, nowMs) {
+function stateForSuccess(raw, nowMs) {
   return {
     version: STATE_VERSION,
     lastAttemptAt: iso(nowMs),
@@ -786,27 +685,30 @@ export async function runConsumer(options = {}) {
     );
   }
 
-  const lock = await acquireLock(cacheDir, { now: nowMs });
-  if (!lock.acquired) {
+  const transaction = await beginStateTransaction(cacheDir, nowMs);
+  if (!transaction.database) {
     stateRead = await readState(cacheDir, { now: nowMs });
     cached = validatedCached(stateRead.state, nowMs);
     return fallbackOutput(
       cached.document,
       bundle.document,
-      lock.reason === 'lock-error' ? 'write-failed' : 'lock-contended',
-      lock.reason,
+      transaction.issue === 'state-busy' ? 'lock-contended' : 'write-failed',
+      transaction.issue,
       stateRead.issue ?? cached.issue ?? bundle.issue,
     );
   }
 
+  let transactionFinished = false;
   try {
-    stateRead = await readState(cacheDir, { now: nowMs });
+    stateRead = transaction.stateRead;
     cached = validatedCached(stateRead.state, nowMs);
     const lockedDecision = refreshDecision(
       stateForRefreshDecision(stateRead.state, cached.structurallyValid),
       nowMs,
     );
     if (lockedDecision !== 'due') {
+      finishStateTransaction(transaction, false);
+      transactionFinished = true;
       return fallbackOutput(
         cached.document,
         bundle.document,
@@ -831,8 +733,14 @@ export async function runConsumer(options = {}) {
     } catch {
       const failure = stateForFailure(stateRead.state, nowMs);
       try {
-        await writeStateAtomic(cacheDir, failure);
+        writeStateToDatabase(transaction.database, failure);
+        finishStateTransaction(transaction, true);
+        transactionFinished = true;
       } catch {
+        if (!transactionFinished) {
+          finishStateTransaction(transaction, false);
+          transactionFinished = true;
+        }
         return fallbackOutput(
           cached.document,
           bundle.document,
@@ -850,9 +758,22 @@ export async function runConsumer(options = {}) {
       );
     }
 
+    const selectedStored = chooseCandidate(
+      { document: remote, source: 'remote' },
+      cached.document ? { document: cached.document, source: 'cache' } : null,
+    );
     try {
-      await writeStateAtomic(cacheDir, stateForSuccess(stateRead.state, remote.raw, nowMs));
+      writeStateToDatabase(
+        transaction.database,
+        stateForSuccess(selectedStored.document.raw, nowMs),
+      );
+      finishStateTransaction(transaction, true);
+      transactionFinished = true;
     } catch {
+      if (!transactionFinished) {
+        finishStateTransaction(transaction, false);
+        transactionFinished = true;
+      }
       return fallbackOutput(
         cached.document,
         bundle.document,
@@ -861,15 +782,19 @@ export async function runConsumer(options = {}) {
         stateRead.issue ?? cached.issue ?? bundle.issue,
       );
     }
+    const selectedOutput = chooseCandidate(
+      selectedStored,
+      bundle.document ? { document: bundle.document, source: 'bundled' } : null,
+    );
     return outputFor(
-      remote,
-      'remote',
-      lock.recovered ? 'fetched-after-lock-recovery' : 'fetched',
+      selectedOutput.document,
+      selectedOutput.source,
+      'fetched',
       null,
       stateRead.issue,
     );
   } finally {
-    await releaseLock(lock);
+    if (!transactionFinished) finishStateTransaction(transaction, false);
   }
 }
 
@@ -914,6 +839,18 @@ async function main() {
   }
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+async function isCliEntry() {
+  if (!process.argv[1]) return false;
+  try {
+    return (
+      (await realpath(resolve(process.argv[1]))) ===
+      (await realpath(fileURLToPath(import.meta.url)))
+    );
+  } catch {
+    return resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+  }
+}
+
+if (await isCliEntry()) {
   await main();
 }

@@ -1,19 +1,19 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { EventEmitter } from 'node:events';
-import { mkdtemp, mkdir, readFile, readdir, rm, utimes, writeFile } from 'node:fs/promises';
+import { mkdtemp, readdir, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { PassThrough } from 'node:stream';
 import test from 'node:test';
+import { DatabaseSync } from 'node:sqlite';
 
 import {
   CANONICAL_URL,
   MAX_DOCUMENT_BYTES,
-  acquireLock,
   fetchHttpsDocument,
   parseCliArgs,
   readState,
-  releaseLock,
   runConsumer,
   validateDocument,
 } from '../skills/visual-no-slop/scripts/current-signals.mjs';
@@ -75,6 +75,26 @@ async function withTempDir(run) {
   }
 }
 
+function readRawState(cacheDir) {
+  const database = new DatabaseSync(join(cacheDir, 'current-signals-state.sqlite'), {
+    readOnly: true,
+  });
+  try {
+    return database
+      .prepare(`
+        SELECT version,
+          last_attempt_at AS lastAttemptAt,
+          last_success_at AS lastSuccessAt,
+          last_failure_at AS lastFailureAt,
+          payload
+        FROM current_signals_state
+        WHERE id = 1`)
+      .get();
+  } finally {
+    database.close();
+  }
+}
+
 test('validates the exact active metadata contract and returns only its body', () => {
   const checked = validateDocument(activeDocument(), { now: NOW });
   assert.equal(checked.status, 'active');
@@ -109,7 +129,7 @@ test('accepts uninitialized as inert and never exposes its body', async () => {
     const first = await runConsumer({
       now: NOW,
       cacheDir,
-      bundledText: activeDocument(),
+      bundledText: uninitializedDocument(),
       fetcher: async () => {
         fetches += 1;
         return uninitializedDocument();
@@ -177,16 +197,20 @@ test('fetches once, writes an atomic state, and uses the cache until seven days 
       ['remote', 'fetched', secondBody],
     );
 
-    const stateText = await readFile(join(cacheDir, 'current-signals-state.json'), 'utf8');
-    const stateJson = JSON.parse(stateText);
-    assert.match(stateJson.payload, /Second revision/);
+    const stateRow = readRawState(cacheDir);
+    assert.match(stateRow.payload, /Second revision/);
+    const database = new DatabaseSync(join(cacheDir, 'current-signals-state.sqlite'), {
+      readOnly: true,
+    });
+    assert.equal(database.prepare('PRAGMA page_size').get().page_size, 4096);
+    database.close();
     const reread = await readState(cacheDir, { now: NOW + 7 * DAY });
     assert.equal(reread.issue, null);
     assert.match(reread.state.payload, /Second revision/);
     assert.deepEqual(
       (await readdir(cacheDir)).sort(),
-      ['current-signals-state.json'],
-      'atomic temp and lock files must be cleaned up',
+      ['current-signals-state.sqlite'],
+      'rollback journal files must be cleaned up',
     );
   });
 });
@@ -287,15 +311,42 @@ test('preserves a still-fresh known-good payload when the new remote is stale', 
           body: '# Current signals\n\nStale replacement',
         }),
     });
-    const stored = JSON.parse(
-      await readFile(join(cacheDir, 'current-signals-state.json'), 'utf8'),
-    );
+    const stored = readRawState(cacheDir);
 
     assert.equal(result.source, 'cache');
     assert.equal(result.refresh, 'failed');
     assert.equal(result.content, '# Current signals\n\nKnown good');
     assert.equal(stored.payload, knownGood);
     assert.equal(stored.lastFailureAt, new Date(NOW + 7 * DAY).toISOString());
+  });
+});
+
+test('an inert remote cannot replace a still-fresh active cached revision', async () => {
+  await withTempDir(async (cacheDir) => {
+    const knownGood = activeDocument({
+      reviewAfter: timestamp(20),
+      body: '# Current signals\n\nActive known good',
+    });
+    await runConsumer({
+      now: NOW,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () => knownGood,
+    });
+    const result = await runConsumer({
+      now: NOW + 7 * DAY,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () => uninitializedDocument(),
+    });
+    const stored = readRawState(cacheDir);
+
+    assert.deepEqual(
+      [result.source, result.status, result.content, result.refresh],
+      ['cache', 'active', '# Current signals\n\nActive known good', 'fetched'],
+    );
+    assert.equal(stored.payload, knownGood);
+    assert.equal(stored.lastSuccessAt, new Date(NOW + 7 * DAY).toISOString());
   });
 });
 
@@ -400,116 +451,156 @@ test('filesystem cache failure returns an explicit bundled fallback without fetc
     assert.equal(fetches, 0);
     assert.equal(result.source, 'bundled');
     assert.equal(result.refresh, 'write-failed');
-    assert.equal(result.detail, 'lock-error');
+    assert.equal(result.detail, 'state-open-failed');
   });
 });
 
-test('a live concurrency lock is nonblocking and prevents a request', async () => {
+test('a live SQLite writer is nonblocking and prevents a request', async () => {
   await withTempDir(async (cacheDir) => {
-    await mkdir(cacheDir, { recursive: true });
-    const lockPath = join(cacheDir, 'current-signals.lock');
-    await writeFile(lockPath, `${timestamp(0)}\n`);
-    const current = new Date(NOW);
-    await utimes(lockPath, current, current);
-    let fetches = 0;
-    const result = await runConsumer({
+    await runConsumer({
       now: NOW,
       cacheDir,
-      bundledText: activeDocument(),
-      fetcher: async () => {
-        fetches += 1;
-        return activeDocument();
-      },
+      bundledText: uninitializedDocument(),
+      fetcher: async () => activeDocument(),
     });
-
-    assert.equal(fetches, 0);
-    assert.equal(result.source, 'bundled');
-    assert.equal(result.refresh, 'lock-contended');
+    const database = new DatabaseSync(join(cacheDir, 'current-signals-state.sqlite'));
+    database.exec('PRAGMA busy_timeout = 0; BEGIN IMMEDIATE');
+    try {
+      let fetches = 0;
+      const result = await runConsumer({
+        now: NOW + 7 * DAY,
+        cacheDir,
+        bundledText: uninitializedDocument(),
+        fetcher: async () => {
+          fetches += 1;
+          return activeDocument({ updated: timestamp(7) });
+        },
+      });
+      assert.equal(fetches, 0);
+      assert.equal(result.source, 'cache');
+      assert.equal(result.refresh, 'lock-contended');
+      assert.equal(result.detail, 'state-busy');
+    } finally {
+      database.exec('ROLLBACK');
+      database.close();
+    }
   });
 });
 
-test('an abandoned lock is recovered once and removed after a successful refresh', async () => {
+test('three simultaneous contenders permit one fetch and one committed writer', async () => {
   await withTempDir(async (cacheDir) => {
-    await mkdir(cacheDir, { recursive: true });
-    const lockPath = join(cacheDir, 'current-signals.lock');
-    await writeFile(lockPath, 'abandoned\n');
-    const old = new Date(NOW - 120_000);
-    await utimes(lockPath, old, old);
-    const result = await runConsumer({
+    await runConsumer({
       now: NOW,
       cacheDir,
       bundledText: uninitializedDocument(),
       fetcher: async () => activeDocument(),
     });
 
-    assert.equal(result.refresh, 'fetched-after-lock-recovery');
-    assert.deepEqual(await readdir(cacheDir), ['current-signals-state.json']);
-  });
-});
-
-test('simultaneous stale-lock contenders produce exactly one owner', async () => {
-  await withTempDir(async (cacheDir) => {
-    const lockPath = join(cacheDir, 'current-signals.lock');
-    await writeFile(lockPath, 'abandoned\n');
-    const old = new Date(NOW - 120_000);
-    await utimes(lockPath, old, old);
-
-    let arrivals = 0;
-    let openBarrier;
-    const barrier = new Promise((resolveBarrier) => {
-      openBarrier = resolveBarrier;
+    let fetches = 0;
+    let signalStarted;
+    let releaseFetch;
+    const started = new Promise((resolveStarted) => {
+      signalStarted = resolveStarted;
     });
-    const afterStaleStat = async () => {
-      arrivals += 1;
-      if (arrivals === 2) openBarrier();
-      await barrier;
-    };
-    const contenders = await Promise.all([
-      acquireLock(cacheDir, { now: NOW, afterStaleStat }),
-      acquireLock(cacheDir, { now: NOW, afterStaleStat }),
+    const gate = new Promise((resolveFetch) => {
+      releaseFetch = resolveFetch;
+    });
+    const first = runConsumer({
+      now: NOW + 7 * DAY,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () => {
+        fetches += 1;
+        signalStarted();
+        await gate;
+        return activeDocument({ updated: timestamp(7), body: '# Current signals\n\nWinner' });
+      },
+    });
+    await started;
+    const [second, third] = await Promise.all([
+      runConsumer({
+        now: NOW + 7 * DAY,
+        cacheDir,
+        bundledText: uninitializedDocument(),
+        fetcher: async () => {
+          fetches += 1;
+          return activeDocument({ updated: timestamp(7) });
+        },
+      }),
+      runConsumer({
+        now: NOW + 7 * DAY,
+        cacheDir,
+        bundledText: uninitializedDocument(),
+        fetcher: async () => {
+          fetches += 1;
+          return activeDocument({ updated: timestamp(7) });
+        },
+      }),
     ]);
-    const owners = contenders.filter((lock) => lock.acquired);
+    releaseFetch();
+    const winner = await first;
 
-    assert.equal(arrivals, 2);
-    assert.equal(owners.length, 1);
-    assert.equal(contenders.filter((lock) => lock.reason === 'lock-contended').length, 1);
-    await releaseLock(owners[0]);
-    assert.deepEqual(await readdir(cacheDir), []);
+    assert.equal(fetches, 1);
+    assert.equal(winner.refresh, 'fetched');
+    assert.deepEqual([second.refresh, third.refresh], ['lock-contended', 'lock-contended']);
+    assert.match(readRawState(cacheDir).payload, /Winner/);
   });
 });
 
-test('release never removes a lock whose owner token has changed', async () => {
+test('an exited writer is rolled back by SQLite and does not leave an abandoned lock', async () => {
   await withTempDir(async (cacheDir) => {
-    const first = await acquireLock(cacheDir, { now: NOW });
-    assert.equal(first.acquired, true);
-    await rm(first.path);
-    const second = await acquireLock(cacheDir, { now: NOW });
-    assert.equal(second.acquired, true);
-    const current = new Date(NOW);
-    await utimes(second.path, current, current);
+    await runConsumer({
+      now: NOW,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () => activeDocument(),
+    });
+    const path = join(cacheDir, 'current-signals-state.sqlite');
+    const child = spawnSync(
+      process.execPath,
+      [
+        '--input-type=module',
+        '-e',
+        `import { DatabaseSync } from 'node:sqlite';
+         const db = new DatabaseSync(process.argv[1]);
+         db.exec('PRAGMA busy_timeout=0; BEGIN IMMEDIATE');
+         db.prepare('UPDATE current_signals_state SET payload = ? WHERE id = 1').run('uncommitted');
+         process.exit(0);`,
+        path,
+      ],
+      { encoding: 'utf8' },
+    );
+    assert.equal(child.status, 0, child.stderr);
 
-    await releaseLock(first);
-    const observer = await acquireLock(cacheDir, { now: NOW });
-    assert.equal(observer.acquired, false);
-    assert.equal(observer.reason, 'lock-contended');
-    await releaseLock(second);
+    const result = await runConsumer({
+      now: NOW + 7 * DAY,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () =>
+        activeDocument({ updated: timestamp(7), body: '# Current signals\n\nRecovered' }),
+    });
+    assert.equal(result.refresh, 'fetched');
+    assert.match(readRawState(cacheDir).payload, /Recovered/);
   });
 });
 
 test('future and corrupt state cannot suppress a due refresh', async () => {
   await withTempDir(async (cacheDir) => {
-    await mkdir(cacheDir, { recursive: true });
-    const path = join(cacheDir, 'current-signals-state.json');
-    await writeFile(
-      path,
-      `${JSON.stringify({
-        version: 1,
-        lastAttemptAt: timestamp(1),
-        lastSuccessAt: timestamp(1),
-        lastFailureAt: null,
-        payload: activeDocument(),
-      })}\n`,
-    );
+    await runConsumer({
+      now: NOW,
+      cacheDir,
+      bundledText: uninitializedDocument(),
+      fetcher: async () => activeDocument(),
+    });
+    const path = join(cacheDir, 'current-signals-state.sqlite');
+    let database = new DatabaseSync(path);
+    database
+      .prepare(`
+        UPDATE current_signals_state
+        SET last_attempt_at = ?, last_success_at = ?, last_failure_at = NULL
+        WHERE id = 1`)
+      .run(timestamp(1), timestamp(1));
+    database.close();
     let fetches = 0;
     const future = await runConsumer({
       now: NOW,
@@ -523,7 +614,11 @@ test('future and corrupt state cannot suppress a due refresh', async () => {
     assert.equal(future.source, 'remote');
     assert.equal(fetches, 1);
 
-    await writeFile(path, '{not json');
+    database = new DatabaseSync(path);
+    database
+      .prepare('UPDATE current_signals_state SET payload = ? WHERE id = 1')
+      .run('malformed cached payload');
+    database.close();
     const corrupt = await runConsumer({
       now: NOW + DAY,
       cacheDir,
@@ -604,10 +699,23 @@ test('CLI accepts only offline and cache-dir options', () => {
   assert.throws(() => parseCliArgs(['--cache-dir']), /requires a path/);
 });
 
-test('lock helper reports a newly acquired lock for deterministic callers', async () => {
-  await withTempDir(async (cacheDir) => {
-    const lock = await acquireLock(cacheDir, { now: NOW });
-    assert.equal(lock.acquired, true);
-    await releaseLock(lock);
+test('CLI runs through a symlinked path and emits its offline JSON result', async () => {
+  await withTempDir(async (directory) => {
+    const target = resolve('skills/visual-no-slop/scripts/current-signals.mjs');
+    const alias = join(directory, 'signals-alias.mjs');
+    await symlink(target, alias);
+    const result = spawnSync(
+      process.execPath,
+      [alias, '--offline', '--cache-dir', join(directory, 'cache')],
+      { encoding: 'utf8' },
+    );
+
+    assert.equal(result.status, 0, result.stderr);
+    assert.notEqual(result.stdout.trim(), '');
+    const output = JSON.parse(result.stdout);
+    assert.deepEqual(
+      [output.status, output.source, output.freshness, output.content],
+      ['uninitialized', 'bundled', 'uninitialized', null],
+    );
   });
 });
