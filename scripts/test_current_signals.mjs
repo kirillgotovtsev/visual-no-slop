@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { EventEmitter } from 'node:events';
-import { mkdtemp, readdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, mkdtemp, readdir, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { PassThrough } from 'node:stream';
@@ -700,22 +700,50 @@ test('CLI accepts only offline and cache-dir options', () => {
 });
 
 test('CLI runs through a symlinked path and emits its offline JSON result', async () => {
-  await withTempDir(async (directory) => {
-    const target = resolve('skills/visual-no-slop/scripts/current-signals.mjs');
-    const alias = join(directory, 'signals-alias.mjs');
-    await symlink(target, alias);
-    const result = spawnSync(
-      process.execPath,
-      [alias, '--offline', '--cache-dir', join(directory, 'cache')],
-      { encoding: 'utf8' },
-    );
-
-    assert.equal(result.status, 0, result.stderr);
-    assert.notEqual(result.stdout.trim(), '');
-    const output = JSON.parse(result.stdout);
-    assert.deepEqual(
-      [output.status, output.source, output.freshness, output.content],
-      ['uninitialized', 'bundled', 'uninitialized', null],
-    );
-  });
+  const current = Date.now();
+  const body = '# Current signals\n\nSynthetic active CLI fixture';
+  const cases = [
+    {
+      name: 'uninitialized',
+      bundled: uninitializedDocument(),
+      expected: ['uninitialized', 'bundled', 'uninitialized', null],
+    },
+    {
+      name: 'active',
+      bundled: activeDocument({
+        updated: new Date(current - 60_000).toISOString(),
+        reviewAfter: new Date(current + DAY).toISOString(),
+        body,
+      }),
+      expected: ['active', 'bundled', 'fresh', body],
+    },
+  ];
+  for (const fixture of cases) {
+    await withTempDir(async (directory) => {
+      // Exercise real CLI/symlink resolution against explicit bundled states.
+      // The evolving research reference must not determine this test's outcome.
+      const scripts = join(directory, 'package', 'scripts');
+      const references = join(directory, 'package', 'references');
+      await mkdir(scripts, { recursive: true });
+      await mkdir(references, { recursive: true });
+      const target = join(scripts, 'current-signals.mjs');
+      await copyFile(resolve('skills/visual-no-slop/scripts/current-signals.mjs'), target);
+      await writeFile(join(references, 'current-signals.md'), fixture.bundled);
+      const alias = join(directory, 'signals-alias.mjs');
+      await symlink(target, alias);
+      const result = spawnSync(
+        process.execPath,
+        [alias, '--offline', '--cache-dir', join(directory, 'cache')],
+        { encoding: 'utf8' },
+      );
+      assert.equal(result.status, 0, result.stderr);
+      assert.notEqual(result.stdout.trim(), '');
+      const output = JSON.parse(result.stdout);
+      assert.deepEqual(
+        [output.status, output.source, output.freshness, output.content],
+        fixture.expected,
+        fixture.name,
+      );
+    });
+  }
 });

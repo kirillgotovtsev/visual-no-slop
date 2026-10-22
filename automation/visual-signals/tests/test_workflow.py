@@ -151,6 +151,11 @@ class StateAndPublishing(unittest.TestCase):
         with self.assertRaises(w.Invalid):w.verify_tree({'entries':[]},{'truncated':True,'tree':[]})
 
 class Network(unittest.TestCase):
+    def test_deferred_endpoints_are_not_starved_by_registry_order(self):
+        registry={'sources':[{'id':'A01','monitoring':[{'url':'https://example.org/recent'}]},{'id':'E16','monitoring':[{'url':'https://example.org/old'},{'url':'https://example.org/unseen'}]}]}
+        state={'pending':[{'source_id':'A01'},{'source_id':'E16'}],'fetches':{'https://example.org/recent':{'checked_at':'2026-10-22T00:00:00Z'},'https://example.org/old':{'checked_at':'2026-10-01T00:00:00Z'}}}
+        result=net.monitoring_targets(registry,state)
+        self.assertEqual([x['url'].rsplit('/',1)[-1] for x in result],['unseen','old','recent'])
     def test_budget_queue(self):
         b=net.Budget(1);b.take()
         with self.assertRaises(RuntimeError):b.take()

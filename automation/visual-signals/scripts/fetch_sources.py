@@ -47,6 +47,13 @@ def retry_delay(header,attempt):
             except (ValueError,TypeError):pass
     return 2**attempt
 
+def monitoring_targets(registry,state):
+    """Rotate limited passes toward never/least-recently checked endpoints."""
+    pending={x['source_id'] for x in state.get('pending',[]) if x.get('source_id')}
+    fetches=state.get('fetches',{})
+    targets=[{'source_id':s['id'],'url':m['url']} for s in registry['sources'] for m in s['monitoring']]
+    return sorted(targets,key=lambda t:(0 if t['source_id'] in pending else 1,fetches.get(t['url'],{}).get('checked_at') or '',t['source_id'],t['url']))
+
 def fetch(target,previous,budget,directory,opener=urllib.request.urlopen,sleeper=time.sleep):
     checked=stamp(now());name=hashlib.sha256(target['url'].encode()).hexdigest()
     out={'source_id':target['source_id'],'url':target['url'],'checked_at':checked,'access':'error','attempts':0,'content_reviewed':False,'range_review_complete':False,'discovery_complete':False,'first_observed_at':previous.get('first_observed_at') or checked}
@@ -89,7 +96,7 @@ def fetch(target,previous,budget,directory,opener=urllib.request.urlopen,sleeper
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--registry',type=pathlib.Path,required=True);p.add_argument('--state',type=pathlib.Path,required=True);p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--temporary-directory',type=pathlib.Path,required=True);p.add_argument('--used-content-requests',type=int,default=0);p.add_argument('--limit',type=int,default=120)
     a=p.parse_args();registry=read(a.registry);state=read(a.state);budget=Budget(min(a.limit,120),used=a.used_content_requests)
-    targets=[{'source_id':s['id'],'url':m['url']} for s in registry['sources'] for m in s['monitoring']]
+    targets=monitoring_targets(registry,state)
     previous=state.get('fetches',{})
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
         futures=[pool.submit(fetch,t,previous.get(t['url'],{}),budget,a.temporary_directory) for t in targets]

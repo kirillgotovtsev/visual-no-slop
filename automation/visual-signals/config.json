@@ -48,6 +48,21 @@
     "next_run_reported": null,
     "next_run_calculated": "2026-10-26T10:00:00+03:00",
     "next_run_utc_calculated": "2026-10-26T07:00:00Z",
-    "next_run_basis": "DTSTART and RRULE verified; the service did not populate next_run_time at creation."
+    "next_run_basis": "DTSTART and RRULE verified; the service did not populate next_run_time at creation.",
+    "first_executor_run": {
+      "id": "81abc114-e2d4-832a-943f-fa244c388c89",
+      "started_at": "2026-10-22T22:23:55Z",
+      "completed_at": "2026-10-22T22:31:20Z",
+      "recorded_status": "completed",
+      "publication_commit": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe",
+      "capabilities_proven": [
+        "cloud execution",
+        "current web search and source opens",
+        "actual image viewing",
+        "authenticated atomic GitHub write and exact-SHA readback",
+        "canonical consumer loading"
+      ],
+      "qualification": "Partial research; 17/18 consumer tests passed. Maintenance fixes published before a second executor run."
+    }
   }
 }

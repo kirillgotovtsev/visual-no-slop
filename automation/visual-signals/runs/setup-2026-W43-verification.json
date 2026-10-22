@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "run_id": "setup-2026-W43-verification",
+  "checked_at": "2026-10-22T22:37:29Z",
+  "type": "initial installation maintenance and execution verification",
+  "base_git_sha": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe",
+  "first_scheduler_execution": {
+    "id": "81abc114-e2d4-832a-943f-fa244c388c89",
+    "started_at": "2026-10-22T22:23:55Z",
+    "completed_at": "2026-10-22T22:31:20Z",
+    "recorded_status": "completed",
+    "publication_commit": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe",
+    "capabilities_proven": [
+      "cloud execution",
+      "current web search and source opens",
+      "actual image viewing",
+      "authenticated atomic GitHub write and exact-SHA readback",
+      "canonical consumer loading"
+    ],
+    "qualification": "Partial research; 17/18 consumer tests passed. Maintenance fixes published before a second executor run."
+  },
+  "first_execution_coverage": {
+    "monitoring_endpoints_attempted": 52,
+    "monitoring_endpoints_total": 68,
+    "sources_substantively_reviewed": 6,
+    "research_images_viewed": 2,
+    "active_added": 0,
+    "active_changed": 0,
+    "active_retired": 0
+  },
+  "maintenance": {
+    "consumer_test": "CLI symlink smoke test now runs the real helper against isolated uninitialized and fresh active reference fixtures; assertions retained and coverage expanded. No consumer production code changed.",
+    "source_rotation": "Pending endpoints sorted by last checked time; never-checked endpoints precede recently visited ones.",
+    "budget_accounting": "Own target-repository restoration and configuration reads counted in separate GitHub service budget; third-party Git source files remain in source-content budget. Neither cap increased."
+  },
+  "tests": {
+    "producer": "43 passed",
+    "consumer": "18 passed, including both CLI fixture states",
+    "package": "1.3.1, 56 relative links, zero errors",
+    "synthetic_git_integration": {
+      "stale_parent_rejected": true,
+      "disjoint_author_content_preserved": true,
+      "lost_response_replay_no_duplicate": true,
+      "second_writer_CAS_rejected": true
+    },
+    "diff_check": "passed"
+  },
+  "unchanged": {
+    "consumer_sha256": "4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543",
+    "signals_sha256": "10302d753432a95099541c52680dcc414bd2c423f2c9b80e8902fb06681cd51c",
+    "method_and_license": "preserved; current package remains 1.3.1"
+  },
+  "scheduler": {
+    "mode": "ChatGPT Work cloud",
+    "enabled": true,
+    "timezone": "Europe/Moscow",
+    "next_run_reported": null,
+    "next_run_calculated": "2026-10-26T07:00:00Z",
+    "calculation_checked": "dateutil parsed the saved TZID DTSTART and RRULE; local result 2026-10-26T10:00:00+03:00",
+    "second_executor_run": "pending"
+  },
+  "publication": {
+    "intent": "atomic commit of this installation maintenance; post-write readback follows",
+    "parent_sha": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe"
+  }
+}
