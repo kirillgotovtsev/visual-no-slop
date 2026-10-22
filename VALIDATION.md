@@ -18,9 +18,40 @@ consistency. YAML metadata parses with Ruby Psych. The original examples,
 license, evaluation and four stable reference files are unchanged from the
 reviewed 1.2.0 package. The new instructions add the current-signals workflow.
 
-Public download, remote helper retrieval and installer checks are in progress.
-Their results will be recorded here before the release is tagged. No global
-installation is changed by the project-scoped checks.
+Public checks used macOS, Node.js 24.19.0 and `skills` 1.7.4 with telemetry
+disabled. Each installer used a fresh temporary destination. No global
+installation was changed.
+
+| Public operation | Observed result |
+|---|---|
+| CLI discovery and installation from GitHub | Found `visual-no-slop`; all ten installed files matched the release source by SHA-256 |
+| CLI listing and removal | Listed the project copy and removed its installed folder |
+| Remote replacement | Updated an earlier published development snapshot; the changed helper and all other installed files matched the revised source |
+| Already-current update | Completed without changing the final installed files |
+| Built-in Codex installer | Downloaded the documented GitHub path; all ten files matched, an existing destination was rejected without changes, and the test copy was removed |
+| Installed consumer offline | Read the bundled uninitialized reference and returned null content |
+| Installed consumer online | Fetched the canonical GitHub file, reported its uninitialized status, then used the cache on the next invocation |
+| GitHub README | Rendered the description, install command and before/after images; both image responses were HTTP 200 |
+
+The cache uses a single bounded SQLite record through Node's built-in module.
+It adds no npm package or database service. Its transaction protects the check
+and update across processes. Independent review confirmed that two contenders
+make no request while another process holds the transaction, an interrupted
+uncommitted write preserves the previous revision, and an inert remote response
+does not replace a fresh active revision. Three near-limit reference updates
+left one row in a 102,400-byte database with a successful integrity check and no
+remaining journal. The persistent database cap is 512 KiB; each reference is
+limited to 96 KiB.
+
+Malformed cache state falls back safely. A physically corrupt database is not
+automatically recreated. Windows and Node.js 22.20 were not run separately;
+Node 22 API availability follows the [official documentation](https://nodejs.org/download/release/latest-jod/docs/api/sqlite.html).
+The live endpoint check used the initial empty reference. Researched revisions
+and the cloud schedule require the separate producer setup.
+
+The GitHub page emitted a 404 for its own global-navigation payload endpoint;
+the repository document and example images loaded. Task tabs were closed after
+inspection.
 
 ## Baseline checks from version 1.2.0
 
@@ -121,9 +152,9 @@ text-only zoom, other system-font fallbacks and projector viewing remain unteste
 ## Remaining release checks
 
 User-wide CLI installation still needs an isolated user-environment check.
-A first-release update check cannot establish replacement by a later release.
-The 20 October built-in installer helper checks covered URL parsing, validation
-and local copying; they did not establish the network route.
+The public update check replaced a development snapshot of this first release;
+a migration between separately tagged versions has not yet occurred. The
+optional plugin channel remains a separate verification task.
 
 The optional plugin still needs an isolated host installation and removal test.
 Its portable manifest follows the [official packaging documentation](https://developers.openai.com/plugins/build/plugins)

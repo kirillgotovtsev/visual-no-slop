@@ -50,7 +50,7 @@ signal_count: 0
 | `source_repository` | Exactly `https://github.com/kirillgotovtsev/visual-no-slop` |
 | `signal_count` | A nonnegative integer matching the number of active entries; zero when uninitialized |
 
-An active revision must not be future-dated or expired. The producer normally sets `review_after` within 21 days of a completed review, and no later than the earliest active signal's expiry. A download does not renew these dates. A new date requires a real review of the evidence, even when the resulting visual vocabulary stays the same.
+An active revision must not be future-dated or expired. The parser accepts at most 1,000 entries and permits five minutes of clock skew for `updated_at`. Dates may include up to three fractional second digits. These format checks do not establish the quality or truth of the research. The producer normally sets `review_after` within 21 days of a completed review, and no later than the earliest active signal's expiry. A download does not renew these dates. A new date requires a real review of the evidence, even when the resulting visual vocabulary stays the same.
 
 Each active entry identifies the visible combination, medium and context, what to avoid repeating by default, justified exceptions, direct evidence URLs, observation dates and expiry. Describe actual combinations and observed uses. A named color or font alone cannot establish a defect or AI authorship. Keep the English reference concise, targeting at most 4,000 words and always below 96 KiB including metadata.
 
