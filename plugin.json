@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "visual-no-slop",
+  "version": "1.2.0",
+  "description": "Review and refine composition, typography and imagery while preserving an approved visual direction.",
+  "author": {
+    "name": "Kirill Gotovtsev"
+  },
+  "homepage": "https://github.com/kirillgotovtsev/visual-no-slop",
+  "repository": "https://github.com/kirillgotovtsev/visual-no-slop",
+  "license": "LicenseRef-Visual-No-Slop-1.0",
+  "keywords": ["agent-skills", "visual-design", "design-review", "typography"]
+}

@@ -1,0 +1,82 @@
+# Visual no-slop
+
+Give your AI agent a practical way to find generic layouts, weak typography and confusing hierarchy, then make specific corrections while preserving the design you've approved.
+
+Visual no-slop is an [Agent Skill](https://agentskills.io/specification) for creating and reviewing websites, interfaces, images, slides, print and other visual work. It asks the agent to inspect the actual result, explain what needs attention and check the corrections before delivery.
+
+Use it when you want to:
+
+- Turn “this looks generic” into findings about composition, type, imagery and grouping.
+- Refine an existing design while keeping its approved direction, content and working flows.
+- Review a poster, deck or image at the size people will see it.
+- Check a new design as it develops, including the relevant interface or motion states.
+
+Version **1.2.0 is a local release candidate**. The planned repository, `kirillgotovtsev/visual-no-slop`, has not been published. The GitHub commands below are for the planned release; remote installation remains unverified. With a local copy of this package, you can [try the candidate now](docs/usage.md#try-a-local-candidate).
+
+## Install
+
+Choose one method for each environment. Codex is the first installation target; other Agent Skills hosts need their own compatibility check.
+
+### Terminal
+
+The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. After the repository is published, run:
+
+```bash
+npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a codex -g -y
+```
+
+This installs the skill for your user. Omit `-g` for the current project. Omit `-y` if you want the installer to ask before proceeding.
+
+### Ask Codex
+
+After publication, paste this into a local Codex conversation:
+
+```text
+Use $skill-installer to install visual-no-slop from:
+
+https://github.com/kirillgotovtsev/visual-no-slop/tree/main/skills/visual-no-slop
+
+Install it for my user so it is available across projects.
+```
+
+Use the skill on your next turn. If it does not appear, restart Codex. The built-in installer handles placement independently of the `skills` CLI. See the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
+
+## Give it a task
+
+Provide the artifact and say what the agent may change. For example:
+
+```text
+$visual-no-slop
+
+Review the attached landing-page screenshots. Preserve the brand colors,
+approved photography and copy. Identify the most consequential problems
+in composition, typography and grouping. Give findings only.
+```
+
+The [usage guide](docs/usage.md) has prompts for making corrections and creating new work, explains the required visual tools, and covers updates and removal. The skill contains instructions and references; it needs no server or companion skill.
+
+## See the method
+
+| Workshop source | Agent revision |
+|---|---|
+| [![Source workshop layout](examples/print-workshop/before.png)](examples/print-workshop/before.png) | [![Revised workshop layout](examples/print-workshop/after.png)](examples/print-workshop/after.png) |
+
+The [examples](examples/README.md) include before-and-after versions of a print-workshop design and a project update, plus an audit that keeps justified cards. These are authored teaching fixtures with agent revisions. They illustrate review decisions and do not measure the skill's effect against a no-skill baseline.
+
+The review starts with composition and visual character, then checks legibility, functionality and relevant states. A material finding connects a visible property to its consequence:
+
+> Location → observation → consequence for the task → evidence or verification method → minimal correction.
+
+The agent distinguishes defects, reasoned aesthetic concerns, preferences, justified devices and unresolved questions. A review may find no problems. Popular fonts, gradients or cards do not establish a defect on their own, and appearance cannot establish AI authorship. The [research basis](skills/visual-no-slop/references/basis.md) explains the sources and limits.
+
+See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history. Weekly research and automatic updates remain deferred.
+
+## License
+
+Visual No-Slop by Kirill Gotovtsev is free to use under the custom [Visual No-Slop License 1.0](LICENSE). It is not open source.
+
+You may use it for paid client work and share the complete, unmodified skill for free with its attribution, version, license and source reference. Ordinary outputs, such as websites, designs and presentations, need no author credit under this license.
+
+Selling the skill, charging for access, modifying its protected materials or making derivative skills from them requires separate written permission, subject to the exceptions in the license. Keep project-specific settings outside the skill and install official updates. The full license governs these permissions.
+
+For release preparation, use the [publishing checklist](docs/publishing.md).

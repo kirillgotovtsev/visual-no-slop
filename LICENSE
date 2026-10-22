@@ -1,0 +1,104 @@
+Visual No-Slop License 1.0
+
+Copyright (c) 2026 Kirill Gotovtsev
+
+1. Scope
+
+This license covers the author's files in the Visual No-Slop package,
+including instructions, references, metadata and accompanying documentation
+(the "Skill"). It applies only to rights held by Kirill Gotovtsev (the
+"Licensor"). Referenced publications and separately identified third-party
+materials retain their own terms.
+
+2. Permitted use
+
+Subject to these terms, you may use the Skill without a license fee for personal,
+educational, nonprofit or commercial work, including paid client work.
+
+You may copy, install, back up and synchronize an official, unmodified version.
+You may load it into an agent's working context, supply project briefs and
+constraints, and pass it to agents carrying out the same authorized task.
+Example task prompts intended for users to copy may be adapted for those tasks.
+You may copy and modify the demonstration HTML files under examples/ solely
+to run the example tasks. This exception does not authorize changes to the
+Skill instructions or the creation of derivative skills.
+
+You may give others the complete, unmodified installable Skill without charging
+for the Skill, its license or access to it. Keep the author's attribution, the
+version information, this license and the source reference with every copy you
+redistribute. Recipients receive permission directly under these same terms.
+
+3. Attribution
+
+When redistributing the Skill, retain the following notice and include it in the
+description of your distribution or an accompanying README or attribution file:
+
+    Visual No-Slop by Kirill Gotovtsev
+    Copyright (c) 2026 Kirill Gotovtsev
+    Official source: https://github.com/kirillgotovtsev/visual-no-slop
+    Distributed under the Visual No-Slop License 1.0.
+
+Preserve any other attribution and third-party notices supplied with the Skill.
+Do not present your distribution as your authorship of the Skill or imply that
+the Licensor endorses your product, service or distribution.
+
+4. Modifications and derivative skills
+
+Except as expressly permitted in sections 2 and 5, this license grants no
+permission to modify, translate, abridge or adapt the Skill, including for
+private use. It grants no permission to extract or adapt its copyright-protected
+text or other protected expression to create another skill, reusable prompt
+package or substantially similar derivative instruction product.
+
+You may not distribute modified versions, remove attribution, or present a
+renamed or repackaged derivative as your own skill. Separate written permission
+from the Licensor is required for these activities to the extent they require
+the Licensor's permission under applicable law.
+
+5. Technical operations and official updates
+
+You may archive, compress or decompress the files, change their installation
+location, normalize encoding or line endings, and create machine-readable
+runtime representations needed to use the Skill. These operations must preserve
+the instructional content, meaning, attribution and license notices, and must
+not produce a separately authored or reusable derivative skill.
+
+You may keep host-specific settings outside the Skill and install official
+updates released by the Licensor. Receiving an official update does not make
+you the author of a modification.
+
+6. Commercial work and resale
+
+You may charge for work performed using the Skill and for the resulting designs,
+websites, presentations, reports or other ordinary outputs.
+
+You may not sell or rent the Skill, charge a license or access fee for it, place
+it behind a paywall, or redistribute it as part of a paid skill bundle or paid
+instruction product without separate written permission from the Licensor.
+An otherwise permitted fee for work does not authorize charging for a copy of,
+or access to, the Skill itself.
+
+7. Outputs and reserved rights
+
+Ordinary outputs are not subject to this license's attribution, modification or
+resale restrictions solely because the Skill was used to produce them. This
+does not permit reproducing or adapting the Skill as an output, or creating a
+derivative skill prohibited by section 4. Rights in client materials and other
+third-party content remain with their respective holders.
+
+This license does not claim exclusive rights in ideas, facts, principles or
+methods as such. It does not restrict uses that require no permission from the
+Licensor or rights that applicable law does not allow the Licensor to restrict.
+
+8. Breach and responsibility
+
+If you breach these conditions, the permissions granted by this license cease.
+Restoration requires the Licensor's written permission. This provision does not
+override remedies or protections that applicable law makes mandatory.
+
+The Skill is supplied without a promise that it will be accurate, suitable for
+your task or free from errors. To the extent applicable law permits, the
+Licensor excludes warranties and liability for losses arising from its use.
+
+For permissions beyond these terms, contact the Licensor through the official
+project repository.

@@ -1,0 +1,7 @@
+.DS_Store
+.agents/
+.codex/
+node_modules/
+skills-lock.json
+__pycache__/
+*.pyc

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Visual no-slop"
+  short_description: "Give visual work a considered, specific direction"
+policy:
+  allow_implicit_invocation: true
