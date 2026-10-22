@@ -3,8 +3,9 @@ name: visual-no-slop
 description: Prevent and remove visual AI-slop when creating, implementing, editing or reviewing visual artifacts, including UI, websites, images, identity, print, slides, charts, document layouts, 3D and motion. Use for every visual design task, including small visible changes. Preserve the accepted direction and fix evidenced problems. Do not use for prose-only work, nonvisual code, calculations, research without visual evaluation, deployment, file transfer or skill/configuration maintenance. In mixed tasks apply only to the visual part.
 license: "Visual No-Slop License 1.0; see LICENSE"
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
   author: "Kirill Gotovtsev"
+  homepage: "https://gotovtsev.ru/visual-no-slop"
   source: "https://github.com/kirillgotovtsev/visual-no-slop"
   research-date: "2026-09-23"
 ---

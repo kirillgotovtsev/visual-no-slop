@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 — 23 October 2026
+
+- Add the [official project page](https://gotovtsev.ru/visual-no-slop) to the documentation and skill and plugin homepage metadata.
+- Include the producer's published partial review and update its status in the documentation. No signals were admitted; the review method and consumer code are unchanged.
+
 ## 1.3.0 — 23 October 2026
 
 - Prepare the first public GitHub release with documentation, examples and the custom license.

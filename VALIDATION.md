@@ -1,11 +1,27 @@
 # Validation
 
-Release **1.3.0**, prepared on 23 October 2026. The public package includes
-the stable review method, examples, custom license and current-signals consumer.
-The initial reference is uninitialized. The cloud research producer and weekly
-schedule have not been deployed by this release.
+Release **1.3.1**, prepared on 23 October 2026. This patch adds the
+[official project page](https://gotovtsev.ru/visual-no-slop) to the documentation
+and package metadata.
+
+## Version 1.3.1 checks
+
+The package checker passes with 56 relative links. Ruby Psych parses the skill
+metadata; its version and homepage match the plugin manifest. The instruction
+body and 25 baseline files, including the consumer, tests, licenses and example
+artifacts, match version 1.3.0. The earlier behavioral checks apply to those
+unchanged files; they were not rerun for this documentation patch.
+
+The producer files and current reference match commit `933b714`. That
+separate update published a partial review with zero admitted signals. This
+patch preserves its code, evidence and status without claiming a new research
+pass or a verified scheduled run.
 
 ## Version 1.3.0 checks
+
+Version 1.3.0 included the stable review method, examples, custom license and
+current-signals consumer. Its initial reference was uninitialized. That release
+did not deploy the cloud research producer or weekly schedule.
 
 The dependency-free consumer tests pass on Node.js 24.19.0: 18 tests covering
 metadata, UTF-8 and size limits, bounded HTTPS transport, weekly refresh,
@@ -167,6 +183,6 @@ exception for running the demonstrated tasks; the skill instructions remain
 subject to the modification restriction.
 
 No controlled no-skill comparison, audience study, conversion claim, translation
-benefit or general compatibility claim is established by these checks. Weekly
-research and the cloud schedule remain separate setup work. The consumer is
-included; its first reference contains no researched findings.
+benefit or general compatibility claim is established by these checks. The
+producer's [runbook](automation/visual-signals/RUNBOOK.md) records its separate
+setup. Cloud schedule execution was not verified as part of this patch.

@@ -1,8 +1,10 @@
 # Current visual signals
 
+[Official project page](https://gotovtsev.ru/visual-no-slop) · [Usage guide](usage.md)
+
 The stable skill contains the review method. A separate file records dated observations about specific visual combinations, such as a recurring palette, shape and layout used together in a particular medium. A signal is a reason to examine the work, with evidence and exceptions; it is not a universal ban.
 
-The first release includes an uninitialized reference with no findings. The cloud research producer and its weekly schedule must be configured separately. An installed consumer cannot establish whether that producer is running.
+Version 1.3.0 shipped an uninitialized reference. The producer has since published a first partial review with no admitted signals. Its [runbook](../automation/visual-signals/RUNBOOK.md) records setup and operation; an installed consumer cannot establish whether the cloud schedule is running.
 
 ## Reading updates
 
@@ -54,7 +56,7 @@ An active revision must not be future-dated or expired. The parser accepts at mo
 
 Each active entry identifies the visible combination, medium and context, what to avoid repeating by default, justified exceptions, direct evidence URLs, observation dates and expiry. Describe actual combinations and observed uses. A named color or font alone cannot establish a defect or AI authorship. Keep the English reference concise, targeting at most 4,000 words and always below 96 KiB including metadata.
 
-The producer's planned repository paths are:
+The producer uses these repository paths:
 
 | Path | Purpose |
 |---|---|
@@ -64,6 +66,6 @@ The producer's planned repository paths are:
 | `automation/visual-signals/runs/` | Per-run reports, including failures and unchanged results |
 | `automation/visual-signals/RUNBOOK.md` | Setup, operation and recovery instructions |
 
-These producer files are created during its separate setup. Publish the rendered reference, evidence, state and report together after validation, preserving concurrent repository changes. On research or validation failure, keep the last good reference and record the failure separately. Replaying a completed run must not create a second update. Weekly writes must stay out of the stable method, evaluation, license, scripts and release metadata.
+Publish the rendered reference, evidence, state and report together after validation, preserving concurrent repository changes. On research or validation failure, keep the last good reference and record the failure separately. Replaying a completed run must not create a second update. Weekly writes must stay out of the stable method, evaluation, license, scripts and release metadata.
 
 The full historical research registry belongs in the producer's source packet. The compact bibliography shipped with the skill is not a complete monitoring list. The producer's setup must document how it weighs source authority, checks direct evidence, records disagreement and retires unsupported signals.

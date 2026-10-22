@@ -2,6 +2,8 @@
 
 Give your AI agent a practical way to find generic layouts, weak typography and confusing hierarchy, then make specific corrections while preserving the design you've approved.
 
+[Official project page](https://gotovtsev.ru/visual-no-slop)
+
 Visual no-slop is an [Agent Skill](https://agentskills.io/specification) for creating and reviewing websites, interfaces, images, slides, print and other visual work. It asks the agent to inspect the actual result, explain what needs attention and check the corrections before delivery.
 
 Use it when you want to:
@@ -11,7 +13,7 @@ Use it when you want to:
 - Review a poster, deck or image at the size people will see it.
 - Check a new design as it develops, including the relevant interface or motion states.
 
-Version **1.3.0** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
+Version **1.3.1** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
 
 ## Install
 
@@ -73,7 +75,7 @@ The agent distinguishes defects, reasoned aesthetic concerns, preferences, justi
 
 When Node.js is available, the skill checks this repository for a fresh reference on first use after seven days. It keeps a local cache and continues with the stable method when offline. There is no background service to install. This updates the reference data; changes to the skill's instructions still use your installer.
 
-The initial reference contains no researched findings. The cloud research agent and its schedule are being prepared separately; installing this skill does not start them. The [weekly-update guide](docs/weekly-updates.md) describes the file contract, freshness rules and fallback behavior.
+The first published research review admitted no signals and records partial source coverage. The cloud research agent and its schedule are managed separately; installing this skill does not start them. The [weekly-update guide](docs/weekly-updates.md) describes the file contract, freshness rules and fallback behavior.
 
 See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history.
 

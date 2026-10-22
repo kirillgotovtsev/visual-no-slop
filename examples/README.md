@@ -1,5 +1,7 @@
 # Worked examples
 
+[Official project page](https://gotovtsev.ru/visual-no-slop) · [Usage guide](../docs/usage.md)
+
 These examples show the review method on a workshop page, a project slide and a
 membership comparison. The source layouts and their fictional content were
 authored as teaching fixtures. Fresh agent sessions received an installed copy

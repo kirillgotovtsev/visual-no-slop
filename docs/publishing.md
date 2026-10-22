@@ -2,6 +2,8 @@
 
 Use this checklist for releases of `kirillgotovtsev/visual-no-slop`. Version **1.3.0** is the first public package. [VALIDATION.md](../VALIDATION.md) records the operations actually checked; a plugin manifest or a prepared archive does not establish host or directory acceptance.
 
+The official project page is [gotovtsev.ru/visual-no-slop](https://gotovtsev.ru/visual-no-slop). Use this address in the GitHub Website field, the README, release notes, and the skill and plugin homepage metadata. Keep the GitHub repository as the source and installation address.
+
 The package supports GitHub skill installation and a separate optional plugin channel.
 
 ## Prepare the release files
@@ -31,7 +33,7 @@ The included teaching fixtures explain the method. They do not establish a measu
 For an authorized release:
 
 1. Put this package at the repository root so `skills/visual-no-slop/SKILL.md` resolves at the documented path on `main`. Preserve concurrent changes, including the producer's reference and run records.
-2. Set the repository description and topics below. Keep the custom license file; do not substitute a standard open-source license from a repository template.
+2. Set the repository website, description and topics. Keep the custom license file; do not substitute a standard open-source license from a repository template.
 3. Push the candidate files and check the public README, relative links, images, license and skill path in GitHub.
 4. Test the documented GitHub install in a fresh project. Confirm that discovery finds `visual-no-slop`, the expected files are installed, Codex lists the skill, and a representative invocation can read its bundled references.
 5. Check the documented update and removal commands. A first-release “already current” result does not test replacement by a later version. Test user-wide installation separately in an isolated user environment before claiming it works.
@@ -64,7 +66,7 @@ agent-skills, codex, ai-agents, visual-design, design-review, typography, ui-des
 
 ## Optional plugin channel
 
-The root [plugin.json](../plugin.json) describes a skill-only plugin candidate. The optional `visual-no-slop-1.3.0-plugin.zip` archive contains the manifest, root license and installable skill. The full package archive is `visual-no-slop-1.3.0.zip`. Attach them to the corresponding GitHub release after verifying clean extractions.
+The root [plugin.json](../plugin.json) describes a skill-only plugin candidate. The optional `visual-no-slop-1.3.1-plugin.zip` archive contains the manifest, root license and installable skill. The full package archive is `visual-no-slop-1.3.1.zip`. Attach them to the corresponding GitHub release after verifying clean extractions.
 
 Before offering the plugin through a host or directory:
 

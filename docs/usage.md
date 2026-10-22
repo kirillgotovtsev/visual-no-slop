@@ -1,5 +1,7 @@
 # Using Visual no-slop
 
+[Official project page](https://gotovtsev.ru/visual-no-slop) · [Installation](../README.md#install)
+
 Give the agent the artifact, the relevant project context and a clear boundary for changes. It should use context already established in the conversation or project rather than ask you to supply the brief again.
 
 A useful request identifies the intended audience or action, the medium and stage, what must stay, and whether you want findings or edits. Attach the source or export the agent can inspect. For an interface, provide access to the relevant screens and states.
@@ -92,7 +94,7 @@ Check the [validation record](../VALIDATION.md) for the operations and environme
 
 ## Update or remove
 
-Use the same installer that placed the skill to update its instructions and scripts. The separate [current-signals reference](weekly-updates.md) checks for fresh data on first use after seven days when Node.js and network access are available. The initial reference is uninitialized; the cloud research producer is configured separately.
+Use the same installer that placed the skill to update its instructions and scripts. The separate [current-signals reference](weekly-updates.md) checks for fresh data on first use after seven days when Node.js and network access are available. The cloud research producer is managed separately.
 
 For a global installation managed by the `skills` CLI:
 
