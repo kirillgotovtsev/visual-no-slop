@@ -44,7 +44,21 @@
     "timezone": "Europe/Moscow",
     "rrule": "FREQ=WEEKLY;BYDAY=MO;BYHOUR=10;BYMINUTE=0;BYSECOND=0",
     "task_id": "6ada8c3520f481919f5beeed4ce5b44c",
-    "verified_executor_run": null,
+    "verified_executor_run": {
+      "id": "d1d2f214-d574-832b-943b-40707831cad9",
+      "recorded_status": "completed",
+      "mode": "ChatGPT Work cloud",
+      "completed_at": "2026-10-22T22:50:38.964087Z",
+      "publication_commit": "b595971a0552a4bd0ad1ec175f9a1042ae833a5d",
+      "tests": {
+        "producer_passed": 43,
+        "consumer_passed": 18,
+        "package_check_passed": true
+      },
+      "exact_sha_readback": true,
+      "canonical_consumer_verified": true,
+      "source_coverage": "partial; all 68 monitoring endpoints requested, eight source sections/snapshots substantively reviewed"
+    },
     "next_run_reported": null,
     "next_run_calculated": "2026-10-26T10:00:00+03:00",
     "next_run_utc_calculated": "2026-10-26T07:00:00Z",

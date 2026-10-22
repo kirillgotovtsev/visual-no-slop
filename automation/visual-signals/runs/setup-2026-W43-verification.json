@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "run_id": "setup-2026-W43-verification",
-  "checked_at": "2026-10-22T22:37:29Z",
+  "checked_at": "2026-10-22T22:53:04Z",
   "type": "initial installation maintenance and execution verification",
   "base_git_sha": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe",
   "first_scheduler_execution": {
@@ -57,10 +57,46 @@
     "next_run_reported": null,
     "next_run_calculated": "2026-10-26T07:00:00Z",
     "calculation_checked": "dateutil parsed the saved TZID DTSTART and RRULE; local result 2026-10-26T10:00:00+03:00",
-    "second_executor_run": "pending"
+    "second_executor_run": "completed; all technical checks passed; actual GitHub publication and canonical consumer verification succeeded"
   },
   "publication": {
-    "intent": "atomic commit of this installation maintenance; post-write readback follows",
-    "parent_sha": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe"
-  }
+    "initial_verified_execution_commit": "b595971a0552a4bd0ad1ec175f9a1042ae833a5d",
+    "final_receipt_intent": "Atomic setup metadata and verification receipt only; weekly research outputs preserved.",
+    "parent_sha": "b595971a0552a4bd0ad1ec175f9a1042ae833a5d"
+  },
+  "second_scheduler_execution": {
+    "task_id": "6ada8c3520f481919f5beeed4ce5b44c",
+    "mode": "ChatGPT Work cloud",
+    "is_enabled": true,
+    "timezone": "Europe/Moscow",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Europe/Moscow:20261026T100000\nRRULE:FREQ=WEEKLY;BYDAY=MO;BYHOUR=10;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+    "next_run_reported": null,
+    "run_id": "d1d2f214-d574-832b-943b-40707831cad9",
+    "recorded_status": "completed",
+    "started_at": "2026-10-22T22:38:58.853307Z",
+    "completed_at": "2026-10-22T22:50:38.964087Z",
+    "result_created_at": "2026-10-22T22:50:38.565667Z",
+    "requires_user_action": false,
+    "result_truncated": false,
+    "published_commit": "b595971a0552a4bd0ad1ec175f9a1042ae833a5d"
+  },
+  "second_execution_coverage": {
+    "monitoring_endpoints_attempted": 68,
+    "monitoring_endpoints_total": 68,
+    "registry_sources": 62,
+    "sources_substantively_reviewed": 8,
+    "research_images_viewed": 4,
+    "new_evidence_records": 4,
+    "active_added": 0,
+    "active_changed": 0,
+    "active_retired": 0,
+    "watchlist_remaining": 3
+  },
+  "remaining_limits": [
+    "Full substantive date-range review is incomplete; pending ranges retained.",
+    "Motion playback was not tested; no motion signals admitted.",
+    "Scheduler API returns null next_run_time; next occurrence is verified from its saved TZID DTSTART/RRULE, not a reported server timestamp.",
+    "A consumer test proves this helper path, not instantaneous synchronization of every installed copy."
+  ],
+  "configuration_after_sha256": "a13cca75e51ffb11e8e1181777ae71eca79bd1c3ac0bc609bb3b1ecd96fdf0f5"
 }
