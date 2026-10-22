@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "repository": "kirillgotovtsev/visual-no-slop",
+  "branch": "main",
+  "consumer_path": "skills/visual-no-slop/references/current-signals.md",
+  "canonical_url": "https://raw.githubusercontent.com/kirillgotovtsev/visual-no-slop/main/skills/visual-no-slop/references/current-signals.md",
+  "language": {
+    "consumer": "en",
+    "reports": "ru"
+  },
+  "freshness": {
+    "context_days": 90,
+    "overlap_days": 14,
+    "review_days": 21,
+    "signal_days": 90,
+    "catchup_chunk_days": 30
+  },
+  "budgets": {
+    "minutes": 45,
+    "content_requests": 120,
+    "search_queries": 24,
+    "visual_materials": 40,
+    "max_concurrent_requests": 3,
+    "temporary_error_retries": 2,
+    "github_service_requests": 160,
+    "publication_attempts": 2
+  },
+  "publication": {
+    "max_active_entries": 24,
+    "max_words": 4000,
+    "max_bytes": 98304,
+    "mode": "atomic_git_tree_commit_compare_and_swap",
+    "force_push": false
+  },
+  "execution": {
+    "preferred": "Codex Cloud",
+    "selected": "ChatGPT Work cloud scheduled task",
+    "computer_dependency": false,
+    "model": "available default capable of code, web and image inspection; prove capabilities in each executor",
+    "codex_cloud_status": "not configured: OAuthCallback error in remote browser; no direct environment scheduling tool exposed"
+  },
+  "schedule": {
+    "title": "Visual No-Slop Weekly",
+    "timezone": "Europe/Moscow",
+    "rrule": "FREQ=WEEKLY;BYDAY=MO;BYHOUR=10;BYMINUTE=0;BYSECOND=0",
+    "task_id": null,
+    "verified_executor_run": null
+  }
+}

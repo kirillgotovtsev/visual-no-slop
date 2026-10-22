@@ -1,14 +1,16 @@
 ---
 schema_version: 1
-status: uninitialized
-updated_at: null
-review_after: null
+status: active
+updated_at: 2026-10-22T22:16:37Z
+review_after: 2026-11-12T22:16:37Z
 source_repository: https://github.com/kirillgotovtsev/visual-no-slop
 signal_count: 0
 ---
 
 # Current visual signals
 
-No researched revision has been published yet. This initial file contains no findings and establishes no current design trends.
+These dated combinations call for examination in the stated context. A color, font or isolated effect establishes neither poor quality nor AI authorship. Preserve a justified brand or genre choice.
 
-Continue with the skill's stable principles and historical patterns. The separately configured cloud producer will replace this file after a completed review of sources. Its presence does not mean that the producer or its weekly schedule is running.
+This first review inspected the registered monitoring endpoints and selected current publications. Coverage is partial: several sources were blocked or incomplete, and most historical baselines have not received a substantive range review. No combination has two independent, directly viewed recent works. Unconfirmed candidates remain in the producer data; they are not current instructions.
+
+No candidate met the admission requirements in this review. This is not evidence that visual clichés are absent.

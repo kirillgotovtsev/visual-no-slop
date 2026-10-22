@@ -1,0 +1,2593 @@
+{
+  "schema_version": 1,
+  "corpus": {
+    "historical_date": "2026-09-23",
+    "historical_entries": 59,
+    "registry_sha256": "8ab665c852921f1c9daa66f193d8271d476c45f91fa5d56a55efef4dfaf04de8",
+    "import_policy": "Public URLs and source limitations only. Historical notes and source packet are not redistributed."
+  },
+  "sources": [
+    {
+      "id": "A01",
+      "title": "Wadinambiarachchi, Kelly, Pareek, Zhou, Velloso. The Effects of Generative AI on Design Fixation and Divergent Thinking, 2024. ACM DOI, авторский PDF",
+      "author_or_publisher": "Wadinambiarachchi, Kelly, Pareek, Zhou, Velloso",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1145/3613904.3642919",
+          "label": "ACM DOI",
+          "role": "scientific_paper"
+        },
+        {
+          "url": "https://samangi.com/papers/chi24-1021.pdf",
+          "label": "авторский PDF",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "CHI, рецензируемая конференционная статья; полный текст исследован исполнителем",
+      "limitations": "Фиксация и разнообразие в конкретной задаче визуальной идеации. Не доказательство плохого качества всякого генеративного дизайна",
+      "independence": {
+        "author_group": "Wadinambiarachchi, Kelly, Pareek, Zhou, Velloso",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1145/3613904.3642919",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:08Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A01"
+    },
+    {
+      "id": "A02",
+      "title": "Fu, Bin, Zhou et al. Creativity in the Age of AI, 31.10.2024",
+      "author_or_publisher": "Fu, Bin, Zhou et al",
+      "urls": [
+        {
+          "url": "https://arxiv.org/abs/2411.00168",
+          "label": "Creativity in the Age of AI",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": "2024-10-31",
+      "publication_date_note": "31.10.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Препринт; полный текст исследован исполнителем, основной вывод дополнительно сверен по карточке",
+      "limitations": "Разделение необычности, полезности, привлекательности и соответствия бренду. Отсутствие значимой разницы не означает доказанную эквивалентность",
+      "independence": {
+        "author_group": "Fu, Bin, Zhou et al",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/abs/2411.00168",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:08Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A02"
+    },
+    {
+      "id": "A03",
+      "title": "Hou, Wang et al. The Double-Edged Roles of Generative AI in the Creative Process: Experiments on Design Work, 2025. Information Systems Research, PDF",
+      "author_or_publisher": "Hou, Wang et al",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1287/isre.2024.0937",
+          "label": "Information Systems Research",
+          "role": "scientific_paper"
+        },
+        {
+          "url": "https://pubsonline.informs.org/doi/pdf/10.1287/isre.2024.0937",
+          "label": "PDF",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Рецензируемая статья; полный текст исследован исполнителем",
+      "limitations": "Эффект зависит от стадии и опыта. Плакатные задачи не представляют весь дизайн",
+      "independence": {
+        "author_group": "Hou, Wang et al",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1287/isre.2024.0937",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:08Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A03"
+    },
+    {
+      "id": "A04",
+      "title": "AlDahoul, Rahwan, Zaki. Исследование стереотипов и однородности лиц, 2025. Scientific Reports",
+      "author_or_publisher": "AlDahoul, Rahwan, Zaki",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1038/s41598-025-99623-3",
+          "label": "Scientific Reports",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Рецензируемая открытая статья; основной текст",
+      "limitations": "Репрезентация людей и ролей; ограничения выбранной модели и категорий",
+      "independence": {
+        "author_group": "AlDahoul, Rahwan, Zaki",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1038/s41598-025-99623-3",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:13Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A04"
+    },
+    {
+      "id": "A05",
+      "title": "De Rosa Palmini, Cetinic. Исследование повторов запросов и визуального разнообразия, 2025. arXiv:2504.14125",
+      "author_or_publisher": "De Rosa Palmini, Cetinic",
+      "urls": [
+        {
+          "url": "https://arxiv.org/abs/2504.14125",
+          "label": "arXiv:2504.14125",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Препринт; полный HTML/PDF",
+      "limitations": "Наблюдательная связь повторов и метрик разнообразия. Корреляция не устанавливает причинность, сходство не измеряет художественную ценность",
+      "independence": {
+        "author_group": "De Rosa Palmini, Cetinic",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/abs/2504.14125",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:17Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A05"
+    },
+    {
+      "id": "A06",
+      "title": "Hintze, Proschinger Åström, Schossau. Исследование замкнутых циклов изображения и описания, 19.12.2025. Patterns",
+      "author_or_publisher": "Hintze, Proschinger Åström, Schossau",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1016/j.patter.2025.101451",
+          "label": "Patterns",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": "2025-12-19",
+      "publication_date_note": "Hintze, Proschinger Åström, Schossau. Исследование замкнутых циклов изображения и описания, 19.12.2025. [Patterns](https://doi.org/10.1016/j.patter.2025.101451)",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Открытая журнальная статья; основной текст",
+      "limitations": "Схождение к повторяемым мотивам в AI-to-AI цикле. Нельзя приравнять к процессу с человеческим отбором",
+      "independence": {
+        "author_group": "Hintze, Proschinger Åström, Schossau",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1016/j.patter.2025.101451",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:17Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A06"
+    },
+    {
+      "id": "A07",
+      "title": "Huang et al. T2I-CompBench, 2023",
+      "author_or_publisher": "Huang et al",
+      "urls": [
+        {
+          "url": "https://papers.nips.cc/paper/2023/file/f8ad010cdd9143dbb0e9308c093aff24-Paper-Datasets_and_Benchmarks.pdf",
+          "label": "T2I-CompBench",
+          "role": "scientific_paper"
+        },
+        {
+          "url": "https://arxiv.org/abs/2307.06350",
+          "label": "T2I-CompBench",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "NeurIPS, рецензируемый бенчмарк; оригинальный PDF",
+      "limitations": "Привязка свойств, пространственные отношения, композиционные требования. Проверяется соответствие заданию, а не слоп в целом",
+      "independence": {
+        "author_group": "Huang et al",
+        "organization_group": "papers.nips.cc",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:papers.nips.cc"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://papers.nips.cc/paper/2023/file/f8ad010cdd9143dbb0e9308c093aff24-Paper-Datasets_and_Benchmarks.pdf",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:20Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A07"
+    },
+    {
+      "id": "A08",
+      "title": "Ghosh, Hajishirzi, Schmidt. GenEval, 2023",
+      "author_or_publisher": "Ghosh, Hajishirzi, Schmidt",
+      "urls": [
+        {
+          "url": "https://papers.nips.cc/paper_files/paper/2023/file/a3bf71c7c63f0c3bcb7ff67c67b1e7b1-Paper-Datasets_and_Benchmarks.pdf",
+          "label": "GenEval",
+          "role": "scientific_paper"
+        },
+        {
+          "url": "https://arxiv.org/abs/2310.11513",
+          "label": "GenEval",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "NeurIPS, рецензируемый бенчмарк; оригинальный PDF",
+      "limitations": "Количество, присутствие, цвет, положение объектов. Ограничения распознавания и набора задач",
+      "independence": {
+        "author_group": "Ghosh, Hajishirzi, Schmidt",
+        "organization_group": "papers.nips.cc",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:papers.nips.cc"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://papers.nips.cc/paper_files/paper/2023/file/a3bf71c7c63f0c3bcb7ff67c67b1e7b1-Paper-Datasets_and_Benchmarks.pdf",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:24Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A08"
+    },
+    {
+      "id": "A09",
+      "title": "Lee, Yasunaga, Meng et al. HEIM, 2023",
+      "author_or_publisher": "Lee, Yasunaga, Meng et al",
+      "urls": [
+        {
+          "url": "https://arxiv.org/abs/2311.04287",
+          "label": "HEIM",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "NeurIPS; основной текст и результаты",
+      "limitations": "Многомерная оценка моделей. Исторический срез не является рейтингом моделей 2026 года",
+      "independence": {
+        "author_group": "Lee, Yasunaga, Meng et al",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/abs/2311.04287",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:27Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A09"
+    },
+    {
+      "id": "A10",
+      "title": "Otani, Togashi, Sawai et al. Исследование надёжности оценки T2I, 2023. arXiv:2304.01816",
+      "author_or_publisher": "Otani, Togashi, Sawai et al",
+      "urls": [
+        {
+          "url": "https://arxiv.org/abs/2304.01816",
+          "label": "arXiv:2304.01816",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичное методологическое исследование; полный текст",
+      "limitations": "Расхождения автоматических метрик и человеческих оценок. Не проверяет визуальное происхождение и не создаёт универсальной шкалы качества",
+      "independence": {
+        "author_group": "Otani, Togashi, Sawai et al",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/abs/2304.01816",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:28Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A10"
+    },
+    {
+      "id": "A11",
+      "title": "Nightingale, Farid. AI-synthesized faces are indistinguishable from real faces and more trustworthy, 2022",
+      "author_or_publisher": "Nightingale, Farid",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1073/pnas.2120481119",
+          "label": "AI-synthesized faces are indistinguishable from real faces and more trustworthy",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "PNAS, рецензируемая открытая статья; основной текст",
+      "limitations": "Ограничения распознавания происхождения лиц в заданных условиях. Не обобщается на все жанры изображений",
+      "independence": {
+        "author_group": "Nightingale, Farid",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1073/pnas.2120481119",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:30Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A11"
+    },
+    {
+      "id": "A12",
+      "title": "Duffy, Auguste, Wisniewski. Исследование различения настоящих и StyleGAN-лиц, 2024. Оригинал в репозитории",
+      "author_or_publisher": "Duffy, Auguste, Wisniewski",
+      "urls": [
+        {
+          "url": "https://escholarship.org/uc/item/49v4z44k",
+          "label": "Оригинал в репозитории",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Proceedings Cognitive Science Society; полный текст",
+      "limitations": "Пределы зрительского распознавания, влияние явных артефактов. Ранний StyleGAN и ограниченные выборки",
+      "independence": {
+        "author_group": "Duffy, Auguste, Wisniewski",
+        "organization_group": "escholarship.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:escholarship.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://escholarship.org/uc/item/49v4z44k",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:32Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A12"
+    },
+    {
+      "id": "A13",
+      "title": "Bellaiche, Shahi, Turpin et al. Humans versus AI: whether and why we prefer human-created compared to AI-created artwork, 04.07.2023",
+      "author_or_publisher": "Bellaiche, Shahi, Turpin et al",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1186/s41235-023-00499-6",
+          "label": "Humans versus AI: whether and why we prefer human-created compared to AI-created artwork",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": "2023-07-04",
+      "publication_date_note": "04.07.2023",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Cognitive Research, рецензируемая открытая статья; полный текст, ключевой метод дополнительно сверен",
+      "limitations": "Случайная подпись о происхождении влияет на оценку тех же изображений. Это контекстный эффект, не визуальный дефект",
+      "independence": {
+        "author_group": "Bellaiche, Shahi, Turpin et al",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1186/s41235-023-00499-6",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:32Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A13"
+    },
+    {
+      "id": "A14",
+      "title": "Wittenberg, Epstein, Péloquin-Skulski, Berinsky, Rand. Исследование меток AI в вводящих в заблуждение постах, 2025. PNAS Nexus",
+      "author_or_publisher": "Wittenberg, Epstein, Péloquin-Skulski, Berinsky, Rand",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1093/pnasnexus/pgaf170",
+          "label": "PNAS Nexus",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Рецензируемая открытая статья; основной текст",
+      "limitations": "Маркировка влияет на доверие к утверждениям иначе, чем на заявленную вовлечённость. Не эксперимент об эстетическом качестве",
+      "independence": {
+        "author_group": "Wittenberg, Epstein, Péloquin-Skulski, Berinsky, Rand",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1093/pnasnexus/pgaf170",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:36Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A14"
+    },
+    {
+      "id": "A15",
+      "title": "Wang, Leng, He, Lin. Исследование AI-меток, эстетических суждений и взгляда, 2026. Empirical Studies of the Arts",
+      "author_or_publisher": "Wang, Leng, He, Lin",
+      "urls": [
+        {
+          "url": "https://doi.org/10.1177/02762374261441560",
+          "label": "Empirical Studies of the Arts",
+          "role": "scientific_paper"
+        }
+      ],
+      "role": "scientific_paper",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "OnlineFirst; доступна аннотация, полный текст ограничен",
+      "limitations": "Дополнительное свидетельство о роли метки. Детали выборок и механизма по аннотации не утверждаются",
+      "independence": {
+        "author_group": "Wang, Leng, He, Lin",
+        "organization_group": "doi.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:doi.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://doi.org/10.1177/02762374261441560",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:06:38Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.A15"
+    },
+    {
+      "id": "B01",
+      "title": "Simon Willison. Slop is the new name for unwanted AI-generated content, 08.05.2024",
+      "author_or_publisher": "Simon Willison",
+      "urls": [
+        {
+          "url": "https://simonwillison.net/2024/May/8/slop/",
+          "label": "Slop is the new name for unwanted AI-generated content",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2024-05-08",
+      "publication_date_note": "08.05.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторский текст; основной текст",
+      "limitations": "Раннее определение через непроверенную публикацию и ответственность. Авторство самого термина не устанавливается",
+      "independence": {
+        "author_group": "Simon Willison",
+        "organization_group": "simonwillison.net",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:simonwillison.net"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://simonwillison.net/2024/May/8/slop/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:44Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B01"
+    },
+    {
+      "id": "B02",
+      "title": "Jason Koebler, 404 Media. Where Facebook’s AI Slop Comes From, 06.08.2024",
+      "author_or_publisher": "Jason Koebler, 404 Media",
+      "urls": [
+        {
+          "url": "https://www.404media.co/where-facebooks-ai-slop-comes-from/",
+          "label": "Where Facebook’s AI Slop Comes From",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2024-08-06",
+      "publication_date_note": "06.08.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Оригинальный репортаж; только открытая часть",
+      "limitations": "Пример инструкций по массовым эмоциональным генерациям. Выплаты и распространённость не подтверждены независимо",
+      "independence": {
+        "author_group": "Jason Koebler, 404 Media",
+        "organization_group": "www.404media.co",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.404media.co"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.404media.co/where-facebooks-ai-slop-comes-from/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:48Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B02"
+    },
+    {
+      "id": "B03",
+      "title": "Meta. Cracking Down on Spammy Content on Facebook, 24.04.2025; отмечено обновление 22.10.2025",
+      "author_or_publisher": "Meta",
+      "urls": [
+        {
+          "url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
+          "label": "Cracking Down on Spammy Content on Facebook",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": "2025-04-24",
+      "publication_date_note": "24.04.2025; отмечено обновление 22.10.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичное заявление платформы; основной текст",
+      "limitations": "Связь повторов, охвата и монетизации. Заявленная политика не доказывает её результативность и не ограничивается AI",
+      "independence": {
+        "author_group": "Meta",
+        "organization_group": "about.fb.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:about.fb.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:50Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B03"
+    },
+    {
+      "id": "B04",
+      "title": "Cody Kommers et al. Why Slop Matters, версия 23.12.2025 по карточке arXiv",
+      "author_or_publisher": "Cody Kommers et al",
+      "urls": [
+        {
+          "url": "https://arxiv.org/html/2601.06060v1",
+          "label": "Why Slop Matters",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2025-12-23",
+      "publication_date_note": "версия 23.12.2025 по карточке arXiv",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Концептуальная статья; полный HTML. Карточка сообщает принятие в ACM AI Letters",
+      "limitations": "Семейство признаков и аргумент о культурной функции. Не эмпирическая валидация определения",
+      "independence": {
+        "author_group": "Cody Kommers et al",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/html/2601.06060v1",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:54Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B04"
+    },
+    {
+      "id": "B05",
+      "title": "Sachita Nishal, Marijn Sax, Kimon Kieslich. Why AI Slop Matters, but Not Like That, 10.06.2026",
+      "author_or_publisher": "Sachita Nishal, Marijn Sax, Kimon Kieslich",
+      "urls": [
+        {
+          "url": "https://arxiv.org/html/2606.12285v1",
+          "label": "Why AI Slop Matters, but Not Like That",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2026-06-10",
+      "publication_date_note": "10.06.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Концептуальная полемика; полный HTML",
+      "limitations": "Критика перехода от частного удовольствия к общественной пользе. Не измерение вреда каждой работы",
+      "independence": {
+        "author_group": "Sachita Nishal, Marijn Sax, Kimon Kieslich",
+        "organization_group": "arxiv.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:arxiv.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://arxiv.org/html/2606.12285v1",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:54Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B05"
+    },
+    {
+      "id": "B06",
+      "title": "Francesco D’Isa, The Philosophical Salon. The Idea of “AI Slop” Is Slop, 01.12.2025",
+      "author_or_publisher": "Francesco D’Isa, The Philosophical Salon",
+      "urls": [
+        {
+          "url": "https://thephilosophicalsalon.com/the-idea-of-ai-slop-is-slop/",
+          "label": "The Idea of “AI Slop” Is Slop",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2025-12-01",
+      "publication_date_note": "01.12.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторское эссе; основной текст",
+      "limitations": "Человеческие клише и двойной стандарт. Не статистика качества и не доказательство безвредности масштабирования",
+      "independence": {
+        "author_group": "Francesco D’Isa, The Philosophical Salon",
+        "organization_group": "thephilosophicalsalon.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:thephilosophicalsalon.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://thephilosophicalsalon.com/the-idea-of-ai-slop-is-slop/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:58Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B06"
+    },
+    {
+      "id": "B07",
+      "title": "«Щи Продакшен», Sostav. Реализм вместо нейрослопа, 14.09.2026",
+      "author_or_publisher": "«Щи Продакшен», Sostav",
+      "urls": [
+        {
+          "url": "https://www.sostav.ru/publication/realizm-vmesto-nejroslopa-86833.html",
+          "label": "Реализм вместо нейрослопа",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": "2026-09-14",
+      "publication_date_note": "14.09.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичный рассказ студии; основной текст",
+      "limitations": "Свет, среда, постоянство, актёрская реакция и доработка. Коммерчески заинтересованный опыт, без независимого теста метода",
+      "independence": {
+        "author_group": "«Щи Продакшен», Sostav",
+        "organization_group": "www.sostav.ru",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.sostav.ru"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.sostav.ru/publication/realizm-vmesto-nejroslopa-86833.html",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:59Z"
+        },
+        {
+          "url": "https://www.sostav.ru/rss",
+          "kind": "rss",
+          "verification": "public endpoint successfully retrieved during setup",
+          "verified_at": "2026-10-22T22:13:25Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B07"
+    },
+    {
+      "id": "B08",
+      "title": "Daniel John, интервью Paula Scher, Creative Bloq. Paula Scher on the backlash to Pentagram’s AI government website design, 14.12.2024",
+      "author_or_publisher": "Daniel John, интервью Paula Scher, Creative Bloq",
+      "urls": [
+        {
+          "url": "https://www.creativebloq.com/design/ive-never-seen-anything-like-this-before-paula-scher-on-the-backlash-to-pentagrams-ai-government-website-design",
+          "label": "Paula Scher on the backlash to Pentagram’s AI government website design",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2024-12-14",
+      "publication_date_note": "14.12.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Оригинальное интервью; основной текст",
+      "limitations": "Описание процесса Performance.gov участницей. Не независимый аудит изображений или влияния на занятость",
+      "independence": {
+        "author_group": "Daniel John, интервью Paula Scher, Creative Bloq",
+        "organization_group": "www.creativebloq.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.creativebloq.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.creativebloq.com/design/ive-never-seen-anything-like-this-before-paula-scher-on-the-backlash-to-pentagrams-ai-government-website-design",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:06:59Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B08"
+    },
+    {
+      "id": "B09",
+      "title": "The Coca-Cola Company. Groundbreaking Digital Experience and Films Fuse Holiday Heritage with Cutting-Edge Tech, 10.12.2024",
+      "author_or_publisher": "The Coca-Cola Company",
+      "urls": [
+        {
+          "url": "https://www.coca-colacompany.com/media-center/groundbreaking-digital-experience-and-films-fuse-holiday-heritage-with-cutting-edge-tech",
+          "label": "Groundbreaking Digital Experience and Films Fuse Holiday Heritage with Cutting-Edge Tech",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": "2024-12-10",
+      "publication_date_note": "10.12.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичный корпоративный кейс; основной текст",
+      "limitations": "Заявленная задача локализации и команды. Не доказательство качества, экономии или продаж",
+      "independence": {
+        "author_group": "The Coca-Cola Company",
+        "organization_group": "www.coca-colacompany.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.coca-colacompany.com",
+          "campaign:coca-cola-holiday-distinct-years-verify-before-counting"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.coca-colacompany.com/media-center/groundbreaking-digital-experience-and-films-fuse-holiday-heritage-with-cutting-edge-tech",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:03Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B09"
+    },
+    {
+      "id": "B10",
+      "title": "Tom Ewing, System1. AI or No AI, Coke Gets the Christmas Love, 20.11.2025",
+      "author_or_publisher": "Tom Ewing, System1",
+      "urls": [
+        {
+          "url": "https://system1group.com/ad-of-the-week/ai-or-no-ai-coke-gets-the-christmas-love",
+          "label": "AI or No AI, Coke Gets the Christmas Love",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": "2025-11-20",
+      "publication_date_note": "20.11.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Статья о собственном коммерческом тесте; основной текст, без открытых исходных данных",
+      "limitations": "Оценка определённой рекламы 2025 года. Не тест кампании 2024 года, не причинный эффект AI-метки, не продажи",
+      "independence": {
+        "author_group": "Tom Ewing, System1",
+        "organization_group": "system1group.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:system1group.com",
+          "campaign:coca-cola-holiday-distinct-years-verify-before-counting"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://system1group.com/ad-of-the-week/ai-or-no-ai-coke-gets-the-christmas-love",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:04Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B10"
+    },
+    {
+      "id": "B11",
+      "title": "Rethink для Kraft Heinz, Ads of the World / Clio. A.I. Ketchup, карточка: май 2023",
+      "author_or_publisher": "Rethink для Kraft Heinz, Ads of the World / Clio",
+      "urls": [
+        {
+          "url": "https://www.adsoftheworld.com/campaigns/a-i-ketchup",
+          "label": "A.I. Ketchup",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Конкурсный кейс участников; основной текст",
+      "limitations": "Генерация как часть самой рекламной идеи. Отобранные примеры не заменяют независимое исследование бренда; дата карточки не равна дате запуска",
+      "independence": {
+        "author_group": "Rethink для Kraft Heinz, Ads of the World / Clio",
+        "organization_group": "www.adsoftheworld.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.adsoftheworld.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.adsoftheworld.com/campaigns/a-i-ketchup",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:04Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B11"
+    },
+    {
+      "id": "B12",
+      "title": "Dove, PR Newswire. Dove marks 20 years of real beauty…, 09.04.2024",
+      "author_or_publisher": "Dove, PR Newswire",
+      "urls": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/dove-marks-20-years-of-real-beauty-with-a-renewed-commitment-to-real-and-pledge-to-never-use-ai-to-represent-real-women-in-its-advertising-302111130.html",
+          "label": "Dove marks 20 years of real beauty…",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": "2024-04-09",
+      "publication_date_note": "09.04.2024",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичный пресс-релиз; основной текст",
+      "limitations": "Публичное обещание и проблема репрезентации. Содержащийся там прогноз о доле AI-контента не принят за установленную статистику",
+      "independence": {
+        "author_group": "Dove, PR Newswire",
+        "organization_group": "www.prnewswire.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.prnewswire.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/dove-marks-20-years-of-real-beauty-with-a-renewed-commitment-to-real-and-pledge-to-never-use-ai-to-represent-real-women-in-its-advertising-302111130.html",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:06Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B12"
+    },
+    {
+      "id": "B13",
+      "title": "Paul Sutherland, Institute of Network Cultures. Slop Cinema, 08.09.2025",
+      "author_or_publisher": "Paul Sutherland, Institute of Network Cultures",
+      "urls": [
+        {
+          "url": "https://networkcultures.org/blog/2025/09/08/slop-cinema/",
+          "label": "Slop Cinema",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2025-09-08",
+      "publication_date_note": "08.09.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторская рецензия; основной текст",
+      "limitations": "Критика визуальных решений Total Pixel Space. Не технический предел всех моделей",
+      "independence": {
+        "author_group": "Paul Sutherland, Institute of Network Cultures",
+        "organization_group": "networkcultures.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:networkcultures.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://networkcultures.org/blog/2025/09/08/slop-cinema/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:07Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B13"
+    },
+    {
+      "id": "B14",
+      "title": "Boris Eldagsen. Sony World Photography Awards 2023, заявления 14.03 и 13.04.2023, последующие обновления",
+      "author_or_publisher": "Boris Eldagsen",
+      "urls": [
+        {
+          "url": "https://www.eldagsen.com/sony-world-photography-awards-2023/",
+          "label": "Sony World Photography Awards 2023",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2023-04-13",
+      "publication_date_note": "заявления 14.03 и 13.04.2023, последующие обновления",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичные заявления; прочитаны релевантные разделы",
+      "limitations": "Заявленный процесс и позиция автора. Спор с организаторами независимо не разрешается",
+      "independence": {
+        "author_group": "Boris Eldagsen",
+        "organization_group": "www.eldagsen.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.eldagsen.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.eldagsen.com/sony-world-photography-awards-2023/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:09Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B14"
+    },
+    {
+      "id": "B15",
+      "title": "Семён Гудошников, «Афиша Daily». Тренд на вязаные города привнес уют в нейрослоп, 17.11.2025",
+      "author_or_publisher": "Семён Гудошников, «Афиша Daily»",
+      "urls": [
+        {
+          "url": "https://daily.afisha.ru/infoporn/30619-trend-na-vyazanye-goroda-privnes-uyut-v-neyroslop-kak-samomu-sdelat-takoe-video/",
+          "label": "Тренд на вязаные города привнес уют в нейрослоп",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2025-11-17",
+      "publication_date_note": "17.11.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Редакционный обзор; основной текст",
+      "limitations": "Пример русскоязычного употребления и локализации шаблона. Не количественная оценка спроса",
+      "independence": {
+        "author_group": "Семён Гудошников, «Афиша Daily»",
+        "organization_group": "daily.afisha.ru",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:daily.afisha.ru"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://daily.afisha.ru/infoporn/30619-trend-na-vyazanye-goroda-privnes-uyut-v-neyroslop-kak-samomu-sdelat-takoe-video/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:10Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.B15"
+    },
+    {
+      "id": "C01",
+      "title": "Anthropic, frontend-design: 04.12.2025 и 03.09.2026",
+      "author_or_publisher": "Anthropic",
+      "urls": [
+        {
+          "url": "https://github.com/anthropics/skills/blob/00756142ab04c82a447693cf373c4e0c554d1005/skills/frontend-design/SKILL.md",
+          "label": "04.12.2025",
+          "role": "methodological_basis"
+        },
+        {
+          "url": "https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/frontend-design/SKILL.md",
+          "label": "03.09.2026",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2025-12-04",
+      "publication_date_note": "Anthropic, `frontend-design`: [04.12.2025](https://github.com/anthropics/skills/blob/00756142ab04c82a447693cf373c4e0c554d1005/skills/frontend-design/SKILL.md) и [03.09.2026](https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/frontend-design/SKILL.md)",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Обе инструкции полностью",
+      "limitations": "Смена списка характерных шаблонов, роль брифа. Инструкция не доказывает собственной эффективности",
+      "independence": {
+        "author_group": "Anthropic",
+        "organization_group": "github.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "design-skill-lists:possible-shared-lineage",
+          "author:Anthropic"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md",
+          "kind": "git_file",
+          "repository": "anthropics/skills",
+          "branch": "main",
+          "path": "skills/frontend-design/SKILL.md",
+          "verification": "branch, tree path and UTF-8 file inspected through connected GitHub",
+          "verified_at": "2026-10-22T22:13:25Z",
+          "setup_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+          "setup_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.C01"
+    },
+    {
+      "id": "C02",
+      "title": "Paul Bakaus, Impeccable 4.3.1, коммит 15.09.2026: SKILL, craft-floor, каталог",
+      "author_or_publisher": "Paul Bakaus",
+      "urls": [
+        {
+          "url": "https://github.com/pbakaus/impeccable/blob/0a4e72a254f3b175c95b36b82e5f2e60fa63f116/.agents/skills/impeccable/SKILL.md",
+          "label": "SKILL",
+          "role": "methodological_basis"
+        },
+        {
+          "url": "https://github.com/pbakaus/impeccable/blob/0a4e72a254f3b175c95b36b82e5f2e60fa63f116/.agents/skills/impeccable/reference/craft-floor.md",
+          "label": "craft-floor",
+          "role": "methodological_basis"
+        },
+        {
+          "url": "https://impeccable.style/slop/",
+          "label": "каталог",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2026-09-15",
+      "publication_date_note": "[каталог](https://impeccable.style/slop/)",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основные два файла полностью; каталог по релевантным разделам",
+      "limitations": "Контекстная рамка и одновременно абсолютные запреты. Иллюстративные демонстрации не приняты за независимый эксперимент",
+      "independence": {
+        "author_group": "Paul Bakaus",
+        "organization_group": "github.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "design-skill-lists:possible-shared-lineage",
+          "author:Paul Bakaus"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://impeccable.style/slop/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:14Z"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pbakaus/impeccable/main/.agents/skills/impeccable/SKILL.md",
+          "kind": "git_file",
+          "repository": "pbakaus/impeccable",
+          "branch": "main",
+          "path": ".agents/skills/impeccable/SKILL.md",
+          "verification": "branch, tree path and UTF-8 file inspected through connected GitHub",
+          "verified_at": "2026-10-22T22:13:25Z",
+          "setup_commit_sha": "1ea581e2399e970d914829ffcdc130e82d6941c9",
+          "setup_blob_sha": "7da92d6e902cd1bf001f05a80f7592b61d6381f4"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.C02"
+    },
+    {
+      "id": "C03",
+      "title": "Leonxlnx, taste-skill, коммит 26.05.2026",
+      "author_or_publisher": "Leonxlnx",
+      "urls": [
+        {
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/3c7017d636c3a4aad378433ea6d0cfa6c921da4a/skills/taste-skill/SKILL.md",
+          "label": "taste-skill",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2026-05-26",
+      "publication_date_note": "коммит 26.05.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Существенные разделы об оформлении, ограничениях и проверке",
+      "limitations": "Противоречия другим навыкам; область применения и численные квоты. Заявленные автором тесты отдельно не воспроизводились",
+      "independence": {
+        "author_group": "Leonxlnx",
+        "organization_group": "github.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "design-skill-lists:possible-shared-lineage",
+          "author:Leonxlnx"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/SKILL.md",
+          "kind": "git_file",
+          "repository": "Leonxlnx/taste-skill",
+          "branch": "main",
+          "path": "skills/taste-skill/SKILL.md",
+          "verification": "branch, tree path and UTF-8 file inspected through connected GitHub",
+          "verified_at": "2026-10-22T22:13:25Z",
+          "setup_commit_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+          "setup_blob_sha": "433d92105c76671250013e0312d82cb413f552bc"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.C03"
+    },
+    {
+      "id": "C04",
+      "title": "Nutlope / Together AI, Hallmark upstream 1.1.0, коммит 06.08.2026",
+      "author_or_publisher": "Nutlope / Together AI",
+      "urls": [
+        {
+          "url": "https://github.com/Nutlope/hallmark/blob/f5f4a2ceb0ff302f2e69fb33679501611eadee32/skills/hallmark/SKILL.md",
+          "label": "Hallmark upstream 1.1.0",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2026-08-06",
+      "publication_date_note": "коммит 06.08.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основные дисциплины и workflow; вся библиотека не исследовалась",
+      "limitations": "Структурное разнообразие, стилистические запреты и самооценки. Отдельно от локально изменённого Hallmark",
+      "independence": {
+        "author_group": "Nutlope / Together AI",
+        "organization_group": "github.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "design-skill-lists:possible-shared-lineage",
+          "author:Nutlope / Together AI"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://raw.githubusercontent.com/Nutlope/hallmark/main/skills/hallmark/SKILL.md",
+          "kind": "git_file",
+          "repository": "Nutlope/hallmark",
+          "branch": "main",
+          "path": "skills/hallmark/SKILL.md",
+          "verification": "branch, tree path and UTF-8 file inspected through connected GitHub",
+          "verified_at": "2026-10-22T22:13:25Z",
+          "setup_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+          "setup_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.C04"
+    },
+    {
+      "id": "D01",
+      "title": "Karl Koch. The Slop Isn’t the Models, 03.05.2026",
+      "author_or_publisher": "Karl Koch",
+      "urls": [
+        {
+          "url": "https://karlkoch.me/writing/the-slop-isnt-the-models/",
+          "label": "The Slop Isn’t the Models",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2026-05-03",
+      "publication_date_note": "03.05.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторское эссе; основной текст",
+      "limitations": "Ответственность за отбор и доработку. Не эксперимент о внутренних механизмах моделей",
+      "independence": {
+        "author_group": "Karl Koch",
+        "organization_group": "karlkoch.me",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:karlkoch.me"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://karlkoch.me/writing/the-slop-isnt-the-models/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:21Z"
+        },
+        {
+          "url": "https://karlkoch.me/rss.xml",
+          "kind": "rss",
+          "verification": "public endpoint successfully retrieved during setup",
+          "verified_at": "2026-10-22T22:13:25Z"
+        },
+        {
+          "url": "https://karlkoch.me/writing",
+          "kind": "author_index",
+          "verification": "public endpoint successfully retrieved during setup",
+          "verified_at": "2026-10-22T22:13:25Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D01"
+    },
+    {
+      "id": "D02",
+      "title": "Kosta Canatselis. Spot the Slop, 23.07.2026",
+      "author_or_publisher": "Kosta Canatselis",
+      "urls": [
+        {
+          "url": "https://world.hey.com/kostac/spot-the-slop-a-ui-designer-s-guide-to-fixing-ai-defaults-4c448c9c",
+          "label": "Spot the Slop",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2026-07-23",
+      "publication_date_note": "23.07.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Практическая критика; основной текст",
+      "limitations": "Детали, состояния и последовательность задач. Заявление о быстром узнавании AI и объяснение через model collapse не приняты как установленные факты",
+      "independence": {
+        "author_group": "Kosta Canatselis",
+        "organization_group": "world.hey.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:world.hey.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://world.hey.com/kostac/spot-the-slop-a-ui-designer-s-guide-to-fixing-ai-defaults-4c448c9c",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:21Z"
+        },
+        {
+          "url": "https://world.hey.com/kostac/feed.atom",
+          "kind": "atom",
+          "verification": "public endpoint successfully retrieved during setup",
+          "verified_at": "2026-10-22T22:13:25Z"
+        },
+        {
+          "url": "https://world.hey.com/kostac",
+          "kind": "author_index",
+          "verification": "public endpoint successfully retrieved during setup",
+          "verified_at": "2026-10-22T22:13:25Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D02"
+    },
+    {
+      "id": "D03",
+      "title": "Thierry Brunfaut, Tom Greenwood, Fast Company. Blanding, 11.12.2018",
+      "author_or_publisher": "Thierry Brunfaut, Tom Greenwood, Fast Company",
+      "urls": [
+        {
+          "url": "https://www.fastcompany.com/90276496/blanding-the-hottest-branding-trend-of-the-year-is-also-the-worst",
+          "label": "Blanding",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2018-12-11",
+      "publication_date_note": "11.12.2018",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Профессиональная полемика; основной текст",
+      "limitations": "Историческая критика сходящихся идентичностей. Не доказательство бизнес-вреда любого простого логотипа",
+      "independence": {
+        "author_group": "Thierry Brunfaut, Tom Greenwood, Fast Company",
+        "organization_group": "www.fastcompany.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.fastcompany.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.fastcompany.com/90276496/blanding-the-hottest-branding-trend-of-the-year-is-also-the-worst",
+          "kind": "page",
+          "verification": "unavailable_or_incomplete_at_setup; retain original URL and pending status",
+          "verified_at": "2026-10-22T22:07:25Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D03"
+    },
+    {
+      "id": "D04",
+      "title": "Elizabeth Goodspeed, AIGA Eye on Design. All Advertising Looks the Same These Days. Blame the Moodboard, 24.03.2022",
+      "author_or_publisher": "Elizabeth Goodspeed, AIGA Eye on Design",
+      "urls": [
+        {
+          "url": "https://eyeondesign.aiga.org/all-advertising-looks-the-same-these-days-blame-the-moodboard/",
+          "label": "All Advertising Looks the Same These Days. Blame the Moodboard",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2022-03-24",
+      "publication_date_note": "24.03.2022",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Профессиональное эссе; основной текст",
+      "limitations": "Заимствование формы без смыслового основания. Не причинный эксперимент обо всех мудбордах",
+      "independence": {
+        "author_group": "Elizabeth Goodspeed, AIGA Eye on Design",
+        "organization_group": "eyeondesign.aiga.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:eyeondesign.aiga.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://eyeondesign.aiga.org/all-advertising-looks-the-same-these-days-blame-the-moodboard/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:26Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D04"
+    },
+    {
+      "id": "D05",
+      "title": "Rachel Hawley, AIGA Eye on Design. Don’t Worry, These Gangly-armed Cartoons Are Here to Protect You From Big Tech, 21.08.2019",
+      "author_or_publisher": "Rachel Hawley, AIGA Eye on Design",
+      "urls": [
+        {
+          "url": "https://eyeondesign.aiga.org/dont-worry-these-gangley-armed-cartoons-are-here-to-protect-you-from-big-tech/",
+          "label": "Don’t Worry, These Gangly-armed Cartoons Are Here to Protect You From Big Tech",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2019-08-21",
+      "publication_date_note": "21.08.2019",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Оригинальная критика с интервью; основной текст",
+      "limitations": "Корпоративная иллюстрация и её культурное прочтение. Не измерение намерений всех заказчиков",
+      "independence": {
+        "author_group": "Rachel Hawley, AIGA Eye on Design",
+        "organization_group": "eyeondesign.aiga.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:eyeondesign.aiga.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://eyeondesign.aiga.org/dont-worry-these-gangley-armed-cartoons-are-here-to-protect-you-from-big-tech/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:26Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D05"
+    },
+    {
+      "id": "D06",
+      "title": "BUCK. Facebook Alegria, дата страницы не установлена",
+      "author_or_publisher": "BUCK",
+      "urls": [
+        {
+          "url": "https://buck.co/work/facebook-alegria",
+          "label": "Facebook Alegria",
+          "role": "vendor_statement"
+        }
+      ],
+      "role": "vendor_statement",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Первичный кейс; текст, без воспроизведения анимаций",
+      "limitations": "Заявленная задача иллюстративной системы. Не доказательство универсального восприятия и репрезентации",
+      "independence": {
+        "author_group": "BUCK",
+        "organization_group": "buck.co",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:buck.co"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://buck.co/work/facebook-alegria",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:29Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D06"
+    },
+    {
+      "id": "D07",
+      "title": "Frank Chimero. The Web’s Grain, 18.02.2015",
+      "author_or_publisher": "Frank Chimero",
+      "urls": [
+        {
+          "url": "https://frankchimero.com/blog/2015/the-webs-grain/",
+          "label": "The Web’s Grain",
+          "role": "historical_context"
+        }
+      ],
+      "role": "historical_context",
+      "published_at": "2015-02-18",
+      "publication_date_note": "18.02.2015",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторское эссе; основной текст",
+      "limitations": "Повторяемость как следствие свойств носителя. Старые демонстрационные сайты заново не тестировались",
+      "independence": {
+        "author_group": "Frank Chimero",
+        "organization_group": "frankchimero.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:frankchimero.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://frankchimero.com/blog/2015/the-webs-grain/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:31Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D07"
+    },
+    {
+      "id": "D08",
+      "title": "Page Laubheimer, NN/g. Cards: UI-Component Definition, 06.11.2016",
+      "author_or_publisher": "Page Laubheimer, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/cards-component/",
+          "label": "Cards: UI-Component Definition",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2016-11-06",
+      "publication_date_note": "06.11.2016",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Экспертное руководство; основной текст",
+      "limitations": "Назначение карточек и ограничения сравнения. Полного протокола упомянутых наблюдений на странице нет",
+      "independence": {
+        "author_group": "Page Laubheimer, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/cards-component/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:31Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D08"
+    },
+    {
+      "id": "D09",
+      "title": "Brian Collins, Frontify. Brian Collins on rocket ships, Helvetica, and Grace Jones, взгляд на 2024 год; точный день не установлен",
+      "author_or_publisher": "Brian Collins, Frontify",
+      "urls": [
+        {
+          "url": "https://www.frontify.com/en/blog/brian-collins-on-rocket-ships-helvetica-and-grace-jones",
+          "label": "Brian Collins on rocket ships, Helvetica, and Grace Jones",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Свидетельство участника проектов; основной текст",
+      "limitations": "Характер бренда и опасность шаблонного отличия. Вклад дизайна в коммерческие результаты отдельно не выделен",
+      "independence": {
+        "author_group": "Brian Collins, Frontify",
+        "organization_group": "www.frontify.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.frontify.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.frontify.com/en/blog/brian-collins-on-rocket-ships-helvetica-and-grace-jones",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:35Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.D09"
+    },
+    {
+      "id": "E01",
+      "title": "Kate Moran, NN/g. The Aesthetic-Usability Effect, 03.02.2024; пересмотр 01.09.2026",
+      "author_or_publisher": "Kate Moran, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/",
+          "label": "The Aesthetic-Usability Effect",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2024-02-03",
+      "publication_date_note": "03.02.2024; пересмотр 01.09.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Привлекательность и наблюдаемое удобство оцениваются раздельно",
+      "independence": {
+        "author_group": "Kate Moran, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:36Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E01"
+    },
+    {
+      "id": "E02",
+      "title": "Aurora Harley, NN/g. Similarity Principle in Visual Design, 06.09.2020",
+      "author_or_publisher": "Aurora Harley, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/gestalt-similarity/",
+          "label": "Similarity Principle in Visual Design",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2020-09-06",
+      "publication_date_note": "06.09.2020",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Сходство сообщает отношения и роли; это полезный принцип, который можно применить неверно",
+      "independence": {
+        "author_group": "Aurora Harley, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/gestalt-similarity/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:36Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E02"
+    },
+    {
+      "id": "E03",
+      "title": "Aurora Harley, NN/g. The Principle of Common Region, 12.07.2020",
+      "author_or_publisher": "Aurora Harley, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/common-region/",
+          "label": "The Principle of Common Region",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2020-07-12",
+      "publication_date_note": "12.07.2020",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основная формулировка и объяснение",
+      "limitations": "Контейнеры помогают группировать. Нельзя запретить карточки как класс",
+      "independence": {
+        "author_group": "Aurora Harley, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/common-region/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:39Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E03"
+    },
+    {
+      "id": "E04",
+      "title": "Therese Fessenden, NN/g. Aesthetic and Minimalist Design, 24.01.2021",
+      "author_or_publisher": "Therese Fessenden, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/",
+          "label": "Aesthetic and Minimalist Design",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2021-01-24",
+      "publication_date_note": "24.01.2021",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основная формулировка и примеры",
+      "limitations": "Конкуренция информации за внимание. Это не универсальная норма визуального минимализма",
+      "independence": {
+        "author_group": "Therese Fessenden, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:41Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E04"
+    },
+    {
+      "id": "E05",
+      "title": "W3C WAI, редакторы Eric Eggert и Shadi Abou-Zahra. Decorative Images, обновлено 27.07.2019",
+      "author_or_publisher": "W3C WAI, редакторы Eric Eggert и Shadi Abou-Zahra",
+      "urls": [
+        {
+          "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+          "label": "Decorative Images",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2019-07-27",
+      "publication_date_note": "обновлено 27.07.2019",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Декоративная функция допустима; информационность определяется контекстом",
+      "independence": {
+        "author_group": "W3C WAI, редакторы Eric Eggert и Shadi Abou-Zahra",
+        "organization_group": "www.w3.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.w3.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:41Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E05"
+    },
+    {
+      "id": "E06",
+      "title": "Anna Kaley, Raluca Budiu, NN/g. The Custodial Era of UX, 28.08.2026",
+      "author_or_publisher": "Anna Kaley, Raluca Budiu, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/ai-ux-debt/",
+          "label": "The Custodial Era of UX",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2026-08-28",
+      "publication_date_note": "28.08.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Экспертное описание разрыва скорости производства и оценки. Распространённость количественно не установлена",
+      "independence": {
+        "author_group": "Anna Kaley, Raluca Budiu, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/ai-ux-debt/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:42Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E06"
+    },
+    {
+      "id": "E07",
+      "title": "Tuch, Presslaber, Stoecklin, Opwis, Bargas-Avila. Visual complexity and prototypicality, IJHCS 70(11), 2012",
+      "author_or_publisher": "Tuch, Presslaber, Stoecklin, Opwis, Bargas-Avila",
+      "urls": [
+        {
+          "url": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+          "label": "Visual complexity and prototypicality",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Авторская карточка и полная аннотация",
+      "limitations": "Контрпример правилу «знакомость плоха». Не измеряет долгосрочное использование, ценность бренда или слоп",
+      "independence": {
+        "author_group": "Tuch, Presslaber, Stoecklin, Opwis, Bargas-Avila",
+        "organization_group": "research.google",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:research.google"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:44Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E07"
+    },
+    {
+      "id": "E08",
+      "title": "Bateman, Mandryk, Gutwin, Genest, McDine, Brooks. Useful Junk?, CHI 2010",
+      "author_or_publisher": "Bateman, Mandryk, Gutwin, Genest, McDine, Brooks",
+      "urls": [
+        {
+          "url": "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Bateman-UsefulJunk.pdf",
+          "label": "Useful Junk?",
+          "role": "methodological_basis"
+        },
+        {
+          "url": "https://doi.org/10.1145/1753326.1753716",
+          "label": "Bateman and colleagues on chart embellishment",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Оригинальный PDF: метод, результаты, обсуждение",
+      "limitations": "Контрпример универсальному запрету декора. Небольшая выборка и неограниченное время просмотра",
+      "independence": {
+        "author_group": "Bateman, Mandryk, Gutwin, Genest, McDine, Brooks",
+        "organization_group": "vis.csail.mit.edu",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:vis.csail.mit.edu"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Bateman-UsefulJunk.pdf",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:46Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E08"
+    },
+    {
+      "id": "E09",
+      "title": "Government Digital Service / CDDO. Government Design Principles, 03.04.2012; обновлено 02.04.2025",
+      "author_or_publisher": "Government Digital Service / CDDO",
+      "urls": [
+        {
+          "url": "https://www.gov.uk/guidance/government-design-principles",
+          "label": "Government Design Principles",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2012-04-03",
+      "publication_date_note": "03.04.2012; обновлено 02.04.2025",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Релевантные положения",
+      "limitations": "Потребности, контекст и повторяемые паттерны. Практика госуслуг не задаёт эстетику всех жанров",
+      "independence": {
+        "author_group": "Government Digital Service / CDDO",
+        "organization_group": "www.gov.uk",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.gov.uk"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.gov.uk/guidance/government-design-principles",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:46Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E09"
+    },
+    {
+      "id": "E10",
+      "title": "C2PA. Explainer, редакция 1.4, дата отдельно не установлена",
+      "author_or_publisher": "C2PA",
+      "urls": [
+        {
+          "url": "https://spec.c2pa.org/specifications/specifications/1.4/explainer/Explainer.html",
+          "label": "Explainer, редакция 1.4",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Разделы provenance, trust, truth",
+      "limitations": "Происхождение не удостоверяет истинность и эстетическое качество; отсутствие credentials не является доказательством подделки. Версия 1.4 не представляется самой новой",
+      "independence": {
+        "author_group": "C2PA",
+        "organization_group": "spec.c2pa.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:spec.c2pa.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://spec.c2pa.org/specifications/specifications/1.4/explainer/Explainer.html",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:49Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E10"
+    },
+    {
+      "id": "E11",
+      "title": "Jakob Nielsen, NN/g. Photos as Web Content, 31.10.2010; пересмотр 13.08.2026",
+      "author_or_publisher": "Jakob Nielsen, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/photos-as-web-content/",
+          "label": "Photos as Web Content",
+          "role": "professional_analysis"
+        }
+      ],
+      "role": "professional_analysis",
+      "published_at": "2010-10-31",
+      "publication_date_note": "31.10.2010; пересмотр 13.08.2026",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Важность предметного содержания изображений. Не универсальный запрет стока и атмосферы",
+      "independence": {
+        "author_group": "Jakob Nielsen, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/photos-as-web-content/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:50Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "discovery_and_comparison",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E11"
+    },
+    {
+      "id": "E12",
+      "title": "Kim Flaherty, NN/g. Zigzag Image–Text Layouts Make Scanning Less Efficient, 26.11.2017",
+      "author_or_publisher": "Kim Flaherty, NN/g",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/zigzag-page-layout/",
+          "label": "Zigzag Image–Text Layouts Make Scanning Less Efficient",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2017-11-26",
+      "publication_date_note": "26.11.2017",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст, метод и исключения",
+      "limitations": "Компоновка взаимодействует с информационной ролью изображения; нельзя запретить весь зигзаг",
+      "independence": {
+        "author_group": "Kim Flaherty, NN/g",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/zigzag-page-layout/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:53Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E12"
+    },
+    {
+      "id": "E13",
+      "title": "Don Norman. Signifiers, not affordances, 17.11.2008, ACM Interactions 15(6)",
+      "author_or_publisher": "Don Norman",
+      "urls": [
+        {
+          "url": "https://jnd.org/signifiers-not-affordances/",
+          "label": "Signifiers, not affordances",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2008-11-17",
+      "publication_date_note": "17.11.2008, ACM Interactions 15(6)",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Видимые признаки действия и состояния; основание для проверки графических обещаний",
+      "independence": {
+        "author_group": "Don Norman",
+        "organization_group": "jnd.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:jnd.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://jnd.org/signifiers-not-affordances/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:53Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E13"
+    },
+    {
+      "id": "E14",
+      "title": "Lisa Charlotte Muth, Datawrapper. What to consider when using text in data visualizations, 28.09.2022",
+      "author_or_publisher": "Lisa Charlotte Muth, Datawrapper",
+      "urls": [
+        {
+          "url": "https://www.datawrapper.de/blog/text-in-data-visualizations",
+          "label": "What to consider when using text in data visualizations",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": "2022-09-28",
+      "publication_date_note": "28.09.2022",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Основной текст",
+      "limitations": "Подписи, единицы, легенды и пояснения входят в устройство визуализации. Руководство автора-практика",
+      "independence": {
+        "author_group": "Lisa Charlotte Muth, Datawrapper",
+        "organization_group": "www.datawrapper.de",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.datawrapper.de"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.datawrapper.de/blog/text-in-data-visualizations",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:54Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E14"
+    },
+    {
+      "id": "E15",
+      "title": "W3C WAI. Understanding SC 1.4.10: Reflow, дата отдельно не установлена",
+      "author_or_publisher": "W3C WAI",
+      "urls": [
+        {
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "label": "Understanding SC 1.4.10: Reflow",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Официальное пояснение",
+      "limitations": "Проверяемая устойчивость к размеру; нарушение доступности само по себе не доказывает слоп",
+      "independence": {
+        "author_group": "W3C WAI",
+        "organization_group": "www.w3.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.w3.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:57Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E15"
+    },
+    {
+      "id": "E16",
+      "title": "W3C WAI. Understanding SC 2.2.2: Pause, Stop, Hide, дата отдельно не установлена",
+      "author_or_publisher": "W3C WAI",
+      "urls": [
+        {
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
+          "label": "Understanding SC 2.2.2: Pause, Stop, Hide",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Exact publication date not established in the historical registry.",
+      "registry_checked_at": "2026-09-23",
+      "historical_access": "Официальное пояснение",
+      "limitations": "Контроль отвлекающего движения с условиями и исключениями; не запрет анимации",
+      "independence": {
+        "author_group": "W3C WAI",
+        "organization_group": "www.w3.org",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.w3.org"
+        ],
+        "note": "Unknown lineage is not independent evidence; investigate citations and original work before admission."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:07:58Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval; no downloaded code execution; stop at access walls",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "new publications by the same named author or publisher about concrete visual defaults; follow primary links; propose new permanent sources only",
+      "last_access_state_path": "state.json:sources.E16"
+    },
+    {
+      "id": "F04",
+      "title": "Google Design: How to Choose a Web Font",
+      "author_or_publisher": "design.google",
+      "urls": [
+        {
+          "url": "https://design.google/library/choosing-web-fonts-beginners-guide",
+          "label": "Google Design: How to Choose a Web Font",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Not established by basis.md.",
+      "registry_checked_at": null,
+      "historical_access": "Referenced by current basis.md; not assumed read in this run.",
+      "limitations": "Methodological reference, not independent proof of prevalence.",
+      "independence": {
+        "author_group": "design.google",
+        "organization_group": "design.google",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:design.google"
+        ],
+        "note": "Check original authorship and reused examples."
+      },
+      "monitoring": [
+        {
+          "url": "https://design.google/library/choosing-web-fonts-beginners-guide",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:08:01Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "changes to the registered page",
+      "last_access_state_path": "state.json:sources.F04"
+    },
+    {
+      "id": "F05",
+      "title": "NN/g: Proximity",
+      "author_or_publisher": "www.nngroup.com",
+      "urls": [
+        {
+          "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+          "label": "NN/g: Proximity",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Not established by basis.md.",
+      "registry_checked_at": null,
+      "historical_access": "Referenced by current basis.md; not assumed read in this run.",
+      "limitations": "Methodological reference, not independent proof of prevalence.",
+      "independence": {
+        "author_group": "www.nngroup.com",
+        "organization_group": "www.nngroup.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:www.nngroup.com"
+        ],
+        "note": "Check original authorship and reused examples."
+      },
+      "monitoring": [
+        {
+          "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:08:01Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "changes to the registered page",
+      "last_access_state_path": "state.json:sources.F05"
+    },
+    {
+      "id": "F06",
+      "title": "Anthropic: Improving frontend design through Skills",
+      "author_or_publisher": "claude.com",
+      "urls": [
+        {
+          "url": "https://claude.com/blog/improving-frontend-design-through-skills",
+          "label": "Anthropic: Improving frontend design through Skills",
+          "role": "methodological_basis"
+        }
+      ],
+      "role": "methodological_basis",
+      "published_at": null,
+      "publication_date_note": "Not established by basis.md.",
+      "registry_checked_at": null,
+      "historical_access": "Referenced by current basis.md; not assumed read in this run.",
+      "limitations": "Methodological reference, not independent proof of prevalence.",
+      "independence": {
+        "author_group": "claude.com",
+        "organization_group": "claude.com",
+        "template_family": null,
+        "repost_chain": null,
+        "dependency_groups": [
+          "publisher:claude.com"
+        ],
+        "note": "Check original authorship and reused examples."
+      },
+      "monitoring": [
+        {
+          "url": "https://claude.com/blog/improving-frontend-design-through-skills",
+          "kind": "page",
+          "verification": "http_endpoint_checked_at_setup",
+          "verified_at": "2026-10-22T22:08:01Z"
+        }
+      ],
+      "retrieval": "public HTTP or approved web retrieval",
+      "weekly_role": "static_baseline_conditional",
+      "discovery_scope": "changes to the registered page",
+      "last_access_state_path": "state.json:sources.F06"
+    }
+  ]
+}
