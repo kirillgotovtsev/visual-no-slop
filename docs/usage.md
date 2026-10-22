@@ -72,9 +72,9 @@ The skill applies to visual creation, changes and review. Prose-only editing, no
 
 Compatibility with another Agent Skills host depends on that host's discovery rules and visual tools. [VALIDATION.md](../VALIDATION.md) records the environments and operations actually checked.
 
-## Try a local candidate
+## Install from a local copy
 
-The public GitHub path is planned and remains unavailable until publication. If you have a local copy or unpacked archive, use its package folder as the source. The folder must contain `skills/visual-no-slop/SKILL.md`.
+If you have a local copy or unpacked archive, use its package folder as the source. The folder must contain `skills/visual-no-slop/SKILL.md`.
 
 The local CLI checks used `skills` 1.7.4 with Node.js 24.19.0. From the project where you want to try the skill, replace `/absolute/path/to/visual-no-slop` below with your package path:
 
@@ -88,11 +88,11 @@ This uses project scope. Confirm the installation with:
 npx --yes skills@1.7.4 list -a codex --json
 ```
 
-The local checks do not establish GitHub download, remote updating or global installation. Check the current [validation record](../VALIDATION.md) before treating an operation as verified. For the planned GitHub install commands, see the [README](../README.md#install).
+Check the [validation record](../VALIDATION.md) for the operations and environments tested. For GitHub installation, see the [README](../README.md#install).
 
 ## Update or remove
 
-Use the same installer that placed the skill. Updates are manual; weekly research and automatic updates remain deferred.
+Use the same installer that placed the skill to update its instructions and scripts. The separate [current-signals reference](weekly-updates.md) checks for fresh data on first use after seven days when Node.js and network access are available. The initial reference is uninitialized; the cloud research producer is configured separately.
 
 For a global installation managed by the `skills` CLI:
 
@@ -113,7 +113,7 @@ npx --yes skills@latest update visual-no-slop --project
 npx --yes skills@latest remove visual-no-slop -y
 ```
 
-These follow the [CLI command reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md). Remote update remains a release verification step. The local removal check used the command without an agent filter: filtering removal to Codex reported success but left the shared skill folder in that test.
+These follow the [CLI command reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md). The removal check used the command without an agent filter: filtering removal to Codex reported success but left the shared skill folder in that test.
 
 For a copy installed by Codex's `$skill-installer`, ask Codex to locate that copy and update or remove it. The built-in installer refuses to overwrite an existing skill directory, so updating requires replacing the installed copy through an appropriate supported workflow. Keep project settings outside the skill and preserve its license and attribution when copying or moving it.
 

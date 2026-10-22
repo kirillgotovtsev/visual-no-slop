@@ -1,11 +1,35 @@
 # Validation
 
-Local candidate **1.2.0**, checked on 22 October 2026. The GitHub repository has
-not been published. The custom license is included at the repository root and
-inside the installable skill. The plugin archive is prepared for a separate
-host check; it has not been installed in a plugin host or submitted to a directory.
+Release **1.3.0**, prepared on 23 October 2026. The public package includes
+the stable review method, examples, custom license and current-signals consumer.
+The initial reference is uninitialized. The cloud research producer and weekly
+schedule have not been deployed by this release.
 
-## Package and installation
+## Version 1.3.0 checks
+
+The dependency-free consumer tests pass on Node.js 24.19.0: 18 tests covering
+metadata, UTF-8 and size limits, bounded HTTPS transport, weekly refresh,
+24-hour failure backoff, offline operation, expiry, corrupt state, preservation
+of usable data, concurrent lock ownership and recovery. Network responses in
+these tests are controlled fixtures, not live research results.
+
+The package checker passes, including local links, version and license
+consistency. YAML metadata parses with Ruby Psych. The original examples,
+license, evaluation and four stable reference files are unchanged from the
+reviewed 1.2.0 package. The new instructions add the current-signals workflow.
+
+Public download, remote helper retrieval and installer checks are in progress.
+Their results will be recorded here before the release is tagged. No global
+installation is changed by the project-scoped checks.
+
+## Baseline checks from version 1.2.0
+
+The following package and visual checks were completed on 22 October 2026.
+The custom license is included at the repository root and inside the installed
+skill. The optional plugin has not been installed in a plugin host or submitted
+to a directory.
+
+### Package and installation
 
 | Check | Result |
 |---|---|
@@ -96,10 +120,10 @@ text-only zoom, other system-font fallbacks and projector viewing remain unteste
 
 ## Remaining release checks
 
-After publication is authorized, test the GitHub download, remote update,
-user-wide installation and complete Codex skill-installer network route. The
-20 October helper checks covered URL parsing, validation and local copying of
-the earlier candidate; they were not a complete remote installation.
+User-wide CLI installation still needs an isolated user-environment check.
+A first-release update check cannot establish replacement by a later release.
+The 20 October built-in installer helper checks covered URL parsing, validation
+and local copying; they did not establish the network route.
 
 The optional plugin still needs an isolated host installation and removal test.
 Its portable manifest follows the [official packaging documentation](https://developers.openai.com/plugins/build/plugins)
@@ -113,4 +137,5 @@ subject to the modification restriction.
 
 No controlled no-skill comparison, audience study, conversion claim, translation
 benefit or general compatibility claim is established by these checks. Weekly
-research and automatic updates remain outside this release.
+research and the cloud schedule remain separate setup work. The consumer is
+included; its first reference contains no researched findings.

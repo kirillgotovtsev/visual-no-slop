@@ -11,7 +11,7 @@ Use it when you want to:
 - Review a poster, deck or image at the size people will see it.
 - Check a new design as it develops, including the relevant interface or motion states.
 
-Version **1.2.0 is a local release candidate**. The planned repository, `kirillgotovtsev/visual-no-slop`, has not been published. The GitHub commands below are for the planned release; remote installation remains unverified. With a local copy of this package, you can [try the candidate now](docs/usage.md#try-a-local-candidate).
+Version **1.3.0** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
 
 ## Install
 
@@ -19,7 +19,7 @@ Choose one method for each environment. Codex is the first installation target; 
 
 ### Terminal
 
-The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. After the repository is published, run:
+The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. Run:
 
 ```bash
 npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a codex -g -y
@@ -29,7 +29,7 @@ This installs the skill for your user. Omit `-g` for the current project. Omit `
 
 ### Ask Codex
 
-After publication, paste this into a local Codex conversation:
+Paste this into a local Codex conversation:
 
 ```text
 Use $skill-installer to install visual-no-slop from:
@@ -69,7 +69,13 @@ The review starts with composition and visual character, then checks legibility,
 
 The agent distinguishes defects, reasoned aesthetic concerns, preferences, justified devices and unresolved questions. A review may find no problems. Popular fonts, gradients or cards do not establish a defect on their own, and appearance cannot establish AI authorship. The [research basis](skills/visual-no-slop/references/basis.md) explains the sources and limits.
 
-See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history. Weekly research and automatic updates remain deferred.
+## Current visual signals
+
+When Node.js is available, the skill checks this repository for a fresh reference on first use after seven days. It keeps a local cache and continues with the stable method when offline. There is no background service to install. This updates the reference data; changes to the skill's instructions still use your installer.
+
+The initial reference contains no researched findings. The cloud research agent and its schedule are being prepared separately; installing this skill does not start them. The [weekly-update guide](docs/weekly-updates.md) describes the file contract, freshness rules and fallback behavior.
+
+See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## License
 

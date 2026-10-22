@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 — 23 October 2026
+
+- Prepare the first public GitHub release with documentation, examples and the custom license.
+- Add a weekly reference check with a local cache, bounded requests and offline fallback. The installed skill's instructions remain unchanged by reference downloads.
+- Define the current-signals file contract for the separately configured cloud producer. The initial file is explicitly uninitialized and contains no researched findings.
+- Preserve the visual-review method and its safeguards for accepted design choices.
+
 ## 1.2.0 — Local release candidate
 
 - Add public documentation, two worked visual examples and an audit-only counterexample.

@@ -37,7 +37,7 @@ def check(root):
         relative = str(file.relative_to(root))
         if file.is_symlink():
             errors.append('Release contains a symlink: ' + relative)
-        if file.suffix.lower() not in ['.md', '.html', '.json', '.yaml', '.yml']:
+        if file.suffix.lower() not in ['.md', '.html', '.json', '.yaml', '.yml', '.mjs']:
             continue
         content = file.read_text()
         if re.search(r'/Users/|/private/tmp/|/home/[^ /]+/', content):
