@@ -23,9 +23,51 @@ code and its existing tests are unchanged. The earlier behavioral and visual
 checks remain historical evidence for those files; this release does not claim
 new native automatic activation or equivalent outcomes in different hosts.
 
-Public installation, replacement and removal results for this release are
-pending. The [compatibility table](docs/compatibility.md#verification-evidence)
-separates these checks from native host behavior and archive validation.
+Public CLI checks used `skills` 1.7.4 and Node.js 24.19.0 on macOS, with
+telemetry disabled and isolated project directories. Four version 1.3.2 copies
+were installed before publication of the 1.4.0 candidate, then replaced from
+GitHub. Four additional copies were installed fresh. Every installed skill
+contained eleven files matching the release source by SHA-256.
+
+| Target | Fresh installation and listing | Replacement from 1.3.2 | Offline helper and removal |
+|---|---|---|---|
+| Codex | Passed in `.agents/skills/visual-no-slop/` | `skills update` passed | Passed; no skill path remained |
+| Claude Code | Passed in `.claude/skills/visual-no-slop/` | Targeted `skills add -a claude-code` passed; generic update left the old copy | Passed; no skill path remained |
+| Cursor | Passed in `.agents/skills/visual-no-slop/` | `skills update` passed | Passed; no skill path remained |
+| GitHub Copilot | Passed in `.agents/skills/visual-no-slop/` | `skills update` passed | Passed; no skill path remained |
+
+The generic Claude Code update exited successfully while preserving the old
+agent copy and placing the new version in `.agents`. Repeating installation
+with the explicit Claude target replaced the actual agent copy. The
+[usage guide](docs/usage.md#update-or-remove) documents this verified route.
+
+The commands exercised with the cached `skills` 1.7.4 executable were:
+
+```text
+skills add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a <agent> -y --json
+skills list -a <agent> --json
+skills update visual-no-slop --project
+skills remove visual-no-slop -y
+```
+
+For the Claude replacement, the first command was repeated with
+`-a claude-code`. The checks inspected actual installed file content, not only
+the CLI's exit status or listing. They did not launch the target applications.
+
+The skill-only ZIP has one `visual-no-slop/` root; its eleven files match the
+source and the skill files in the other two archives. Its extracted helper
+returned the bundled active reference offline, fetched the canonical reference
+online and used the cache on the next invocation. These are standalone Node
+checks, not native host invocation tests. Source-bound package checks and the
+builder verify the exact archive contents and their SHA-256 checksums.
+
+An independent review found no blockers in the changed packaging, metadata,
+runtime instructions or documented installation routes; it independently ran
+the nine archive tests and reviewed the Claude replacement receipts. The
+[compatibility table](docs/compatibility.md#verification-evidence) separates
+these results from native behavior. Claude Code, Cursor and Copilot were not
+available as installed executables. Native activation, Claude ZIP import,
+plugin-host installation and user-wide CLI placement remain unverified.
 
 ## Version 1.3.2 checks
 
@@ -222,9 +264,8 @@ text-only zoom, other system-font fallbacks and projector viewing remain unteste
 ## Remaining release checks
 
 User-wide CLI installation still needs an isolated user-environment check.
-The public update check replaced a development snapshot of this first release;
-a migration between separately tagged versions has not yet occurred. The
-optional plugin channel remains a separate verification task.
+The 1.4.0 project checks replaced version 1.3.2 with matching files as recorded
+above. The optional plugin channel remains a separate verification task.
 
 The optional plugin still needs an isolated host installation and removal test.
 Its portable manifest follows the [official packaging documentation](https://developers.openai.com/plugins/build/plugins)

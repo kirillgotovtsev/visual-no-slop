@@ -121,7 +121,15 @@ Check the [validation record](../VALIDATION.md) for the operations and environme
 
 Use the same installer that placed the skill to update its instructions and scripts. The separate [current-signals reference](weekly-updates.md) has its own freshness checks; refreshing it does not update the skill or manage the cloud research producer.
 
-For a global installation managed by the `skills` CLI:
+For a Claude Code copy managed by the `skills` CLI, repeat the installation with an explicit agent and the same scope. The project-scoped replacement was checked with `skills` 1.7.4:
+
+```bash
+npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a claude-code -y
+```
+
+Add `-g` only if the existing installation is user-wide. In the 1.7.4 project test, `skills update visual-no-slop --project` reported success but left the old `.claude/skills/visual-no-slop/` copy and wrote the new files to `.agents/skills/visual-no-slop/`. Repeating the targeted installation replaced the actual Claude copy correctly. Check its `SKILL.md` version after updating; the success message alone did not establish replacement.
+
+For Codex, Cursor and Copilot installations managed by the `skills` CLI, project-scoped `update` replaced the checked copies. The corresponding global command is:
 
 ```bash
 npx --yes skills@latest update visual-no-slop --global
@@ -140,7 +148,7 @@ npx --yes skills@latest update visual-no-slop --project
 npx --yes skills@latest remove visual-no-slop -y
 ```
 
-These follow the [CLI command reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md). They apply to all installations of this skill managed by the CLI in the chosen scope. Check the affected agents before removing a shared copy. The earlier removal check used no agent filter: filtering removal to Codex reported success but left the shared folder in that test. Verify the resulting files and host list after removal.
+These follow the [CLI command reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md); use the targeted installation above for the tested Claude Code copy case. Update and removal can affect multiple agents in the chosen scope. Check the affected agents before removing a shared copy. The earlier removal check used no agent filter: filtering removal to Codex reported success but left the shared folder in that test. Verify the resulting files and host list after removal.
 
 For a copy installed by Codex's `$skill-installer`, ask Codex to locate that copy and update or remove it. The built-in installer refuses to overwrite an existing skill directory, so updating requires replacing the installed copy through an appropriate supported workflow. Keep project settings outside the skill and preserve its license and attribution when copying or moving it.
 

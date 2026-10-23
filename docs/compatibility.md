@@ -42,13 +42,17 @@ The table separates the documented route from the operations checked for this re
 
 | Target | Documented format or route | CLI placement or archive check for 1.4.0 | Native host behavior | Reference refresh in that host |
 |---|---|---|---|---|
-| Codex | Agent Skills folder; `$visual-no-slop` | Pending project install, listing, hash comparison and removal | Earlier explicit-use visual tasks are recorded for 1.2.0; no new native invocation or automatic activation check for 1.4.0 | Earlier standalone helper checks apply to unchanged code; native invocation not checked |
-| Claude Code | Agent Skills folder; `/visual-no-slop` | Pending project install, listing, hash comparison and removal | Not run | Not run |
-| Cursor | Agent Skills folder; select `/visual-no-slop` | Pending project install, listing, hash comparison and removal | Not run | Not run |
-| GitHub Copilot / VS Code | Agent Skills folder; select `/visual-no-slop` | Pending project install, listing, hash comparison and removal | Not run | Not run |
-| Claude web or desktop | ZIP with one skill folder; upload and enable | Builder tests passed for layout and identical skill files; final release archive readback pending | ZIP import, activation and removal not run | Not run; depends on the available runtime and account settings |
+| Codex | Agent Skills folder; `$visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Earlier explicit-use visual tasks are recorded for 1.2.0; no new native invocation or automatic activation check for 1.4.0 | Earlier standalone helper checks apply to unchanged code; native invocation not checked |
+| Claude Code | Agent Skills folder; `/visual-no-slop` | Passed install, listing, targeted replacement, hashes and removal; generic update left an old copy | Not run | Not run |
+| Cursor | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Not run | Not run |
+| GitHub Copilot / VS Code | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Not run | Not run |
+| Claude web or desktop | ZIP with one skill folder; upload and enable | Passed ZIP layout, eleven file hashes and extracted helper checks | ZIP import, activation and removal not run | Not run; depends on the available runtime and account settings |
 
-The planned CLI checks use `skills` 1.7.4 in isolated project directories. They cover the `codex`, `claude-code`, `cursor` and `github-copilot` destinations without launching those hosts. The CLI can copy files or create links; record the observed path and mode rather than assuming a shared copy. Installed hashes and removal results must be recorded before the table is marked passed. User-wide installation has no separate isolated check in this release.
+The checks used `skills` 1.7.4 and Node.js 24.19.0 on macOS in isolated project directories. All eleven installed files matched the candidate source by SHA-256. Codex, Cursor and Copilot used `.agents/skills/visual-no-slop/`; Claude Code used `.claude/skills/visual-no-slop/`. These noninteractive installations created copies. Every fresh copy ran the helper offline, and removal left no skill folders or links. User-wide installation has no separate isolated check in this release.
+
+The generic CLI update correctly replaced the Codex, Cursor and Copilot copies from version 1.3.2. For Claude Code, it reported success but retained the old `.claude` copy and placed new files in `.agents`. Repeating the explicit `add -a claude-code` command replaced the actual Claude copy with matching files. Use the [verified replacement instructions](usage.md#update-or-remove).
+
+The standalone helper extracted from the skill ZIP fetched the current reference and used its cache on the next invocation. This checks the supplied Node runtime and network path; it does not establish execution inside another AI application.
 
 The package checker and nine archive-builder tests passed against the prepared files. Those checks cover local references, archive layouts, identical skill contents, reproducibility and path safety. They do not exercise a host's upload or invocation controls.
 

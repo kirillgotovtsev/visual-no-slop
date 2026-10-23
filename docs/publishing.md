@@ -58,7 +58,7 @@ For an authorized release:
 2. Set the repository website, description and topics. Keep the custom license file; do not substitute a standard open-source license from a repository template.
 3. Push the candidate files and check the public README, relative links, images, license and skill path in GitHub.
 4. Test the documented GitHub install for each CLI target in a fresh project. Confirm discovery, installed-file hashes and CLI listing. Record native host discovery and representative invocation separately, including whether the bundled references are available.
-5. Check the documented update and removal commands. A first-release “already current” result does not test replacement by a later version. Test user-wide installation separately in an isolated user environment before claiming it works.
+5. Check the documented update and removal commands against the actual installed agent path. A first-release “already current” result does not test replacement by a later version. The checked `skills` 1.7.4 Claude Code copy needs the [targeted replacement command](usage.md#update-or-remove); its generic update reported success while retaining an older agent copy. Test user-wide installation separately in an isolated user environment before claiming it works.
 6. For Codex's optional `$skill-installer` route, retain the earlier network-install evidence and repeat the check when a change affects that route. Its result does not establish CLI or other-host compatibility.
 7. Record the remote results and remaining limits in `VALIDATION.md`. Keep the README's feature and compatibility claims within those results.
 8. Tag the reviewed release, create the GitHub release and attach all three archives and their SHA-256 checksums. Confirm that each archive contains the version, license, attribution and source reference, and that its files match the tagged package. Exclude Git metadata, caches, credentials and local task records.
@@ -71,6 +71,8 @@ npx --yes skills@latest list -a codex --json
 npx --yes skills@latest update visual-no-slop --project
 npx --yes skills@latest remove visual-no-slop -y
 ```
+
+For the Claude Code copy case, replace the `update` line with the same targeted `add` command used for installation. Confirm the new version and file hashes in `.claude/skills/visual-no-slop/` before removal.
 
 Repeat with `claude-code`, `cursor` and `github-copilot` in fresh destinations. Use the global, Claude ZIP and Codex installer instructions in the [README](../README.md#install) for their separate checks. Record a skills.sh listing only after inspecting its public page and install target; keep it out of release claims until then.
 
