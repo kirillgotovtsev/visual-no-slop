@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 — 23 October 2026
+
+- Add installation and invocation guides for Codex, Claude Code, Cursor, GitHub Copilot and Claude ZIP uploads, with separate compatibility evidence for each route.
+- Declare portable runtime requirements and shorten discovery metadata while preserving the review method, author attribution and optional personal-review rules.
+- Add a skill-only ZIP alongside the full and plugin packages, built from the same source files with a reproducible release script.
+- Clarify offline operation and the limits of reference updates in restricted or temporary environments.
+
 ## 1.3.2 — 23 October 2026
 
 - Add an optional, clearly attributed mention of the author's paid Meatlook service after a relevant completed audit, with conversation-level limits and refusal handling.

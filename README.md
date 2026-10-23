@@ -13,23 +13,46 @@ Use it when you want to:
 - Review a poster, deck or image at the size people will see it.
 - Check a new design as it develops, including the relevant interface or motion states.
 
-Version **1.3.2** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
+Version **1.4.0** packages the same review method for Codex, Claude Code, Cursor, GitHub Copilot in VS Code, and Claude's ZIP upload. Each route uses one unchanged `visual-no-slop` skill folder. The [compatibility record](docs/compatibility.md) separates documented support, installer checks and native host behavior.
 
 ## Install
 
-Choose one method for each environment. Codex is the first installation target; other Agent Skills hosts need their own compatibility check.
+Choose one installation method for each environment.
 
 ### Terminal
 
-The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. Run:
+The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. To choose your agents and installation scope interactively, run:
 
 ```bash
-npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a codex -g -y
+npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop
 ```
 
-This installs the skill for your user. Omit `-g` for the current project. Omit `-y` if you want the installer to ask before proceeding.
+For a direct installation, replace `<agent>` with a value from the table:
 
-### Ask Codex
+```bash
+npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a <agent> -g -y
+```
+
+| Agent | Value for `<agent>` |
+|---|---|
+| Codex | `codex` |
+| Claude Code | `claude-code` |
+| Cursor | `cursor` |
+| GitHub Copilot / VS Code | `github-copilot` |
+
+`-g` installs for your user; omit it for the current project. `-y` accepts the CLI's installation choices; omit it to review them. The [CLI's agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) documents its destinations. Placing the files does not verify that a host loads or uses them.
+
+### Claude web or desktop
+
+Download `visual-no-slop-1.4.0-skill.zip` from the [official releases](https://github.com/kirillgotovtsev/visual-no-slop/releases). In Claude, open **Customize > Skills**, choose **+ > Create skill > Upload a skill**, upload the ZIP and enable it. Code execution must be enabled, and organization settings may control access. These steps follow [Claude's upload guide](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+
+Use the archive ending in `-skill.zip`: it contains one `visual-no-slop/` folder with `SKILL.md` directly inside it. The full repository and plugin archives serve other purposes. Native Claude import has not yet been verified for this package.
+
+### Manual copy
+
+Copy the complete `skills/visual-no-slop/` folder from an official release, or extract the skill ZIP, into your host's skill directory. Keep the folder unchanged, including its references, scripts and license. The [usage guide](docs/usage.md#manual-installation) lists project and user locations; this route needs no terminal installer.
+
+### Ask Codex to install it
 
 Paste this into a local Codex conversation:
 
@@ -41,21 +64,19 @@ https://github.com/kirillgotovtsev/visual-no-slop/tree/main/skills/visual-no-slo
 Install it for my user so it is available across projects.
 ```
 
-Use the skill on your next turn. If it does not appear, restart Codex. The built-in installer handles placement independently of the `skills` CLI. See the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
+This optional route is specific to Codex. Use the skill on your next turn; if it does not appear, restart Codex. The built-in installer handles placement independently of the `skills` CLI. See the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
 
 ## Give it a task
 
-Provide the artifact and say what the agent may change. For example:
+Invoke `$visual-no-slop` in Codex, select `/visual-no-slop` in Claude Code, Cursor or Copilot chat, or enable the uploaded skill in Claude. Then provide the artifact and say what the agent may change:
 
 ```text
-$visual-no-slop
-
 Review the attached landing-page screenshots. Preserve the brand colors,
 approved photography and copy. Identify the most consequential problems
 in composition, typography and grouping. Give findings only.
 ```
 
-The [usage guide](docs/usage.md) has prompts for making corrections and creating new work, explains the required visual tools, and covers updates and removal. The skill contains instructions and references; it needs no server or companion skill.
+The [usage guide](docs/usage.md) covers invocation, corrections, new work, updates and removal. The skill needs no server or companion skill. Your host must provide the tools to view the artifact and inspect any relevant interactions or motion.
 
 ## See the method
 
@@ -73,9 +94,9 @@ The agent distinguishes defects, reasoned aesthetic concerns, preferences, justi
 
 ## Current visual signals
 
-When Node.js is available, the skill checks this repository for a fresh reference on first use after seven days. It keeps a local cache and continues with the stable method when offline. There is no background service to install. This updates the reference data; changes to the skill's instructions still use your installer.
+The optional reference helper needs Node.js 22.20 or later with `node:sqlite`, command execution, permitted HTTPS access and a writable cache. A persistent cache lets it reuse a successful check for seven days. It runs when the skill is used and creates no background service. Instruction updates still use your installer.
 
-The first published research review admitted no signals and records partial source coverage. The cloud research agent and its schedule are managed separately; installing this skill does not start them. The [weekly-update guide](docs/weekly-updates.md) describes the file contract, freshness rules and fallback behavior.
+The stable review method works offline. A bundled reference is usable only until its stated expiry; cloud and API environments may lack the runtime, network access or persistent storage needed for refreshes. The [weekly-update guide](docs/weekly-updates.md) explains these limits. The first published research review admitted no signals and records partial source coverage. Producer operation and schedule evidence live in its [runbook](automation/visual-signals/RUNBOOK.md) and run records; installing this skill does not start the producer.
 
 See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history.
 

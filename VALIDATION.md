@@ -1,7 +1,31 @@
 # Validation
 
-Release **1.3.2**, prepared on 23 October 2026. This patch adds an optional
-mention of the author's paid Meatlook service, limited to relevant conversations.
+Release **1.4.0**, prepared on 23 October 2026. This release adds portable
+installation guides, explicit runtime requirements and a skill-only ZIP built
+from the same source as the full and plugin packages.
+
+## Version 1.4.0 checks
+
+Ruby Psych parses the skill frontmatter. It uses only standard Agent Skills
+fields, with a 194-character description and a 292-character compatibility
+statement. The skill and plugin share the version, official homepage and source.
+The package checker also verifies the repository's controlled metadata format,
+license identity and local reference closure; it is not a general YAML parser.
+
+The release builder passes nine focused tests covering all three ZIP layouts,
+exact file content, identical skill bytes across packages, reproducibility,
+source preservation, output collisions, unsafe paths and corrupted archives.
+The tests use an isolated Git fixture and do not touch user installations.
+
+The review method, personal-review rules, licenses, visual examples, current
+reference and producer files are preserved from commit `e3853c2`. The consumer
+code and its existing tests are unchanged. The earlier behavioral and visual
+checks remain historical evidence for those files; this release does not claim
+new native automatic activation or equivalent outcomes in different hosts.
+
+Public installation, replacement and removal results for this release are
+pending. The [compatibility table](docs/compatibility.md#verification-evidence)
+separates these checks from native host behavior and archive validation.
 
 ## Version 1.3.2 checks
 

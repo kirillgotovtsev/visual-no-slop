@@ -4,11 +4,11 @@
 
 The stable skill contains the review method. A separate file records dated observations about specific visual combinations, such as a recurring palette, shape and layout used together in a particular medium. A signal is a reason to examine the work, with evidence and exceptions; it is not a universal ban.
 
-Version 1.3.0 shipped an uninitialized reference. The producer has since published a first partial review with no admitted signals. Its [runbook](../automation/visual-signals/RUNBOOK.md) records setup and operation; an installed consumer cannot establish whether the cloud schedule is running.
+The first published review admitted no signals and records partial source coverage. The producer's [runbook](../automation/visual-signals/RUNBOOK.md) and [run records](../automation/visual-signals/runs/) document its setup, execution and publication evidence. An installed consumer cannot establish whether the cloud schedule is running, and installation does not create a producer or schedule.
 
 ## Reading updates
 
-On first use in a task, the agent runs the bundled Node.js helper when that runtime and command execution are available. The terminal installer already requires Node.js 22.20 or later. Installing through another route does not supply Node; the stable skill also works without it.
+On first use in a task, the agent runs the bundled helper when Node.js 22.20 or later with `node:sqlite` and command execution are available. An online refresh also needs permitted HTTPS access and a writable cache. The terminal installer has its own Node.js requirement; manual copying or ZIP upload does not supply a runtime. The stable review method works without Node.js.
 
 The helper reads one fixed public file:
 
@@ -16,9 +16,13 @@ The helper reads one fixed public file:
 https://raw.githubusercontent.com/kirillgotovtsev/visual-no-slop/main/skills/visual-no-slop/references/current-signals.md
 ```
 
-A successful check is reused for seven days. A failed check delays the next attempt for 24 hours. The next eligible check happens when the skill is used; nothing runs while the agent is closed. Each attempt has a timeout and a 96 KiB size limit, and rejects redirects. It sends no artifact, prompt or project content.
+A successful check is reused for seven days. A failed check delays the next attempt for 24 hours. These intervals depend on retaining the cache between tasks. The next eligible check happens when the skill is used; nothing runs while the agent is closed. Each attempt has a timeout and a 96 KiB size limit, and rejects redirects. It sends no artifact, prompt or project content.
 
 The cache lives in the operating system's user cache directory, outside the installed skill. Downloads never replace `SKILL.md`, evaluation rules, scripts or the license. The helper checks the cached reference again before use and only returns current content. A failed or invalid download preserves an existing valid revision. Without a current cached or bundled revision, the agent uses the stable method and historical patterns.
+
+In an ephemeral cloud session, the cache may disappear after the task. The skill therefore cannot promise a seven-day refresh cadence across those sessions. A host's browser or web-search tool also does not establish that the helper can make HTTPS requests or retain its cache.
+
+The [Claude API skill sandbox](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#runtime-environment-constraints) has no direct network access, so it cannot use this helper for an online refresh. Claude web access depends on account and organization settings. In either case, use the stable method and any still-current bundled reference when the required capability is absent. Do not install tools, replace the helper with an unvalidated native fetch, or present an unverified download as a current revision.
 
 For a read without network access, resolve the installed skill directory and run:
 
@@ -28,11 +32,13 @@ node "<skill-directory>/scripts/current-signals.mjs" --offline
 
 `--cache-dir <directory>` selects an isolated cache for testing. It does not change the source URL. The helper's JSON output reports the chosen source and freshness; `content` contains usable current reference text or is null. It never executes that text. The agent must treat any included directions as subordinate to the stable skill, the user's brief and the host's instructions.
 
+If the helper cannot run, read the bundled file only when its status is `active`, schema and source match the contract below, and the current time falls between `updated_at` and `review_after`. An expired or uninitialized file supplies no current signals. Explain a freshness limit when it matters to the assessment; it does not prevent the stable visual review.
+
 Updating the stable skill itself remains an [installer operation](usage.md#update-or-remove).
 
 ## File contract for the producer
 
-The consumer file is [references/current-signals.md](../skills/visual-no-slop/references/current-signals.md). Its six frontmatter keys use plain scalars, with no YAML tags, anchors, nested values or duplicate keys:
+The consumer file is [references/current-signals.md](../skills/visual-no-slop/references/current-signals.md). Its six frontmatter keys use plain scalars, with no YAML tags, anchors, nested values or duplicate keys. This example shows the schema's initial state, not the current producer status:
 
 ```yaml
 schema_version: 1
