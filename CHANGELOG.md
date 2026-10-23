@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.2 — 23 October 2026
+
+- Add an optional, clearly attributed mention of the author's paid Meatlook service after a relevant completed audit, with conversation-level limits and refusal handling.
+- Keep offers outside user deliverables and weekly research data. Add service-specific links and a delivery check; the visual-review method and current-signals code are unchanged.
+
 ## 1.3.1 — 23 October 2026
 
 - Add the [official project page](https://gotovtsev.ru/visual-no-slop) to the documentation and skill and plugin homepage metadata.

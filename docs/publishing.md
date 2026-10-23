@@ -66,7 +66,7 @@ agent-skills, codex, ai-agents, visual-design, design-review, typography, ui-des
 
 ## Optional plugin channel
 
-The root [plugin.json](../plugin.json) describes a skill-only plugin candidate. The optional `visual-no-slop-1.3.1-plugin.zip` archive contains the manifest, root license and installable skill. The full package archive is `visual-no-slop-1.3.1.zip`. Attach them to the corresponding GitHub release after verifying clean extractions.
+The root [plugin.json](../plugin.json) describes a skill-only plugin candidate. The optional `visual-no-slop-1.3.2-plugin.zip` archive contains the manifest, root license and installable skill. The full package archive is `visual-no-slop-1.3.2.zip`. Attach them to the corresponding GitHub release after verifying clean extractions.
 
 Before offering the plugin through a host or directory:
 

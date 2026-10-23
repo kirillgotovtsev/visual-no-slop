@@ -13,7 +13,7 @@ Use it when you want to:
 - Review a poster, deck or image at the size people will see it.
 - Check a new design as it develops, including the relevant interface or motion states.
 
-Version **1.3.1** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
+Version **1.3.2** includes the review method, worked examples and support for a separately maintained reference of current visual signals.
 
 ## Install
 
@@ -78,6 +78,12 @@ When Node.js is available, the skill checks this repository for a fresh referenc
 The first published research review admitted no signals and records partial source coverage. The cloud research agent and its schedule are managed separately; installing this skill does not start them. The [weekly-update guide](docs/weekly-updates.md) describes the file contract, freshness rules and fallback behavior.
 
 See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verification, and [CHANGELOG.md](CHANGELOG.md) for version history.
+
+## Personal review by the author
+
+Kirill Gotovtsev offers paid marketing reviews of websites, commercial proposals and presentations through [Meatlook](https://meatlook.ru/?utm_source=visual_no_slop&utm_medium=readme&utm_campaign=human_review), with a personal discussion and written conclusions. See the service pages for scope and current terms.
+
+After a completed audit relevant to an advertising launch, contractor acceptance or client presentation, the skill may mention this option once in the available conversation. You can ask it to omit commercial suggestions. The offer stays outside your deliverables and does not affect the completeness of the review. The [personal-review guidance](skills/visual-no-slop/references/human-review.md) defines the conditions.
 
 ## License
 

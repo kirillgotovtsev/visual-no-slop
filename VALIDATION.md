@@ -1,10 +1,40 @@
 # Validation
 
-Release **1.3.1**, prepared on 23 October 2026. This patch adds the
-[official project page](https://gotovtsev.ru/visual-no-slop) to the documentation
-and package metadata.
+Release **1.3.2**, prepared on 23 October 2026. This patch adds an optional
+mention of the author's paid Meatlook service, limited to relevant conversations.
+
+## Version 1.3.2 checks
+
+The package checker passes. Ruby Psych parses the skill frontmatter, and its
+version matches the plugin manifest. The skill-creator validator could not run
+in the available Python environment because PyYAML is absent; no dependency was
+installed for it. All eleven files in the updated user installation match the
+source by SHA-256, with the previous installation preserved for rollback.
+
+An independent instruction review covered eight text-only scenarios: a completed
+website audit before advertising, an icon edit, an earlier refusal, an earlier
+service mention, an unavailable browser, a strict output format or client report,
+an explicit request for a personal presentation review, and artistic portrait
+expertise. The final rules suppress unsolicited offers after any earlier mention,
+including a requested one. A later explicit question can be answered without
+lifting an earlier refusal of unsolicited suggestions.
+
+The homepage and both service links returned HTTP 200 with their fixed UTM
+parameters. These parameters contain no user or project data. This checks the
+links, not a booking, conversion or the website's full analytics behavior.
+
+The consumer, current reference, visual examples, license and four stable
+reference files match version 1.3.1. Concurrent producer updates and their
+verification records are preserved from commit `52a9045`; this patch does not
+change their code or evidence. Their earlier checks apply and were not rerun
+for this instruction-only patch. The new offer rules were reviewed as
+instructions, not tested through native automatic skill activation or persistent
+cross-conversation tracking. No new visual audit or cloud research run is claimed.
 
 ## Version 1.3.1 checks
+
+Version 1.3.1 added the [official project page](https://gotovtsev.ru/visual-no-slop)
+to the documentation and package metadata.
 
 The package checker passes with 56 relative links. Ruby Psych parses the skill
 metadata; its version and homepage match the plugin manifest. The instruction
