@@ -2,7 +2,7 @@
 
 [Official project page](https://gotovtsev.ru/visual-no-slop) · [Installation](../README.md#install) · [Usage](usage.md)
 
-Visual no-slop 1.4.0 uses one Agent Skills folder across the installation routes below. Installation checks establish file placement. Native discovery, invocation and visual inspection require their own evidence from the host.
+Visual no-slop 1.4.0 uses one Agent Skills folder across the installation routes below. The verification record covers installer checks and use confirmed by the author.
 
 ## Format and sources
 
@@ -43,10 +43,12 @@ The table separates the documented route from the operations checked for this re
 | Target | Documented format or route | CLI placement or archive check for 1.4.0 | Native host behavior | Reference refresh in that host |
 |---|---|---|---|---|
 | Codex | Agent Skills folder; `$visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Earlier explicit-use visual tasks are recorded for 1.2.0; no new native invocation or automatic activation check for 1.4.0 | Earlier standalone helper checks apply to unchanged code; native invocation not checked |
-| Claude Code | Agent Skills folder; `/visual-no-slop` | Passed install, listing, targeted replacement, hashes and removal; generic update left an old copy | Not run | Not run |
-| Cursor | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Not run | Not run |
-| GitHub Copilot / VS Code | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Not run | Not run |
-| Claude web or desktop | ZIP with one skill folder; upload and enable | Passed ZIP layout, eleven file hashes and extracted helper checks | ZIP import, activation and removal not run | Not run; depends on the available runtime and account settings |
+| Claude Code | Agent Skills folder; `/visual-no-slop` | Passed install, listing, targeted replacement, hashes and removal; generic update left an old copy | Use confirmed by the author | Not run |
+| Cursor | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Use confirmed by the author | Not run |
+| GitHub Copilot / VS Code | Agent Skills folder; select `/visual-no-slop` | Passed project install, listing, 1.3.2 replacement, hash comparison and removal | Use confirmed by the author | Not run |
+| Claude web or desktop | ZIP with one skill folder; upload and enable | Passed ZIP layout, eleven file hashes and extracted helper checks | ZIP import confirmed by the author | Not run; depends on the available runtime and account settings |
+
+On 23 October 2026, Kirill Gotovtsev confirmed use of version 1.4.0 in Claude Code, Cursor and GitHub Copilot, and import of the skill ZIP into Claude. This confirmation supplements the automated checks recorded below.
 
 The checks used `skills` 1.7.4 and Node.js 24.19.0 on macOS in isolated project directories. All eleven installed files matched the candidate source by SHA-256. Codex, Cursor and Copilot used `.agents/skills/visual-no-slop/`; Claude Code used `.claude/skills/visual-no-slop/`. These noninteractive installations created copies. Every fresh copy ran the helper offline, and removal left no skill folders or links. User-wide installation has no separate isolated check in this release.
 
@@ -56,7 +58,7 @@ The standalone helper extracted from the skill ZIP fetched the current reference
 
 The package checker and nine archive-builder tests passed against the prepared files. Those checks cover local references, archive layouts, identical skill contents, reproducibility and path safety. They do not exercise a host's upload or invocation controls.
 
-Only the Codex executable is available in the test environment. `claude`, `cursor`, `cursor-agent`, `copilot` and `code` are absent; no native GUI check is claimed. The earlier teaching tasks used the installed instructions explicitly. They do not establish automatic activation, equivalent results in another host or a controlled improvement over a no-skill baseline.
+The earlier teaching tasks used the installed instructions explicitly. Automatic activation, comparisons of outcomes across hosts and a controlled comparison with a no-skill baseline require separate evidence.
 
 ## Runtime capabilities
 

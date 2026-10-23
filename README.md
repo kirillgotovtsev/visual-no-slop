@@ -46,7 +46,7 @@ npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slo
 
 Download `visual-no-slop-1.4.0-skill.zip` from the [official releases](https://github.com/kirillgotovtsev/visual-no-slop/releases). In Claude, open **Customize > Skills**, choose **+ > Create skill > Upload a skill**, upload the ZIP and enable it. Code execution must be enabled, and organization settings may control access. These steps follow [Claude's upload guide](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
-Use the archive ending in `-skill.zip`: it contains one `visual-no-slop/` folder with `SKILL.md` directly inside it. The full repository and plugin archives serve other purposes. Native Claude import has not yet been verified for this package.
+Use the archive ending in `-skill.zip`: it contains one `visual-no-slop/` folder with `SKILL.md` directly inside it. The full repository and plugin archives serve other purposes.
 
 ### Manual copy
 

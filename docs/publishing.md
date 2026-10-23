@@ -1,6 +1,6 @@
 # Publishing Visual no-slop
 
-Use this checklist for releases of `kirillgotovtsev/visual-no-slop`. Version **1.4.0** adds cross-agent installation guidance and a skill ZIP alongside the full and plugin archives. [VALIDATION.md](../VALIDATION.md) and the [compatibility record](compatibility.md) distinguish completed checks from documented routes and unverified host behavior.
+Use this checklist for releases of `kirillgotovtsev/visual-no-slop`. Version **1.4.0** adds cross-agent installation guidance and a skill ZIP alongside the full and plugin archives. [VALIDATION.md](../VALIDATION.md) and the [compatibility record](compatibility.md) record automated checks, the author's confirmation of native use and remaining verification tasks.
 
 The official project page is [gotovtsev.ru/visual-no-slop](https://gotovtsev.ru/visual-no-slop). Use this address in the GitHub Website field, the README, release notes, and the skill and plugin homepage metadata. Keep the GitHub repository as the source and installation address.
 

@@ -64,10 +64,13 @@ builder verify the exact archive contents and their SHA-256 checksums.
 An independent review found no blockers in the changed packaging, metadata,
 runtime instructions or documented installation routes; it independently ran
 the nine archive tests and reviewed the Claude replacement receipts. The
-[compatibility table](docs/compatibility.md#verification-evidence) separates
-these results from native behavior. Claude Code, Cursor and Copilot were not
-available as installed executables. Native activation, Claude ZIP import,
-plugin-host installation and user-wide CLI placement remain unverified.
+[compatibility table](docs/compatibility.md#verification-evidence) records
+these automated checks alongside the author's confirmation of native use.
+
+On 23 October 2026, after publication, Kirill Gotovtsev confirmed use of version
+1.4.0 in Claude Code, Cursor and GitHub Copilot, and import of the skill ZIP
+into Claude. Plugin-host installation and user-wide CLI placement remain
+separate verification tasks.
 
 ## Version 1.3.2 checks
 
