@@ -4,6 +4,15 @@ Release **1.4.0**, prepared on 23 October 2026. This release adds portable
 installation guides, explicit runtime requirements and a skill-only ZIP built
 from the same source as the full and plugin packages.
 
+## Post-release Meatlook journey check — 25 October 2026
+
+The [journey check](docs/meatlook-journey-check-2026-10-25.md) covers the README
+homepage route, both service-specific skill routes, form initialization and
+client-side validation. No enquiry was submitted. It distinguishes working
+navigation from attribution gaps and unverified server delivery. This is
+post-release evidence, not a change to the published 1.4.0 archives or a
+measurement of conversion.
+
 ## Version 1.4.0 checks
 
 Ruby Psych parses the skill frontmatter. It uses only standard Agent Skills
