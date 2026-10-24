@@ -227,8 +227,9 @@ def _release_plan(root):
     full_prefix = "visual-no-slop-{}/".format(version)
 
     full_entries = tuple((full_prefix + path, mode, data) for path, mode, data in inventory)
+    # Keep one source manifest; only the Claude plugin archive relocates it.
     plugin_entries = tuple(
-        (path, mode, data)
+        (".claude-plugin/plugin.json" if path == "plugin.json" else path, mode, data)
         for path, mode, data in inventory
         if path in {"LICENSE", "plugin.json"} or path.startswith(SKILL_PREFIX)
     )
@@ -237,11 +238,11 @@ def _release_plan(root):
         for path, mode, data in inventory
         if path.startswith(SKILL_PREFIX)
     )
-    if {name for name, _mode, _data in plugin_entries if "/" not in name} != {
+    if {name for name, _mode, _data in plugin_entries if not name.startswith(SKILL_PREFIX)} != {
         "LICENSE",
-        "plugin.json",
+        ".claude-plugin/plugin.json",
     }:
-        raise ReleaseError("plugin archive root must contain plugin.json and LICENSE")
+        raise ReleaseError("plugin archive must contain .claude-plugin/plugin.json and LICENSE")
     if not any(name == "visual-no-slop/SKILL.md" for name, _mode, _data in skill_entries):
         raise ReleaseError("skill archive would not contain visual-no-slop/SKILL.md")
     if not any(name == "visual-no-slop/LICENSE" for name, _mode, _data in skill_entries):

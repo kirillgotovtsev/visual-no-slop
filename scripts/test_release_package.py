@@ -65,6 +65,31 @@ class ReleasePackageTests(unittest.TestCase):
         self.assertEqual(self.version, result["version"])
         self.assertGreater(result["relative_links_checked"], 0)
 
+    def test_claude_plugin_manifest_location_and_contents(self):
+        plugin_name = "visual-no-slop-{}-plugin.zip".format(self.version)
+        plugin = _zip_contents(self.first_output / plugin_name)
+        manifest_path = ".claude-plugin/plugin.json"
+
+        self.assertIn(manifest_path, set(plugin))
+        self.assertNotIn("plugin.json", set(plugin))
+        self.assertEqual(
+            {path for path in plugin if path.startswith(".claude-plugin/")},
+            {manifest_path},
+        )
+        source = (self.repository / "plugin.json").read_bytes()
+        self.assertEqual(plugin[manifest_path], source)
+        manifest = json.loads(plugin[manifest_path])
+        self.assertEqual(manifest["name"], "visual-no-slop")
+        self.assertEqual(manifest["version"], self.version)
+        self.assertEqual(manifest["author"], {"name": "Kirill Gotovtsev"})
+        self.assertEqual(manifest["license"], "LicenseRef-Visual-No-Slop-1.0")
+        self.assertEqual(plugin["LICENSE"], (self.repository / "LICENSE").read_bytes())
+        self.assertEqual(plugin["skills/visual-no-slop/LICENSE"], plugin["LICENSE"])
+        self.assertEqual(
+            {path for path in plugin if path.endswith("/SKILL.md")},
+            {"skills/visual-no-slop/SKILL.md"},
+        )
+
     def test_all_archive_layouts_and_skill_bytes_are_exact(self):
         version = self.version
         inventory = {path: data for path, _mode, data in self.inventory}
@@ -80,11 +105,10 @@ class ReleasePackageTests(unittest.TestCase):
         self.assertEqual(set(full), {prefix + path for path in inventory})
         self.assertEqual(
             set(plugin),
-            {
+            {"LICENSE", ".claude-plugin/plugin.json"} | {
                 path
                 for path in inventory
-                if path in {"LICENSE", "plugin.json"}
-                or path.startswith(build_release.SKILL_PREFIX)
+                if path.startswith(build_release.SKILL_PREFIX)
             },
         )
         self.assertEqual(
@@ -95,7 +119,8 @@ class ReleasePackageTests(unittest.TestCase):
                 if path.startswith(build_release.SKILL_PREFIX)
             },
         )
-        self.assertEqual({name for name in plugin if "/" not in name}, {"LICENSE", "plugin.json"})
+        self.assertEqual({name for name in plugin if "/" not in name}, {"LICENSE"})
+        self.assertEqual(full[prefix + "plugin.json"], inventory["plugin.json"])
         self.assertIn("visual-no-slop/SKILL.md", skill)
         self.assertIn("visual-no-slop/LICENSE", skill)
 
