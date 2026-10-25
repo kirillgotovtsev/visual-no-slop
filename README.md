@@ -19,18 +19,24 @@ Version **1.4.0** packages the same review method for Codex, Claude Code, Cursor
 
 Choose one installation method for each environment.
 
+### Claude plugin
+
+The optional plugin ZIP includes its Claude manifest, icon, README and the same canonical skill. Extract `visual-no-slop-1.4.0-plugin.zip` into a fresh folder and load it with `claude --plugin-dir ./visual-no-slop-plugin`. Invoke `/visual-no-slop:visual-no-slop` inside Claude Code. You can also load a checkout of this repository with `claude --plugin-dir .`.
+
+The [plugin guide](docs/plugin-README.md) covers runtime and data handling. The [directory preparation record](docs/claude-directory.md) distinguishes local validation from submission and publication; there is no confirmed Anthropic directory listing yet.
+
 ### Terminal
 
 The [`skills` CLI](https://github.com/vercel-labs/skills) requires Node.js 22.20 or later, npm and Git. To choose your agents and installation scope interactively, run:
 
 ```bash
-npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop
+npx --yes skills@1.7.4 add kirillgotovtsev/visual-no-slop --skill visual-no-slop
 ```
 
 For a direct installation, replace `<agent>` with a value from the table:
 
 ```bash
-npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a <agent> -g -y
+npx --yes skills@1.7.4 add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a <agent> -g -y
 ```
 
 | Agent | Value for `<agent>` |

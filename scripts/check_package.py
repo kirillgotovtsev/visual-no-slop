@@ -197,10 +197,10 @@ def validate(root):
     skill = root / "skills" / "visual-no-slop"
 
     try:
-        plugin = json.loads((root / "plugin.json").read_text(encoding="utf-8"))
+        plugin = json.loads((root / ".claude-plugin/plugin.json").read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         plugin = {}
-        errors.append("Cannot read plugin.json: " + str(exc))
+        errors.append("Cannot read .claude-plugin/plugin.json: " + str(exc))
     try:
         metadata = parse_skill_frontmatter((skill / "SKILL.md").read_text(encoding="utf-8"))
     except (OSError, UnicodeError, FrontmatterError) as exc:
