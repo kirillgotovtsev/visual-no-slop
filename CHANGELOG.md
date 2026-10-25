@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 packaging correction — 25 October 2026
+
+- Put the sole plugin manifest at `.claude-plugin/plugin.json` in both the repository and plugin ZIP, and include a plugin README and catalogue icon.
+- Add archive regression coverage and isolated Claude Code validation, installation and removal instructions.
+- Prepare replacement release assets and an Anthropic directory submission at the author's request. Submission and approval must be recorded separately from preparation.
+- Preserve every canonical skill file, the license, research producer and its schedule. Pin installation examples to the previously verified `skills` 1.7.4 CLI.
+
 ## 1.4.0 — 23 October 2026
 
 - Add installation and invocation guides for Codex, Claude Code, Cursor, GitHub Copilot and Claude ZIP uploads, with separate compatibility evidence for each route.

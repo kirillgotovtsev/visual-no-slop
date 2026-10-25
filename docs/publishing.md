@@ -8,7 +8,7 @@ Keep one canonical skill at `skills/visual-no-slop/`. All installation routes di
 
 ## Prepare the release files
 
-- Check that the README, `SKILL.md` metadata, changelog and `plugin.json` identify the same version.
+- Check that the README, `SKILL.md` metadata, changelog and `.claude-plugin/plugin.json` identify the same version.
 - Include the final `LICENSE` at the repository root and inside `skills/visual-no-slop/`, so an installation of that folder retains the terms and attribution.
 - Verify all relative links and bundled reference paths from the files that use them. Remove author-machine paths, temporary files and private material from the release package.
 - Keep the examples' provenance with their images. Describe them as authored teaching fixtures with agent revisions; preserve the audit-only counterexample that retains justified cards.
@@ -45,10 +45,12 @@ Replace `<directory>` with the release output directory. This builds distributio
 | Archive | Contents and purpose |
 |---|---|
 | `visual-no-slop-1.4.0.zip` | Tracked repository files under `visual-no-slop-1.4.0/`, including documentation, examples, validation and producer records |
-| `visual-no-slop-1.4.0-plugin.zip` | Optional plugin candidate with `plugin.json`, `LICENSE` and `skills/visual-no-slop/` at the archive root |
+| `visual-no-slop-1.4.0-plugin.zip` | Claude plugin with `.claude-plugin/plugin.json`, `.claude-plugin/icon.png`, root `README.md`, `LICENSE` and `skills/visual-no-slop/` |
 | `visual-no-slop-1.4.0-skill.zip` | One `visual-no-slop/` folder for Claude upload or manual installation |
 
 The skill archive must contain `visual-no-slop/SKILL.md`, with `eval.md`, `LICENSE`, `references/`, `scripts/` and `agents/openai.yaml` inside that same folder. It must have no extra repository wrapper or plugin manifest. Compare every extracted skill file against `skills/visual-no-slop/`; all three archives must carry the same canonical skill and license. The builder writes `SHA256SUMS` beside the archives, with each SHA-256 hash followed by two spaces and its archive filename. Verify clean extraction, relative paths and checksums before attaching the archives to a release.
+
+The plugin ZIP originally published with **1.4.0 on 23 October 2026** had `plugin.json` at its root. On **25 October 2026**, the author authorized replacing that release with corrected packaging and preparing an Anthropic directory submission. Before replacement, preserve the original assets, release description and tag target. Build in a fresh directory, replace the full and plugin ZIPs and checksums together, and record the exact build commit in the release description. The standalone skill ZIP must remain byte-identical. This is a packaging correction at the author's request, not a new methodology version; future changes should use a new version so existing plugin installs receive updates.
 
 ## Publish the GitHub skill
 
@@ -66,10 +68,10 @@ For an authorized release:
 The project-scoped CLI smoke check starts with:
 
 ```bash
-npx --yes skills@latest add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a codex -y
-npx --yes skills@latest list -a codex --json
-npx --yes skills@latest update visual-no-slop --project
-npx --yes skills@latest remove visual-no-slop -y
+npx --yes skills@1.7.4 add kirillgotovtsev/visual-no-slop --skill visual-no-slop -a codex -y
+npx --yes skills@1.7.4 list -a codex --json
+npx --yes skills@1.7.4 update visual-no-slop --project
+npx --yes skills@1.7.4 remove visual-no-slop -y
 ```
 
 For the Claude Code copy case, replace the `update` line with the same targeted `add` command used for installation. Confirm the new version and file hashes in `.claude/skills/visual-no-slop/` before removal.
@@ -90,7 +92,58 @@ agent-skills, codex, claude-code, cursor, github-copilot, ai-agents, visual-desi
 
 ## Optional plugin channel
 
-The root [plugin.json](../plugin.json) describes a skill-only plugin candidate. Its archive is a separate distribution option; it does not establish compatibility with Claude Code's or Cursor's plugin manifests or marketplaces. Their documented skill-directory routes use the canonical folder without this manifest.
+The single source manifest now lives at [.claude-plugin/plugin.json](../.claude-plugin/plugin.json) in the repository, so the directory can read the source directly. The builder includes that file unchanged, bundles the icon, and maps [the standalone plugin README](plugin-README.md) to `README.md` inside the plugin ZIP. `LICENSE` and `skills/visual-no-slop/` stay at the plugin root. The full archive preserves repository paths; the skill ZIP contains no plugin manifest or catalogue assets.
+
+This matches Anthropic's [plugin layout](https://github.com/anthropics/claude-plugins-official/blob/main/README.md), [Claude Code manifest contract](https://code.claude.com/docs/en/plugins-reference) and [Claude Plugins API manifest location](https://platform.claude.com/docs/en/manage-claude/plugins-api). The existing name, version, description, author object, URLs, license string and keyword array pass Claude Code's manifest validator. Its `$schema` is a portable editor hint, not an Anthropic schema URL; Claude Code ignores that field at load time. No manifest field or license change was needed.
+
+### Initial packaging verification — 25 October 2026
+
+- The new manifest regression test failed on the old builder because `.claude-plugin/plugin.json` was absent, then passed after the path correction. All ten release tests pass, including byte-for-byte reproducibility, exact skill contents, checksums and overwrite protection.
+- An extracted candidate passed `claude plugin validate <plugin-directory> --strict --json` using Claude Code **2.1.310** on Linux x86_64: exit 0, `success: true`, and no manifest errors or warnings. The separate directory-submission findings report a missing README and icon; this is not a directory-ready submission.
+- With a fresh `CLAUDE_CONFIG_DIR` and temporary project, a local test marketplace was added; the plugin installed in user scope and appeared enabled at version 1.4.0. All thirteen cached plugin files matched the extraction by SHA-256.
+- Uninstall succeeded and `claude plugin list --json` returned `[]`. Removing the test marketplace left empty plugin, marketplace and enablement registries. Claude retained an orphan-marked cache until the temporary test directory was removed.
+- No authenticated model invocation, automatic skill activation, visual task, Claude web/desktop plugin upload or Enterprise Plugins API upload was tested. Earlier author-confirmed use of the standalone skill is separate evidence. Cursor's plugin format and public marketplace acceptance remain unverified.
+
+To repeat the archive tests, run `python3 scripts/check_package.py` and `python3 scripts/test_release_package.py`. To repeat the host check with Claude Code installed, build into a fresh output directory and run the following from the repository root. The subshell confines configuration changes to the temporary directory; it does not submit anything to a public marketplace:
+
+```bash
+(
+  set -eu
+  plugin_test_dir="$(mktemp -d)"
+  trap 'rm -rf -- "$plugin_test_dir"' EXIT
+  export CLAUDE_CONFIG_DIR="$plugin_test_dir/config"
+  python3 scripts/build_release.py --output "$plugin_test_dir/release"
+  python3 - "$plugin_test_dir" <<'PY'
+import json
+from pathlib import Path
+import sys
+import zipfile
+
+root = Path(sys.argv[1])
+marketplace = root / "marketplace"
+manifest_dir = marketplace / ".claude-plugin"
+manifest_dir.mkdir(parents=True)
+version = json.loads(Path(".claude-plugin/plugin.json").read_text())["version"]
+with zipfile.ZipFile(root / "release" / f"visual-no-slop-{version}-plugin.zip") as archive:
+    archive.extractall(marketplace / "plugins" / "visual-no-slop")
+(manifest_dir / "marketplace.json").write_text(json.dumps({
+    "name": "visual-no-slop-packaging-test",
+    "owner": {"name": "Kirill Gotovtsev"},
+    "plugins": [{"name": "visual-no-slop", "source": "./plugins/visual-no-slop"}],
+}))
+(root / "project").mkdir()
+PY
+  cd "$plugin_test_dir/project"
+  claude --version
+  claude plugin validate "$plugin_test_dir/marketplace/plugins/visual-no-slop" --strict --json
+  claude plugin marketplace add "$plugin_test_dir/marketplace" --json
+  claude plugin install visual-no-slop@visual-no-slop-packaging-test --scope user --json
+  claude plugin list --json
+  claude plugin uninstall visual-no-slop@visual-no-slop-packaging-test --scope user --json
+  claude plugin list --json
+  claude plugin marketplace remove visual-no-slop-packaging-test --json
+)
+```
 
 Before offering the plugin through a host or directory:
 
@@ -101,4 +154,4 @@ Before offering the plugin through a host or directory:
 - [ ] If directory publication is requested, prepare its required listing fields and assets, then submit through the supported channel. Track submission, review and approval as separate states.
 - [ ] Add an installation badge, listing link or compatibility claim only after the relevant host or directory result is confirmed.
 
-The current candidate has no verified plugin host installation or directory submission. Keep those limits in the release record until the corresponding checks are complete. Preserve concurrent producer changes and their run records during publication. The producer's [runbook](../automation/visual-signals/RUNBOOK.md) records its separate operation and schedule evidence; publishing the consumer package does not deploy or restart it.
+The current candidate has the isolated Claude Code installation/removal evidence above; see [directory preparation](claude-directory.md) for the expanded package and the remaining account-dependent checks. Preserve concurrent producer changes and their run records during publication. The producer's [runbook](../automation/visual-signals/RUNBOOK.md) records its separate operation and schedule evidence; publishing the consumer package does not deploy or restart it.

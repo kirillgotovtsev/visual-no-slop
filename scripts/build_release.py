@@ -227,21 +227,27 @@ def _release_plan(root):
     full_prefix = "visual-no-slop-{}/".format(version)
 
     full_entries = tuple((full_prefix + path, mode, data) for path, mode, data in inventory)
+    # Package the canonical Claude manifest and a standalone plugin README.
     plugin_entries = tuple(
-        (path, mode, data)
+        ("README.md" if path == "docs/plugin-README.md" else path, mode, data)
         for path, mode, data in inventory
-        if path in {"LICENSE", "plugin.json"} or path.startswith(SKILL_PREFIX)
+        if path in {
+            "LICENSE", ".claude-plugin/plugin.json", ".claude-plugin/icon.png",
+            "docs/plugin-README.md",
+        } or path.startswith(SKILL_PREFIX)
     )
     skill_entries = tuple(
         (path[len("skills/") :], mode, data)
         for path, mode, data in inventory
         if path.startswith(SKILL_PREFIX)
     )
-    if {name for name, _mode, _data in plugin_entries if "/" not in name} != {
+    if {name for name, _mode, _data in plugin_entries if not name.startswith(SKILL_PREFIX)} != {
         "LICENSE",
-        "plugin.json",
+        "README.md",
+        ".claude-plugin/plugin.json",
+        ".claude-plugin/icon.png",
     }:
-        raise ReleaseError("plugin archive root must contain plugin.json and LICENSE")
+        raise ReleaseError("plugin archive must contain the Claude manifest, icon, README and LICENSE")
     if not any(name == "visual-no-slop/SKILL.md" for name, _mode, _data in skill_entries):
         raise ReleaseError("skill archive would not contain visual-no-slop/SKILL.md")
     if not any(name == "visual-no-slop/LICENSE" for name, _mode, _data in skill_entries):

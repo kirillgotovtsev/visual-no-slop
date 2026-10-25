@@ -65,6 +65,31 @@ class ReleasePackageTests(unittest.TestCase):
         self.assertEqual(self.version, result["version"])
         self.assertGreater(result["relative_links_checked"], 0)
 
+    def test_claude_plugin_manifest_location_and_contents(self):
+        plugin_name = "visual-no-slop-{}-plugin.zip".format(self.version)
+        plugin = _zip_contents(self.first_output / plugin_name)
+        manifest_path = ".claude-plugin/plugin.json"
+
+        self.assertIn(manifest_path, set(plugin))
+        self.assertNotIn("plugin.json", set(plugin))
+        self.assertEqual(
+            {path for path in plugin if path.startswith(".claude-plugin/")},
+            {manifest_path, ".claude-plugin/icon.png"},
+        )
+        source = (self.repository / manifest_path).read_bytes()
+        self.assertEqual(plugin[manifest_path], source)
+        manifest = json.loads(plugin[manifest_path])
+        self.assertEqual(manifest["name"], "visual-no-slop")
+        self.assertEqual(manifest["version"], self.version)
+        self.assertEqual(manifest["author"], {"name": "Kirill Gotovtsev"})
+        self.assertEqual(manifest["license"], "LicenseRef-Visual-No-Slop-1.0")
+        self.assertEqual(plugin["LICENSE"], (self.repository / "LICENSE").read_bytes())
+        self.assertEqual(plugin["skills/visual-no-slop/LICENSE"], plugin["LICENSE"])
+        self.assertEqual(
+            {path for path in plugin if path.endswith("/SKILL.md")},
+            {"skills/visual-no-slop/SKILL.md"},
+        )
+
     def test_all_archive_layouts_and_skill_bytes_are_exact(self):
         version = self.version
         inventory = {path: data for path, _mode, data in self.inventory}
@@ -80,11 +105,10 @@ class ReleasePackageTests(unittest.TestCase):
         self.assertEqual(set(full), {prefix + path for path in inventory})
         self.assertEqual(
             set(plugin),
-            {
+            {"LICENSE", "README.md", ".claude-plugin/plugin.json", ".claude-plugin/icon.png"} | {
                 path
                 for path in inventory
-                if path in {"LICENSE", "plugin.json"}
-                or path.startswith(build_release.SKILL_PREFIX)
+                if path.startswith(build_release.SKILL_PREFIX)
             },
         )
         self.assertEqual(
@@ -95,7 +119,10 @@ class ReleasePackageTests(unittest.TestCase):
                 if path.startswith(build_release.SKILL_PREFIX)
             },
         )
-        self.assertEqual({name for name in plugin if "/" not in name}, {"LICENSE", "plugin.json"})
+        self.assertEqual({name for name in plugin if "/" not in name}, {"LICENSE", "README.md"})
+        self.assertEqual(full[prefix + ".claude-plugin/plugin.json"], inventory[".claude-plugin/plugin.json"])
+        self.assertEqual(plugin["README.md"], inventory["docs/plugin-README.md"])
+        self.assertEqual(plugin[".claude-plugin/icon.png"], inventory[".claude-plugin/icon.png"])
         self.assertIn("visual-no-slop/SKILL.md", skill)
         self.assertIn("visual-no-slop/LICENSE", skill)
 
@@ -117,6 +144,21 @@ class ReleasePackageTests(unittest.TestCase):
             digest, filename = line.split("  ", 1)
             actual = hashlib.sha256((self.first_output / filename).read_bytes()).hexdigest()
             self.assertEqual(digest, actual)
+
+    def test_plugin_readme_icon_and_single_source_manifest(self):
+        plugin = _zip_contents(self.first_output / f"visual-no-slop-{self.version}-plugin.zip")
+        self.assertFalse((self.repository / "plugin.json").exists())
+        readme = plugin["README.md"].decode("utf-8")
+        self.assertGreaterEqual(len(readme.split()), 40)
+        self.assertIn("/visual-no-slop:visual-no-slop", readme)
+        icon = plugin[".claude-plugin/icon.png"]
+        self.assertTrue(icon.startswith(b"\x89PNG\r\n\x1a\n"))
+        width = int.from_bytes(icon[16:20], "big")
+        height = int.from_bytes(icon[20:24], "big")
+        self.assertEqual(width, height)
+        self.assertGreaterEqual(width, 512)
+        self.assertLessEqual(width, 2048)
+        self.assertLess(len(icon), 2 * 1024 * 1024)
 
     def test_repeated_build_is_byte_for_byte_reproducible_and_read_only(self):
         before = build_release.tracked_inventory(self.repository)
