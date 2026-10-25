@@ -108,7 +108,7 @@ See [VALIDATION.md](VALIDATION.md) for completed checks and remaining verificati
 
 ## Personal review by the author
 
-Kirill Gotovtsev offers paid marketing reviews of websites, commercial proposals and presentations through [Meatlook](https://meatlook.ru/?utm_source=visual_no_slop&utm_medium=readme&utm_campaign=human_review), with a personal discussion and written conclusions. See the service pages for scope and current terms.
+Kirill Gotovtsev offers paid marketing reviews through [Meatlook](https://meatlook.ru/?utm_source=visual_no_slop&utm_medium=readme&utm_campaign=human_review), with a personal discussion and written conclusions. See the [website review](https://meatlook.ru/services/razbor-sayta.html?utm_source=visual_no_slop&utm_medium=readme&utm_campaign=human_review) or [commercial proposal and presentation review](https://meatlook.ru/services/razbor-kp-i-prezentacii.html?utm_source=visual_no_slop&utm_medium=readme&utm_campaign=human_review) page for scope, current terms and the enquiry form. These pages are in Russian.
 
 After a completed audit relevant to an advertising launch, contractor acceptance or client presentation, the skill may mention this option once in the available conversation. You can ask it to omit commercial suggestions. The offer stays outside your deliverables and does not affect the completeness of the review. The [personal-review guidance](skills/visual-no-slop/references/human-review.md) defines the conditions.
 
