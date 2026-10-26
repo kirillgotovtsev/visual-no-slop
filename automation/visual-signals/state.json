@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "last_completed_week": null,
-  "last_run_id": "2026-W43",
-  "base_git_sha": "271481990e8e1f1186ecb8a569df2f8adc71af25",
+  "last_run_id": "2026-W44",
+  "base_git_sha": "2fc252d1ce128c457cd4f1f58246323cd7139851",
   "input_sha256": {
     "automation/visual-signals/RUNBOOK.md": "7232809cae42b96be0e83488cfd7b15901064a312ff4e419aa80bcd476ad3328",
     "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
-    "automation/visual-signals/config.json": "73762ea1277be4eed6d043e7f4b3576c6ca3e511f4b2b378f1b9a656a6ecce60",
+    "automation/visual-signals/config.json": "a13cca75e51ffb11e8e1181777ae71eca79bd1c3ac0bc609bb3b1ecd96fdf0f5",
     "automation/visual-signals/scripts/fetch_sources.py": "bb71280b9cec86884b7598dc09d9e4de58ad663966d257d225f8cf0e5b9c8dd2",
     "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
     "automation/visual-signals/scripts/workflow.py": "524f408b350bc5ca757edeb4af3e2719340d05cda443b505b3329d65de312043",
@@ -16,14 +16,15 @@
   "completed_runs": [],
   "incomplete_runs": [
     "setup-2026-W43",
-    "2026-W43"
+    "2026-W43",
+    "2026-W44"
   ],
   "sources": {
     "A01": {
       "last_check": {
         "source_id": "A01",
         "url": "https://doi.org/10.1145/3613904.3642919",
-        "checked_at": "2026-10-22T22:40:17Z",
+        "checked_at": "2026-10-26T07:02:22Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -32,7 +33,7 @@
         "first_observed_at": "2026-10-22T22:06:08Z",
         "http_status": 403,
         "error": "HTTP 403",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -41,7 +42,7 @@
       "last_check": {
         "source_id": "A02",
         "url": "https://arxiv.org/abs/2411.00168",
-        "checked_at": "2026-10-22T22:40:18Z",
+        "checked_at": "2026-10-26T07:02:22Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -54,7 +55,7 @@
         "sha256": "e7289f2dcebd50311c66d1af77b8901907a9aabebad56b794477ee87b015898a",
         "etag": null,
         "last_modified": "Mon, 04 Nov 2024 01:07:44 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -63,7 +64,7 @@
       "last_check": {
         "source_id": "A03",
         "url": "https://doi.org/10.1287/isre.2024.0937",
-        "checked_at": "2026-10-22T22:40:21Z",
+        "checked_at": "2026-10-26T07:02:25Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -75,9 +76,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html;charset=UTF-8",
-        "sha256": "551fa844aaeb3c524bc48a27d6c4489708d079e0e2f2fe2bbdcd01a68f48909f",
+        "sha256": "67bf34519a78d6b8a2a68531f54aadcc81e59c94fbccd1432ef411bda427762e",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -86,7 +87,7 @@
       "last_check": {
         "source_id": "A04",
         "url": "https://doi.org/10.1038/s41598-025-99623-3",
-        "checked_at": "2026-10-22T22:40:21Z",
+        "checked_at": "2026-10-26T07:02:26Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -94,13 +95,13 @@
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:13Z",
         "http_status": 200,
-        "final_url": "https://www.nature.com/articles/s41598-025-99623-3?error=cookies_not_supported&code=6c9e97af-161a-494e-98f3-62c7a787a529",
+        "final_url": "https://www.nature.com/articles/s41598-025-99623-3?error=cookies_not_supported&code=11009385-7365-454e-905f-fc8af7782355",
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "fafecd63c932933834ccc449da8c965f87bd727fc46f2334bd50890b6d0e503a",
+        "sha256": "dc095a5b7c27167c4806267891ab9abc2e8f01cf8533ecff75447e9884d6b4bb",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -109,7 +110,7 @@
       "last_check": {
         "source_id": "A05",
         "url": "https://arxiv.org/abs/2504.14125",
-        "checked_at": "2026-10-22T22:40:22Z",
+        "checked_at": "2026-10-26T07:02:27Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -122,7 +123,7 @@
         "sha256": "26ba6db9a9245c5040dd2750245daba5c05da52fe896ecd8a183299333c68de7",
         "etag": null,
         "last_modified": "Mon, 24 Aug 2026 22:08:56 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -131,7 +132,7 @@
       "last_check": {
         "source_id": "A06",
         "url": "https://doi.org/10.1016/j.patter.2025.101451",
-        "checked_at": "2026-10-22T22:40:24Z",
+        "checked_at": "2026-10-26T07:02:30Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -140,14 +141,14 @@
         "first_observed_at": "2026-10-22T22:06:17Z",
         "http_status": 200,
         "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S2666389925002995",
-        "etag": "\"6ab20c78-c3\"",
-        "last_modified": "Tue, 22 Sep 2026 05:04:56 GMT",
+        "etag": "\"6ab20a79-c3\"",
+        "last_modified": "Tue, 22 Sep 2026 04:56:25 GMT",
         "content_type": "text/html",
         "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
         "changed": false,
         "http_access": "full",
-        "limitation": "HTTP 200 contains only Site Unavailable, not the paper.",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "limitation": "Access-wall/error body, not substantive article; not bypassed.",
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -156,7 +157,7 @@
       "last_check": {
         "source_id": "A07",
         "url": "https://papers.nips.cc/paper/2023/file/f8ad010cdd9143dbb0e9308c093aff24-Paper-Datasets_and_Benchmarks.pdf",
-        "checked_at": "2026-10-22T22:40:26Z",
+        "checked_at": "2026-10-26T07:02:32Z",
         "access": "error",
         "attempts": 1,
         "content_reviewed": false,
@@ -164,7 +165,7 @@
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:20Z",
         "error": "ValueError: response exceeds 2 MiB; incomplete",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -173,7 +174,7 @@
       "last_check": {
         "source_id": "A08",
         "url": "https://papers.nips.cc/paper_files/paper/2023/file/a3bf71c7c63f0c3bcb7ff67c67b1e7b1-Paper-Datasets_and_Benchmarks.pdf",
-        "checked_at": "2026-10-22T22:40:29Z",
+        "checked_at": "2026-10-26T07:02:34Z",
         "access": "error",
         "attempts": 1,
         "content_reviewed": false,
@@ -181,7 +182,7 @@
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:24Z",
         "error": "ValueError: response exceeds 2 MiB; incomplete",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -190,7 +191,7 @@
       "last_check": {
         "source_id": "A09",
         "url": "https://arxiv.org/abs/2311.04287",
-        "checked_at": "2026-10-22T22:40:29Z",
+        "checked_at": "2026-10-26T07:02:36Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -203,7 +204,7 @@
         "sha256": "5a718cab5255c643686b9a240372ddfe39f38a364d198457fc224385003edb92",
         "etag": null,
         "last_modified": "Mon, 24 Aug 2026 20:51:43 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -212,7 +213,7 @@
       "last_check": {
         "source_id": "A10",
         "url": "https://arxiv.org/abs/2304.01816",
-        "checked_at": "2026-10-22T22:40:32Z",
+        "checked_at": "2026-10-26T07:02:37Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -225,7 +226,7 @@
         "sha256": "74f2cbacd6e7217bf4c27174bf18e8de7a4668f6358c52fb6ea5b60eb92a6f58",
         "etag": null,
         "last_modified": "Mon, 24 Aug 2026 19:29:36 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -234,7 +235,7 @@
       "last_check": {
         "source_id": "A11",
         "url": "https://doi.org/10.1073/pnas.2120481119",
-        "checked_at": "2026-10-22T22:40:32Z",
+        "checked_at": "2026-10-26T07:02:39Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -243,7 +244,7 @@
         "first_observed_at": "2026-10-22T22:06:30Z",
         "http_status": 403,
         "error": "HTTP 403",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -252,23 +253,16 @@
       "last_check": {
         "source_id": "A12",
         "url": "https://escholarship.org/uc/item/49v4z44k",
-        "checked_at": "2026-10-22T22:40:34Z",
-        "access": "blocked",
-        "attempts": 1,
+        "checked_at": "2026-10-26T07:02:39Z",
+        "access": "error",
+        "attempts": 3,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:32Z",
-        "http_status": 202,
-        "final_url": "https://escholarship.org/uc/item/49v4z44k",
-        "etag": null,
-        "last_modified": null,
-        "content_type": "text/html; charset=UTF-8",
-        "sha256": "b612c760eb0dc797641917fc4ece424dd59dcebea4c438eb0492c0dd2b0a4738",
-        "changed": true,
-        "http_access": "partial",
-        "limitation": "Robot verification/JavaScript wall, not bypassed.",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "http_status": 429,
+        "error": "HTTP 429",
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -277,7 +271,7 @@
       "last_check": {
         "source_id": "A13",
         "url": "https://doi.org/10.1186/s41235-023-00499-6",
-        "checked_at": "2026-10-22T22:40:35Z",
+        "checked_at": "2026-10-26T07:02:40Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -285,13 +279,13 @@
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:32Z",
         "http_status": 200,
-        "final_url": "https://link.springer.com/article/10.1186/s41235-023-00499-6?error=cookies_not_supported&code=26ff64e3-35d1-4feb-aa83-38805967bff1",
-        "etag": "W/\"ea334daabadf553cca6442b0c4e7d864\"",
+        "final_url": "https://link.springer.com/article/10.1186/s41235-023-00499-6?error=cookies_not_supported&code=c749ae00-bad0-4ede-a942-3c65ad1d24d0",
+        "etag": "W/\"cdc90b734f830e1a1f8e1bf6d3f6b9ae\"",
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "3a4684fea6a51cb0122b492b52587902d7c86c56533dc64e377a1e71dee68c58",
+        "sha256": "6ffaab933401eee8feab20e3545bdd6e32d0a040e8999a1317fd10cb2a1c9041",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -300,7 +294,7 @@
       "last_check": {
         "source_id": "A14",
         "url": "https://doi.org/10.1093/pnasnexus/pgaf170",
-        "checked_at": "2026-10-22T22:40:36Z",
+        "checked_at": "2026-10-26T07:02:44Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -309,7 +303,7 @@
         "first_observed_at": "2026-10-22T22:06:36Z",
         "http_status": 403,
         "error": "HTTP 403",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -318,7 +312,7 @@
       "last_check": {
         "source_id": "A15",
         "url": "https://doi.org/10.1177/02762374261441560",
-        "checked_at": "2026-10-22T22:40:37Z",
+        "checked_at": "2026-10-26T07:02:49Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -327,7 +321,7 @@
         "first_observed_at": "2026-10-22T22:06:38Z",
         "http_status": 403,
         "error": "HTTP 403",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -336,20 +330,21 @@
       "last_check": {
         "source_id": "B01",
         "url": "https://simonwillison.net/2024/May/8/slop/",
-        "checked_at": "2026-10-22T22:40:40Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:50Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:44Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "1bffbfa9bbf44f8c635aba938d4fc02172e17c8f09f903761e50d3fb2496af67",
+        "http_status": 200,
+        "final_url": "https://simonwillison.net/2024/May/8/slop/",
         "etag": null,
-        "last_modified": "Thu, 22 Oct 2026 22:06:50 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Sun, 25 Oct 2026 18:53:58 GMT",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "be30ab6b7a2a0dc0fc5c4347f37634bc975d3ba52f1fa9f8af00e62d09556c76",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -358,7 +353,7 @@
       "last_check": {
         "source_id": "B02",
         "url": "https://www.404media.co/where-facebooks-ai-slop-comes-from/",
-        "checked_at": "2026-10-22T22:40:41Z",
+        "checked_at": "2026-10-26T07:02:53Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -371,7 +366,7 @@
         "sha256": "cfcb69cf8ce82dcdb4840fa0b1e959ffd1c4bc2b4512c5b1625c98a06cb907d5",
         "etag": "W/\"96de-uEyhcq+r2Ib5/nCrZsFXBgerdnQ\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -380,7 +375,7 @@
       "last_check": {
         "source_id": "B03",
         "url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
-        "checked_at": "2026-10-22T22:40:43Z",
+        "checked_at": "2026-10-26T07:02:54Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -392,9 +387,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=UTF-8",
-        "sha256": "a39222e262799f05010712088cfaab9a0a45413a078520b759ffa5b0e1e9b3f5",
-        "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "sha256": "974d138a4e143d1e563d05bae1f7de12faaefe10d9e2b53bf57d9f3af3f95c0b",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -403,7 +398,7 @@
       "last_check": {
         "source_id": "B04",
         "url": "https://arxiv.org/html/2601.06060v1",
-        "checked_at": "2026-10-22T22:40:44Z",
+        "checked_at": "2026-10-26T07:02:56Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -416,7 +411,7 @@
         "sha256": "8eb3bfb1f8d11b66b2372785a77d883d58442ba7744e31fdb3e351bb599ef0b9",
         "etag": "\"COvch9iSupYDEAE=\"",
         "last_modified": "Mon, 24 Aug 2026 20:52:44 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -425,7 +420,7 @@
       "last_check": {
         "source_id": "B05",
         "url": "https://arxiv.org/html/2606.12285v1",
-        "checked_at": "2026-10-22T22:40:46Z",
+        "checked_at": "2026-10-26T07:02:58Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -438,7 +433,7 @@
         "sha256": "ce343d1de1a080a8282b0edeedea7113bc642ebd7900d3d46dc055f9848f20e5",
         "etag": "\"CP3TuaOUupYDEAE=\"",
         "last_modified": "Mon, 24 Aug 2026 20:59:51 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -447,20 +442,21 @@
       "last_check": {
         "source_id": "B06",
         "url": "https://thephilosophicalsalon.com/the-idea-of-ai-slop-is-slop/",
-        "checked_at": "2026-10-22T22:40:48Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:59Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:58Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "6fcf02f4de4b3ef5578a7565612d90816f0ab36ae52711647957e81fbeef72b5",
-        "etag": "\"22884-1792641361;;;\"",
+        "http_status": 200,
+        "final_url": "https://thephilosophicalsalon.com/the-idea-of-ai-slop-is-slop/",
+        "etag": "\"34307-1792986590;;;\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=UTF-8",
+        "sha256": "69dd8c684efecaef2cc0f4099cf87232ac9386714a30c4bbffbacf3554107b46",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -469,7 +465,7 @@
       "last_check": {
         "source_id": "B07",
         "url": "https://www.sostav.ru/rss",
-        "checked_at": "2026-10-22T22:40:51Z",
+        "checked_at": "2026-10-26T07:03:01Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -481,9 +477,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "application/rss+xml; charset=utf-8",
-        "sha256": "304dcef04eeb95a00c970d42dfc387cbb76c6a07503e75e9fae9c25ed2090f44",
-        "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "sha256": "d1612dda4d3842b33e60c152e1094af3c79c99a860b7da5e907f345254b2741c",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null
@@ -492,20 +488,21 @@
       "last_check": {
         "source_id": "B08",
         "url": "https://www.creativebloq.com/design/ive-never-seen-anything-like-this-before-paula-scher-on-the-backlash-to-pentagrams-ai-government-website-design",
-        "checked_at": "2026-10-22T22:40:51Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:03Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:06:59Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "ae229fa52bb382c72dd2330d6dad8171dc7552881f1c150d7f69935e6359450b",
+        "http_status": 200,
+        "final_url": "https://www.creativebloq.com/design/ive-never-seen-anything-like-this-before-paula-scher-on-the-backlash-to-pentagrams-ai-government-website-design",
         "etag": null,
-        "last_modified": "Tue, 20 Oct 2026 19:46:31 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Fri, 23 Oct 2026 20:04:23 GMT",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "aaf6b3f2f0a8f1b0cfad02f33318fac9ed7886619175edd1d1913eed8a89ab77",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -514,7 +511,7 @@
       "last_check": {
         "source_id": "B09",
         "url": "https://www.coca-colacompany.com/media-center/groundbreaking-digital-experience-and-films-fuse-holiday-heritage-with-cutting-edge-tech",
-        "checked_at": "2026-10-22T22:40:54Z",
+        "checked_at": "2026-10-26T07:03:06Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -528,7 +525,7 @@
         "content_type": "text/html",
         "sha256": "98e6b2cfdc0333ed56cc17d38b65fbea9a2c35d3c85dec05f8eabe946e75a83f",
         "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -537,20 +534,21 @@
       "last_check": {
         "source_id": "B10",
         "url": "https://system1group.com/ad-of-the-week/ai-or-no-ai-coke-gets-the-christmas-love",
-        "checked_at": "2026-10-22T22:40:54Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:07Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:04Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "5b989d7afcc2b84e843e0488d432d65a092b645c49698133079b52312adf0b69",
+        "http_status": 200,
+        "final_url": "https://system1group.com/ad-of-the-week/ai-or-no-ai-coke-gets-the-christmas-love",
         "etag": null,
-        "last_modified": "Thu, 22 Oct 2026 12:49:35 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Sun, 25 Oct 2026 23:02:49 GMT",
+        "content_type": "text/html; charset=UTF-8",
+        "sha256": "656ed9fc8d642da46dd99e3915843c6f938c687b9034c60a88fce1f072b092db",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -559,7 +557,7 @@
       "last_check": {
         "source_id": "B11",
         "url": "https://www.adsoftheworld.com/campaigns/a-i-ketchup",
-        "checked_at": "2026-10-22T22:40:55Z",
+        "checked_at": "2026-10-26T07:03:07Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -568,12 +566,12 @@
         "first_observed_at": "2026-10-22T22:07:04Z",
         "http_status": 200,
         "final_url": "https://www.adsoftheworld.com/campaigns/a-i-ketchup",
-        "etag": "W/\"0ae6789b33b50b1b4813eaf1aa66abd4\"",
+        "etag": "W/\"ea9033037a4fb7284f13d02f55bb38ab\"",
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "0ae6789b33b50b1b4813eaf1aa66abd4a48bd5027141ccf6c5b59aef52f4a032",
+        "sha256": "ea9033037a4fb7284f13d02f55bb38ab785ac27b32f230ceb384e26ce8be8368",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -582,20 +580,21 @@
       "last_check": {
         "source_id": "B12",
         "url": "https://www.prnewswire.com/news-releases/dove-marks-20-years-of-real-beauty-with-a-renewed-commitment-to-real-and-pledge-to-never-use-ai-to-represent-real-women-in-its-advertising-302111130.html",
-        "checked_at": "2026-10-22T22:40:57Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:10Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:06Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "1d5a0ef92bfe472b04c8fc1d649e40449cc055c69441e2be3f84b00f2202ea3a",
+        "http_status": 200,
+        "final_url": "https://www.prnewswire.com/news-releases/dove-marks-20-years-of-real-beauty-with-a-renewed-commitment-to-real-and-pledge-to-never-use-ai-to-represent-real-women-in-its-advertising-302111130.html",
         "etag": null,
-        "last_modified": "Sun, 18 Oct 2026 22:30:36 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Mon, 19 Oct 2026 23:01:29 GMT",
+        "content_type": "text/html; charset=UTF-8",
+        "sha256": "4009e1cdc009bc5086b5e61f211b754dd7b63fa23b1ff548169879e24458afdb",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -604,7 +603,7 @@
       "last_check": {
         "source_id": "B13",
         "url": "https://networkcultures.org/blog/2025/09/08/slop-cinema/",
-        "checked_at": "2026-10-22T22:40:57Z",
+        "checked_at": "2026-10-26T07:03:10Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -616,9 +615,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=UTF-8",
-        "sha256": "a4b49ba17871e90b8e838312171f1567ddac3ad7597be22df8164e4f3afefdde",
+        "sha256": "8dbcee6220bf9dd4964bfc51fb2ea2664686b9bf1ef6998362081f6fb41c32a9",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -627,22 +626,21 @@
       "last_check": {
         "source_id": "B14",
         "url": "https://www.eldagsen.com/sony-world-photography-awards-2023/",
-        "checked_at": "2026-10-22T22:40:57Z",
+        "checked_at": "2026-10-26T07:03:10Z",
         "access": "full",
-        "attempts": 2,
+        "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:09Z",
-        "error": "TimeoutError: The read operation timed out",
         "http_status": 200,
         "final_url": "https://www.eldagsen.com/sony-world-photography-awards-2023/",
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=UTF-8",
-        "sha256": "44660ec773ad3f81de725e39815200fc9af06be5b5b890a373ecf9ceda9c7c8f",
+        "sha256": "a153d89ef3b2ae7a79154efce3595063f4865f8da437e74f4117c37435a59be0",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -651,7 +649,7 @@
       "last_check": {
         "source_id": "B15",
         "url": "https://daily.afisha.ru/infoporn/30619-trend-na-vyazanye-goroda-privnes-uyut-v-neyroslop-kak-samomu-sdelat-takoe-video/",
-        "checked_at": "2026-10-22T22:40:59Z",
+        "checked_at": "2026-10-26T07:03:14Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -663,9 +661,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "c36b03a10ec500d9f5679ebd57993e30ba3520b52fb3b73154919ff5f4929ee4",
-        "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "sha256": "78fdc46c48e330c93c35985e15bb70d34122ba932b60d8283116363d4422c584",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null
@@ -674,7 +672,7 @@
       "last_check": {
         "source_id": "C01",
         "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md",
-        "checked_at": "2026-10-22T22:41:01Z",
+        "checked_at": "2026-10-26T07:03:15Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -687,7 +685,7 @@
         "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
         "etag": "\"a9124835667400dbea93d1d44ce9415053b0c4dfb624af9145ccdd4dd1cf350a\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null,
@@ -701,44 +699,45 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
-        "source_id": "C01",
-        "repository": "anthropics/skills",
-        "default_branch": "main",
+        "id": "C01",
+        "repo": "anthropics/skills",
         "path": "skills/frontend-design/SKILL.md",
-        "observed_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
-        "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+        "commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+        "checked_at": "2026-10-26T07:08:16Z",
         "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
-        "checked_at": "2026-10-22T22:48:15Z",
+        "default_branch": "main",
+        "previous_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "previous_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+        "unchanged_since_previous": true,
         "historical_commit_sha": "00756142ab04c82a447693cf373c4e0c554d1005",
         "historical_blob_sha": "5be498e2585843c7137bf9a74e262f57415de5ce",
         "historical_sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
-        "differs_from_historical": true,
-        "matches_setup_blob": true,
-        "setup_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
-        "content_reviewed": true,
-        "range_review_complete": false,
-        "discovery_complete": false,
-        "limitations": "Snapshot comparison, not a full intervening-commit or same-author publication review; instructional claims are not independent visual evidence."
+        "scope": "Current head, tree path and file identity verified; unchanged historical snapshot comparison retained from durable state. Changed files compared with previous exact commit. No upstream scripts executed.",
+        "decision": "No new visual default: C02 launcher fallback and C03 content-fit/accessibility/build checks are operational guidance.",
+        "observed_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3"
       }
     },
     "C02": {
       "last_check": {
         "source_id": "C02",
         "url": "https://raw.githubusercontent.com/pbakaus/impeccable/main/.agents/skills/impeccable/SKILL.md",
-        "checked_at": "2026-10-22T22:41:04Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:18Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:26:25Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2",
-        "etag": "\"c0e6efcf92b1a60db7bb707ea5ea639b9814f160fe2387861af9d3cb07861877\"",
+        "http_status": 200,
+        "final_url": "https://raw.githubusercontent.com/pbakaus/impeccable/main/.agents/skills/impeccable/SKILL.md",
+        "etag": "\"ff9356ecc9f66954a0880b2cec492a75282ca7ea0b5d9d227e6f53ff99a44340\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/plain; charset=utf-8",
+        "sha256": "c26d6963fe2278f570930ea083ec89609ba094ee93b1ae825719ff5d29b9ac3c",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null,
@@ -752,44 +751,45 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
-        "source_id": "C02",
-        "repository": "pbakaus/impeccable",
-        "default_branch": "main",
+        "id": "C02",
+        "repo": "pbakaus/impeccable",
         "path": ".agents/skills/impeccable/SKILL.md",
-        "observed_commit_sha": "cf9ec0c3769283e5edee088dc61d039b039b7546",
-        "observed_blob_sha": "7da92d6e902cd1bf001f05a80f7592b61d6381f4",
-        "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2",
-        "checked_at": "2026-10-22T22:48:15Z",
+        "commit_sha": "3671d50f0ac9a662ce0615e85a256110c9cd720b",
+        "blob_sha": "8da085ce49cf210f0fc97edc81479747b91dc831",
+        "checked_at": "2026-10-26T07:08:16Z",
+        "sha256": "c26d6963fe2278f570930ea083ec89609ba094ee93b1ae825719ff5d29b9ac3c",
+        "default_branch": "main",
+        "previous_commit_sha": "cf9ec0c3769283e5edee088dc61d039b039b7546",
+        "previous_blob_sha": "7da92d6e902cd1bf001f05a80f7592b61d6381f4",
+        "unchanged_since_previous": false,
         "historical_commit_sha": "0a4e72a254f3b175c95b36b82e5f2e60fa63f116",
         "historical_blob_sha": "2f12a53b1e5eaa38fd69625926340704a4ced54b",
         "historical_sha256": "fa0cb3ef01a25b9094266109a63c1d01d4b2d4973f75b324f5c4ad7e568d148f",
-        "differs_from_historical": true,
-        "matches_setup_blob": true,
-        "setup_commit_sha": "1ea581e2399e970d914829ffcdc130e82d6941c9",
-        "content_reviewed": true,
-        "range_review_complete": false,
-        "discovery_complete": false,
-        "limitations": "Snapshot comparison, not a full intervening-commit or same-author publication review; instructional claims are not independent visual evidence."
+        "scope": "Current head, tree path and file identity verified; unchanged historical snapshot comparison retained from durable state. Changed files compared with previous exact commit. No upstream scripts executed.",
+        "decision": "No new visual default: C02 launcher fallback and C03 content-fit/accessibility/build checks are operational guidance.",
+        "observed_commit_sha": "3671d50f0ac9a662ce0615e85a256110c9cd720b",
+        "observed_blob_sha": "8da085ce49cf210f0fc97edc81479747b91dc831"
       }
     },
     "C03": {
       "last_check": {
         "source_id": "C03",
         "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/SKILL.md",
-        "checked_at": "2026-10-22T22:41:07Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:19Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:26:28Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a",
-        "etag": "\"a4d0886f21581de3558e2bd2622b0ff05a8410783d44f655eb6ce9f4e38ee09b\"",
+        "http_status": 200,
+        "final_url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/SKILL.md",
+        "etag": "\"f0ab9600ea3e643323b5f70a8b4fe3ee51ab397ce3108e1dd1a90e5cdd1251d5\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/plain; charset=utf-8",
+        "sha256": "3435ed963b15a1b6447746ec8844ab2cd38d8d2e8ead3451937f42df01e408c4",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null,
@@ -803,31 +803,31 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
-        "source_id": "C03",
-        "repository": "Leonxlnx/taste-skill",
-        "default_branch": "main",
+        "id": "C03",
+        "repo": "Leonxlnx/taste-skill",
         "path": "skills/taste-skill/SKILL.md",
-        "observed_commit_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
-        "observed_blob_sha": "433d92105c76671250013e0312d82cb413f552bc",
-        "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a",
-        "checked_at": "2026-10-22T22:48:15Z",
+        "commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
+        "blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6",
+        "checked_at": "2026-10-26T07:08:16Z",
+        "sha256": "3435ed963b15a1b6447746ec8844ab2cd38d8d2e8ead3451937f42df01e408c4",
+        "default_branch": "main",
+        "previous_commit_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+        "previous_blob_sha": "433d92105c76671250013e0312d82cb413f552bc",
+        "unchanged_since_previous": false,
         "historical_commit_sha": "3c7017d636c3a4aad378433ea6d0cfa6c921da4a",
         "historical_blob_sha": "b72132fcd466da605623ffe96e370b3991fc5285",
         "historical_sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
-        "differs_from_historical": true,
-        "matches_setup_blob": true,
-        "setup_commit_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
-        "content_reviewed": true,
-        "range_review_complete": false,
-        "discovery_complete": false,
-        "limitations": "Snapshot comparison, not a full intervening-commit or same-author publication review; instructional claims are not independent visual evidence."
+        "scope": "Current head, tree path and file identity verified; unchanged historical snapshot comparison retained from durable state. Changed files compared with previous exact commit. No upstream scripts executed.",
+        "decision": "No new visual default: C02 launcher fallback and C03 content-fit/accessibility/build checks are operational guidance.",
+        "observed_commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
+        "observed_blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6"
       }
     },
     "C04": {
       "last_check": {
         "source_id": "C04",
         "url": "https://raw.githubusercontent.com/Nutlope/hallmark/main/skills/hallmark/SKILL.md",
-        "checked_at": "2026-10-22T22:41:07Z",
+        "checked_at": "2026-10-26T07:03:21Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -840,7 +840,7 @@
         "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
         "etag": "\"7101eb16153fd37f3026b3dcaf4045ee47ebf3e8b4bb4c9bb1eeb5b39671a7b9\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null,
@@ -854,31 +854,31 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
-        "source_id": "C04",
-        "repository": "Nutlope/hallmark",
-        "default_branch": "main",
+        "id": "C04",
+        "repo": "Nutlope/hallmark",
         "path": "skills/hallmark/SKILL.md",
-        "observed_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
-        "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+        "commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+        "blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+        "checked_at": "2026-10-26T07:08:16Z",
         "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
-        "checked_at": "2026-10-22T22:48:15Z",
+        "default_branch": "main",
+        "previous_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+        "previous_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+        "unchanged_since_previous": true,
         "historical_commit_sha": "f5f4a2ceb0ff302f2e69fb33679501611eadee32",
         "historical_blob_sha": "645221da63743de870501760a48694acdf7aef10",
         "historical_sha256": "59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
-        "differs_from_historical": true,
-        "matches_setup_blob": true,
-        "setup_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
-        "content_reviewed": true,
-        "range_review_complete": false,
-        "discovery_complete": false,
-        "limitations": "Snapshot comparison, not a full intervening-commit or same-author publication review; instructional claims are not independent visual evidence."
+        "scope": "Current head, tree path and file identity verified; unchanged historical snapshot comparison retained from durable state. Changed files compared with previous exact commit. No upstream scripts executed.",
+        "decision": "No new visual default: C02 launcher fallback and C03 content-fit/accessibility/build checks are operational guidance.",
+        "observed_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+        "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174"
       }
     },
     "D01": {
       "last_check": {
         "source_id": "D01",
         "url": "https://karlkoch.me/writing",
-        "checked_at": "2026-10-22T22:41:12Z",
+        "checked_at": "2026-10-26T07:03:22Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -888,11 +888,11 @@
         "http_status": 200,
         "final_url": "https://karlkoch.me/writing",
         "etag": null,
-        "last_modified": null,
+        "last_modified": "Mon, 26 Oct 2026 06:56:33 GMT",
         "content_type": "text/html; charset=utf-8",
         "sha256": "0ade7ba2dc463ae779b6f3a74d519766f7df50b7c23b4fee6e79201855403ffe",
         "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null
@@ -901,20 +901,21 @@
       "last_check": {
         "source_id": "D02",
         "url": "https://world.hey.com/kostac",
-        "checked_at": "2026-10-22T22:41:16Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:25Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:26:45Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
-        "etag": "W/\"42da74bab62fa0d21beae12864fe89c0\"",
+        "http_status": 200,
+        "final_url": "https://world.hey.com/kostac",
+        "etag": "W/\"f7718344983e5bfc12324ec71f38429d\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
+        "changed": false,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": "2026-10-22T22:16:37Z",
@@ -924,7 +925,7 @@
       "last_check": {
         "source_id": "D03",
         "url": "https://www.fastcompany.com/90276496/blanding-the-hottest-branding-trend-of-the-year-is-also-the-worst",
-        "checked_at": "2026-10-22T22:41:17Z",
+        "checked_at": "2026-10-26T07:03:28Z",
         "access": "blocked",
         "attempts": 1,
         "content_reviewed": false,
@@ -933,7 +934,7 @@
         "first_observed_at": "2026-10-22T22:07:25Z",
         "http_status": 403,
         "error": "HTTP 403",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -942,7 +943,7 @@
       "last_check": {
         "source_id": "D04",
         "url": "https://eyeondesign.aiga.org/all-advertising-looks-the-same-these-days-blame-the-moodboard/",
-        "checked_at": "2026-10-22T22:41:17Z",
+        "checked_at": "2026-10-26T07:03:28Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -955,7 +956,7 @@
         "sha256": "4297448523c29859d8daef7e1efd2d93627b5405706068132b63770a94f720f6",
         "etag": "\"8d81910125be7849ab691403ba0d5479\"",
         "last_modified": "Thu, 25 Jun 2026 23:31:57 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -964,7 +965,7 @@
       "last_check": {
         "source_id": "D05",
         "url": "https://eyeondesign.aiga.org/dont-worry-these-gangley-armed-cartoons-are-here-to-protect-you-from-big-tech/",
-        "checked_at": "2026-10-22T22:41:20Z",
+        "checked_at": "2026-10-26T07:03:28Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -977,7 +978,7 @@
         "sha256": "67047151ab3c1bf65ac11e58a87eefb0690ec6c2b5164f1c4031f83b1cf20478",
         "etag": "\"b90d47718584f709da1cc5c3ecdd7d44\"",
         "last_modified": "Thu, 25 Jun 2026 23:32:58 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -986,7 +987,7 @@
       "last_check": {
         "source_id": "D06",
         "url": "https://buck.co/work/facebook-alegria",
-        "checked_at": "2026-10-22T22:41:21Z",
+        "checked_at": "2026-10-26T07:03:31Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -999,7 +1000,7 @@
         "sha256": "4ee15c24db01cff5470939f3d781b59b0f05441f1fa977975ee74c94ec5d2e48",
         "etag": "\"adff6-Z6sx6i9+zT2KjvF8A2P/SL+qaGw\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null
@@ -1008,7 +1009,7 @@
       "last_check": {
         "source_id": "D07",
         "url": "https://frankchimero.com/blog/2015/the-webs-grain/",
-        "checked_at": "2026-10-22T22:41:22Z",
+        "checked_at": "2026-10-26T07:03:31Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1021,7 +1022,7 @@
         "sha256": "10ee6efa1e724819f51f89ac04270049eddf2f12627546350b1da9e584f720f5",
         "etag": "\"6a7cf65f-807a\"",
         "last_modified": "Wed, 12 Aug 2026 22:40:31 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1030,20 +1031,21 @@
       "last_check": {
         "source_id": "D08",
         "url": "https://www.nngroup.com/articles/cards-component/",
-        "checked_at": "2026-10-22T22:41:25Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:32Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:31Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "c699806fb61f26a9c16227f763484ef0afe3ac270a6a56caffacd69be7efd329",
+        "http_status": 200,
+        "final_url": "https://www.nngroup.com/articles/cards-component/",
         "etag": "\"b85199766123aa821845e708f00daa22\"",
         "last_modified": "Thu, 01 Feb 2024 02:49:07 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "c699806fb61f26a9c16227f763484ef0afe3ac270a6a56caffacd69be7efd329",
+        "changed": false,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1052,20 +1054,21 @@
       "last_check": {
         "source_id": "D09",
         "url": "https://www.frontify.com/en/blog/brian-collins-on-rocket-ships-helvetica-and-grace-jones",
-        "checked_at": "2026-10-22T22:41:25Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:03:34Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:35Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "077e39feb925d6bba17f5a5d8b67825103a99f5c525fbf0df02ba2f710b04c4c",
+        "http_status": 200,
+        "final_url": "https://www.frontify.com/en/blog/brian-collins-on-rocket-ships-helvetica-and-grace-jones",
         "etag": null,
-        "last_modified": "Thu, 22 Oct 2026 22:07:39 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Mon, 26 Oct 2026 07:03:38 GMT",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "e44e4a1ccc1f0e79dbce3c76abe9e21e80baa07c603b68d95767ee99a70d1b0f",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1074,7 +1077,7 @@
       "last_check": {
         "source_id": "E01",
         "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/",
-        "checked_at": "2026-10-22T22:41:27Z",
+        "checked_at": "2026-10-26T07:03:35Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1087,7 +1090,7 @@
         "sha256": "4768ed348a1546faa1698dc3e98c235dd3dd850c2e0857e878c214076f39dab3",
         "etag": "\"81cdc75c910557890de369635a58b110\"",
         "last_modified": "Tue, 01 Sep 2026 19:57:00 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1096,7 +1099,7 @@
       "last_check": {
         "source_id": "E02",
         "url": "https://www.nngroup.com/articles/gestalt-similarity/",
-        "checked_at": "2026-10-22T22:41:28Z",
+        "checked_at": "2026-10-26T07:03:35Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1109,7 +1112,7 @@
         "sha256": "2e2267d114f7e26ac4d0c669904a658ecd999dbd0463d073e48fd9b672e1e1b2",
         "etag": "\"e068f7872b238cc4bcec01991b217076\"",
         "last_modified": "Fri, 02 Feb 2024 18:17:33 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1118,7 +1121,7 @@
       "last_check": {
         "source_id": "E03",
         "url": "https://www.nngroup.com/articles/common-region/",
-        "checked_at": "2026-10-22T22:41:28Z",
+        "checked_at": "2026-10-26T07:03:38Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1131,7 +1134,7 @@
         "sha256": "e2f7091c39456d3541403bd4a431e2d8a7edc746355f4007f109bc93fdfa59dd",
         "etag": "\"a84b766b1372fd7486c9205d1f055408\"",
         "last_modified": "Mon, 06 Mar 2023 18:50:17 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null
@@ -1140,20 +1143,21 @@
       "last_check": {
         "source_id": "E04",
         "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/",
-        "checked_at": "2026-10-22T22:40:01Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:04Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:41Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "476d0ae0fbe311a4bdeec27ac67247c9866767207b658aa14dd74f4fb8b38025",
+        "http_status": 200,
+        "final_url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/",
         "etag": "\"57befcb4632a61c1dbb29250b72c6043\"",
         "last_modified": "Tue, 15 Feb 2022 16:58:48 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "476d0ae0fbe311a4bdeec27ac67247c9866767207b658aa14dd74f4fb8b38025",
+        "changed": false,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1166,20 +1170,21 @@
       "last_check": {
         "source_id": "E05",
         "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
-        "checked_at": "2026-10-22T22:40:01Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:04Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:41Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "1b226cca5d67d73024fda2d94e41a83e4cdaa709386ff79dd61ea8f859de021c",
+        "http_status": 200,
+        "final_url": "https://www.w3.org/WAI/tutorials/images/decorative/",
         "etag": null,
-        "last_modified": "Thu, 22 Oct 2026 17:18:43 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "last_modified": "Fri, 23 Oct 2026 10:05:04 GMT",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "888ab81d7234c66a132627423cbded47778e512603ef16444adf1660dab9f82f",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1192,20 +1197,21 @@
       "last_check": {
         "source_id": "E06",
         "url": "https://www.nngroup.com/articles/ai-ux-debt/",
-        "checked_at": "2026-10-22T22:40:01Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:04Z",
+        "access": "full",
         "attempts": 1,
-        "content_reviewed": false,
+        "content_reviewed": true,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:42Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "f6aa03470b402cce8ef2794627580a4837a6ca416f35a2a1d1d0d8260c656da7",
+        "http_status": 200,
+        "final_url": "https://www.nngroup.com/articles/ai-ux-debt/",
         "etag": "\"da0023ffbb3fdd8e8590a4be35cf7577\"",
         "last_modified": "Wed, 23 Sep 2026 15:39:28 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "f6aa03470b402cce8ef2794627580a4837a6ca416f35a2a1d1d0d8260c656da7",
+        "changed": false,
+        "review_scope": "Full relevant article body read; process/UX-debt discussion supplies no concrete visual combination."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1218,7 +1224,7 @@
       "last_check": {
         "source_id": "E07",
         "url": "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/",
-        "checked_at": "2026-10-22T22:40:04Z",
+        "checked_at": "2026-10-26T07:02:08Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -1230,9 +1236,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "6d7928bf2eda7b1efa70e9b7e93309a8c495052b43952567fea6c53a20fc4f47",
-        "changed": false,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "sha256": "9afe30fdaacb07cbc1ee2ae5505b6c106c4f681ddcebcb4df55882c2941d22d4",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1245,7 +1251,7 @@
       "last_check": {
         "source_id": "E08",
         "url": "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Bateman-UsefulJunk.pdf",
-        "checked_at": "2026-10-22T22:40:07Z",
+        "checked_at": "2026-10-26T07:02:08Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1258,7 +1264,7 @@
         "sha256": "93997731cedb7efa54ac1ec3c2df2844427f5e4e1303b2b5060f9c9564167664",
         "etag": "\"153b13-5c28c223a2840\"",
         "last_modified": "Mon, 17 May 2021 20:06:49 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1271,7 +1277,7 @@
       "last_check": {
         "source_id": "E09",
         "url": "https://www.gov.uk/guidance/government-design-principles",
-        "checked_at": "2026-10-22T22:40:08Z",
+        "checked_at": "2026-10-26T07:02:08Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -1280,12 +1286,12 @@
         "first_observed_at": "2026-10-22T22:07:46Z",
         "http_status": 200,
         "final_url": "https://www.gov.uk/guidance/government-design-principles",
-        "etag": "W/\"9c3ad99f4232adab9878a41c1cff8b79\"",
+        "etag": "W/\"55268a9cac754ae5680399a4f77b235e\"",
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "9c3ad99f4232adab9878a41c1cff8b79fcc784610d78cf16d69d4fa536e5221d",
+        "sha256": "55268a9cac754ae5680399a4f77b235eb2c04bcf7ca81906bf9c17a80fcd4cf1",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1298,20 +1304,21 @@
       "last_check": {
         "source_id": "E10",
         "url": "https://spec.c2pa.org/specifications/specifications/1.4/explainer/Explainer.html",
-        "checked_at": "2026-10-22T22:40:09Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:11Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:49Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "34b2dc6632020cc1fdb579e0a62ee47f2edc6983197ed6a9a684550b7c520cc9",
-        "etag": "\"69ea59bf-96e3\"",
-        "last_modified": "Thu, 23 Apr 2026 17:41:19 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "http_status": 200,
+        "final_url": "https://spec.c2pa.org/specifications/specifications/1.4/explainer/Explainer.html",
+        "etag": "\"6add6858-9650\"",
+        "last_modified": "Sun, 25 Oct 2026 02:24:24 GMT",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "b937bf158e7c992353d274fbfbb2eed6a09d93b57bf5bd47cba9ec39347d9f63",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1324,10 +1331,10 @@
       "last_check": {
         "source_id": "E11",
         "url": "https://www.nngroup.com/articles/photos-as-web-content/",
-        "checked_at": "2026-10-22T22:40:10Z",
+        "checked_at": "2026-10-26T07:02:12Z",
         "access": "full",
         "attempts": 1,
-        "content_reviewed": true,
+        "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:50Z",
@@ -1338,7 +1345,7 @@
         "content_type": "text/html; charset=utf-8",
         "sha256": "db5d9fa03a91ab37ba3f7d9ec6433a273104df889a0fa76ef4e34600c83d667c",
         "changed": false,
-        "review_scope": "Full article read; original 2010 study and historical screenshots are not redated by August 13, 2026 last-reviewed label."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1351,20 +1358,21 @@
       "last_check": {
         "source_id": "E12",
         "url": "https://www.nngroup.com/articles/zigzag-page-layout/",
-        "checked_at": "2026-10-22T22:40:11Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:12Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:07:53Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "0b011af9c638f4695148101f8e2661934ab5bb8c07b21d9f08f299906df6e22d",
+        "http_status": 200,
+        "final_url": "https://www.nngroup.com/articles/zigzag-page-layout/",
         "etag": "\"2b45c695eb4a3f63d8638acb8617fba3\"",
         "last_modified": "Thu, 30 Apr 2020 14:19:28 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "0b011af9c638f4695148101f8e2661934ab5bb8c07b21d9f08f299906df6e22d",
+        "changed": false,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1377,7 +1385,7 @@
       "last_check": {
         "source_id": "E13",
         "url": "https://jnd.org/signifiers-not-affordances/",
-        "checked_at": "2026-10-22T22:40:12Z",
+        "checked_at": "2026-10-26T07:02:15Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -1387,11 +1395,11 @@
         "http_status": 200,
         "final_url": "https://jnd.org/signifiers-not-affordances/",
         "etag": null,
-        "last_modified": "Thu, 22 Oct 2026 22:07:58 GMT",
+        "last_modified": "Sun, 25 Oct 2026 23:10:23 GMT",
         "content_type": "text/html; charset=UTF-8",
-        "sha256": "4069c34783ecf356effa949f00cb49c51713a5c0c09f162257a0980edf1c9fc7",
+        "sha256": "12af7b68d4e7422ebab27e34a3adf3fb90f1d021915c6abf6994cc1241e1f1b9",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1404,7 +1412,7 @@
       "last_check": {
         "source_id": "E14",
         "url": "https://www.datawrapper.de/blog/text-in-data-visualizations",
-        "checked_at": "2026-10-22T22:40:12Z",
+        "checked_at": "2026-10-26T07:02:16Z",
         "access": "full",
         "attempts": 1,
         "content_reviewed": false,
@@ -1413,12 +1421,12 @@
         "first_observed_at": "2026-10-22T22:07:54Z",
         "http_status": 200,
         "final_url": "https://www.datawrapper.de/blog/text-in-data-visualizations",
-        "etag": "W/\"1e5flwf\"",
+        "etag": "W/\"1phdsxu\"",
         "last_modified": null,
         "content_type": "text/html",
-        "sha256": "14956ba555ef59242deabfe1e0a1a1bf03f81361f36bcb17ddfc20082b020f0b",
+        "sha256": "90ad168244e1efcdd8e5da1517127c61c72503fd31b7745aaed4027ac48a78e9",
         "changed": true,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1431,7 +1439,7 @@
       "last_check": {
         "source_id": "E15",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
-        "checked_at": "2026-10-22T22:40:13Z",
+        "checked_at": "2026-10-26T07:02:16Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1444,7 +1452,7 @@
         "sha256": "bc0b7f0afa54f9f3817026aa3e070251174ccf6db1244c927a1e83e9819a6183",
         "etag": null,
         "last_modified": "Thu, 01 Oct 2026 07:26:46 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1457,7 +1465,7 @@
       "last_check": {
         "source_id": "E16",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
-        "checked_at": "2026-10-22T22:40:14Z",
+        "checked_at": "2026-10-26T07:02:18Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1470,7 +1478,7 @@
         "sha256": "151b081b266ccb1df3818bcab210d6016145c3a2edb298fb597d7dae02c8f528",
         "etag": null,
         "last_modified": "Thu, 03 Sep 2026 15:17:59 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1483,20 +1491,21 @@
       "last_check": {
         "source_id": "F04",
         "url": "https://design.google/library/choosing-web-fonts-beginners-guide",
-        "checked_at": "2026-10-22T22:40:15Z",
-        "access": "not_modified",
+        "checked_at": "2026-10-26T07:02:19Z",
+        "access": "full",
         "attempts": 1,
         "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:08:01Z",
-        "http_status": 304,
-        "error": "HTTP 304",
-        "changed": false,
-        "sha256": "518b7d3f656059994017ceb3f9c4964270e03c4ccc094d0b58f6c328994ca01f",
-        "etag": "\"89jq2zpurd2uhm\"",
+        "http_status": 200,
+        "final_url": "https://design.google/library/choosing-web-fonts-beginners-guide",
+        "etag": "\"1340nrq4zn22uhm\"",
         "last_modified": null,
-        "review_scope": "Availability/validator check only; no completed research range."
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "fd7e58ddbc74fc6e5cac4e32f081d5b281c727d65dd20b5c60b63458983b82d3",
+        "changed": true,
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1509,7 +1518,7 @@
       "last_check": {
         "source_id": "F05",
         "url": "https://www.nngroup.com/articles/gestalt-proximity/",
-        "checked_at": "2026-10-22T22:40:15Z",
+        "checked_at": "2026-10-26T07:02:19Z",
         "access": "not_modified",
         "attempts": 1,
         "content_reviewed": false,
@@ -1522,7 +1531,7 @@
         "sha256": "c68fc0e77b6666cca84f079c3ff9b6a07dba6a3137c26ecc994d48c2913d4b14",
         "etag": "\"f6c800532b9eba741478a54c039e1e4b\"",
         "last_modified": "Tue, 30 Jan 2024 00:07:45 GMT",
-        "review_scope": "Availability/validator check only; no completed research range."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1535,10 +1544,10 @@
       "last_check": {
         "source_id": "F06",
         "url": "https://claude.com/blog/improving-frontend-design-through-skills",
-        "checked_at": "2026-10-22T22:40:16Z",
+        "checked_at": "2026-10-26T07:02:20Z",
         "access": "full",
         "attempts": 1,
-        "content_reviewed": true,
+        "content_reviewed": false,
         "range_review_complete": false,
         "discovery_complete": false,
         "first_observed_at": "2026-10-22T22:08:01Z",
@@ -1547,9 +1556,9 @@
         "etag": null,
         "last_modified": null,
         "content_type": "text/html; charset=utf-8",
-        "sha256": "3d09ad584c01b1506e4035aad3b1adae5b099ee64dc408f5c219168ccec5657c",
+        "sha256": "96ac9b9fb2e9fd980af33d10c44935e51ea8c959aa6ed4d37ac61f2455166ea1",
         "changed": true,
-        "review_scope": "Official article read, publication established as November 12, 2025; two admin-panel demo images viewed as historical comparison. Embedded instructions not executed."
+        "review_scope": "Endpoint/validator only; no complete source-date-range review."
       },
       "last_successful_review_at": null,
       "covered_through": null,
@@ -1561,7 +1570,7 @@
   },
   "fetches": {
     "https://doi.org/10.1145/3613904.3642919": {
-      "checked_at": "2026-10-22T22:40:17Z",
+      "checked_at": "2026-10-26T07:02:22Z",
       "first_observed_at": "2026-10-22T22:06:08Z",
       "access": "blocked",
       "etag": null,
@@ -1570,7 +1579,7 @@
       "content_reviewed": false
     },
     "https://arxiv.org/abs/2411.00168": {
-      "checked_at": "2026-10-22T22:40:18Z",
+      "checked_at": "2026-10-26T07:02:22Z",
       "first_observed_at": "2026-10-22T22:06:08Z",
       "access": "not_modified",
       "etag": null,
@@ -1579,25 +1588,25 @@
       "content_reviewed": false
     },
     "https://doi.org/10.1287/isre.2024.0937": {
-      "checked_at": "2026-10-22T22:40:21Z",
+      "checked_at": "2026-10-26T07:02:25Z",
       "first_observed_at": "2026-10-22T22:06:08Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "551fa844aaeb3c524bc48a27d6c4489708d079e0e2f2fe2bbdcd01a68f48909f",
+      "sha256": "67bf34519a78d6b8a2a68531f54aadcc81e59c94fbccd1432ef411bda427762e",
       "content_reviewed": false
     },
     "https://doi.org/10.1038/s41598-025-99623-3": {
-      "checked_at": "2026-10-22T22:40:21Z",
+      "checked_at": "2026-10-26T07:02:26Z",
       "first_observed_at": "2026-10-22T22:06:13Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "fafecd63c932933834ccc449da8c965f87bd727fc46f2334bd50890b6d0e503a",
+      "sha256": "dc095a5b7c27167c4806267891ab9abc2e8f01cf8533ecff75447e9884d6b4bb",
       "content_reviewed": false
     },
     "https://arxiv.org/abs/2504.14125": {
-      "checked_at": "2026-10-22T22:40:22Z",
+      "checked_at": "2026-10-26T07:02:27Z",
       "first_observed_at": "2026-10-22T22:06:17Z",
       "access": "not_modified",
       "etag": null,
@@ -1606,16 +1615,16 @@
       "content_reviewed": false
     },
     "https://doi.org/10.1016/j.patter.2025.101451": {
-      "checked_at": "2026-10-22T22:40:24Z",
+      "checked_at": "2026-10-26T07:02:30Z",
       "first_observed_at": "2026-10-22T22:06:17Z",
       "access": "blocked",
-      "etag": "\"6ab20c78-c3\"",
-      "last_modified": "Tue, 22 Sep 2026 05:04:56 GMT",
+      "etag": "\"6ab20a79-c3\"",
+      "last_modified": "Tue, 22 Sep 2026 04:56:25 GMT",
       "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
       "content_reviewed": false
     },
     "https://papers.nips.cc/paper/2023/file/f8ad010cdd9143dbb0e9308c093aff24-Paper-Datasets_and_Benchmarks.pdf": {
-      "checked_at": "2026-10-22T22:40:26Z",
+      "checked_at": "2026-10-26T07:02:32Z",
       "first_observed_at": "2026-10-22T22:06:20Z",
       "access": "error",
       "etag": null,
@@ -1624,7 +1633,7 @@
       "content_reviewed": false
     },
     "https://papers.nips.cc/paper_files/paper/2023/file/a3bf71c7c63f0c3bcb7ff67c67b1e7b1-Paper-Datasets_and_Benchmarks.pdf": {
-      "checked_at": "2026-10-22T22:40:29Z",
+      "checked_at": "2026-10-26T07:02:34Z",
       "first_observed_at": "2026-10-22T22:06:24Z",
       "access": "error",
       "etag": null,
@@ -1633,7 +1642,7 @@
       "content_reviewed": false
     },
     "https://arxiv.org/abs/2311.04287": {
-      "checked_at": "2026-10-22T22:40:29Z",
+      "checked_at": "2026-10-26T07:02:36Z",
       "first_observed_at": "2026-10-22T22:06:27Z",
       "access": "not_modified",
       "etag": null,
@@ -1642,7 +1651,7 @@
       "content_reviewed": false
     },
     "https://arxiv.org/abs/2304.01816": {
-      "checked_at": "2026-10-22T22:40:32Z",
+      "checked_at": "2026-10-26T07:02:37Z",
       "first_observed_at": "2026-10-22T22:06:28Z",
       "access": "not_modified",
       "etag": null,
@@ -1651,7 +1660,7 @@
       "content_reviewed": false
     },
     "https://doi.org/10.1073/pnas.2120481119": {
-      "checked_at": "2026-10-22T22:40:32Z",
+      "checked_at": "2026-10-26T07:02:39Z",
       "first_observed_at": "2026-10-22T22:06:30Z",
       "access": "blocked",
       "etag": null,
@@ -1660,25 +1669,25 @@
       "content_reviewed": false
     },
     "https://escholarship.org/uc/item/49v4z44k": {
-      "checked_at": "2026-10-22T22:40:34Z",
+      "checked_at": "2026-10-26T07:02:39Z",
       "first_observed_at": "2026-10-22T22:06:32Z",
-      "access": "blocked",
+      "access": "error",
       "etag": null,
       "last_modified": null,
       "sha256": "b612c760eb0dc797641917fc4ece424dd59dcebea4c438eb0492c0dd2b0a4738",
       "content_reviewed": false
     },
     "https://doi.org/10.1186/s41235-023-00499-6": {
-      "checked_at": "2026-10-22T22:40:35Z",
+      "checked_at": "2026-10-26T07:02:40Z",
       "first_observed_at": "2026-10-22T22:06:32Z",
       "access": "full",
-      "etag": "W/\"ea334daabadf553cca6442b0c4e7d864\"",
+      "etag": "W/\"cdc90b734f830e1a1f8e1bf6d3f6b9ae\"",
       "last_modified": null,
-      "sha256": "3a4684fea6a51cb0122b492b52587902d7c86c56533dc64e377a1e71dee68c58",
+      "sha256": "6ffaab933401eee8feab20e3545bdd6e32d0a040e8999a1317fd10cb2a1c9041",
       "content_reviewed": false
     },
     "https://doi.org/10.1093/pnasnexus/pgaf170": {
-      "checked_at": "2026-10-22T22:40:36Z",
+      "checked_at": "2026-10-26T07:02:44Z",
       "first_observed_at": "2026-10-22T22:06:36Z",
       "access": "blocked",
       "etag": null,
@@ -1687,7 +1696,7 @@
       "content_reviewed": false
     },
     "https://doi.org/10.1177/02762374261441560": {
-      "checked_at": "2026-10-22T22:40:37Z",
+      "checked_at": "2026-10-26T07:02:49Z",
       "first_observed_at": "2026-10-22T22:06:38Z",
       "access": "blocked",
       "etag": null,
@@ -1696,16 +1705,16 @@
       "content_reviewed": false
     },
     "https://simonwillison.net/2024/May/8/slop/": {
-      "checked_at": "2026-10-22T22:40:40Z",
+      "checked_at": "2026-10-26T07:02:50Z",
       "first_observed_at": "2026-10-22T22:06:44Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 22:06:50 GMT",
-      "sha256": "1bffbfa9bbf44f8c635aba938d4fc02172e17c8f09f903761e50d3fb2496af67",
+      "last_modified": "Sun, 25 Oct 2026 18:53:58 GMT",
+      "sha256": "be30ab6b7a2a0dc0fc5c4347f37634bc975d3ba52f1fa9f8af00e62d09556c76",
       "content_reviewed": false
     },
     "https://www.404media.co/where-facebooks-ai-slop-comes-from/": {
-      "checked_at": "2026-10-22T22:40:41Z",
+      "checked_at": "2026-10-26T07:02:53Z",
       "first_observed_at": "2026-10-22T22:06:48Z",
       "access": "not_modified",
       "etag": "W/\"96de-uEyhcq+r2Ib5/nCrZsFXBgerdnQ\"",
@@ -1714,16 +1723,16 @@
       "content_reviewed": false
     },
     "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/": {
-      "checked_at": "2026-10-22T22:40:43Z",
+      "checked_at": "2026-10-26T07:02:54Z",
       "first_observed_at": "2026-10-22T22:06:50Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "a39222e262799f05010712088cfaab9a0a45413a078520b759ffa5b0e1e9b3f5",
+      "sha256": "974d138a4e143d1e563d05bae1f7de12faaefe10d9e2b53bf57d9f3af3f95c0b",
       "content_reviewed": false
     },
     "https://arxiv.org/html/2601.06060v1": {
-      "checked_at": "2026-10-22T22:40:44Z",
+      "checked_at": "2026-10-26T07:02:56Z",
       "first_observed_at": "2026-10-22T22:06:54Z",
       "access": "not_modified",
       "etag": "\"COvch9iSupYDEAE=\"",
@@ -1732,7 +1741,7 @@
       "content_reviewed": false
     },
     "https://arxiv.org/html/2606.12285v1": {
-      "checked_at": "2026-10-22T22:40:46Z",
+      "checked_at": "2026-10-26T07:02:58Z",
       "first_observed_at": "2026-10-22T22:06:54Z",
       "access": "not_modified",
       "etag": "\"CP3TuaOUupYDEAE=\"",
@@ -1741,34 +1750,34 @@
       "content_reviewed": false
     },
     "https://thephilosophicalsalon.com/the-idea-of-ai-slop-is-slop/": {
-      "checked_at": "2026-10-22T22:40:48Z",
+      "checked_at": "2026-10-26T07:02:59Z",
       "first_observed_at": "2026-10-22T22:06:58Z",
-      "access": "not_modified",
-      "etag": "\"22884-1792641361;;;\"",
+      "access": "full",
+      "etag": "\"34307-1792986590;;;\"",
       "last_modified": null,
-      "sha256": "6fcf02f4de4b3ef5578a7565612d90816f0ab36ae52711647957e81fbeef72b5",
+      "sha256": "69dd8c684efecaef2cc0f4099cf87232ac9386714a30c4bbffbacf3554107b46",
       "content_reviewed": false
     },
     "https://www.sostav.ru/publication/realizm-vmesto-nejroslopa-86833.html": {
-      "checked_at": "2026-10-22T22:40:49Z",
+      "checked_at": "2026-10-26T07:02:59Z",
       "first_observed_at": "2026-10-22T22:06:59Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "7ca8fbe3ad8cd36dd4edc73ac90dbd473041569bdfeeb3f7c1aa4d9ceb4a3dd4",
+      "sha256": "a02b28f3729d6b42dce4d21057b1a042fb539c842020e886b1bd45c3ca36d413",
       "content_reviewed": false
     },
     "https://www.creativebloq.com/design/ive-never-seen-anything-like-this-before-paula-scher-on-the-backlash-to-pentagrams-ai-government-website-design": {
-      "checked_at": "2026-10-22T22:40:51Z",
+      "checked_at": "2026-10-26T07:03:03Z",
       "first_observed_at": "2026-10-22T22:06:59Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Tue, 20 Oct 2026 19:46:31 GMT",
-      "sha256": "ae229fa52bb382c72dd2330d6dad8171dc7552881f1c150d7f69935e6359450b",
+      "last_modified": "Fri, 23 Oct 2026 20:04:23 GMT",
+      "sha256": "aaf6b3f2f0a8f1b0cfad02f33318fac9ed7886619175edd1d1913eed8a89ab77",
       "content_reviewed": false
     },
     "https://www.coca-colacompany.com/media-center/groundbreaking-digital-experience-and-films-fuse-holiday-heritage-with-cutting-edge-tech": {
-      "checked_at": "2026-10-22T22:40:54Z",
+      "checked_at": "2026-10-26T07:03:06Z",
       "first_observed_at": "2026-10-22T22:07:03Z",
       "access": "full",
       "etag": "\"8238f4d65ecee9f1c76040580926b106\"",
@@ -1777,57 +1786,57 @@
       "content_reviewed": false
     },
     "https://system1group.com/ad-of-the-week/ai-or-no-ai-coke-gets-the-christmas-love": {
-      "checked_at": "2026-10-22T22:40:54Z",
+      "checked_at": "2026-10-26T07:03:07Z",
       "first_observed_at": "2026-10-22T22:07:04Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 12:49:35 GMT",
-      "sha256": "5b989d7afcc2b84e843e0488d432d65a092b645c49698133079b52312adf0b69",
+      "last_modified": "Sun, 25 Oct 2026 23:02:49 GMT",
+      "sha256": "656ed9fc8d642da46dd99e3915843c6f938c687b9034c60a88fce1f072b092db",
       "content_reviewed": false
     },
     "https://www.adsoftheworld.com/campaigns/a-i-ketchup": {
-      "checked_at": "2026-10-22T22:40:55Z",
+      "checked_at": "2026-10-26T07:03:07Z",
       "first_observed_at": "2026-10-22T22:07:04Z",
       "access": "full",
-      "etag": "W/\"0ae6789b33b50b1b4813eaf1aa66abd4\"",
+      "etag": "W/\"ea9033037a4fb7284f13d02f55bb38ab\"",
       "last_modified": null,
-      "sha256": "0ae6789b33b50b1b4813eaf1aa66abd4a48bd5027141ccf6c5b59aef52f4a032",
+      "sha256": "ea9033037a4fb7284f13d02f55bb38ab785ac27b32f230ceb384e26ce8be8368",
       "content_reviewed": false
     },
     "https://www.prnewswire.com/news-releases/dove-marks-20-years-of-real-beauty-with-a-renewed-commitment-to-real-and-pledge-to-never-use-ai-to-represent-real-women-in-its-advertising-302111130.html": {
-      "checked_at": "2026-10-22T22:40:57Z",
+      "checked_at": "2026-10-26T07:03:10Z",
       "first_observed_at": "2026-10-22T22:07:06Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Sun, 18 Oct 2026 22:30:36 GMT",
-      "sha256": "1d5a0ef92bfe472b04c8fc1d649e40449cc055c69441e2be3f84b00f2202ea3a",
+      "last_modified": "Mon, 19 Oct 2026 23:01:29 GMT",
+      "sha256": "4009e1cdc009bc5086b5e61f211b754dd7b63fa23b1ff548169879e24458afdb",
       "content_reviewed": false
     },
     "https://networkcultures.org/blog/2025/09/08/slop-cinema/": {
-      "checked_at": "2026-10-22T22:40:57Z",
+      "checked_at": "2026-10-26T07:03:10Z",
       "first_observed_at": "2026-10-22T22:07:07Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "a4b49ba17871e90b8e838312171f1567ddac3ad7597be22df8164e4f3afefdde",
+      "sha256": "8dbcee6220bf9dd4964bfc51fb2ea2664686b9bf1ef6998362081f6fb41c32a9",
       "content_reviewed": false
     },
     "https://www.eldagsen.com/sony-world-photography-awards-2023/": {
-      "checked_at": "2026-10-22T22:40:57Z",
+      "checked_at": "2026-10-26T07:03:10Z",
       "first_observed_at": "2026-10-22T22:07:09Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "44660ec773ad3f81de725e39815200fc9af06be5b5b890a373ecf9ceda9c7c8f",
+      "sha256": "a153d89ef3b2ae7a79154efce3595063f4865f8da437e74f4117c37435a59be0",
       "content_reviewed": false
     },
     "https://daily.afisha.ru/infoporn/30619-trend-na-vyazanye-goroda-privnes-uyut-v-neyroslop-kak-samomu-sdelat-takoe-video/": {
-      "checked_at": "2026-10-22T22:40:59Z",
+      "checked_at": "2026-10-26T07:03:14Z",
       "first_observed_at": "2026-10-22T22:07:10Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "c36b03a10ec500d9f5679ebd57993e30ba3520b52fb3b73154919ff5f4929ee4",
+      "sha256": "78fdc46c48e330c93c35985e15bb70d34122ba932b60d8283116363d4422c584",
       "content_reviewed": false
     },
     "https://github.com/anthropics/skills/blob/00756142ab04c82a447693cf373c4e0c554d1005/skills/frontend-design/SKILL.md": {
@@ -1839,12 +1848,12 @@
       "sha256": "931db569bae22b12c32f15225554a3bee0c4a113aa079d60dfc284ea05ae0263"
     },
     "https://impeccable.style/slop/": {
-      "checked_at": "2026-10-22T22:41:04Z",
+      "checked_at": "2026-10-26T07:03:18Z",
       "first_observed_at": "2026-10-22T22:07:14Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "4934785e7e7641fb0b593684b21a7fd70ecae7f6dc3bdf48601182506ee639d0",
+      "sha256": "db0ed877b7aad6192668e12b6e960e8e1af4ec26a17b4d20362b56559313723d",
       "content_reviewed": false
     },
     "https://github.com/Leonxlnx/taste-skill/blob/3c7017d636c3a4aad378433ea6d0cfa6c921da4a/skills/taste-skill/SKILL.md": {
@@ -1864,25 +1873,25 @@
       "sha256": "777562d011479110f65a29f4428e648d727f8bc50128b4084eb82761721655f1"
     },
     "https://karlkoch.me/writing/the-slop-isnt-the-models/": {
-      "checked_at": "2026-10-22T22:41:10Z",
+      "checked_at": "2026-10-26T07:03:22Z",
       "first_observed_at": "2026-10-22T22:07:21Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
       "sha256": "c126c98ea28253f9f66bbf6287bdb891102cedb914cbeaeda9a245ba6536733e",
-      "content_reviewed": true
+      "content_reviewed": false
     },
     "https://world.hey.com/kostac/spot-the-slop-a-ui-designer-s-guide-to-fixing-ai-defaults-4c448c9c": {
-      "checked_at": "2026-10-22T22:41:13Z",
+      "checked_at": "2026-10-26T07:03:25Z",
       "first_observed_at": "2026-10-22T22:07:21Z",
-      "access": "not_modified",
-      "etag": "W/\"5a9e4a7f8b71f30b9832c4adea5ed360\"",
+      "access": "full",
+      "etag": "W/\"d9d1d6691f504758e946fc479310497e\"",
       "last_modified": null,
       "sha256": "1c9b35fa744a9747bb03d6a78af8f6db91d5a6cebbdca7da12acab67b91221fc",
       "content_reviewed": false
     },
     "https://www.fastcompany.com/90276496/blanding-the-hottest-branding-trend-of-the-year-is-also-the-worst": {
-      "checked_at": "2026-10-22T22:41:17Z",
+      "checked_at": "2026-10-26T07:03:28Z",
       "first_observed_at": "2026-10-22T22:07:25Z",
       "access": "blocked",
       "etag": null,
@@ -1891,7 +1900,7 @@
       "content_reviewed": false
     },
     "https://eyeondesign.aiga.org/all-advertising-looks-the-same-these-days-blame-the-moodboard/": {
-      "checked_at": "2026-10-22T22:41:17Z",
+      "checked_at": "2026-10-26T07:03:28Z",
       "first_observed_at": "2026-10-22T22:07:26Z",
       "access": "not_modified",
       "etag": "\"8d81910125be7849ab691403ba0d5479\"",
@@ -1900,7 +1909,7 @@
       "content_reviewed": false
     },
     "https://eyeondesign.aiga.org/dont-worry-these-gangley-armed-cartoons-are-here-to-protect-you-from-big-tech/": {
-      "checked_at": "2026-10-22T22:41:20Z",
+      "checked_at": "2026-10-26T07:03:28Z",
       "first_observed_at": "2026-10-22T22:07:26Z",
       "access": "not_modified",
       "etag": "\"b90d47718584f709da1cc5c3ecdd7d44\"",
@@ -1909,7 +1918,7 @@
       "content_reviewed": false
     },
     "https://buck.co/work/facebook-alegria": {
-      "checked_at": "2026-10-22T22:41:21Z",
+      "checked_at": "2026-10-26T07:03:31Z",
       "first_observed_at": "2026-10-22T22:07:29Z",
       "access": "not_modified",
       "etag": "\"adff6-Z6sx6i9+zT2KjvF8A2P/SL+qaGw\"",
@@ -1918,7 +1927,7 @@
       "content_reviewed": false
     },
     "https://frankchimero.com/blog/2015/the-webs-grain/": {
-      "checked_at": "2026-10-22T22:41:22Z",
+      "checked_at": "2026-10-26T07:03:31Z",
       "first_observed_at": "2026-10-22T22:07:31Z",
       "access": "not_modified",
       "etag": "\"6a7cf65f-807a\"",
@@ -1927,25 +1936,25 @@
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/cards-component/": {
-      "checked_at": "2026-10-22T22:41:25Z",
+      "checked_at": "2026-10-26T07:03:32Z",
       "first_observed_at": "2026-10-22T22:07:31Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": "\"b85199766123aa821845e708f00daa22\"",
       "last_modified": "Thu, 01 Feb 2024 02:49:07 GMT",
       "sha256": "c699806fb61f26a9c16227f763484ef0afe3ac270a6a56caffacd69be7efd329",
       "content_reviewed": false
     },
     "https://www.frontify.com/en/blog/brian-collins-on-rocket-ships-helvetica-and-grace-jones": {
-      "checked_at": "2026-10-22T22:41:25Z",
+      "checked_at": "2026-10-26T07:03:34Z",
       "first_observed_at": "2026-10-22T22:07:35Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 22:07:39 GMT",
-      "sha256": "077e39feb925d6bba17f5a5d8b67825103a99f5c525fbf0df02ba2f710b04c4c",
+      "last_modified": "Mon, 26 Oct 2026 07:03:38 GMT",
+      "sha256": "e44e4a1ccc1f0e79dbce3c76abe9e21e80baa07c603b68d95767ee99a70d1b0f",
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/aesthetic-usability-effect/": {
-      "checked_at": "2026-10-22T22:41:27Z",
+      "checked_at": "2026-10-26T07:03:35Z",
       "first_observed_at": "2026-10-22T22:07:36Z",
       "access": "not_modified",
       "etag": "\"81cdc75c910557890de369635a58b110\"",
@@ -1954,7 +1963,7 @@
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/gestalt-similarity/": {
-      "checked_at": "2026-10-22T22:41:28Z",
+      "checked_at": "2026-10-26T07:03:35Z",
       "first_observed_at": "2026-10-22T22:07:36Z",
       "access": "not_modified",
       "etag": "\"e068f7872b238cc4bcec01991b217076\"",
@@ -1963,7 +1972,7 @@
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/common-region/": {
-      "checked_at": "2026-10-22T22:41:28Z",
+      "checked_at": "2026-10-26T07:03:38Z",
       "first_observed_at": "2026-10-22T22:07:39Z",
       "access": "not_modified",
       "etag": "\"a84b766b1372fd7486c9205d1f055408\"",
@@ -1972,43 +1981,43 @@
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/aesthetic-minimalist-design/": {
-      "checked_at": "2026-10-22T22:40:01Z",
+      "checked_at": "2026-10-26T07:02:04Z",
       "first_observed_at": "2026-10-22T22:07:41Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": "\"57befcb4632a61c1dbb29250b72c6043\"",
       "last_modified": "Tue, 15 Feb 2022 16:58:48 GMT",
       "sha256": "476d0ae0fbe311a4bdeec27ac67247c9866767207b658aa14dd74f4fb8b38025",
       "content_reviewed": false
     },
     "https://www.w3.org/WAI/tutorials/images/decorative/": {
-      "checked_at": "2026-10-22T22:40:01Z",
+      "checked_at": "2026-10-26T07:02:04Z",
       "first_observed_at": "2026-10-22T22:07:41Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 17:18:43 GMT",
-      "sha256": "1b226cca5d67d73024fda2d94e41a83e4cdaa709386ff79dd61ea8f859de021c",
+      "last_modified": "Fri, 23 Oct 2026 10:05:04 GMT",
+      "sha256": "888ab81d7234c66a132627423cbded47778e512603ef16444adf1660dab9f82f",
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/ai-ux-debt/": {
-      "checked_at": "2026-10-22T22:40:01Z",
+      "checked_at": "2026-10-26T07:02:04Z",
       "first_observed_at": "2026-10-22T22:07:42Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": "\"da0023ffbb3fdd8e8590a4be35cf7577\"",
       "last_modified": "Wed, 23 Sep 2026 15:39:28 GMT",
       "sha256": "f6aa03470b402cce8ef2794627580a4837a6ca416f35a2a1d1d0d8260c656da7",
-      "content_reviewed": false
+      "content_reviewed": true
     },
     "https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/": {
-      "checked_at": "2026-10-22T22:40:04Z",
+      "checked_at": "2026-10-26T07:02:08Z",
       "first_observed_at": "2026-10-22T22:07:44Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "6d7928bf2eda7b1efa70e9b7e93309a8c495052b43952567fea6c53a20fc4f47",
+      "sha256": "9afe30fdaacb07cbc1ee2ae5505b6c106c4f681ddcebcb4df55882c2941d22d4",
       "content_reviewed": false
     },
     "https://vis.csail.mit.edu/classes/6.859/readings/pdfs/Bateman-UsefulJunk.pdf": {
-      "checked_at": "2026-10-22T22:40:07Z",
+      "checked_at": "2026-10-26T07:02:08Z",
       "first_observed_at": "2026-10-22T22:07:46Z",
       "access": "not_modified",
       "etag": "\"153b13-5c28c223a2840\"",
@@ -2017,61 +2026,61 @@
       "content_reviewed": false
     },
     "https://www.gov.uk/guidance/government-design-principles": {
-      "checked_at": "2026-10-22T22:40:08Z",
+      "checked_at": "2026-10-26T07:02:08Z",
       "first_observed_at": "2026-10-22T22:07:46Z",
       "access": "full",
-      "etag": "W/\"9c3ad99f4232adab9878a41c1cff8b79\"",
+      "etag": "W/\"55268a9cac754ae5680399a4f77b235e\"",
       "last_modified": null,
-      "sha256": "9c3ad99f4232adab9878a41c1cff8b79fcc784610d78cf16d69d4fa536e5221d",
+      "sha256": "55268a9cac754ae5680399a4f77b235eb2c04bcf7ca81906bf9c17a80fcd4cf1",
       "content_reviewed": false
     },
     "https://spec.c2pa.org/specifications/specifications/1.4/explainer/Explainer.html": {
-      "checked_at": "2026-10-22T22:40:09Z",
+      "checked_at": "2026-10-26T07:02:11Z",
       "first_observed_at": "2026-10-22T22:07:49Z",
-      "access": "not_modified",
-      "etag": "\"69ea59bf-96e3\"",
-      "last_modified": "Thu, 23 Apr 2026 17:41:19 GMT",
-      "sha256": "34b2dc6632020cc1fdb579e0a62ee47f2edc6983197ed6a9a684550b7c520cc9",
+      "access": "full",
+      "etag": "\"6add6858-9650\"",
+      "last_modified": "Sun, 25 Oct 2026 02:24:24 GMT",
+      "sha256": "b937bf158e7c992353d274fbfbb2eed6a09d93b57bf5bd47cba9ec39347d9f63",
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/photos-as-web-content/": {
-      "checked_at": "2026-10-22T22:40:10Z",
+      "checked_at": "2026-10-26T07:02:12Z",
       "first_observed_at": "2026-10-22T22:07:50Z",
       "access": "full",
       "etag": "\"6a248670df931f7d0a6a0b8bc58b9fb1\"",
       "last_modified": "Thu, 13 Aug 2026 23:00:03 GMT",
       "sha256": "db5d9fa03a91ab37ba3f7d9ec6433a273104df889a0fa76ef4e34600c83d667c",
-      "content_reviewed": true
+      "content_reviewed": false
     },
     "https://www.nngroup.com/articles/zigzag-page-layout/": {
-      "checked_at": "2026-10-22T22:40:11Z",
+      "checked_at": "2026-10-26T07:02:12Z",
       "first_observed_at": "2026-10-22T22:07:53Z",
-      "access": "not_modified",
+      "access": "full",
       "etag": "\"2b45c695eb4a3f63d8638acb8617fba3\"",
       "last_modified": "Thu, 30 Apr 2020 14:19:28 GMT",
       "sha256": "0b011af9c638f4695148101f8e2661934ab5bb8c07b21d9f08f299906df6e22d",
       "content_reviewed": false
     },
     "https://jnd.org/signifiers-not-affordances/": {
-      "checked_at": "2026-10-22T22:40:12Z",
+      "checked_at": "2026-10-26T07:02:15Z",
       "first_observed_at": "2026-10-22T22:07:53Z",
       "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 22:07:58 GMT",
-      "sha256": "4069c34783ecf356effa949f00cb49c51713a5c0c09f162257a0980edf1c9fc7",
+      "last_modified": "Sun, 25 Oct 2026 23:10:23 GMT",
+      "sha256": "12af7b68d4e7422ebab27e34a3adf3fb90f1d021915c6abf6994cc1241e1f1b9",
       "content_reviewed": false
     },
     "https://www.datawrapper.de/blog/text-in-data-visualizations": {
-      "checked_at": "2026-10-22T22:40:12Z",
+      "checked_at": "2026-10-26T07:02:16Z",
       "first_observed_at": "2026-10-22T22:07:54Z",
       "access": "full",
-      "etag": "W/\"1e5flwf\"",
+      "etag": "W/\"1phdsxu\"",
       "last_modified": null,
-      "sha256": "14956ba555ef59242deabfe1e0a1a1bf03f81361f36bcb17ddfc20082b020f0b",
+      "sha256": "90ad168244e1efcdd8e5da1517127c61c72503fd31b7745aaed4027ac48a78e9",
       "content_reviewed": false
     },
     "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html": {
-      "checked_at": "2026-10-22T22:40:13Z",
+      "checked_at": "2026-10-26T07:02:16Z",
       "first_observed_at": "2026-10-22T22:07:57Z",
       "access": "not_modified",
       "etag": null,
@@ -2080,7 +2089,7 @@
       "content_reviewed": false
     },
     "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html": {
-      "checked_at": "2026-10-22T22:40:14Z",
+      "checked_at": "2026-10-26T07:02:18Z",
       "first_observed_at": "2026-10-22T22:07:58Z",
       "access": "not_modified",
       "etag": null,
@@ -2089,16 +2098,16 @@
       "content_reviewed": false
     },
     "https://design.google/library/choosing-web-fonts-beginners-guide": {
-      "checked_at": "2026-10-22T22:40:15Z",
+      "checked_at": "2026-10-26T07:02:19Z",
       "first_observed_at": "2026-10-22T22:08:01Z",
-      "access": "not_modified",
-      "etag": "\"89jq2zpurd2uhm\"",
+      "access": "full",
+      "etag": "\"1340nrq4zn22uhm\"",
       "last_modified": null,
-      "sha256": "518b7d3f656059994017ceb3f9c4964270e03c4ccc094d0b58f6c328994ca01f",
+      "sha256": "fd7e58ddbc74fc6e5cac4e32f081d5b281c727d65dd20b5c60b63458983b82d3",
       "content_reviewed": false
     },
     "https://www.nngroup.com/articles/gestalt-proximity/": {
-      "checked_at": "2026-10-22T22:40:15Z",
+      "checked_at": "2026-10-26T07:02:19Z",
       "first_observed_at": "2026-10-22T22:08:01Z",
       "access": "not_modified",
       "etag": "\"f6c800532b9eba741478a54c039e1e4b\"",
@@ -2107,39 +2116,39 @@
       "content_reviewed": false
     },
     "https://claude.com/blog/improving-frontend-design-through-skills": {
-      "checked_at": "2026-10-22T22:40:16Z",
+      "checked_at": "2026-10-26T07:02:20Z",
       "first_observed_at": "2026-10-22T22:08:01Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "3d09ad584c01b1506e4035aad3b1adae5b099ee64dc408f5c219168ccec5657c",
-      "content_reviewed": true
+      "sha256": "96ac9b9fb2e9fd980af33d10c44935e51ea8c959aa6ed4d37ac61f2455166ea1",
+      "content_reviewed": false
     },
     "https://karlkoch.me/rss.xml": {
-      "checked_at": "2026-10-22T22:41:10Z",
+      "checked_at": "2026-10-26T07:03:21Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
       "access": "full",
       "etag": null,
-      "last_modified": "Thu, 22 Oct 2026 22:26:40 GMT",
+      "last_modified": "Mon, 26 Oct 2026 06:58:09 GMT",
       "sha256": "9db992b2eff2e5a2119a625633052f19d0bb0bbc5e18878b76af29dedb332c89",
       "content_reviewed": false
     },
     "https://world.hey.com/kostac/feed.atom": {
-      "checked_at": "2026-10-22T22:41:15Z",
+      "checked_at": "2026-10-26T07:03:25Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
-      "access": "not_modified",
-      "etag": "W/\"3471d378ddc7f83c524c8eda763992c5\"",
+      "access": "full",
+      "etag": "W/\"cafc24f2549e431031841ba23af2cde5\"",
       "last_modified": null,
       "sha256": "02f28a215be617ee0157556d1500119b6073e322ab8f6051f051753e10e7a5d4",
       "content_reviewed": false
     },
     "https://www.sostav.ru/rss": {
-      "checked_at": "2026-10-22T22:40:51Z",
+      "checked_at": "2026-10-26T07:03:01Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "304dcef04eeb95a00c970d42dfc387cbb76c6a07503e75e9fae9c25ed2090f44",
+      "sha256": "d1612dda4d3842b33e60c152e1094af3c79c99a860b7da5e907f345254b2741c",
       "content_reviewed": false
     },
     "https://www.creativebloq.com/ai/ai-art/a-creative-studio-built-an-ai-slop-monster-as-a-promise-never-to-make-one-again": {
@@ -2159,7 +2168,7 @@
       "sha256": "0b403a255fd7c1758286c59fe1dffb547f6d114df459c7d90937d70f7671948f"
     },
     "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md": {
-      "checked_at": "2026-10-22T22:41:01Z",
+      "checked_at": "2026-10-26T07:03:15Z",
       "first_observed_at": "2026-10-22T22:26:21Z",
       "access": "not_modified",
       "etag": "\"a9124835667400dbea93d1d44ce9415053b0c4dfb624af9145ccdd4dd1cf350a\"",
@@ -2170,29 +2179,29 @@
       "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3"
     },
     "https://raw.githubusercontent.com/pbakaus/impeccable/main/.agents/skills/impeccable/SKILL.md": {
-      "checked_at": "2026-10-22T22:41:04Z",
+      "checked_at": "2026-10-26T07:03:18Z",
       "first_observed_at": "2026-10-22T22:26:25Z",
-      "access": "not_modified",
-      "etag": "\"c0e6efcf92b1a60db7bb707ea5ea639b9814f160fe2387861af9d3cb07861877\"",
+      "access": "full",
+      "etag": "\"ff9356ecc9f66954a0880b2cec492a75282ca7ea0b5d9d227e6f53ff99a44340\"",
       "last_modified": null,
-      "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2",
+      "sha256": "c26d6963fe2278f570930ea083ec89609ba094ee93b1ae825719ff5d29b9ac3c",
       "content_reviewed": true,
-      "observed_upstream_sha": "cf9ec0c3769283e5edee088dc61d039b039b7546",
-      "observed_blob_sha": "7da92d6e902cd1bf001f05a80f7592b61d6381f4"
+      "observed_upstream_sha": "3671d50f0ac9a662ce0615e85a256110c9cd720b",
+      "observed_blob_sha": "8da085ce49cf210f0fc97edc81479747b91dc831"
     },
     "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/SKILL.md": {
-      "checked_at": "2026-10-22T22:41:07Z",
+      "checked_at": "2026-10-26T07:03:19Z",
       "first_observed_at": "2026-10-22T22:26:28Z",
-      "access": "not_modified",
-      "etag": "\"a4d0886f21581de3558e2bd2622b0ff05a8410783d44f655eb6ce9f4e38ee09b\"",
+      "access": "full",
+      "etag": "\"f0ab9600ea3e643323b5f70a8b4fe3ee51ab397ce3108e1dd1a90e5cdd1251d5\"",
       "last_modified": null,
-      "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a",
+      "sha256": "3435ed963b15a1b6447746ec8844ab2cd38d8d2e8ead3451937f42df01e408c4",
       "content_reviewed": true,
-      "observed_upstream_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
-      "observed_blob_sha": "433d92105c76671250013e0312d82cb413f552bc"
+      "observed_upstream_sha": "12af471f627f866411b4bd785b19646d3672784c",
+      "observed_blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6"
     },
     "https://raw.githubusercontent.com/Nutlope/hallmark/main/skills/hallmark/SKILL.md": {
-      "checked_at": "2026-10-22T22:41:07Z",
+      "checked_at": "2026-10-26T07:03:21Z",
       "first_observed_at": "2026-10-22T22:26:32Z",
       "access": "not_modified",
       "etag": "\"7101eb16153fd37f3026b3dcaf4045ee47ebf3e8b4bb4c9bb1eeb5b39671a7b9\"",
@@ -2203,19 +2212,19 @@
       "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174"
     },
     "https://karlkoch.me/writing": {
-      "checked_at": "2026-10-22T22:41:12Z",
+      "checked_at": "2026-10-26T07:03:22Z",
       "first_observed_at": "2026-10-22T22:26:40Z",
       "access": "full",
       "etag": null,
-      "last_modified": null,
+      "last_modified": "Mon, 26 Oct 2026 06:56:33 GMT",
       "sha256": "0ade7ba2dc463ae779b6f3a74d519766f7df50b7c23b4fee6e79201855403ffe",
       "content_reviewed": false
     },
     "https://world.hey.com/kostac": {
-      "checked_at": "2026-10-22T22:41:16Z",
+      "checked_at": "2026-10-26T07:03:25Z",
       "first_observed_at": "2026-10-22T22:26:45Z",
-      "access": "not_modified",
-      "etag": "W/\"42da74bab62fa0d21beae12864fe89c0\"",
+      "access": "full",
+      "etag": "W/\"f7718344983e5bfc12324ec71f38429d\"",
       "last_modified": null,
       "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
       "content_reviewed": false
@@ -2225,434 +2234,434 @@
     {
       "source_id": "A01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "B01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "B03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "D04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E16",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D02",
       "from": "2026-10-08T22:16:37Z",
-      "through": "2026-10-22T22:48:15Z",
+      "through": "2026-10-26T07:08:16Z",
       "reason": "Current overlap/discovery range not completely reviewed. Prior checkpoint is preserved.",
       "priority": "content_review"
     }
@@ -2666,15 +2675,13 @@
     "research_visuals_viewed": 2,
     "unreviewed_source_ranges": 62,
     "last_run": {
-      "run_id": "2026-W43",
-      "attempt": 2,
+      "run_id": "2026-W44",
       "attempted_monitoring_endpoints": 68,
       "attempted_registry_sources": 62,
-      "substantively_reviewed_registry_sources": 8,
-      "research_visuals_viewed": 4,
-      "budget_deferred_endpoints": 0,
-      "unreviewed_source_ranges": 62,
-      "note": "All monitoring endpoints requested; selected sections/snapshots of eight registered sources read. Full date-range/discovery coverage remains incomplete."
+      "substantively_reviewed_registry_sources": 6,
+      "primary_work_pages_read": 2,
+      "research_visuals_viewed": 3,
+      "unreviewed_source_ranges": 62
     }
   },
   "publication_verification_receipts": [
