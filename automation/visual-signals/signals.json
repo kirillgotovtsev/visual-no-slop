@@ -540,6 +540,62 @@
       "relevance_at": "2026-10-25",
       "relevance_kind": "dated_analysis_of_examples",
       "current_relevance_basis": "Dated comparative discussion on October 25; this dates discussion, not creation or recurrence of the pictured work."
+    },
+    {
+      "id": "E-C02-side-tab-2026W45",
+      "source_id": "C02",
+      "origin_url": "https://impeccable.style/slop/",
+      "url": "https://impeccable.style/antipattern-images/thick-border-cards.png",
+      "author_or_publisher": "Paul Bakaus / Impeccable",
+      "kind": "professional_analysis",
+      "medium": "teaching UI screenshot",
+      "access": "full",
+      "published_at": null,
+      "modified_at": null,
+      "first_observed_at": "2026-11-02T07:04:05Z",
+      "checked_at": "2026-11-02T07:08:49Z",
+      "original_work_date": null,
+      "visible_observation": "Four equal white rounded service panels in a two-column grid, each with a different saturated left stripe, emoji above a bold sans heading, muted paragraph and pale button. Smaller statistic panels repeat the stripe below. The stripe decorates unrelated services rather than identifying an alert state.",
+      "independent_origin_id": "pbakaus-impeccable-teaching-catalog",
+      "work_family": "impeccable-exaggerated-demo-side-tab",
+      "limitations": "Deliberately exaggerated teaching example from one author, with no established publication/work date. Not an independent current deployed work, prevalence estimate, or AI-authorship proof. Static screenshot only; interaction and motion not checked.",
+      "quote": null,
+      "visual_inspected": true,
+      "visual_inspected_at": "2026-11-02T07:04:05Z",
+      "visual_method": "view_image",
+      "visual_url": "https://impeccable.style/antipattern-images/thick-border-cards.png",
+      "visual_receipt": "Current cloud executor tools.view_image returned actual pixels; sha256 36dcba1e04b0b7d05fadfcf21656b69ed35f91895c21750c454f500482a890f8. Own observation: Four equal white rounded service panels in a two-column grid, each with a different saturated left stripe, emoji above a bold sans heading, muted paragraph and pale button. Smaller statistic panels repeat the stripe below. The stripe decorates unrelated services rather than identifying an alert state.",
+      "relevance_at": null,
+      "relevance_kind": null,
+      "current_relevance_basis": null
+    },
+    {
+      "id": "E-C02-metrics-2026W45",
+      "source_id": "C02",
+      "origin_url": "https://impeccable.style/slop/",
+      "url": "https://impeccable.style/antipattern-images/layout-templates.png",
+      "author_or_publisher": "Paul Bakaus / Impeccable",
+      "kind": "professional_analysis",
+      "medium": "teaching UI screenshot",
+      "access": "full",
+      "published_at": null,
+      "modified_at": null,
+      "first_observed_at": "2026-11-02T07:04:05Z",
+      "checked_at": "2026-11-02T07:08:49Z",
+      "original_work_date": null,
+      "visible_observation": "One large rounded blue-to-purple revenue panel above four equally styled saturated statistic panels. Oversized white numbers, small uppercase labels, translucent change badges, thin dividers and subsidiary figures repeat across blue, green, orange and pink surfaces. This demonstrates metric-card repetition; it is not a measured dataset or evidence of usage frequency.",
+      "independent_origin_id": "pbakaus-impeccable-teaching-catalog",
+      "work_family": "impeccable-exaggerated-demo-metrics",
+      "limitations": "Deliberately exaggerated teaching example from one author, with no established publication/work date. Not an independent current deployed work, prevalence estimate, or AI-authorship proof. Static screenshot only; interaction and motion not checked.",
+      "quote": null,
+      "visual_inspected": true,
+      "visual_inspected_at": "2026-11-02T07:04:05Z",
+      "visual_method": "view_image",
+      "visual_url": "https://impeccable.style/antipattern-images/layout-templates.png",
+      "visual_receipt": "Current cloud executor tools.view_image returned actual pixels; sha256 55bd52789fa1f195d1d787a557b1f7188577e27bf4291d5858bcfc9ea66befe4. Own observation: One large rounded blue-to-purple revenue panel above four equally styled saturated statistic panels. Oversized white numbers, small uppercase labels, translucent change badges, thin dividers and subsidiary figures repeat across blue, green, orange and pink surfaces. This demonstrates metric-card repetition; it is not a measured dataset or evidence of usage frequency.",
+      "relevance_at": null,
+      "relevance_kind": null,
+      "current_relevance_basis": null
     }
   ],
   "signals": [
@@ -591,15 +647,21 @@
       "context": "Ordinary panels styled like alerts without status meaning",
       "evidence_ids": [
         "E-D02-2026W43",
-        "E-C02-catalog-2026W43"
+        "E-C02-catalog-2026W43",
+        "E-C02-side-tab-2026W45"
       ],
-      "limitations": "Kosta's article is outside the current window, catalog image access failed, and two independent current works have not been viewed.",
-      "status_reason": "Kosta's article is outside the current window, catalog image access failed, and two independent current works have not been viewed.",
+      "limitations": "The side-stripe, rounded white panel, emoji/heading/body/button combination is now directly visible in one deliberately exaggerated Impeccable demonstration. Its work date is unknown; Kosta July 23 analysis is outside 90 days. Two independent current primary works remain missing.",
+      "status_reason": "The side-stripe, rounded white panel, emoji/heading/body/button combination is now directly visible in one deliberately exaggerated Impeccable demonstration. Its work date is unknown; Kosta July 23 analysis is outside 90 days. Two independent current primary works remain missing.",
       "history": [
         {
           "at": "2026-10-22T22:16:37Z",
           "status": "watchlist",
           "reason": "Kosta's article is outside the current window, catalog image access failed, and two independent current works have not been viewed."
+        },
+        {
+          "at": "2026-11-02T07:08:49Z",
+          "status": "watchlist",
+          "reason": "The side-stripe, rounded white panel, emoji/heading/body/button combination is now directly visible in one deliberately exaggerated Impeccable demonstration. Its work date is unknown; Kosta July 23 analysis is outside 90 days. Two independent current primary works remain missing."
         }
       ]
     }
