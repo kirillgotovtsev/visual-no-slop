@@ -14,6 +14,8 @@ JSON is UTF-8 with unique keys. IDs are unique ASCII letters/digits/hyphen/under
 
 Roles: primary visual example, professional_analysis, vendor_statement, scientific_paper, methodological_basis, historical_context. `static_baseline_conditional` checks versions without weekly theory summaries; `discovery_and_comparison` also checks registered author/publisher updates. Missing endpoint access is recorded honestly and remains pending. Weekly access status lives in state, never in the constant registry.
 
+`config.json` sets the monitoring request sublimit, the calendar-day baseline and Git snapshot cadences, and the per-run catch-up range and request allowances under `research`. These allowances count against the existing total budgets.
+
 ## Evidence and signals
 
 `signals.json` has schema_version, revision, evidence and signals. Revision has status (uninitialized/active), updated_at, review_after, reviewed_active_ids, optional included_active_ids and a concise coverage_note. included_active_ids selects at most 24 displayed records; additional confirmed entries remain structured. The renderer emits only the existing six consumer frontmatter keys and the displayed active entries.
@@ -34,6 +36,8 @@ The model must make this editorial assessment from visible material. Repeated or
 ## State and run receipts
 
 `state.json`: schema_version, last_completed_week, last_run_id, base_git_sha, input_sha256, completed_runs, incomplete_runs, sources, fetches, pending, coverage. Per-source state keeps last_check, last_successful_review_at, covered_through and unresolved ranges. Per-URL fetches retain ETag, Last-Modified, content SHA-256, observed upstream SHA, access and last checked time. Only reviewed ranges advance checkpoints. Static availability alone does not advance a dynamic discovery interval. Pending work is explicit and never marked read.
+
+Optional per-source `last_discovery_attempt_at` and `last_catchup_attempt_at` timestamps rotate the two work queues. They record attempts, including incomplete attempts, independently of successful coverage and HTTP checks. Pending ranges retain `source_id`, `from`, `through` and the reason for deferred work. A verified contiguous chunk can narrow the range. A reviewed recent slice beyond a gap is recorded in the run receipt and leaves the contiguous checkpoint and older boundary in place.
 
 Run JSON records run_id, executor, base SHA, start/end, research interval, budgets consumed, source receipts, visuals, candidates, editorial review, tests, pending work, content changes and publication intent/readback limits. Its companion Markdown is a short Russian report. The scheduler result records the commit and post-commit verification. No raw source HTML or media is published by default.
 

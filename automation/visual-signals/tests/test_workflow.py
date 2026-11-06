@@ -1,13 +1,16 @@
 """Synthetic fixtures test failure gates; they are not research observations."""
 import copy
 import datetime as dt
+import email.message
 import io
 import json
 import pathlib
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import urllib.error
+import urllib.response
 
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]/'scripts'))
 import workflow as w
@@ -154,8 +157,98 @@ class Network(unittest.TestCase):
     def test_deferred_endpoints_are_not_starved_by_registry_order(self):
         registry={'sources':[{'id':'A01','monitoring':[{'url':'https://example.org/recent'}]},{'id':'E16','monitoring':[{'url':'https://example.org/old'},{'url':'https://example.org/unseen'}]}]}
         state={'pending':[{'source_id':'A01'},{'source_id':'E16'}],'fetches':{'https://example.org/recent':{'checked_at':'2026-10-22T00:00:00Z'},'https://example.org/old':{'checked_at':'2026-10-01T00:00:00Z'}}}
-        result=net.monitoring_targets(registry,state)
+        result=net.monitoring_targets(registry,state,at=AT+dt.timedelta(days=28))
         self.assertEqual([x['url'].rsplit('/',1)[-1] for x in result],['unseen','old','recent'])
+
+    def test_pending_static_and_historical_pages_wait_while_live_discovery_runs(self):
+        points = [('A01', 'page'), ('B08', 'page'), ('D02', 'atom'), ('D03', 'page'), ('C02', 'git_file')]
+        registry = {'sources': [{'id': sid, 'monitoring': [{'url': 'https://example.org/'+sid, 'kind': kind}]}
+                                for sid, kind in points]}
+        state = {'pending': [{'source_id': sid} for sid, _ in points], 'fetches': {
+            'https://example.org/A01': {'checked_at': '2026-10-21T00:00:00Z', 'access': 'blocked'},
+            'https://example.org/B08': {'checked_at': '2026-10-21T00:00:00Z', 'access': 'full'},
+            'https://example.org/D02': {'checked_at': '2026-10-21T00:00:00Z', 'access': 'not_modified'},
+            'https://example.org/D03': {'checked_at': '2026-09-24T23:00:00Z', 'access': 'full'},
+        }}
+        targets = net.monitoring_targets(registry, state, AT)
+        self.assertEqual([(t['source_id'], t['conditional']) for t in targets], [('D02', False), ('D03', True)])
+
+    def test_live_discovery_fetches_a_body_even_with_old_validators(self):
+        headers = []
+
+        def not_modified(request, timeout):
+            headers.append({key.lower(): value for key, value in request.header_items()})
+            raise urllib.error.HTTPError(request.full_url, 304, 'fixture', {}, None)
+
+        previous = {'etag': 'fixture', 'last_modified': 'Wed, 21 Oct 2026 00:00:00 GMT'}
+        target = {'source_id': 'D02', 'url': 'https://example.org/atom'}
+        with tempfile.TemporaryDirectory() as directory:
+            for conditional in (False, True):
+                net.fetch(dict(target, conditional=conditional), previous, net.Budget(), pathlib.Path(directory),
+                          opener=not_modified)
+        self.assertNotIn('if-none-match', headers[0])
+        self.assertNotIn('if-modified-since', headers[0])
+        self.assertEqual(headers[1]['if-none-match'], previous['etag'])
+        self.assertEqual(headers[1]['if-modified-since'], previous['last_modified'])
+
+    def test_cli_reserves_requests_and_counts_failed_attempts_and_retries(self):
+        registry = {'sources': [
+            {'id': f'S{i:02}', 'monitoring': [{'url': f'https://example.org/{i}', 'kind': 'page'}]}
+            for i in range(40)]}
+        observed = []
+        fetch = net.fetch
+
+        def unavailable(request, timeout):
+            observed.append(request.full_url)
+            raise urllib.error.HTTPError(request.full_url, 503, 'fixture', {}, None)
+
+        def simulated_fetch(*args, **kwargs):
+            return fetch(*args, **kwargs, opener=unavailable, sleeper=lambda _: None)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            w.write(root/'registry.json', registry)
+            w.write(root/'state.json', {})
+            args = ['--registry', str(root/'registry.json'), '--state', str(root/'state.json'),
+                    '--output', str(root/'receipts.json'), '--temporary-directory', str(root/'retrieved'),
+                    '--used-monitoring-requests', '4']
+            with patch.object(net, 'fetch', side_effect=simulated_fetch), patch.object(net, 'now', return_value=AT), patch('sys.stdout', new=io.StringIO()):
+                net.main(args + ['--used-content-requests', '90'])
+                output = w.read(root/'receipts.json')
+                self.assertEqual(len(observed), 20)
+                self.assertEqual(output['monitoring_requests_used'], 24)
+                self.assertEqual(output['content_requests_used'], 110)
+                self.assertEqual(sum(r['attempts'] for r in output['receipts']), 20)
+                self.assertTrue(any(r['attempts'] > 1 for r in output['receipts']))
+                self.assertTrue(all(r['attempts'] > 0 and not r['content_reviewed'] for r in output['receipts']))
+                self.assertEqual(output['deferred_targets'], 40 - len(output['receipts']))
+                net.main(args + ['--used-content-requests', '119'])
+                self.assertEqual(len(observed), 21)
+                self.assertEqual(w.read(root/'receipts.json')['content_requests_used'], 120)
+                net.main(args + ['--used-content-requests', '4', '--started-at', '2026-10-22T21:15:00Z'])
+                self.assertEqual(len(observed), 21)
+                self.assertEqual(w.read(root/'receipts.json')['receipts'], [])
+
+    def test_redirects_share_the_same_request_budget(self):
+        def redirecting_server(handler, request):
+            headers = email.message.Message()
+            status = 200
+            if request.full_url.endswith('/start'):
+                headers['Location'] = 'https://example.org/end'
+                status = 302
+            response = urllib.response.addinfourl(io.BytesIO(b'fixture'), headers, request.full_url, status)
+            response.msg = 'fixture'
+            return response
+
+        target = {'source_id': 'D02', 'url': 'https://example.org/start'}
+        with tempfile.TemporaryDirectory() as directory, patch.object(urllib.request.HTTPSHandler, 'https_open', redirecting_server):
+            for cap, expected in [(1, 'error'), (2, 'full')]:
+                with self.subTest(cap=cap):
+                    budget = net.Budget(cap)
+                    result = net.fetch(target, {}, budget, pathlib.Path(directory))
+                    self.assertEqual(result['attempts'], cap)
+                    self.assertEqual(budget.used, cap)
+                    self.assertEqual(result['access'], expected)
     def test_budget_queue(self):
         b=net.Budget(1);b.take()
         with self.assertRaises(RuntimeError):b.take()
@@ -175,5 +268,89 @@ class Network(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             r=net.fetch({'source_id':'D01','url':'https://example.org/x'},{},net.Budget(),pathlib.Path(d),opener=fail,sleeper=lambda _:self.fail('must not sleep'))
         self.assertEqual(r['attempts'],1);self.assertEqual(r['retry_deferred_seconds'],600)
+
+class ResearchQueues(unittest.TestCase):
+    def setUp(self):
+        self.config = w.read(BASE/'config.json')
+        self.registry = {'sources': [
+            {'id': 'A01', 'weekly_role': 'static_baseline_conditional', 'monitoring': [{'kind': 'page'}]},
+            {'id': 'D02', 'weekly_role': 'discovery_and_comparison', 'monitoring': [{'kind': 'atom'}]},
+        ]}
+        self.gap = {'source_id': 'D02', 'from': '2026-06-01T00:00:00Z', 'through': '2026-10-19T00:00:00Z',
+                    'reason': 'Previously unreviewed range.'}
+        self.state = {'sources': {}, 'pending': [dict(self.gap)]}
+
+    def plan(self, at=AT):
+        return w.research_plan(self.config, self.state, self.registry, at)
+
+    def receipt(self, lane, interval, **overrides):
+        return dict({'source_id': interval['source_id'], 'lane': lane, 'checked_at': w.stamp(AT), 'access': 'full',
+                     'content_reviewed': True, 'range_review_complete': True, 'discovery_complete': True,
+                     'reviewed_from': interval['from'], 'reviewed_through': interval['through'],
+                     'review_scope': 'Synthetic review of the complete dated public index.'}, **overrides)
+
+    def record(self, *receipts):
+        return w.record_research(self.config, self.state, self.registry,
+                                 {'reviewed_through': w.stamp(AT), 'reviews': list(receipts)})
+
+    def test_fresh_discovery_does_not_erase_an_older_gap(self):
+        plan = self.plan()
+        fresh, catchup = plan['fresh_discovery'][0], plan['catch_up'][0]
+        self.assertEqual((fresh['from'], fresh['through']), ('2026-10-08T22:00:00Z', w.stamp(AT)))
+        self.assertEqual((catchup['from'], catchup['through']), (self.gap['from'], '2026-07-01T00:00:00Z'))
+        state = self.record(self.receipt('fresh_discovery', fresh))
+        self.assertIsNone(state['sources']['D02'].get('covered_through'))
+        self.assertEqual(state['sources']['D02']['last_discovery_attempt_at'], w.stamp(AT))
+        pending = {gap['source_id']: gap for gap in state['pending']}
+        self.assertEqual(pending['D02'], dict(self.gap, through=w.stamp(AT)))
+        self.assertEqual(pending['A01']['from'], w.stamp(AT - dt.timedelta(days=90)))
+
+    def test_complete_catchup_chunk_narrows_the_queue_and_retains_its_tail(self):
+        self.config['research']['catchup_sources_per_run'] = 1
+        catchup = self.plan()['catch_up'][0]
+        state = self.record(self.receipt('catch_up', catchup))
+        self.assertEqual(state['sources']['D02']['covered_through'], catchup['through'])
+        pending = next(gap for gap in state['pending'] if gap['source_id'] == 'D02')
+        self.assertEqual((pending['from'], pending['through']), (catchup['through'], w.stamp(AT)))
+        self.assertEqual(self.plan()['windows'][1]['from'], catchup['through'])
+        self.assertEqual(self.plan(AT + dt.timedelta(days=7))['catch_up'][0]['source_id'], 'D02')
+
+    def test_full_contiguous_fresh_review_closes_only_that_sources_range(self):
+        self.state['sources']['D02'] = {'covered_through': '2026-10-15T22:00:00Z'}
+        self.state['pending'][0]['from'] = '2026-10-01T22:00:00Z'
+        plan = self.plan()
+        fresh = plan['fresh_discovery'][0]
+        self.assertEqual(fresh, plan['windows'][1])
+        self.assertEqual([x['source_id'] for x in plan['catch_up']], ['A01'])
+        state = self.record(self.receipt('fresh_discovery', fresh))
+        self.assertEqual(state['sources']['D02']['covered_through'], w.stamp(AT))
+        self.assertEqual([gap['source_id'] for gap in state['pending']], ['A01'])
+
+    def test_incomplete_catchup_rotates_and_preserves_the_gap(self):
+        self.config['research']['catchup_sources_per_run'] = 1
+        catchup = self.plan()['catch_up'][0]
+        self.assertEqual(catchup['source_id'], 'D02')
+        state = self.record(self.receipt('catch_up', catchup, access='blocked', content_reviewed=False))
+        self.assertEqual(state['sources']['D02']['last_catchup_attempt_at'], w.stamp(AT))
+        self.assertIsNone(state['sources']['D02'].get('covered_through'))
+        self.assertEqual(self.plan(AT + dt.timedelta(days=7))['catch_up'][0]['source_id'], 'A01')
+        self.assertEqual(self.plan(AT + dt.timedelta(days=7))['windows'][1]['from'], self.gap['from'])
+
+    def test_range_requires_exact_bounds_substantive_review_and_discovery(self):
+        catchup = self.plan()['catch_up'][0]
+        for mismatch in [{'access': 'not_modified'}, {'content_reviewed': False}, {'discovery_complete': False},
+                         {'range_review_complete': False}, {'reviewed_from': '2026-06-02T00:00:00Z'}]:
+            with self.subTest(mismatch=mismatch):
+                state = copy.deepcopy(self.state)
+                self.assertFalse(w.checkpoint(state, 'D02', catchup, self.receipt('catch_up', catchup, **mismatch)))
+                self.assertIsNone(state['sources']['D02'].get('covered_through'))
+
+    def test_git_snapshot_cadence_uses_the_latest_exact_observation(self):
+        self.registry['sources'].append({'id': 'C02', 'weekly_role': 'discovery_and_comparison',
+                                         'monitoring': [{'kind': 'git_file'}]})
+        self.state['sources']['C02'] = {'upstream': {'checked_at': '2026-09-01T00:00:00Z'},
+                                       'last_git_observation': {'checked_at': '2026-10-09T23:59:00Z'}}
+        self.assertEqual(self.plan()['git_checks'], [])
+        self.assertEqual(self.plan(AT + dt.timedelta(days=1))['git_checks'], ['C02'])
 
 if __name__=='__main__':unittest.main()

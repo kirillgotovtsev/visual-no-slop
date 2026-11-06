@@ -15,6 +15,13 @@
     "signal_days": 90,
     "catchup_chunk_days": 30
   },
+  "research": {
+    "monitoring_requests": 24,
+    "baseline_recheck_days": 28,
+    "git_recheck_days": 14,
+    "catchup_sources_per_run": 3,
+    "catchup_content_requests": 12
+  },
   "budgets": {
     "minutes": 45,
     "content_requests": 120,

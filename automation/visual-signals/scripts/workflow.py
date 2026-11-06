@@ -18,6 +18,7 @@ TIME_RE = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
 SHA_RE = re.compile(r'^[0-9a-f]{40}$')
 RUN_RE = re.compile(r'^(?:setup-)?\d{4}-W\d{2}(?:-[a-z0-9-]+)?$')
 LOCAL_PATH_RE = re.compile('/' + r'Users/|/' + r'private/tmp/|/' + r'home/[^ /]+/')
+DISCOVERY_KINDS = {'rss', 'atom', 'author_index'}
 
 class Invalid(ValueError):
     pass
@@ -250,27 +251,139 @@ def render(data):
     return '\n'.join(lines)
 
 def windows(config, state, registry, at=None):
-    at=at or now(); out=[]
+    at = at or now()
+    freshness = config['freshness']
+    pending = {}
+    for gap in state.get('pending', []):
+        if gap.get('from'):
+            source_id = gap['source_id']
+            start = moment(gap['from'])
+            pending[source_id] = min(start, pending.get(source_id, start))
+
+    result = []
     for source in registry['sources']:
-        checkpoint=state.get('sources',{}).get(source['id'],{}).get('covered_through')
-        pending=[x for x in state.get('pending',[]) if x.get('source_id')==source['id'] and x.get('from')]
-        lower=min(moment(x['from']) for x in pending) if pending else moment(checkpoint)-dt.timedelta(days=config['freshness']['overlap_days']) if checkpoint else at-dt.timedelta(days=config['freshness']['context_days'])
-        upper=min(at,lower+dt.timedelta(days=config['freshness']['catchup_chunk_days'])) if checkpoint and at-moment(checkpoint)>dt.timedelta(days=config['freshness']['catchup_chunk_days']) else at
-        if pending:upper=min(at,lower+dt.timedelta(days=config['freshness']['catchup_chunk_days']))
-        out.append({'source_id':source['id'],'from':stamp(lower),'through':stamp(upper),'remainder_through':stamp(at) if upper<at else None,'role':source['weekly_role']})
-    return out
+        source_id = source['id']
+        covered = moment(state.get('sources', {}).get(source_id, {}).get('covered_through'), True)
+        if source_id in pending:
+            lower = pending[source_id]
+            if covered is not None:
+                lower = min(lower, covered)
+        elif covered is not None:
+            lower = covered - dt.timedelta(days=freshness['overlap_days'])
+        else:
+            lower = at - dt.timedelta(days=freshness['context_days'])
+        upper = min(at, lower + dt.timedelta(days=freshness['catchup_chunk_days']))
+        result.append({'source_id': source_id, 'from': stamp(lower), 'through': stamp(upper),
+                       'remainder_through': stamp(at) if upper < at else None, 'role': source['weekly_role']})
+    return result
+
+def research_plan(config, state, registry, at):
+    """Keep recent discovery runnable while older contiguous coverage is still pending."""
+    policy = config['research']
+    sources = state.get('sources', {})
+    intervals = windows(config, state, registry, at)
+    cutoff = stamp(at)
+    recent_start = stamp(at - dt.timedelta(days=config['freshness']['overlap_days']))
+    fresh, catch_up, git_checks = [], [], []
+    live = set()
+    for source, interval in zip(registry['sources'], intervals):
+        source_id = source['id']
+        kinds = {point['kind'] for point in source['monitoring']}
+        if kinds & DISCOVERY_KINDS:
+            live.add(source_id)
+        if source['weekly_role'] == 'discovery_and_comparison':
+            discovery = dict(interval)
+            if interval['remainder_through']:
+                discovery.update({'from': recent_start, 'through': cutoff, 'remainder_through': None})
+            fresh.append(discovery)
+        if source['weekly_role'] != 'discovery_and_comparison' or interval['remainder_through']:
+            catch_up.append(interval)
+        if 'git_file' in kinds:
+            entry = sources.get(source_id, {})
+            checked = entry.get('last_git_observation', {}).get('checked_at') or entry.get('upstream', {}).get('checked_at')
+            if not checked or (at.date() - moment(checked).date()).days >= policy['git_recheck_days']:
+                git_checks.append(source_id)
+
+    def discovery_order(interval):
+        source_id = interval['source_id']
+        attempted = sources.get(source_id, {}).get('last_discovery_attempt_at') or ''
+        return source_id not in live, attempted, source_id
+
+    def catchup_order(interval):
+        source_id = interval['source_id']
+        entry = sources.get(source_id, {})
+        attempted = entry.get('last_catchup_attempt_at') or ''
+        continuing = (attempted == entry.get('last_successful_review_at') and
+                      interval['from'] == entry.get('covered_through'))
+        return (not continuing, attempted, source_id not in live,
+                interval['role'] != 'discovery_and_comparison', interval['from'], source_id)
+
+    fresh.sort(key=discovery_order)
+    catch_up.sort(key=catchup_order)
+    return {'reviewed_through': cutoff, 'windows': intervals, 'fresh_discovery': fresh,
+            'catch_up': catch_up[:policy['catchup_sources_per_run']],
+            'catchup_content_requests': policy['catchup_content_requests'], 'git_checks': git_checks}
 
 def checkpoint(state, source_id, interval, receipt):
     """Fetch success alone never advances research coverage."""
-    entry=state.setdefault('sources',{}).setdefault(source_id,{})
-    entry['last_check']=receipt
-    if receipt.get('range_review_complete') is True and receipt.get('access') in ['full','not_modified'] and receipt.get('discovery_complete') is True:
-        previous=entry.get('covered_through')
-        end=interval['through']
-        require(not previous or moment(end)>=moment(previous), 'checkpoint cannot go backwards')
-        entry.update(covered_through=end,last_successful_review_at=receipt['checked_at'])
-        return True
-    return False
+    entry = state.setdefault('sources', {}).setdefault(source_id, {})
+    entry['last_check'] = receipt
+    if receipt.get('access') != 'full' or not all(receipt.get(flag) is True for flag in
+            ('content_reviewed', 'range_review_complete', 'discovery_complete')):
+        return False
+    start, end = interval['from'], interval['through']
+    if (receipt.get('reviewed_from'), receipt.get('reviewed_through')) != (start, end):
+        return False
+    previous = entry.get('covered_through')
+    if previous and start > previous:
+        return False
+    if any(gap.get('source_id') == source_id and gap.get('from') and gap['from'] < start
+           for gap in state.get('pending', [])):
+        return False
+    require(moment(start) <= moment(end) <= moment(receipt['checked_at']), 'invalid reviewed range')
+    text(receipt.get('review_scope'), 'receipt.review_scope')
+    entry.update(covered_through=max(previous or end, end), last_successful_review_at=receipt['checked_at'])
+    return True
+
+def record_research(config, state, registry, report):
+    """Reconcile only the scheduled windows, leaving skipped and partial ranges open."""
+    cutoff = report['reviewed_through']
+    at = moment(cutoff)
+    plan = research_plan(config, state, registry, at)
+    lanes = {'fresh_discovery': 'last_discovery_attempt_at', 'catch_up': 'last_catchup_attempt_at'}
+    scheduled = {(lane, interval['source_id']): interval for lane in lanes for interval in plan[lane]}
+    reviews = {}
+    for receipt in report['reviews']:
+        key = (receipt['lane'], receipt['source_id'])
+        require(key in scheduled and key not in reviews, 'unscheduled or duplicate review: ' + str(key))
+        require(moment(receipt['checked_at']) >= at, 'review predates the plan')
+        reviews[key] = receipt
+
+    advanced = set()
+    oldest = {interval['source_id']: interval for interval in plan['windows']}
+    for (lane, source_id), receipt in reviews.items():
+        entry = state.setdefault('sources', {}).setdefault(source_id, {})
+        field = lanes[lane]
+        entry[field] = max(entry.get(field) or '', receipt['checked_at'])
+        interval = scheduled[lane, source_id]
+        if interval == oldest[source_id] and checkpoint(state, source_id, interval, receipt):
+            advanced.add(source_id)
+
+    pending = {}
+    for gap in state.get('pending', []):
+        pending.setdefault(gap['source_id'], []).append(gap)
+    remaining = []
+    for source_id, interval in oldest.items():
+        prior = pending.pop(source_id, [])
+        through = max([cutoff, *(gap.get('through') or cutoff for gap in prior)])
+        lower = interval['through'] if source_id in advanced else interval['from']
+        if source_id in advanced and lower >= through:
+            continue
+        record = min(prior, key=lambda gap: gap.get('from') or interval['from'],
+                     default={'source_id': source_id, 'reason': 'Substantive range review remains pending.'})
+        remaining.append({**record, 'from': lower, 'through': through})
+    state['pending'] = remaining + [gap for gaps in pending.values() for gap in gaps]
+    return state
 
 def select_revision(previous, candidate, research_ok, visual_capable):
     """Failure never converts the last good instruction into an empty result."""
@@ -358,9 +471,10 @@ def verify_tree(plan, remote_tree):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action',choices=['validate','render','plan-windows','publication-plan','fingerprint'])
+    p.add_argument('action',choices=['validate','render','plan-windows','record-reviews','publication-plan','fingerprint'])
     p.add_argument('--root',type=pathlib.Path,default=ROOT)
     p.add_argument('--base');p.add_argument('--run-id');p.add_argument('--setup',action='store_true');p.add_argument('--output',type=pathlib.Path)
+    p.add_argument('--reviews',type=pathlib.Path)
     p.add_argument('--publication',action='store_true')
     a=p.parse_args(); root=a.root.resolve()
     c,s,d,state=[read(root/BASE/name) for name in ['config.json','sources.json','signals.json','state.json']]
@@ -370,7 +484,13 @@ def main():
     elif a.action=='render':
         validate(c,s,d,state,publication=a.publication)
         (root/CONSUMER).write_text(render(d));result={'rendered':CONSUMER}
-    elif a.action=='plan-windows':result={'run_id':week_id(),'action':run_action(state,week_id()),'windows':windows(c,state,s)}
+    elif a.action=='plan-windows':
+        at = now()
+        run_id = week_id(at)
+        result = {'run_id': run_id, 'action': run_action(state, run_id), **research_plan(c, state, s, at)}
+    elif a.action=='record-reviews':
+        require(a.reviews, '--reviews required')
+        result = record_research(c, state, s, read(a.reviews))
     elif a.action=='fingerprint':result=protected_hashes(root)
     else:
         require(a.base and a.run_id,'--base and --run-id required')
