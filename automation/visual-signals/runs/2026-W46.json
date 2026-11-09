@@ -1,0 +1,2138 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-W46",
+  "status": "partial",
+  "executor": "ChatGPT Work cloud",
+  "base_git_sha": "0aac54d0474f48dd1931592bc1240656a3d25ce0",
+  "started_at": "2026-11-09T07:00:33Z",
+  "reviewed_through": "2026-11-09T07:00:51Z",
+  "finished_research_at": "2026-11-09T07:10:33Z",
+  "input_sha256": {
+    "automation/visual-signals/RUNBOOK.md": "ef425ef404892d8f09eb001c7b926abe3e30db0a81fb3a00604a05e3c543b180",
+    "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
+    "automation/visual-signals/config.json": "ba7fc79dfaaefa3b68e2ea54c96bb9ea6966b66b9e9d70b189073aa475eb2225",
+    "automation/visual-signals/scripts/fetch_sources.py": "bda24d1b35d2ed4cd4b56112380e0f711f1ea5a87c3119ef4131a34d30cf7653",
+    "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
+    "automation/visual-signals/scripts/workflow.py": "ab5ccdef4548718e0053c01ce8490e15a8ad9174c98853702a714f869eb5b616",
+    "automation/visual-signals/sources.json": "a94d9603c945527e0f7a64d42879fe592c231805d1d100c4303e85cfa22c68c4",
+    "automation/visual-signals/tests/test_workflow.py": "dfae36cc9e92e736acc769bb2a6d2385dce0e0454c905641a8230abbad7ee005"
+  },
+  "research_windows": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D02",
+      "from": "2026-10-19T06:59:57Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "static_baseline_conditional"
+    }
+  ],
+  "fresh_discovery_queue": [
+    {
+      "source_id": "B07",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D02",
+      "from": "2026-10-19T06:59:57Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-09T07:00:51Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    }
+  ],
+  "catch_up_queue": [
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-09T07:00:51Z",
+      "role": "discovery_and_comparison"
+    }
+  ],
+  "research_reviews": [
+    {
+      "source_id": "B07",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-10-26T07:00:51Z",
+      "reviewed_through": "2026-11-09T07:00:51Z",
+      "review_scope": "Reviewed the public RSS and selected dated Sostav case texts: October round-up (Nov 2), GAGA Labs (Nov 6), and Alfa-Bank production (Oct 30). The RSS includes selected articles and is not the complete dated archive; only a still and a cover were viewed."
+    },
+    {
+      "source_id": "D01",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-10-26T07:00:51Z",
+      "reviewed_through": "2026-11-09T07:00:51Z",
+      "review_scope": "The author’s RSS full bodies and current index agree for the six items in this slice, dated Oct 27, Oct 30, Nov 3, Nov 5 (two), and Nov 6. Read/screened bodies; the Nov 3 generic-card description supplies no dated primary UI work and the Nov 5 type-scale post is about context and reading size. Its illustrated pavilion is not a UI screenshot. The older gap remains."
+    },
+    {
+      "source_id": "D02",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-10-19T06:59:57Z",
+      "reviewed_through": "2026-11-09T07:00:51Z",
+      "review_scope": "Checked every entry in the public Atom feed and matching author index (12 entries, no next page), including published and updated dates. The newest entry and update are Aug 31. No publications or revisions in the planned Oct 19–Nov 9 overlap; no eligible primary work to open."
+    },
+    {
+      "source_id": "B08",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-10-26T07:00:51Z",
+      "reviewed_through": "2026-11-09T07:00:51Z",
+      "review_scope": "Reviewed three Creative Bloq articles (Bound Oct 27, Levi’s Nov 4, e.l.f. Nov 6); followed to the creator site and brand pages. Looked at the actual Bound screenshot and two campaign stills. Targeted, not an exhaustive publisher archive review."
+    },
+    {
+      "source_id": "B11",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-10-26T07:00:51Z",
+      "reviewed_through": "2026-11-09T07:00:51Z",
+      "review_scope": "Read the November Devialet campaign submission and dated launch attribution. The public linked thumbnail timed out including two retries; visual content and the wider campaign index are not verified."
+    },
+    {
+      "source_id": "D01",
+      "lane": "catch_up",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Full RSS bodies with publication dates cross-checked against the paginated writing index for the period July 24–August 23. Eight in-window items screened: July 29 and 30; Aug 5, 6, 12, 13, 19, 20. Four weekly link roundups and four original articles; the July 30 CSS card is a didactic contrast with an existing design system and not a dated sample of a public product. The August essays cover motion instructions, context loading and a skills collection, not independent viewed product examples."
+    },
+    {
+      "source_id": "B07",
+      "lane": "catch_up",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Read creative/video archive pages 2–3 and two dated case texts (Ilim, Aug 17; VILKA/Biocodex, Aug 14). Archive covers selected video listings and is not the complete publisher archive. Actual motion and several relevant case works remain unreviewed; keep original boundary."
+    },
+    {
+      "source_id": "B01",
+      "lane": "catch_up",
+      "checked_at": "2026-11-09T07:09:17Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Screened public July/August archive pages, including July pages 4–5 and August pages 1–4. The July 24 page boundary overlaps an unchecked previous page; some August entries are excerpts. Aug 7 raccoon prototype describes a concrete rendering bug, not a confirmed repeated visual default. No complete review of relevant primary work; keep the boundary."
+    }
+  ],
+  "context_days": 90,
+  "budgets": {
+    "limits": {
+      "minutes": 45,
+      "content_requests": 120,
+      "search_queries": 24,
+      "visual_materials": 40,
+      "max_concurrent_requests": 3,
+      "temporary_error_retries": 2,
+      "github_service_requests": 160,
+      "publication_attempts": 2
+    },
+    "source_content_requests": 41,
+    "breakdown": {
+      "monitoring": 5,
+      "fresh": 24,
+      "catch_up": 12
+    },
+    "search_queries": 15,
+    "visual_materials": 7,
+    "github_service_conservative_estimate_including_restore_publish_readback": 65,
+    "max_concurrent_requests": 3,
+    "publication_attempts": 1
+  },
+  "search_queries": [
+    {
+      "q": "site:creativebloq.com AI generated advert campaign still November 2026 Creative Bloq",
+      "recency": 14
+    },
+    {
+      "q": "site:sostav.ru нейросеть реклама ролик ноябрь 2026",
+      "recency": 14
+    },
+    {
+      "q": "site:creativebloq.com web design AI landing page template November 2026",
+      "recency": 14
+    },
+    {
+      "q": "site:adsoftheworld.com campaigns AI generated domestic kitchen October November 2026",
+      "recency": 30
+    },
+    {
+      "q": "site:coca-colacompany.com 2026 November Holidays Are Coming Coca-Cola holiday campaign film press images",
+      "recency": 21
+    },
+    {
+      "q": "site:creativebloq.com November 2026 web design beige cream serif website branding landing page",
+      "recency": 20
+    },
+    {
+      "q": "site:nngroup.com 2026 October November AI generated interface cards design examples",
+      "recency": 21
+    },
+    {
+      "q": "site:creativebloq.com e.l.f. stop-motion Christmas November 6 Levi's stop-motion November 4 design ad",
+      "recency": 20
+    },
+    {
+      "q": "\"Made to Stand Out\" \"Apartment D\" e.l.f. November 2026 campaign images"
+    },
+    {
+      "q": "\"Let's Get Fuzzy\" Levi's Blinkink campaign project 2026"
+    },
+    {
+      "q": "\"Alive with Sound\" Devialet \"Bonjour Paris\" November 2026 Hadjar"
+    },
+    {
+      "q": "site:creativebloq.com \"This creative agency’s website\" \"Tumblr\" 2026"
+    },
+    {
+      "q": "site:creativebloq.com OR site:karlkoch.me 2026 \"terracotta\" \"serif\" website beige AI",
+      "recency": 90
+    },
+    {
+      "q": "site:creativebloq.com OR site:nngroup.com OR site:karlkoch.me AI interface \"left border\" \"cards\" screenshot 2026",
+      "recency": 90
+    },
+    {
+      "q": "site:sostav.ru OR site:creativebloq.com 2026 AI advert \"kitchen\" family synthetic generated October November",
+      "recency": 45
+    }
+  ],
+  "coverage": {
+    "run_id": "2026-W46",
+    "targets": 5,
+    "attempted_targets": 5,
+    "deferred_targets": 0,
+    "monitoring_requests_used": 5,
+    "not_due_registry_endpoints": 63,
+    "substantively_reviewed_source_ids": [
+      "B01",
+      "B07",
+      "B08",
+      "B11",
+      "D01",
+      "D02"
+    ],
+    "substantively_reviewed_registry_sources": 6,
+    "primary_work_families_viewed": 4,
+    "research_visuals_viewed": 7,
+    "unreviewed_source_ranges": 61,
+    "previous_pending_count": 61,
+    "narrowed_sources": [
+      "D01"
+    ],
+    "fully_reviewed_current_overlap": [
+      "D02"
+    ]
+  },
+  "source_receipts": [
+    {
+      "source_id": "B07",
+      "url": "https://www.sostav.ru/rss",
+      "checked_at": "2026-11-09T07:00:58Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/rss",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "application/rss+xml; charset=utf-8",
+      "sha256": "273bfb0fbdb1d4e4e728a4be90bf115df82b8fda8bd313bbd72db95d574900ca",
+      "changed": true,
+      "review_scope": "Public feed or index dated entries examined; range decisions are in separate substantive receipts."
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/rss.xml",
+      "checked_at": "2026-11-09T07:00:58Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/rss.xml",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:00:48 GMT",
+      "content_type": "application/xml; charset=utf-8",
+      "sha256": "4049b22b9478411f84127af8341e178739f58aa605c0d36303358d91e76ea468",
+      "changed": true,
+      "review_scope": "Public feed or index dated entries examined; range decisions are in separate substantive receipts."
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/writing",
+      "checked_at": "2026-11-09T07:00:58Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:40Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "fe739a2dc0c823d465a06afcaa18f7581816b65eecfa7b5752848523d07ba191",
+      "changed": true,
+      "review_scope": "Public feed or index dated entries examined; range decisions are in separate substantive receipts."
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac",
+      "checked_at": "2026-11-09T07:01:04Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:45Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac",
+      "etag": "W/\"a13beaf6e1cd04798baef85276510585\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
+      "changed": false,
+      "review_scope": "Public feed or index dated entries examined; range decisions are in separate substantive receipts."
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac/feed.atom",
+      "checked_at": "2026-11-09T07:01:05Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac/feed.atom",
+      "etag": "W/\"4fd76423cdd295b65b0a85ef48989993\"",
+      "last_modified": null,
+      "content_type": "application/atom+xml; charset=utf-8",
+      "sha256": "02f28a215be617ee0157556d1500119b6073e322ab8f6051f051753e10e7a5d4",
+      "changed": false,
+      "review_scope": "Public feed or index dated entries examined; range decisions are in separate substantive receipts."
+    }
+  ],
+  "fresh_retrieval_receipts": [
+    {
+      "source_id": "devialet",
+      "url": "https://www.adsoftheworld.com/campaigns/alive-with-sound-6f43aaa3-f63b-4f3b-aa45-784acfc66e6d",
+      "checked_at": "2026-11-09T07:01:50Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:50Z",
+      "http_status": 200,
+      "final_url": "https://www.adsoftheworld.com/campaigns/alive-with-sound-6f43aaa3-f63b-4f3b-aa45-784acfc66e6d",
+      "etag": "W/\"eef3fd6d3dc7f8336228dcd66a087214\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "eef3fd6d3dc7f8336228dcd66a087214d6e675ef5b9614a690040a113d503f5a",
+      "changed": true
+    },
+    {
+      "source_id": "gaga",
+      "url": "https://www.sostav.ru/publication/giper-lenta-otpravila-gusya-gulyat-po-luzham-v-reklame-novoj-stm-gaga-labs-88339.html",
+      "checked_at": "2026-11-09T07:01:50Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:50Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/giper-lenta-otpravila-gusya-gulyat-po-luzham-v-reklame-novoj-stm-gaga-labs-88339.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "238c6b9d358e516513b807670831e610917efabafa05c52efc7f99e4a11fb519",
+      "changed": true
+    },
+    {
+      "source_id": "alfa",
+      "url": "https://www.sostav.ru/publication/kak-alfa-bank-snyal-manifest-88172.html",
+      "checked_at": "2026-11-09T07:01:50Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:50Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/kak-alfa-bank-snyal-manifest-88172.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e23895426fe8b609ce66f0ae9d79af403b90f67afed3b8b16b0efa778bfbfc8d",
+      "changed": true
+    },
+    {
+      "source_id": "october",
+      "url": "https://www.sostav.ru/publication/352352153-88019.html",
+      "checked_at": "2026-11-09T07:01:56Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:56Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/352352153-88019.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e559dbc80469dd5113a2795cd298eb50a5de1661e6ea15d092d7b4779ebf2f58",
+      "changed": true
+    },
+    {
+      "source_id": "koch-type",
+      "url": "https://karlkoch.me/writing/on-borrowing-apples-type-scale",
+      "checked_at": "2026-11-09T07:01:56Z",
+      "access": "full",
+      "attempts": 2,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:56Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing/on-borrowing-apples-type-scale/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html",
+      "sha256": "fbea4bc9547cf4a7cb86d3d7bce76dd9056faacb2779c021f252bddcb028759b",
+      "changed": true
+    },
+    {
+      "source_id": "koch-prompt",
+      "url": "https://karlkoch.me/writing/the-work-before-the-prompt",
+      "checked_at": "2026-11-09T07:01:57Z",
+      "access": "full",
+      "attempts": 2,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:01:57Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing/the-work-before-the-prompt/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html",
+      "sha256": "f1a71ee1397c4dd13be4273cb2e464f11afbe7e4f745b441fff2664a23294a38",
+      "changed": true
+    },
+    {
+      "source_id": "gaga-img",
+      "url": "https://cdn.sostav.ru/images/news/2026/11/06/mnzzx3cp_md.jpg",
+      "checked_at": "2026-11-09T07:02:28Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:02:28Z",
+      "http_status": 200,
+      "final_url": "https://cdn.sostav.ru/images/news/2026/11/06/mnzzx3cp_md.jpg",
+      "etag": "\"6aed9fa5-7129f\"",
+      "last_modified": "Fri, 06 Nov 2026 09:36:37 GMT",
+      "content_type": "image/jpeg",
+      "sha256": "f2d9fe5483ff7ea37f0d06d3d0fbb11095ecc076bf2d60975412e5ff7c7cf09f",
+      "changed": true
+    },
+    {
+      "source_id": "alfa-img",
+      "url": "https://www.sostav.ru/images/news/2026/10/30/preview/88172_social.jpg?rnd=133264",
+      "checked_at": "2026-11-09T07:02:28Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:02:28Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/images/news/2026/10/30/preview/88172_social.jpg?rnd=133264",
+      "etag": "\"6ae4aa3b-6fa26\"",
+      "last_modified": "Fri, 30 Oct 2026 14:31:23 GMT",
+      "content_type": "image/jpeg",
+      "sha256": "65235861383446a2135ad3ce09005f3adefa777ac1d996fb09aa2d8e6375392c",
+      "changed": true
+    },
+    {
+      "source_id": "devialet-img",
+      "url": "https://vumbnail.com/1242396599.jpg",
+      "checked_at": "2026-11-09T07:02:28Z",
+      "access": "error",
+      "attempts": 3,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:02:28Z",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "source_id": "koch-img",
+      "url": "https://karlkoch.me/images/writing/on-borrowing-apples-type-scale-e76082e401de.webp",
+      "checked_at": "2026-11-09T07:02:36Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:02:36Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/images/writing/on-borrowing-apples-type-scale-e76082e401de.webp",
+      "etag": "\"8a64ff616456ca3e0ffbd546eef627cd\"",
+      "last_modified": null,
+      "content_type": "image/webp",
+      "sha256": "e76082e401decd97dfbc1e3c563af39053b00beb99d226c606de8f4f7eab46e7",
+      "changed": true
+    },
+    {
+      "source_id": "levis",
+      "url": "https://www.levistrauss.com/2026/11/02/levis-holiday-2026/",
+      "checked_at": "2026-11-09T07:05:00Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:00Z",
+      "http_status": 200,
+      "final_url": "https://www.levistrauss.com/2026/11/02/levis-holiday-2026/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "46831b0069038944aaed61f22af43ae6dea042b6d42bc8cde517ce960b6fc4b7",
+      "changed": true
+    },
+    {
+      "source_id": "elf",
+      "url": "https://www.elfbeauty.com/articles/-e-l-f-made-to-stand-out-e-l-f-creates-handcrafted-holiday-campaign-to-celebrate-self-expression-individuality-and-inclusivity",
+      "checked_at": "2026-11-09T07:05:00Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:00Z",
+      "http_status": 200,
+      "final_url": "https://www.elfbeauty.com/articles/-e-l-f-made-to-stand-out-e-l-f-creates-handcrafted-holiday-campaign-to-celebrate-self-expression-individuality-and-inclusivity",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "7dd58600e809826aad4a91f7bd904ccabdd46057b6e2bcadb5bf7dcd38d265ef",
+      "changed": true
+    },
+    {
+      "source_id": "cb-levis",
+      "url": "https://www.creativebloq.com/news/levis-stop-motion-masterpiece-is-a-lesson-in-christmas-advertising",
+      "checked_at": "2026-11-09T07:05:00Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:00Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/news/levis-stop-motion-masterpiece-is-a-lesson-in-christmas-advertising",
+      "etag": null,
+      "last_modified": "Sun, 08 Nov 2026 15:01:10 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "67e2c58dc4ad6c7beeb3dbfb8bf87bc6b4f81e03f9c92f3e874f9d81a1263ad4",
+      "changed": true
+    },
+    {
+      "source_id": "cb-elf",
+      "url": "https://www.creativebloq.com/features/e-l-f-s-stop-motion-christmas-ad-is-a-win-for-human-creativity",
+      "checked_at": "2026-11-09T07:05:07Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:07Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/features/e-l-f-s-stop-motion-christmas-ad-is-a-win-for-human-creativity",
+      "etag": null,
+      "last_modified": "Sun, 08 Nov 2026 12:02:16 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "2d10b70cd4ecdd75aaff7e54846a9706fa3137fc7ad3b2f70c13242d6837c73c",
+      "changed": true
+    },
+    {
+      "source_id": "cb-tumblr",
+      "url": "https://www.creativebloq.com/news/this-creative-agencys-website-is-giving-me-tumblr-2000s-vibes-and-im-here-for-it",
+      "checked_at": "2026-11-09T07:05:08Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:08Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/news/this-creative-agencys-website-is-giving-me-tumblr-2000s-vibes-and-im-here-for-it",
+      "etag": null,
+      "last_modified": "Sun, 08 Nov 2026 12:10:43 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "81aa42a55b3257b1252eef94d90f762f0552735d2ee0d929ba9a614ebd1564c7",
+      "changed": true
+    },
+    {
+      "source_id": "levis-img",
+      "url": "https://www.levistrauss.com/wp-content/uploads/2026/10/261102_Holiday_Hero.jpg",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:21Z",
+      "http_status": 200,
+      "final_url": "https://www.levistrauss.com/wp-content/uploads/2026/10/261102_Holiday_Hero.jpg",
+      "etag": null,
+      "last_modified": "Thu, 29 Oct 2026 22:54:14 GMT",
+      "content_type": "image/jpeg",
+      "sha256": "9fba43d9164af046933882e13c99c848300736105e5aababb410113d786e6699",
+      "changed": true
+    },
+    {
+      "source_id": "elf-img",
+      "url": "https://www.elfbeauty.com/cms-media/f/1022076/1920x1080/7920168e3d/thumbnail-opt-1-clean.jpg/m/3840x2160",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:21Z",
+      "http_status": 200,
+      "final_url": "https://www.elfbeauty.com/cms-media/f/1022076/1920x1080/7920168e3d/thumbnail-opt-1-clean.jpg/m/3840x2160",
+      "etag": "\"1443fa75511ab30c7be31e627972c3c4d02d4fd4\"",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "8bbeba30e6f5bf0ea89e7274882c83f7201978786ec17965ff4a1ee2b94cd200",
+      "changed": true
+    },
+    {
+      "source_id": "bound-img",
+      "url": "https://cdn.mos.cms.futurecdn.net/Joo62AgK8B8wqppc4mwDhj-2552-80.png",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:21Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/Joo62AgK8B8wqppc4mwDhj-2552-80.png",
+      "etag": "d0a4b99f348bb959bb1f78ef4a87b0b7",
+      "last_modified": null,
+      "content_type": "image/png",
+      "sha256": "a5f469c108c5472e868d89fe7382d9eb29d77fd9eedfc35db4514ccb752f28f4",
+      "changed": true
+    },
+    {
+      "source_id": "bound",
+      "url": "https://boundagency.com/",
+      "checked_at": "2026-11-09T07:05:28Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:28Z",
+      "http_status": 200,
+      "final_url": "https://boundagency.com/",
+      "etag": "\"1bf0ffdztecedo\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "53c8813b5f74d2c838e96938e2e0cd3031e94a0eded41ff3dab32d61bac04216",
+      "changed": true
+    },
+    {
+      "source_id": "levis-film-img",
+      "url": "https://cdn.mos.cms.futurecdn.net/tzkmk86YsUjWBZ2j89Kex3-1920-80.jpg",
+      "checked_at": "2026-11-09T07:05:53Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:05:53Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/tzkmk86YsUjWBZ2j89Kex3-1920-80.jpg",
+      "etag": "6228cd3ac2439b5095052ab847e09564",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "1caa3c04b76238db68b7f07b43066a971a9f9293693bfb97d508fe389e8ba3e1",
+      "changed": true
+    }
+  ],
+  "catchup_retrieval_receipts": [
+    {
+      "source_id": "b01-july",
+      "url": "https://simonwillison.net/2026/Jul/",
+      "checked_at": "2026-11-09T07:03:30Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:03:30Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Jul/",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:03:36 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "b819756794db815a4594aa2803a4c2bce66afbfa141421947f4b7a5865d5b389",
+      "changed": true
+    },
+    {
+      "source_id": "b01-aug",
+      "url": "https://simonwillison.net/2026/Aug/",
+      "checked_at": "2026-11-09T07:03:30Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:03:30Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Aug/",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:03:36 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "8d63d84c4e2cc316076e550cabb1e68c7e5cab497056c16ed87b32742329a4f7",
+      "changed": true
+    },
+    {
+      "source_id": "b07-archive3",
+      "url": "https://www.sostav.ru/news/creative/video?page=3",
+      "checked_at": "2026-11-09T07:03:30Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:03:30Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/news/creative/video?page=3",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "fde8a354ed5c7c2df394a0d0cdc31c02d3358e7d9d3624e50f4fdb6696765297",
+      "changed": true
+    },
+    {
+      "source_id": "d01-archive",
+      "url": "https://karlkoch.me/writing?page=2",
+      "checked_at": "2026-11-09T07:03:36Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:03:36Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing?page=2",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "7738ca2b45fec84032d1f5535fd3324fa6bfbfdfbceae3071db32beddd39c7c6",
+      "changed": true
+    },
+    {
+      "source_id": "b01-july4",
+      "url": "https://simonwillison.net/2026/Jul/?page=4",
+      "checked_at": "2026-11-09T07:04:09Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:09Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Jul/?page=4",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:04:16 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "fafd806fc92b4855c86b0ab0e48d0e4004902f875d3f207c275c76db65f695e1",
+      "changed": true
+    },
+    {
+      "source_id": "b01-july5",
+      "url": "https://simonwillison.net/2026/Jul/?page=5",
+      "checked_at": "2026-11-09T07:04:09Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:09Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Jul/?page=5",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:04:15 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "6a66a0d69da8fbc0e32071c84c00bed3e263ab7d88c838a672b4516282e0137a",
+      "changed": true
+    },
+    {
+      "source_id": "b01-aug2",
+      "url": "https://simonwillison.net/2026/Aug/?page=2",
+      "checked_at": "2026-11-09T07:04:09Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:09Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Aug/?page=2",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:04:16 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "f4de6ec543f98c5ba9aed326625fd4fe27ce301239baa43328ec76e60d8e34d7",
+      "changed": true
+    },
+    {
+      "source_id": "b01-aug3",
+      "url": "https://simonwillison.net/2026/Aug/?page=3",
+      "checked_at": "2026-11-09T07:04:16Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:16Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Aug/?page=3",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:04:22 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "f3a08e35563a493e0de015edf5b4caa468e8fae1d451f800d5a744109fb00900",
+      "changed": true
+    },
+    {
+      "source_id": "b01-aug4",
+      "url": "https://simonwillison.net/2026/Aug/?page=4",
+      "checked_at": "2026-11-09T07:04:16Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:16Z",
+      "http_status": 200,
+      "final_url": "https://simonwillison.net/2026/Aug/?page=4",
+      "etag": null,
+      "last_modified": "Mon, 09 Nov 2026 07:04:22 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "5197d31de34b15b1be36e73e9ca41c3bc2df061f8d772bf9805345405a78728b",
+      "changed": true
+    },
+    {
+      "source_id": "b07-archive2",
+      "url": "https://www.sostav.ru/news/creative/video?page=2",
+      "checked_at": "2026-11-09T07:04:16Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:16Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/news/creative/video?page=2",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "659b49219cd3db8550c08667e4fefdc037cdf00cf67237af766bc6796b90cac3",
+      "changed": true
+    },
+    {
+      "source_id": "b07-ilim",
+      "url": "https://www.sostav.ru/publication/2-bolshie-dela-nachinayutsya-s-lista-kak-ilim-razvivaet-brend-ofisnoj-bumagi-86158.html",
+      "checked_at": "2026-11-09T07:04:22Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:22Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/2-bolshie-dela-nachinayutsya-s-lista-kak-ilim-razvivaet-brend-ofisnoj-bumagi-86158.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "d0d54a2c11f3a3c166c47946dcf1bd857d17caa8d1e127f3f47a1223010e239b",
+      "changed": true
+    },
+    {
+      "source_id": "b07-pharma",
+      "url": "https://www.sostav.ru/publication/farm-rolik-kotoryj-khajpanul-na-ii-kak-obygrat-delikatnuyu-problemu-i-zatsepit-tsa-86081.html",
+      "checked_at": "2026-11-09T07:04:22Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:04:22Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/farm-rolik-kotoryj-khajpanul-na-ii-kak-obygrat-delikatnuyu-problemu-i-zatsepit-tsa-86081.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "610d1f28c8c8fe00be55d456025e19313bcc67aad4c2c9816b05cddc14137030",
+      "changed": true
+    }
+  ],
+  "visuals": [
+    {
+      "label": "gaga-img",
+      "url": "https://cdn.sostav.ru/images/news/2026/11/06/mnzzx3cp_md.jpg",
+      "checked_at": "2026-11-09T07:02:28Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:03:13Z",
+      "visual_method": "view_image",
+      "sha256": "f2d9fe5483ff7ea37f0d06d3d0fbb11095ecc076bf2d60975412e5ff7c7cf09f",
+      "visible_observation": "A black goose mascot wears a hat and transparent raincoat under a saturated yellow umbrella. Backlit drops and out-of-focus street lights frame the upturned beak. The recurring yellow reinforces the wet-weather footwear premise; the shot does not depict a human domestic scene."
+    },
+    {
+      "label": "alfa-img",
+      "url": "https://www.sostav.ru/images/news/2026/10/30/preview/88172_social.jpg?rnd=133264",
+      "checked_at": "2026-11-09T07:02:28Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:03:13Z",
+      "visual_method": "view_image",
+      "sha256": "65235861383446a2135ad3ce09005f3adefa777ac1d996fb09aa2d8e6375392c",
+      "visible_observation": "Editorial cover with white Cyrillic headline on a darkened behind-the-scenes photograph. A monitor displays suspended colored strips; stands and cables remain visible. This is the publisher cover, not a film frame."
+    },
+    {
+      "label": "koch-img",
+      "url": "https://karlkoch.me/images/writing/on-borrowing-apples-type-scale-e76082e401de.webp",
+      "checked_at": "2026-11-09T07:02:36Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:06:56Z",
+      "visual_method": "view_image",
+      "sha256": "e76082e401decd97dfbc1e3c563af39053b00beb99d226c606de8f4f7eab46e7",
+      "visible_observation": "A perspective drawing of an open reading pavilion sets a standing lectern beside a seated desk and open book. The image illustrates two reading contexts and does not show the website type scale."
+    },
+    {
+      "label": "levis-img",
+      "url": "https://www.levistrauss.com/wp-content/uploads/2026/10/261102_Holiday_Hero.jpg",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:06:56Z",
+      "visual_method": "view_image",
+      "sha256": "9fba43d9164af046933882e13c99c848300736105e5aababb410113d786e6699",
+      "visible_observation": "The brand hero is a two-row grid of portraits against alternating red, pink, green and blue backgrounds. Ribbed knit caps, thick scarves and shaggy cushions foreground the collection texture. This is campaign photography, not a stop-motion frame."
+    },
+    {
+      "label": "levis-film-img",
+      "url": "https://cdn.mos.cms.futurecdn.net/tzkmk86YsUjWBZ2j89Kex3-1920-80.jpg",
+      "checked_at": "2026-11-09T07:05:53Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:06:56Z",
+      "visual_method": "view_image",
+      "sha256": "1caa3c04b76238db68b7f07b43066a971a9f9293693bfb97d508fe389e8ba3e1",
+      "visible_observation": "The left portion shows the white shaggy yeti in a red sweater beside puppets in a wood-paneled cabin, with warm lamps, small colored lights and a textured rug. The right portion is a separate behind-the-scenes view of a miniature snowy cabin, trees and studio lighting. The sweater and fur textures carry the campaign idea."
+    },
+    {
+      "label": "elf-img",
+      "url": "https://www.elfbeauty.com/cms-media/f/1022076/1920x1080/7920168e3d/thumbnail-opt-1-clean.jpg/m/3840x2160",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:06:56Z",
+      "visual_method": "view_image",
+      "sha256": "8bbeba30e6f5bf0ea89e7274882c83f7201978786ec17965ff4a1ee2b94cd200",
+      "visible_observation": "Three puppets fill a doorway against deep blue. Orange yarn buns, yellow braids, red earmuffs and contrasting knit clothes make the figures distinct; the miniature turquoise e.l.f. bottle is visible beside the camera prop. The shared material vocabulary supports character differentiation."
+    },
+    {
+      "label": "bound-img",
+      "url": "https://cdn.mos.cms.futurecdn.net/Joo62AgK8B8wqppc4mwDhj-2552-80.png",
+      "checked_at": "2026-11-09T07:05:21Z",
+      "access": "full",
+      "visual_inspected_at": "2026-11-09T07:06:56Z",
+      "visual_method": "view_image",
+      "sha256": "a5f469c108c5472e868d89fe7382d9eb29d77fd9eedfc35db4514ccb752f28f4",
+      "visible_observation": "A pale lavender field frames a central collage of Dolly Parton and Tim Curry with a white notification overlay, hand-drawn pictograms, dark-outlined peach buttons and a cream footer. The handwritten logo and separate italic footer links do not form a high-contrast serif hero on cream with a clay accent."
+    }
+  ],
+  "new_evidence_ids": [
+    "E-B07-gaga-2026W46",
+    "E-B08-levis-2026W46",
+    "E-B08-elf-2026W46",
+    "E-B08-bound-2026W46"
+  ],
+  "editorial_review": {
+    "active_added": 0,
+    "active_changed": 0,
+    "active_retired": 0,
+    "watchlist_count": 3,
+    "watchlist_changed": 0,
+    "research_evidence_added": 4,
+    "decision": "No admission: recency and independence do not substitute for a repeated concrete combination functioning as a default.",
+    "independence": "GAGA/Lenta, Levi’s/Blinkink, e.l.f./Apartment D and Bound are distinct origins and families. Retail hero and film still share the Levi’s campaign; the two Creative Bloq articles are discovery routes, not additional origin counts.",
+    "counterevidence": "The e.l.f. and Levi’s stills deliberately tie visible fibers, color and character materials to different briefs; holiday stop-motion and saturated accents are conventions. The Bound screenshot uses pink/cream in subordinate roles and collage as hierarchy; not a generic cream-serif-clay hero.",
+    "watchlist_decisions": {
+      "VNS-W001": "No second independent recent domestic-ad work with the three features. GAGA is a rainwear mascot; independent toy characters from the seasonal work are intentionally stylized. No film movement assessed.",
+      "VNS-W002": "Targeted query yielded older analyses and generic font discussion. Bound has a creamy footer and contrasting letter styles, but not the target role combination.",
+      "VNS-W003": "Koch’s July card text concerns white fill, shadow and radius without side accents. November prose has no inspected product witness. No second dated example from an independent family."
+    }
+  },
+  "access_limits": [
+    "Devialet still timed out after two retries. Its campaign text was read; no viewed Devialet image claimed.",
+    "Sostav video category and Willison archive had gaps or excerpts; neither checkpoint advanced. Motion, interactive states, and population frequency were not established.",
+    "C01–C04 were not due for exact Git checks; no new evidence justified an early one."
+  ],
+  "pending": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-09T07:00:51Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    }
+  ],
+  "tests": [
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py render --publication",
+      "exit_code": 0
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py validate --publication",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest discover -s automation/visual-signals/tests -v",
+      "exit_code": 0,
+      "passed": 53
+    },
+    {
+      "command": "node --test scripts/test_current_signals.mjs",
+      "exit_code": 0,
+      "passed": 18
+    },
+    {
+      "command": "python scripts/check_package.py",
+      "exit_code": 0
+    }
+  ],
+  "preserved_consumer": {
+    "sha256": "4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543",
+    "updated_at": "2026-10-22T22:16:37Z",
+    "review_after": "2026-11-12T22:16:37Z"
+  },
+  "publication": {
+    "intent": "One compare-and-swap commit; preserve consumer bytes and dates.",
+    "readback": "Pending post-commit.",
+    "consumer_probe": "Pending post-commit; existing verifier, one invocation."
+  }
+}
