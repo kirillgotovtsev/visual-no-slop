@@ -353,4 +353,66 @@ class ResearchQueues(unittest.TestCase):
         self.assertEqual(self.plan()['git_checks'], [])
         self.assertEqual(self.plan(AT + dt.timedelta(days=1))['git_checks'], ['C02'])
 
+class UpdateStatus(unittest.TestCase):
+    def setUp(self):
+        self.c, self.registry, self.data = fixture()
+        self.report = {'run_id': '2026-W43', 'status': 'partial',
+                       'started_at': '2026-10-22T21:00:00Z',
+                       'finished_research_at': '2026-10-22T21:59:00Z'}
+        self.state = {'pending': [{'source_id': 'D01'}], 'completed_runs': [],
+                      'update_status': {'dictionary_last_changed_at': '2026-10-22T21:00:00Z',
+                                        'dictionary_content_sha256': w.dictionary_digest(self.data)}}
+    def record(self):
+        return w.record_status(self.state, self.data, self.report, at=AT)['update_status']
+    def test_partial_records_check_without_renewal_or_coverage_change(self):
+        before = copy.deepcopy(self.data)
+        self.assertEqual(self.record()['last_checked_at'], self.report['finished_research_at'])
+        self.assertEqual(self.state['pending'], [{'source_id': 'D01'}])
+        self.assertEqual(self.state['completed_runs'], [])
+        self.assertEqual(self.data, before)
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:00:00Z')
+    def test_failed_attempt_and_replay(self):
+        self.report['status'] = 'failed'
+        self.record()
+        before = copy.deepcopy(self.state)
+        self.record()
+        self.assertEqual(self.state, before)
+    def test_metadata_only_renewal_is_not_content_change(self):
+        self.data['revision']['updated_at'] = '2026-10-22T21:30:00Z'
+        self.data['revision']['review_after'] = '2026-11-02T21:00:00Z'
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:00:00Z')
+    def test_body_change_tracks_reviewed_revision(self):
+        self.data['revision']['coverage_note'] += ' Changed coverage explanation.'
+        self.data['revision']['updated_at'] = '2026-10-22T21:30:00Z'
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:30:00Z')
+    def test_body_change_without_new_review_rejected(self):
+        self.data['revision']['coverage_note'] += ' Changed.'
+        with self.assertRaises(w.Invalid): self.record()
+    def test_old_freshness_renewal_cannot_date_new_body_change(self):
+        self.data['revision']['updated_at'] = '2026-10-22T21:10:00Z'
+        self.report['started_at'] = '2026-10-22T21:20:00Z'
+        self.data['revision']['coverage_note'] += ' Changed later.'
+        with self.assertRaises(w.Invalid): self.record()
+    def test_watchlist_research_does_not_change_consumer_identity(self):
+        before = w.dictionary_digest(self.data)
+        self.data['signals'].append({'id': 'watch', 'status': 'watchlist'})
+        self.assertEqual(w.dictionary_digest(self.data), before)
+    def test_body_metadata_like_lines_are_not_excluded(self):
+        self.data['revision']['coverage_note'] = 'review_after: first'
+        before = w.dictionary_digest(self.data)
+        self.data['revision']['coverage_note'] = 'review_after: second'
+        self.assertNotEqual(w.dictionary_digest(self.data), before)
+    def test_unknown_history_stays_unknown(self):
+        del self.state['update_status']
+        self.assertIsNone(self.record()['dictionary_last_changed_at'])
+    def test_noop_future_and_stale_rejected(self):
+        for field, value in [('status', 'no-op'), ('finished_research_at', '2026-10-23T00:00:00Z')]:
+            with self.subTest(field=field):
+                old = self.report[field]; self.report[field] = value
+                with self.assertRaises(w.Invalid): self.record()
+                self.report[field] = old
+        self.record()
+        self.report['finished_research_at'] = '2026-10-22T21:50:00Z'
+        with self.assertRaises(w.Invalid): self.record()
+
 if __name__=='__main__':unittest.main()

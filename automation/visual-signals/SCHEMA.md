@@ -37,6 +37,15 @@ The model must make this editorial assessment from visible material. Repeated or
 
 `state.json`: schema_version, last_completed_week, last_run_id, base_git_sha, input_sha256, completed_runs, incomplete_runs, sources, fetches, pending, coverage. Per-source state keeps last_check, last_successful_review_at, covered_through and unresolved ranges. Per-URL fetches retain ETag, Last-Modified, content SHA-256, observed upstream SHA, access and last checked time. Only reviewed ranges advance checkpoints. Static availability alone does not advance a dynamic discovery interval. Pending work is explicit and never marked read.
 
+Optional top-level `update_status` separates activity from freshness without changing consumer schema 1:
+
+- `last_checked_at`: actual research finish time of the latest finished attempt, including partial/failed attempts.
+- `last_check_run_id`, `last_check_status`: source run ID and `partial`, `completed` or `failed`; neither claims complete corpus coverage.
+- `dictionary_last_changed_at`: reviewed revision timestamp of the last confirmed consumer-content change, or null when historical provenance is unknown.
+- `dictionary_content_sha256`: SHA-256 of rendered consumer lines excluding the two `updated_at:` and `review_after:` frontmatter lines, with one trailing newline. It includes visible content and all other frontmatter, not unpublished evidence/watchlist data.
+
+`workflow.py record-status --report <run.json>` produces updated state and leaves signals, consumer bytes, freshness dates and coverage queues untouched. Run reports copy this object. `revision.updated_at` continues to mean the reviewed revision time, not necessarily a content change; `review_after` remains the independent expiry. Existing state without `update_status` remains valid. Historical run reports are not rewritten by migration.
+
 Optional per-source `last_discovery_attempt_at` and `last_catchup_attempt_at` timestamps rotate the two work queues. They record attempts, including incomplete attempts, independently of successful coverage and HTTP checks. Pending ranges retain `source_id`, `from`, `through` and the reason for deferred work. A verified contiguous chunk can narrow the range. A reviewed recent slice beyond a gap is recorded in the run receipt and leaves the contiguous checkpoint and older boundary in place.
 
 Run JSON records run_id, executor, base SHA, start/end, research interval, budgets consumed, source receipts, visuals, candidates, editorial review, tests, pending work, content changes and publication intent/readback limits. Its companion Markdown is a short Russian report. The scheduler result records the commit and post-commit verification. No raw source HTML or media is published by default.

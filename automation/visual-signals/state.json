@@ -2704,5 +2704,12 @@
       "commit_sha": "3558cbdee5adfe869cd2f4636a2c48a94e81d6fe",
       "basis": "Prior attempt receipt and immutable files restored from GitHub. This is prior-run evidence, not a substitute for this attempt readback."
     }
-  ]
+  ],
+  "update_status": {
+    "last_checked_at": "2026-11-09T07:10:33Z",
+    "last_check_run_id": "2026-W46",
+    "last_check_status": "partial",
+    "dictionary_last_changed_at": "2026-10-22T22:16:37Z",
+    "dictionary_content_sha256": "0f9219a5f0c491192b22f5d7d77f60153ee1603d4aef0672de8bf21955732947"
+  }
 }
