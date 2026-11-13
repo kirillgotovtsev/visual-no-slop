@@ -6,6 +6,12 @@ The stable skill contains the review method. A separate file records dated obser
 
 The first published review admitted no signals and records partial source coverage. The producer's [runbook](../automation/visual-signals/RUNBOOK.md) and [run records](../automation/visual-signals/runs/) document its setup, execution and publication evidence. An installed consumer cannot establish whether the cloud schedule is running, and installation does not create a producer or schedule.
 
+## Check activity is not dictionary freshness
+
+The producer's [published state](../automation/visual-signals/state.json) records `update_status`: when the last research attempt finished, its run ID and partial/completed/failed status, and when the consumer dictionary content last changed. The [run reports](../automation/visual-signals/runs/) describe coverage and limitations. A partial or failed check is activity, not confirmation that the whole corpus was reviewed.
+
+These dates are separate from the consumer's `review_after` expiry. A research-only update can advance the check date while leaving the dictionary and its expiry untouched. A freshness-only renewal after a real review does not count as a dictionary-content change. Unknown historical change dates remain unknown. Neither a check nor this status metadata authorizes using an expired reference; the stable method remains available.
+
 ## Reading updates
 
 On first use in a task, the agent runs the bundled helper when Node.js 22.20 or later with `node:sqlite` and command execution are available. An online refresh also needs permitted HTTPS access and a writable cache. The terminal installer has its own Node.js requirement; manual copying or ZIP upload does not supply a runtime. The stable review method works without Node.js.

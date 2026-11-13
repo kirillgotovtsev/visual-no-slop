@@ -217,6 +217,14 @@ def validate(config, registry, data, state=None, at=None, publication=False):
         require(isinstance(state.get('completed_runs'),list) and len(state['completed_runs'])==len(set(state['completed_runs'])), 'completed runs must be unique')
         require(isinstance(state.get('pending'),list) and isinstance(state.get('sources'),dict), 'state queues required')
         require(set(state['sources']) <= sources.keys(), 'unknown source state')
+        status = state.get('update_status')
+        if status is not None:
+            require(RUN_RE.fullmatch(status['last_check_run_id']), 'invalid status run ID')
+            require(status['last_check_status'] in ['partial', 'completed', 'failed'], 'invalid check status')
+            require(moment(status['last_checked_at']) <= at, 'future check time')
+            changed = moment(status.get('dictionary_last_changed_at'), True)
+            require(changed is None or changed <= moment(status['last_checked_at']), 'change after check')
+            require(status['dictionary_content_sha256'] == dictionary_digest(data), 'stale dictionary status digest')
         for value in state['sources'].values():
             moment(value.get('covered_through'), True)
             moment(value.get('last_successful_review_at'), True)
@@ -385,6 +393,42 @@ def record_research(config, state, registry, report):
     state['pending'] = remaining + [gap for gaps in pending.values() for gap in gaps]
     return state
 
+def dictionary_digest(data):
+    """Consumer content identity, excluding its two freshness timestamps."""
+    frontmatter, body = render(data).split('---\n', 2)[1:]
+    metadata = [line for line in frontmatter.splitlines()
+                if not line.startswith(('updated_at: ', 'review_after: '))]
+    return sha256(('---\n' + '\n'.join(metadata) + '\n---\n' + body).encode())
+
+def record_status(state, data, report, at=None):
+    """Record a finished attempt, not a completed corpus or renewed reference."""
+    at = at or now()
+    run_id = report['run_id']
+    require(RUN_RE.fullmatch(run_id), 'invalid run_id')
+    outcome = report['status']
+    require(outcome in ['partial', 'completed', 'failed'], 'unfinished/no-op status cannot advance check time')
+    checked_at = report['finished_research_at']
+    require(moment(report['started_at']) <= moment(checked_at) <= at, 'invalid check time')
+    previous = state.get('update_status', {})
+    require(not previous.get('last_checked_at') or moment(checked_at) >= moment(previous['last_checked_at']),
+            'check time cannot move backwards')
+    digest = dictionary_digest(data)
+    changed_at = previous.get('dictionary_last_changed_at')
+    if previous.get('dictionary_content_sha256') and previous['dictionary_content_sha256'] != digest:
+        changed_at = data['revision']['updated_at']
+        require(changed_at is not None and moment(report['started_at']) <= moment(changed_at) <= moment(checked_at), 'change needs a reviewed revision')
+        require(not previous.get('dictionary_last_changed_at') or
+                moment(changed_at) > moment(previous['dictionary_last_changed_at']), 'change date must advance')
+    # A first observation alone does not prove when content last changed.
+    state['update_status'] = {
+        'last_checked_at': checked_at,
+        'last_check_run_id': run_id,
+        'last_check_status': outcome,
+        'dictionary_last_changed_at': changed_at,
+        'dictionary_content_sha256': digest,
+    }
+    return state
+
 def select_revision(previous, candidate, research_ok, visual_capable):
     """Failure never converts the last good instruction into an empty result."""
     return candidate if research_ok and visual_capable else previous
@@ -471,10 +515,11 @@ def verify_tree(plan, remote_tree):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action',choices=['validate','render','plan-windows','record-reviews','publication-plan','fingerprint'])
+    p.add_argument('action',choices=['validate','render','plan-windows','record-reviews','record-status','publication-plan','fingerprint'])
     p.add_argument('--root',type=pathlib.Path,default=ROOT)
     p.add_argument('--base');p.add_argument('--run-id');p.add_argument('--setup',action='store_true');p.add_argument('--output',type=pathlib.Path)
     p.add_argument('--reviews',type=pathlib.Path)
+    p.add_argument('--report',type=pathlib.Path)
     p.add_argument('--publication',action='store_true')
     a=p.parse_args(); root=a.root.resolve()
     c,s,d,state=[read(root/BASE/name) for name in ['config.json','sources.json','signals.json','state.json']]
@@ -491,6 +536,9 @@ def main():
     elif a.action=='record-reviews':
         require(a.reviews, '--reviews required')
         result = record_research(c, state, s, read(a.reviews))
+    elif a.action=='record-status':
+        require(a.report, '--report required')
+        result = record_status(state, d, read(a.report))
     elif a.action=='fingerprint':result=protected_hashes(root)
     else:
         require(a.base and a.run_id,'--base and --run-id required')

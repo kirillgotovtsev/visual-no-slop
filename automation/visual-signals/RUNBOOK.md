@@ -77,7 +77,18 @@ Record the editorial review in JSON: why the combination is specific, what usefu
 
 For colors, report names/roles; add HEX only from an identified CSS/source measurement or a documented approximate image sample. Font names need source confirmation; otherwise describe properties. The English consumer must remain within 4,000 words, 96 KiB and 24 displayed active entries. Keep additional confirmed records in structured research data. Do not change the stable skill version for a reference update.
 
-### 5. Render and validate
+### 5. Record check status, then render and validate
+
+Before validation, finish the run JSON with its actual `started_at`, `finished_research_at`, `run_id` and `status` (`partial`, `completed` or `failed`). Record the completed attempt independently of dictionary freshness:
+
+```bash
+python automation/visual-signals/scripts/workflow.py record-status --report automation/visual-signals/runs/<run_id>.json --output automation/visual-signals/state.json
+```
+
+Copy the resulting `state.update_status` into the run JSON as `update_status`. In the Russian Markdown report, report three separate dates: latest check (with partial/failed coverage explicitly stated), last confirmed dictionary-content change, and the consumer's `review_after` expiry. A partial or failed attempt advances only the check date; it does not complete pending coverage or renew the dictionary. A replay/no-op must not invent a new check time. Use the actual research finish time, not the later commit/readback time.
+
+The helper compares rendered consumer content excluding only `updated_at` and `review_after`. Research-only/watchlist changes and freshness-only renewals do not advance the dictionary-content change date. A changed body needs a new reviewed revision timestamp. If historical status is absent, the last-change date remains null (unknown); do not infer it from a recent check or freshness renewal. The initial status migration is grounded in the published first revision on 22 October and the W46 research-finish receipt, not a new research pass.
+
 
 The frontmatter has exactly the six existing scalar keys. UTC timestamps use whole seconds and `Z`. Set active only after an actual research review, including an honest zero-admission result. `review_after` is at most 21 days after that review and no later than the earliest included expiry. Per-signal expiry is at most 90 days after the last genuinely relevant evidence. An HTTP success does not renew either date. Rechecking an old source without a new basis does not move `last_confirmed` forward.
 
@@ -125,7 +136,7 @@ A Git commit cannot contain its own SHA or proof of a read performed after that 
 
 ### 9. Return the Russian report
 
-Report monitoring requests and attempted and deferred endpoints separately from the requests used for fresh research and catch-up. Include substantively reviewed sources, primary works actually viewed, independent origins, narrowed and closed ranges, and the before/after count of pending ranges. Report the date range, active additions/changes/retirements, watchlist decisions, access limits and errors. Link the actual commit, current consumer and run report. Include publication/readback status. Distinguish a no-op, failed research, PR awaiting merge, successful publication and successful scheduled execution.
+Report monitoring requests and attempted and deferred endpoints separately from the requests used for fresh research and catch-up. Include substantively reviewed sources, primary works actually viewed, independent origins, narrowed and closed ranges, and the before/after count of pending ranges. Report the date range, active additions/changes/retirements, watchlist decisions, access limits and errors. Link the actual commit, current consumer and run report. Include publication/readback status and the three separate dates from step 5. Distinguish a no-op, failed research, PR awaiting merge, successful publication and successful scheduled execution.
 
 ## Maintenance and scheduling
 
