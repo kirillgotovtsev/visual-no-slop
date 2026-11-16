@@ -1,0 +1,1900 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-W47",
+  "status": "partial_reference_stale",
+  "executor": "ChatGPT Work cloud",
+  "base_git_sha": "af634603dce27f81b3a4867493c213d99d349478",
+  "started_at": "2026-11-16T07:08:29Z",
+  "reviewed_through": "2026-11-16T07:08:48Z",
+  "finished_research_at": "2026-11-16T07:16:32Z",
+  "input_sha256": {
+    "automation/visual-signals/RUNBOOK.md": "ef425ef404892d8f09eb001c7b926abe3e30db0a81fb3a00604a05e3c543b180",
+    "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
+    "automation/visual-signals/config.json": "ba7fc79dfaaefa3b68e2ea54c96bb9ea6966b66b9e9d70b189073aa475eb2225",
+    "automation/visual-signals/scripts/fetch_sources.py": "bda24d1b35d2ed4cd4b56112380e0f711f1ea5a87c3119ef4131a34d30cf7653",
+    "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
+    "automation/visual-signals/scripts/workflow.py": "ab5ccdef4548718e0053c01ce8490e15a8ad9174c98853702a714f869eb5b616",
+    "automation/visual-signals/sources.json": "a94d9603c945527e0f7a64d42879fe592c231805d1d100c4303e85cfa22c68c4",
+    "automation/visual-signals/tests/test_workflow.py": "dfae36cc9e92e736acc769bb2a6d2385dce0e0454c905641a8230abbad7ee005"
+  },
+  "research_windows": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-09-22T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D02",
+      "from": "2026-10-26T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "static_baseline_conditional"
+    }
+  ],
+  "research_reviews": [
+    {
+      "source_id": "D02",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-10-26T07:00:51Z",
+      "reviewed_through": "2026-11-16T07:08:48Z",
+      "review_scope": "Full public Atom feed and author index agree (12 posts); newest publication and update August 31, 2026. No items in October 26–November 16 overlap."
+    },
+    {
+      "source_id": "D01",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-11-02T07:08:48Z",
+      "reviewed_through": "2026-11-16T07:08:48Z",
+      "review_scope": "Inspected the eight dated RSS entries in scope against the author’s writing index (essays and links). November 10 type-family essay documents role-specific type cuts, not cream/clay branding; November 11 portfolio of authored skills is instructional; November 12 essay concerns design handoff. The old gap remains."
+    },
+    {
+      "source_id": "B07",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-02T07:08:48Z",
+      "reviewed_through": "2026-11-16T07:08:48Z",
+      "review_scope": "Selected entries from the public RSS, November 9 broker-cat case, November 13 PromtHub roundup, and November 16 Avito equipment case; directly viewed two Avito stills. One brand/campaign family. Feed is not an exhaustive archive. No film playback."
+    },
+    {
+      "source_id": "B08",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-02T07:08:48Z",
+      "reviewed_through": "2026-11-16T07:08:48Z",
+      "review_scope": "Reviewed November 5 Creative Bloq article about Dior and directly inspected its credited still. Alleged AI production is not verified. Targeted web query is not an exhaustive publisher range."
+    },
+    {
+      "source_id": "B11",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-02T07:08:48Z",
+      "reviewed_through": "2026-11-16T07:08:48Z",
+      "review_scope": "Reviewed Ads of the World campaign pages and actual linked-video thumbnails for Amazon and Very; Very’s official release corroborates credits and launch date. Two campaign origins but no shared candidate. Catalog range not exhausted."
+    },
+    {
+      "source_id": "D01",
+      "lane": "catch_up",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-08-23T22:06:08Z",
+      "reviewed_through": "2026-09-22T22:06:08Z",
+      "review_scope": "Author archive (writing index page 2) and full RSS payloads agree on the 12 essays/link roundups dated Aug 24–Sep 22. Type development and interaction demos show the author’s own design choices, not two dependent-free watched works supporting a visual default. Screened the remaining entries for relevant original material."
+    },
+    {
+      "source_id": "B02",
+      "lane": "catch_up",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "partial",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Public author index and topical tag are partial; July 30 TikTok supplement investigation documents avatar conventions but predates the 90-day window and listed artifacts were not independently viewed. August 14 commentary is membership-limited. No full archive or range advancement."
+    },
+    {
+      "source_id": "B03",
+      "lane": "catch_up",
+      "checked_at": "2026-11-16T07:13:32Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Read the official Meta Newsroom July and August archives through their last pages. Reviewed the July 28 transparency statement, July 24 Facebook changes, and the registered anti-spam article whose last stated update is October 22, 2025. No original visual works in the scoped anti-spam/AI-labeling publications during this range. This is the public newsroom scope, not a census of Facebook posts."
+    }
+  ],
+  "catch_up_queue": [
+    {
+      "source_id": "D01",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-09-22T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-16T07:08:48Z",
+      "role": "discovery_and_comparison"
+    }
+  ],
+  "context_days": 90,
+  "budgets": {
+    "limits": {
+      "minutes": 45,
+      "content_requests": 120,
+      "search_queries": 24,
+      "visual_materials": 40,
+      "max_concurrent_requests": 3,
+      "temporary_error_retries": 2,
+      "github_service_requests": 160,
+      "publication_attempts": 2
+    },
+    "source_content_requests": 36,
+    "breakdown": {
+      "monitoring": 5,
+      "fresh": 15,
+      "catch_up": 12,
+      "exact_upstream_content": 4
+    },
+    "search_queries": 14,
+    "visual_materials": 5,
+    "github_service_conservative_estimate_including_restore_publish_readback": 70,
+    "max_concurrent_requests": 3,
+    "publication_attempts": 1
+  },
+  "search_queries": [
+    {
+      "q": "site:creativebloq.com AI Christmas ad Coca Cola McDonalds November 2026 AI advertising",
+      "recency": 14
+    },
+    {
+      "q": "site:sostav.ru реклама ролик нейросеть ноябрь 2026",
+      "recency": 14
+    },
+    {
+      "q": "site:adsoftheworld.com November 2026 AI generated holiday domestic family advertising campaign",
+      "recency": 20
+    },
+    {
+      "q": "site:creativebloq.com AI website beige serif design AI site builder November 2026",
+      "recency": 30
+    },
+    {
+      "q": "Amazon \"Joy Delivered\" November 2026 official Amazon Mark Molloy"
+    },
+    {
+      "q": "Very Group \"That's the Very Thing\" 2026 Christmas flamingo official November"
+    },
+    {
+      "q": "site:404media.co \"Jason Koebler\" AI slop July August 2026 after:2026-07-23 before:2026-08-24"
+    },
+    {
+      "q": "site:about.fb.com/news generative AI spam content after:2026-07-23 before:2026-08-24"
+    },
+    {
+      "q": "site:creativebloq.com OR site:karlkoch.me November 2026 website \"cream\" serif clay accent AI generative UI",
+      "recency": 30
+    },
+    {
+      "q": "site:creativebloq.com OR site:nngroup.com OR site:karlkoch.me AI generated interface screenshot \"left border\" cards 2026",
+      "recency": 90
+    },
+    {
+      "q": "site:creativebloq.com November 2026 \"AI slop\" design typography advertisement",
+      "recency": 14
+    },
+    {
+      "q": "site:smugglersite.com \"Joy Delivered\" Mark Molloy Amazon November 2026"
+    },
+    {
+      "q": "site:aboutamazon.com Amazon \"Joy Delivered\" holiday 2026 November"
+    },
+    {
+      "q": "site:claude.com November 2026 brand Claude design warm serif coral official"
+    }
+  ],
+  "coverage": {
+    "run_id": "2026-W47",
+    "attempted_monitoring_endpoints": 5,
+    "monitoring_requests": 5,
+    "deferred_due_to_budget": 0,
+    "registry_endpoints_outside_fetcher": 63,
+    "exact_git_snapshots": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ],
+    "substantively_reviewed_registry_sources": 9,
+    "substantively_reviewed_source_ids": [
+      "B02",
+      "B03",
+      "B07",
+      "B08",
+      "B11",
+      "C02",
+      "C03",
+      "D01",
+      "D02"
+    ],
+    "primary_work_families_viewed": 4,
+    "research_visuals_viewed": 5,
+    "previous_pending_count": 61,
+    "unreviewed_source_ranges": 61,
+    "narrowed_sources": [
+      "B03",
+      "D01"
+    ],
+    "closed_current_overlap": [
+      "D02"
+    ]
+  },
+  "source_receipts": [
+    {
+      "source_id": "B07",
+      "url": "https://www.sostav.ru/rss",
+      "checked_at": "2026-11-16T07:08:55Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/rss",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "application/rss+xml; charset=utf-8",
+      "sha256": "16e946b819076fa1e8de681453f17283d42d5ec5868bb8ffcc1c06469204f5be",
+      "changed": true,
+      "review_scope": "Current public entries read; range decisions listed separately."
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/rss.xml",
+      "checked_at": "2026-11-16T07:08:55Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/rss.xml",
+      "etag": null,
+      "last_modified": "Mon, 16 Nov 2026 07:08:25 GMT",
+      "content_type": "application/xml; charset=utf-8",
+      "sha256": "bc216430de8995366a19339335a86dc76d00e88522324b8628f2085bec8fc582",
+      "changed": true,
+      "review_scope": "Current public entries read; range decisions listed separately."
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/writing",
+      "checked_at": "2026-11-16T07:08:55Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:40Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "93a5ce1f20446be82ed43c5f102182b363048ff2b79d90cb04bc029f21f349ce",
+      "changed": true,
+      "review_scope": "Current public entries read; range decisions listed separately."
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac",
+      "checked_at": "2026-11-16T07:09:01Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:45Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac",
+      "etag": "W/\"8c156f7d9329ac491a70aab3b43133df\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
+      "changed": false,
+      "review_scope": "Current public entries read; range decisions listed separately."
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac/feed.atom",
+      "checked_at": "2026-11-16T07:09:01Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac/feed.atom",
+      "etag": "W/\"9fbaa66ba3f3ba4b6822843b747dd7d2\"",
+      "last_modified": null,
+      "content_type": "application/atom+xml; charset=utf-8",
+      "sha256": "02f28a215be617ee0157556d1500119b6073e322ab8f6051f051753e10e7a5d4",
+      "changed": false,
+      "review_scope": "Current public entries read; range decisions listed separately."
+    }
+  ],
+  "fresh_retrieval_receipts": [
+    {
+      "source_id": "amazon",
+      "url": "https://www.adsoftheworld.com/campaigns/joy-delivered",
+      "checked_at": "2026-11-16T07:09:31Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:09:31Z",
+      "http_status": 200,
+      "final_url": "https://www.adsoftheworld.com/campaigns/joy-delivered",
+      "etag": "W/\"410d5c7dca75854fbfd9ed1de5c7073b\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "410d5c7dca75854fbfd9ed1de5c7073b3e3b5a3d8f85788577c783e7e971e231",
+      "changed": true
+    },
+    {
+      "source_id": "very",
+      "url": "https://www.adsoftheworld.com/campaigns/that-s-the-very-thing",
+      "checked_at": "2026-11-16T07:09:31Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:09:31Z",
+      "http_status": 200,
+      "final_url": "https://www.adsoftheworld.com/campaigns/that-s-the-very-thing",
+      "etag": "W/\"a018952361bcd293a022c2534ebfb938\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a018952361bcd293a022c2534ebfb938e1c53113b00209f45a12463c821ce9df",
+      "changed": true
+    },
+    {
+      "source_id": "promt",
+      "url": "https://www.sostav.ru/publication/nejro-novosti-ot-studii-promthub-88492.html",
+      "checked_at": "2026-11-16T07:09:31Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:09:31Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/nejro-novosti-ot-studii-promthub-88492.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "b82a7bb4b73f04137bc7bb0c898e92a9308cebb82fbb5c30d562d50583ebbe0a",
+      "changed": true
+    },
+    {
+      "source_id": "cat",
+      "url": "https://www.sostav.ru/blogs/295172/119572",
+      "checked_at": "2026-11-16T07:09:35Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:09:35Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/blogs/295172/119572",
+      "etag": "\"146f2-bD9Julvn+LCKz3uUWg8skqEZwnY\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "4404dd111fb1023b7360bfdadfb54325591c24aec06c6414c5d94f2253a4481f",
+      "changed": true
+    },
+    {
+      "source_id": "amazon-img",
+      "url": "https://i.ytimg.com/vi/oAl_EHxk8sw/maxresdefault.jpg",
+      "checked_at": "2026-11-16T07:10:06Z",
+      "access": "full",
+      "attempts": 2,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:06Z",
+      "error": "URLError: <urlopen error timed out>",
+      "http_status": 200,
+      "final_url": "https://i.ytimg.com/vi/oAl_EHxk8sw/maxresdefault.jpg",
+      "etag": "\"1793786641\"",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "c18b8d6ab45366d3f69f47f0ae6d984d9e78da2fbcfa7b24adaaa86fe6296fcf",
+      "changed": true
+    },
+    {
+      "source_id": "very-img",
+      "url": "https://i.ytimg.com/vi/OP1-dkSxKSo/maxresdefault.jpg",
+      "checked_at": "2026-11-16T07:10:06Z",
+      "access": "full",
+      "attempts": 2,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:06Z",
+      "error": "URLError: <urlopen error timed out>",
+      "http_status": 200,
+      "final_url": "https://i.ytimg.com/vi/OP1-dkSxKSo/maxresdefault.jpg",
+      "etag": "\"1794569294\"",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "0c66788ed67c5a21ca96db7e96e98d8e8b6c5150bc1251dda13743a78374dbf6",
+      "changed": true
+    },
+    {
+      "source_id": "very-official",
+      "url": "https://www.theverygroup.com/media/news/2026/new-flamingo-family-leads-verys-christmas-creative/",
+      "checked_at": "2026-11-16T07:10:06Z",
+      "access": "full",
+      "attempts": 2,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:06Z",
+      "error": "URLError: <urlopen error timed out>",
+      "http_status": 200,
+      "final_url": "https://www.theverygroup.com/media/news/2026/new-flamingo-family-leads-verys-christmas-creative/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "5de908a1c253fc5c49036085894e4f9faec09b86cccd4081564bf016effa4f37",
+      "changed": true
+    },
+    {
+      "source_id": "avito",
+      "url": "https://www.sostav.ru/publication/seriya-ii-rolikov-dlya-avito-spetstekhniki-88478.html",
+      "checked_at": "2026-11-16T07:10:22Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:22Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/publication/seriya-ii-rolikov-dlya-avito-spetstekhniki-88478.html",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a347e89e39b77eae6292c9a44cb37650e6007c5fbd945fb66804de91c01bae08",
+      "changed": true
+    },
+    {
+      "source_id": "avito-img",
+      "url": "https://cdn.sostav.ru/images/news/2026/11/11/gv1rpsfn_md.png",
+      "checked_at": "2026-11-16T07:12:10Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:12:10Z",
+      "http_status": 200,
+      "final_url": "https://cdn.sostav.ru/images/news/2026/11/11/gv1rpsfn_md.png",
+      "etag": "\"6af452ec-b8fbc\"",
+      "last_modified": "Wed, 11 Nov 2026 11:35:08 GMT",
+      "content_type": "image/png",
+      "sha256": "172cdb955358f51a213b5f7a037d5db6daca8e51732777ac6e97e5854da45259",
+      "changed": true
+    },
+    {
+      "source_id": "avito-img2",
+      "url": "https://cdn.sostav.ru/images/news/2026/11/11/ua5jgift_md.png",
+      "checked_at": "2026-11-16T07:12:10Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:12:10Z",
+      "http_status": 200,
+      "final_url": "https://cdn.sostav.ru/images/news/2026/11/11/ua5jgift_md.png",
+      "etag": "\"6af45411-c6cf7\"",
+      "last_modified": "Wed, 11 Nov 2026 11:40:01 GMT",
+      "content_type": "image/png",
+      "sha256": "eaac412f6838f6ae3cb1a4295599e6d08a8cfdac78a09c816227e489c42f865e",
+      "changed": true
+    },
+    {
+      "source_id": "dior",
+      "url": "https://www.creativebloq.com/news/diors-christmas-ad-is-the-opposite-to-pradas-classy-animation",
+      "checked_at": "2026-11-16T07:12:10Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:12:10Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/news/diors-christmas-ad-is-the-opposite-to-pradas-classy-animation",
+      "etag": null,
+      "last_modified": "Sun, 15 Nov 2026 18:17:55 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "21a4c1a24fe673bf0cf28d79865f97df78c047d11c560eada0126247fb90f2e8",
+      "changed": true
+    },
+    {
+      "source_id": "dior-img",
+      "url": "https://cdn.mos.cms.futurecdn.net/hBTsT4ombrF3uUGqNgKb57-1920-80.jpg",
+      "checked_at": "2026-11-16T07:12:32Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:12:32Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/hBTsT4ombrF3uUGqNgKb57-1920-80.jpg",
+      "etag": "deb1d033347438a79f7ff7837d8cb11b",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "2da539d2175891d4439047eaa544a849bac5b419e3eb86f80af019c1555b251a",
+      "changed": true
+    }
+  ],
+  "catchup_retrieval_receipts": [
+    {
+      "source_id": "koch-index2",
+      "url": "https://karlkoch.me/writing?page=2",
+      "checked_at": "2026-11-16T07:10:37Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:37Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing?page=2",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "70fb590e8f29819f15ab155a369a2237ce238734d865c44462028ccd04c05adc",
+      "changed": true
+    },
+    {
+      "source_id": "media-author",
+      "url": "https://www.404media.co/author/jason-koebler/",
+      "checked_at": "2026-11-16T07:10:37Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:37Z",
+      "http_status": 200,
+      "final_url": "https://www.404media.co/author/jason-koebler/",
+      "etag": "W/\"10378-TBbNoBIeNDawEfNzQ8wM+gctotA\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "506e1ad56ae869c1ae8458a1659e42edb355ac5260c44d2280b0cd7cddea4cc9",
+      "changed": true,
+      "review_scope": "Public listing or excerpt only."
+    },
+    {
+      "source_id": "media-tag",
+      "url": "https://www.404media.co/tag/ai-slop/",
+      "checked_at": "2026-11-16T07:10:37Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:37Z",
+      "http_status": 200,
+      "final_url": "https://www.404media.co/tag/ai-slop/",
+      "etag": "W/\"ef8f-b/i8cogNGHa6r9Wx4wKlRYhZHqs\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "f7605b96e353481054a321247dae9e71fee1f9213ce77bd77ff026f4c5e791d5",
+      "changed": true,
+      "review_scope": "Public listing or excerpt only."
+    },
+    {
+      "source_id": "media-aug",
+      "url": "https://www.404media.co/behind-the-blog-endless-scam-parade/",
+      "checked_at": "2026-11-16T07:10:42Z",
+      "access": "partial",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:42Z",
+      "http_status": 200,
+      "final_url": "https://www.404media.co/behind-the-blog-endless-scam-parade/",
+      "etag": "W/\"d3c2-jSzJDx9ug9RUAgLtSnid/N2ZfAQ\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "4be6568c0b7ecaca27098dfcd550cd77b2d1e3ed9faaf32bba623fa99c13faed",
+      "changed": true,
+      "review_scope": "Public listing or excerpt only.",
+      "limitation": "Membership wall after public excerpt."
+    },
+    {
+      "source_id": "meta-archive",
+      "url": "https://about.fb.com/news/2026/08/",
+      "checked_at": "2026-11-16T07:10:43Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:43Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/08/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "830357b0f38e8ba1f545e967ec2e34fde92dc6691c70c8bcae23409a9ddae3b4",
+      "changed": true
+    },
+    {
+      "source_id": "meta-july",
+      "url": "https://about.fb.com/news/2026/07/",
+      "checked_at": "2026-11-16T07:10:43Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:43Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/07/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "c70c20e91c1493eefcd6ff7f98c8c3bba96d747c421be6c345a8730e5faf189d",
+      "changed": true
+    },
+    {
+      "source_id": "meta-aug2",
+      "url": "https://about.fb.com/news/2026/08/page/2/",
+      "checked_at": "2026-11-16T07:11:14Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:14Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/08/page/2/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "46a34e82ce28a73cc1a4851bfe028c39078a3cf9987d5c5327ecf1f2084eed66",
+      "changed": true
+    },
+    {
+      "source_id": "meta-july2",
+      "url": "https://about.fb.com/news/2026/07/page/2/",
+      "checked_at": "2026-11-16T07:11:14Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:14Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/07/page/2/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "3173382d2d53723556d969685029d3842d3adec20220bc4860b9de81dabf1e29",
+      "changed": true
+    },
+    {
+      "source_id": "meta-policy",
+      "url": "https://about.fb.com/news/2026/07/meta-is-signing-the-eu-ai-act-code-of-practice-on-transparency-of-ai-generated-content/",
+      "checked_at": "2026-11-16T07:11:14Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:14Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/07/meta-is-signing-the-eu-ai-act-code-of-practice-on-transparency-of-ai-generated-content/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "b58ab86bbc75af0128400c2ad7c3a30b914069820d33b9dd09fa3760f4e33483",
+      "changed": true
+    },
+    {
+      "source_id": "meta-anchor",
+      "url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
+      "checked_at": "2026-11-16T07:11:23Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:23Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "26ae40d62aeae34f84df5f23bac41f2f956c41e6cef378230d58b8e479a3e148",
+      "changed": true
+    },
+    {
+      "source_id": "media-tiktok",
+      "url": "https://www.404media.co/inside-an-ai-tiktok-shop-slop-factory-that-shills-supplements-recalled-by-the-fda/",
+      "checked_at": "2026-11-16T07:11:24Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:24Z",
+      "http_status": 200,
+      "final_url": "https://www.404media.co/inside-an-ai-tiktok-shop-slop-factory-that-shills-supplements-recalled-by-the-fda/",
+      "etag": "W/\"168e9-e/+tsGKrKtRQKscM8v1ftG703xU\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "2baf848f233d5de980a3ccdbf5759f12fe5363f9cc6ba2fd045c61e635daf3ff",
+      "changed": true
+    },
+    {
+      "source_id": "meta-connect",
+      "url": "https://about.fb.com/news/2026/07/connecting-real-people-on-facebook/",
+      "checked_at": "2026-11-16T07:12:49Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:12:49Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/07/connecting-real-people-on-facebook/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "3b9983920339b696eddbe62c60b2fb5aa17b4b85953e6c78dd83d156114a6b49",
+      "changed": true
+    }
+  ],
+  "git_observations": [
+    {
+      "id": "C01",
+      "repo": "anthropics/skills",
+      "default_branch": "main",
+      "path": "skills/frontend-design/SKILL.md",
+      "commit_sha": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064",
+      "commit_date": "2026-11-14T15:16:42Z",
+      "blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+      "previous_commit_sha": "ca45fc496a3436251f191354091d557da31c15b5",
+      "previous_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+      "unchanged_since_previous": true,
+      "checked_at": "2026-11-16T07:16:32Z",
+      "decision": "Same verified skill blob at updated HEAD.",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "scope": "Identical blob to previous exact observation. Snapshot is not a completed archive interval.",
+      "observed_commit_sha": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064",
+      "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+      "historical_commit_sha": "00756142ab04c82a447693cf373c4e0c554d1005",
+      "historical_blob_sha": "5be498e2585843c7137bf9a74e262f57415de5ce",
+      "historical_sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0"
+    },
+    {
+      "id": "C02",
+      "repo": "pbakaus/impeccable",
+      "default_branch": "main",
+      "path": ".agents/skills/impeccable/SKILL.md",
+      "commit_sha": "d41d9860b0094dcb68030657da63461212835aaa",
+      "commit_date": "2026-11-16T00:41:50Z",
+      "blob_sha": "0e93bf813444c2116dcff342cb22c031ace7f210",
+      "previous_commit_sha": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
+      "previous_blob_sha": "c0dd2530c9968963b1f63bf50b227c4a33996e3b",
+      "unchanged_since_previous": false,
+      "checked_at": "2026-11-16T07:16:32Z",
+      "decision": "4.8.0 to 4.9.2; splits new-work references and adds foundations command. No new independent visual witness.",
+      "sha256": "12d15997482e6d0734c5f2dcc4f62cea7bcba19953940214cffa5c6a7758aa93",
+      "scope": "Exact current and previous files compared. No upstream code executed. Preserve historical comparison and unresolved history.",
+      "observed_commit_sha": "d41d9860b0094dcb68030657da63461212835aaa",
+      "observed_blob_sha": "0e93bf813444c2116dcff342cb22c031ace7f210",
+      "historical_commit_sha": "0a4e72a254f3b175c95b36b82e5f2e60fa63f116",
+      "historical_blob_sha": "2f12a53b1e5eaa38fd69625926340704a4ced54b",
+      "historical_sha256": "fa0cb3ef01a25b9094266109a63c1d01d4b2d4973f75b324f5c4ad7e568d148f"
+    },
+    {
+      "id": "C03",
+      "repo": "Leonxlnx/taste-skill",
+      "default_branch": "main",
+      "path": "skills/taste-skill/SKILL.md",
+      "commit_sha": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+      "commit_date": "2026-11-07T12:33:21Z",
+      "blob_sha": "7dc7a9fed097364515581a28ec45ef955620eede",
+      "previous_commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
+      "previous_blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6",
+      "unchanged_since_previous": false,
+      "checked_at": "2026-11-16T07:16:32Z",
+      "decision": "Rewrite 2.5.1 prescribes full-screen sections, photography for non-tech, scoped shader effects and standardized hover motion. Tool rules are leads, not independent production witnesses.",
+      "sha256": "0c7a5852a5217be79cab422c6d58329b776f0c25bd6da8a7a01707ce75be6206",
+      "scope": "Exact current and previous files compared. No upstream code executed. Preserve historical comparison and unresolved history.",
+      "observed_commit_sha": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+      "observed_blob_sha": "7dc7a9fed097364515581a28ec45ef955620eede",
+      "historical_commit_sha": "3c7017d636c3a4aad378433ea6d0cfa6c921da4a",
+      "historical_blob_sha": "b72132fcd466da605623ffe96e370b3991fc5285",
+      "historical_sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89"
+    },
+    {
+      "id": "C04",
+      "repo": "Nutlope/hallmark",
+      "default_branch": "main",
+      "path": "skills/hallmark/SKILL.md",
+      "commit_sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92",
+      "commit_date": "2026-11-11T11:56:04Z",
+      "blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+      "previous_commit_sha": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "previous_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+      "unchanged_since_previous": true,
+      "checked_at": "2026-11-16T07:16:32Z",
+      "decision": "Same verified skill blob at updated HEAD.",
+      "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
+      "scope": "Identical blob to previous exact observation. Snapshot is not a completed archive interval.",
+      "observed_commit_sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92",
+      "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
+      "historical_commit_sha": "f5f4a2ceb0ff302f2e69fb33679501611eadee32",
+      "historical_blob_sha": "645221da63743de870501760a48694acdf7aef10",
+      "historical_sha256": "59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577"
+    }
+  ],
+  "visuals": [
+    {
+      "source_id": "B11",
+      "witness_url": "https://www.adsoftheworld.com/campaigns/joy-delivered",
+      "image_url": "https://i.ytimg.com/vi/oAl_EHxk8sw/maxresdefault.jpg",
+      "author_or_publisher": "Amazon / SMUGGLER",
+      "work_family": "amazon-joy-delivered-2026",
+      "independent_origin_id": "amazon-joy-delivered-2026",
+      "published_at": null,
+      "work_date": null,
+      "modified_at": null,
+      "checked_at": "2026-11-16T07:10:06Z",
+      "visual_inspected": true,
+      "visual_method": "view_image",
+      "inspection_confirmed_by": "2026-11-16T07:13:09Z",
+      "visual_receipt": "Current cloud view_image returned pixels; SHA-256 c18b8d6ab45366d3f69f47f0ae6d984d9e78da2fbcfa7b24adaaa86fe6296fcf",
+      "relevance_basis": "Campaign listing dates the work to November 2026; exact day not established there.",
+      "visible_observation": "A woman in a blue coat and ribbed bonnet holds a striped package by a vehicle. Windblown hair and a snowy outdoor backdrop differ from an immaculate domestic scene. The thumbnail does not identify which elements used AI."
+    },
+    {
+      "source_id": "B11",
+      "witness_url": "https://www.theverygroup.com/media/news/2026/new-flamingo-family-leads-verys-christmas-creative/",
+      "image_url": "https://i.ytimg.com/vi/OP1-dkSxKSo/maxresdefault.jpg",
+      "author_or_publisher": "The Very Group / The Gate / M3Labs",
+      "work_family": "very-flamingos-2026",
+      "independent_origin_id": "very-flamingos-2026",
+      "published_at": "2026-11-02",
+      "work_date": "2026-11-01",
+      "modified_at": null,
+      "checked_at": "2026-11-16T07:10:06Z",
+      "visual_inspected": true,
+      "visual_method": "view_image",
+      "inspection_confirmed_by": "2026-11-16T07:13:09Z",
+      "visual_receipt": "Current cloud view_image returned pixels; SHA-256 0c66788ed67c5a21ca96db7e96e98d8e8b6c5150bc1251dda13743a78374dbf6",
+      "relevance_basis": "Official statement dated Nov 2 gives the Nov 1 launch.",
+      "visible_observation": "A pink flamingo with glasses and a mug frames the left; a small flamingo hangs under a glowing branded magenta cube, beside a coffee machine. The cube ties the fantasy to the brand; the figures are deliberately nonhuman."
+    },
+    {
+      "source_id": "B07",
+      "witness_url": "https://www.sostav.ru/publication/seriya-ii-rolikov-dlya-avito-spetstekhniki-88478.html",
+      "image_url": "https://cdn.sostav.ru/images/news/2026/11/11/gv1rpsfn_md.png",
+      "author_or_publisher": "Avito Equipment / Open Production",
+      "work_family": "avito-equipment-2026",
+      "independent_origin_id": "avito-equipment-2026",
+      "published_at": "2026-11-16",
+      "work_date": null,
+      "modified_at": null,
+      "checked_at": "2026-11-16T07:12:10Z",
+      "visual_inspected": true,
+      "visual_method": "view_image",
+      "inspection_confirmed_by": "2026-11-16T07:13:09Z",
+      "visual_receipt": "Current cloud view_image returned pixels; SHA-256 172cdb955358f51a213b5f7a037d5db6daca8e51732777ac6e97e5854da45259",
+      "relevance_basis": "Public case dated Nov 16; exact campaign release not established.",
+      "visible_observation": "The operator and cab controls are visible through angled reflective glass. Placement and depth separate them from the suspended load. The view shows equipment cues, not proof of regulatory compliance or motion continuity."
+    },
+    {
+      "source_id": "B07",
+      "witness_url": "https://www.sostav.ru/publication/seriya-ii-rolikov-dlya-avito-spetstekhniki-88478.html",
+      "image_url": "https://cdn.sostav.ru/images/news/2026/11/11/ua5jgift_md.png",
+      "author_or_publisher": "Avito Equipment / Open Production",
+      "work_family": "avito-equipment-2026",
+      "independent_origin_id": "avito-equipment-2026",
+      "published_at": "2026-11-16",
+      "work_date": null,
+      "modified_at": null,
+      "checked_at": "2026-11-16T07:12:10Z",
+      "visual_inspected": true,
+      "visual_method": "view_image",
+      "inspection_confirmed_by": "2026-11-16T07:13:09Z",
+      "visual_receipt": "Current cloud view_image returned pixels; SHA-256 eaac412f6838f6ae3cb1a4295599e6d08a8cfdac78a09c816227e489c42f865e",
+      "relevance_basis": "Public case dated Nov 16. Same scene family as the cab frame.",
+      "visible_observation": "Diagonal crane boom, suspended wrapped object and red-white tape give the work zone a visible structure. Same campaign, no extra independent witness."
+    },
+    {
+      "source_id": "B08",
+      "witness_url": "https://www.creativebloq.com/news/diors-christmas-ad-is-the-opposite-to-pradas-classy-animation",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/hBTsT4ombrF3uUGqNgKb57-1920-80.jpg",
+      "author_or_publisher": "Dior / Sylvain Chomet; image credited to Dior by Creative Bloq",
+      "work_family": "dior-night-in-color-2026",
+      "independent_origin_id": "dior-night-in-color-2026",
+      "published_at": "2026-11-05",
+      "work_date": null,
+      "modified_at": null,
+      "checked_at": "2026-11-16T07:12:32Z",
+      "visual_inspected": true,
+      "visual_method": "view_image",
+      "inspection_confirmed_by": "2026-11-16T07:13:09Z",
+      "visual_receipt": "Current cloud view_image returned pixels; SHA-256 2da539d2175891d4439047eaa544a849bac5b419e3eb86f80af019c1555b251a",
+      "relevance_basis": "The dated article publishes the credited still; release day not independently established.",
+      "visible_observation": "Purple shopfront, blue window, outlined suited figure, snow and a white dog form a storybook street scene. Alleged AI use cannot be established from this image."
+    }
+  ],
+  "editorial_review": {
+    "active_added": 0,
+    "active_changed": 0,
+    "active_retired": 0,
+    "watchlist_count": 3,
+    "watchlist_changed": 0,
+    "decision": "Four independent campaign families, but no two qualifying works share one specific candidate combination.",
+    "watchlist": {
+      "VNS-W001": "Amazon sample is outdoors; Very uses nonhuman mascots; Avito is a work scene; Dior is a drawn street. No independent pair with the domestic portrait combination.",
+      "VNS-W002": "Targeted search found older serif discussions and a recreation of one Claude style. Koch’s Nov 10 essay describes type roles for his own site; no two dated independent instances of the full combination.",
+      "VNS-W003": "Targeted search and changed upstream instructions produced no two fresh works with the specific side accent and ordinary panel structure."
+    },
+    "limits": "Static images only. No playback, interaction, measured palette, AI-authorship inference, or prevalence claim."
+  },
+  "errors_and_limits": [
+    "Three initial fresh HTTP timeouts recovered on retry.",
+    "404 Media archive is partial; Aug 14 text is membership-limited. B02 remains pending.",
+    "Expired last-good reference with insufficient basis for renewal: publication render and validate reject freshness. Only state and journal are changed."
+  ],
+  "tests": [
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py render --publication",
+      "exit_code": 1,
+      "reason": "Invalid: revision future/expired"
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py validate --publication",
+      "exit_code": 1,
+      "reason": "Invalid: revision future/expired"
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py render",
+      "exit_code": 0
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py validate",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest discover -s automation/visual-signals/tests -v",
+      "exit_code": 0,
+      "passed": 53
+    },
+    {
+      "command": "node --test scripts/test_current_signals.mjs",
+      "exit_code": 0,
+      "passed": 18
+    },
+    {
+      "command": "python scripts/check_package.py",
+      "exit_code": 0
+    }
+  ],
+  "pending": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-09-22T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    }
+  ],
+  "preserved_consumer": {
+    "sha256": "4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543",
+    "updated_at": "2026-10-22T22:16:37Z",
+    "review_after": "2026-11-12T22:16:37Z",
+    "freshness": "stale"
+  },
+  "publication": {
+    "intent": "Atomic state and journal only; preserve historical reference.",
+    "readback": "Pending post-commit.",
+    "consumer_probe": "Pending post-commit. Freshness assertion should reject the expired revision; direct normal helper comparison can verify stale data only."
+  }
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "last_completed_week": null,
-  "last_run_id": "2026-W46",
-  "base_git_sha": "0aac54d0474f48dd1931592bc1240656a3d25ce0",
+  "last_run_id": "2026-W47",
+  "base_git_sha": "af634603dce27f81b3a4867493c213d99d349478",
   "input_sha256": {
     "automation/visual-signals/RUNBOOK.md": "ef425ef404892d8f09eb001c7b926abe3e30db0a81fb3a00604a05e3c543b180",
     "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
@@ -19,7 +19,8 @@
     "2026-W43",
     "2026-W44",
     "2026-W45",
-    "2026-W46"
+    "2026-W46",
+    "2026-W47"
   ],
   "sources": {
     "A01": {
@@ -350,48 +351,36 @@
     "B02": {
       "last_check": {
         "source_id": "B02",
-        "url": "https://www.404media.co/where-facebooks-ai-slop-comes-from/",
-        "checked_at": "2026-11-02T07:00:56Z",
-        "access": "full",
-        "attempts": 1,
-        "content_reviewed": false,
+        "lane": "catch_up",
+        "checked_at": "2026-11-16T07:13:32Z",
+        "access": "partial",
+        "content_reviewed": true,
         "range_review_complete": false,
         "discovery_complete": false,
-        "first_observed_at": "2026-10-22T22:06:48Z",
-        "http_status": 200,
-        "final_url": "https://www.404media.co/where-facebooks-ai-slop-comes-from/",
-        "etag": "W/\"96de-hcP3w0vRaRDIv3WTK6ellIF6/Q8\"",
-        "last_modified": null,
-        "content_type": "text/html; charset=utf-8",
-        "sha256": "4e37052819ea1a3b1b6f71c65e10f982f76da0f951d45445607710caae843d38",
-        "changed": true,
-        "review_scope": "Availability/validator check only; no complete date-range review."
+        "reviewed_from": "2026-07-24T22:06:08Z",
+        "reviewed_through": "2026-08-23T22:06:08Z",
+        "review_scope": "Public author index and topical tag are partial; July 30 TikTok supplement investigation documents avatar conventions but predates the 90-day window and listed artifacts were not independently viewed. August 14 commentary is membership-limited. No full archive or range advancement."
       },
       "last_successful_review_at": null,
-      "covered_through": null
+      "covered_through": null,
+      "last_catchup_attempt_at": "2026-11-16T07:13:32Z"
     },
     "B03": {
       "last_check": {
         "source_id": "B03",
-        "url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
-        "checked_at": "2026-11-02T07:00:58Z",
+        "lane": "catch_up",
+        "checked_at": "2026-11-16T07:13:32Z",
         "access": "full",
-        "attempts": 1,
-        "content_reviewed": false,
-        "range_review_complete": false,
-        "discovery_complete": false,
-        "first_observed_at": "2026-10-22T22:06:50Z",
-        "http_status": 200,
-        "final_url": "https://about.fb.com/news/2025/04/cracking-down-spammy-content-facebook/",
-        "etag": null,
-        "last_modified": null,
-        "content_type": "text/html; charset=UTF-8",
-        "sha256": "fbb5b8efa3f8af576c174b379b030d7527ff50c9d28a80e3177568c464794714",
-        "changed": true,
-        "review_scope": "Availability/validator check only; no complete date-range review."
+        "content_reviewed": true,
+        "range_review_complete": true,
+        "discovery_complete": true,
+        "reviewed_from": "2026-07-24T22:06:08Z",
+        "reviewed_through": "2026-08-23T22:06:08Z",
+        "review_scope": "Read the official Meta Newsroom July and August archives through their last pages. Reviewed the July 28 transparency statement, July 24 Facebook changes, and the registered anti-spam article whose last stated update is October 22, 2025. No original visual works in the scoped anti-spam/AI-labeling publications during this range. This is the public newsroom scope, not a census of Facebook posts."
       },
-      "last_successful_review_at": null,
-      "covered_through": null
+      "last_successful_review_at": "2026-11-16T07:13:32Z",
+      "covered_through": "2026-08-23T22:06:08Z",
+      "last_catchup_attempt_at": "2026-11-16T07:13:32Z"
     },
     "B04": {
       "last_check": {
@@ -475,7 +464,7 @@
       },
       "last_successful_review_at": "2026-10-22T22:16:37Z",
       "covered_through": null,
-      "last_discovery_attempt_at": "2026-11-09T07:09:17Z",
+      "last_discovery_attempt_at": "2026-11-16T07:13:32Z",
       "last_catchup_attempt_at": "2026-11-09T07:09:17Z"
     },
     "B08": {
@@ -500,7 +489,7 @@
       },
       "last_successful_review_at": null,
       "covered_through": null,
-      "last_discovery_attempt_at": "2026-11-09T07:09:17Z"
+      "last_discovery_attempt_at": "2026-11-16T07:13:32Z"
     },
     "B09": {
       "last_check": {
@@ -570,7 +559,7 @@
       },
       "last_successful_review_at": null,
       "covered_through": null,
-      "last_discovery_attempt_at": "2026-11-09T07:09:17Z"
+      "last_discovery_attempt_at": "2026-11-16T07:13:32Z"
     },
     "B12": {
       "last_check": {
@@ -695,25 +684,25 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
+        "id": "C01",
         "repo": "anthropics/skills",
         "default_branch": "main",
-        "commit_sha": "ca45fc496a3436251f191354091d557da31c15b5",
-        "commit_date": "2026-10-28T19:20:38Z",
         "path": "skills/frontend-design/SKILL.md",
+        "commit_sha": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064",
+        "commit_date": "2026-11-14T15:16:42Z",
         "blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
-        "id": "C01",
-        "checked_at": "2026-11-02T07:08:49Z",
-        "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
-        "previous_commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "previous_commit_sha": "ca45fc496a3436251f191354091d557da31c15b5",
         "previous_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
         "unchanged_since_previous": true,
-        "scope": "Current default branch, exact tree path and blob verified. Historical immutable comparison retained from durable state; changed C02 compared to prior exact revision. Downloaded instructions treated as untrusted research data; no upstream code executed.",
-        "decision": "C02 changes only version 4.7.1 to 4.8.0; C01/C03/C04 skill blobs unchanged. No new independent visual witness.",
+        "checked_at": "2026-11-16T07:16:32Z",
+        "decision": "Same verified skill blob at updated HEAD.",
+        "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+        "scope": "Identical blob to previous exact observation. Snapshot is not a completed archive interval.",
+        "observed_commit_sha": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064",
+        "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
         "historical_commit_sha": "00756142ab04c82a447693cf373c4e0c554d1005",
         "historical_blob_sha": "5be498e2585843c7137bf9a74e262f57415de5ce",
-        "historical_sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
-        "observed_commit_sha": "ca45fc496a3436251f191354091d557da31c15b5",
-        "observed_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3"
+        "historical_sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0"
       }
     },
     "C02": {
@@ -748,25 +737,25 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
+        "id": "C02",
         "repo": "pbakaus/impeccable",
         "default_branch": "main",
-        "commit_sha": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
-        "commit_date": "2026-11-01T14:26:36Z",
         "path": ".agents/skills/impeccable/SKILL.md",
-        "blob_sha": "c0dd2530c9968963b1f63bf50b227c4a33996e3b",
-        "id": "C02",
-        "checked_at": "2026-11-02T07:08:49Z",
-        "sha256": "fab04b31f946573b00a8559db1fc070f8ea5825254d491c2b13156e5661a86d7",
-        "previous_commit_sha": "3671d50f0ac9a662ce0615e85a256110c9cd720b",
-        "previous_blob_sha": "8da085ce49cf210f0fc97edc81479747b91dc831",
+        "commit_sha": "d41d9860b0094dcb68030657da63461212835aaa",
+        "commit_date": "2026-11-16T00:41:50Z",
+        "blob_sha": "0e93bf813444c2116dcff342cb22c031ace7f210",
+        "previous_commit_sha": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
+        "previous_blob_sha": "c0dd2530c9968963b1f63bf50b227c4a33996e3b",
         "unchanged_since_previous": false,
-        "scope": "Current default branch, exact tree path and blob verified. Historical immutable comparison retained from durable state; changed C02 compared to prior exact revision. Downloaded instructions treated as untrusted research data; no upstream code executed.",
-        "decision": "C02 changes only version 4.7.1 to 4.8.0; C01/C03/C04 skill blobs unchanged. No new independent visual witness.",
+        "checked_at": "2026-11-16T07:16:32Z",
+        "decision": "4.8.0 to 4.9.2; splits new-work references and adds foundations command. No new independent visual witness.",
+        "sha256": "12d15997482e6d0734c5f2dcc4f62cea7bcba19953940214cffa5c6a7758aa93",
+        "scope": "Exact current and previous files compared. No upstream code executed. Preserve historical comparison and unresolved history.",
+        "observed_commit_sha": "d41d9860b0094dcb68030657da63461212835aaa",
+        "observed_blob_sha": "0e93bf813444c2116dcff342cb22c031ace7f210",
         "historical_commit_sha": "0a4e72a254f3b175c95b36b82e5f2e60fa63f116",
         "historical_blob_sha": "2f12a53b1e5eaa38fd69625926340704a4ced54b",
-        "historical_sha256": "fa0cb3ef01a25b9094266109a63c1d01d4b2d4973f75b324f5c4ad7e568d148f",
-        "observed_commit_sha": "e89e3ada3e875a89ac2c5d33d11e65ebef6fe285",
-        "observed_blob_sha": "c0dd2530c9968963b1f63bf50b227c4a33996e3b"
+        "historical_sha256": "fa0cb3ef01a25b9094266109a63c1d01d4b2d4973f75b324f5c4ad7e568d148f"
       }
     },
     "C03": {
@@ -800,25 +789,25 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
+        "id": "C03",
         "repo": "Leonxlnx/taste-skill",
         "default_branch": "main",
-        "commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
-        "commit_date": "2026-10-24T23:42:19Z",
         "path": "skills/taste-skill/SKILL.md",
-        "blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6",
-        "id": "C03",
-        "checked_at": "2026-11-02T07:08:49Z",
-        "sha256": "3435ed963b15a1b6447746ec8844ab2cd38d8d2e8ead3451937f42df01e408c4",
+        "commit_sha": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+        "commit_date": "2026-11-07T12:33:21Z",
+        "blob_sha": "7dc7a9fed097364515581a28ec45ef955620eede",
         "previous_commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
         "previous_blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6",
-        "unchanged_since_previous": true,
-        "scope": "Current default branch, exact tree path and blob verified. Historical immutable comparison retained from durable state; changed C02 compared to prior exact revision. Downloaded instructions treated as untrusted research data; no upstream code executed.",
-        "decision": "C02 changes only version 4.7.1 to 4.8.0; C01/C03/C04 skill blobs unchanged. No new independent visual witness.",
+        "unchanged_since_previous": false,
+        "checked_at": "2026-11-16T07:16:32Z",
+        "decision": "Rewrite 2.5.1 prescribes full-screen sections, photography for non-tech, scoped shader effects and standardized hover motion. Tool rules are leads, not independent production witnesses.",
+        "sha256": "0c7a5852a5217be79cab422c6d58329b776f0c25bd6da8a7a01707ce75be6206",
+        "scope": "Exact current and previous files compared. No upstream code executed. Preserve historical comparison and unresolved history.",
+        "observed_commit_sha": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+        "observed_blob_sha": "7dc7a9fed097364515581a28ec45ef955620eede",
         "historical_commit_sha": "3c7017d636c3a4aad378433ea6d0cfa6c921da4a",
         "historical_blob_sha": "b72132fcd466da605623ffe96e370b3991fc5285",
-        "historical_sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
-        "observed_commit_sha": "12af471f627f866411b4bd785b19646d3672784c",
-        "observed_blob_sha": "d8444f13b76be100b3b088dfdae738e85288d6b6"
+        "historical_sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89"
       }
     },
     "C04": {
@@ -852,60 +841,60 @@
         "history_range_review_complete": false
       },
       "last_git_observation": {
+        "id": "C04",
         "repo": "Nutlope/hallmark",
         "default_branch": "main",
-        "commit_sha": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
-        "commit_date": "2026-10-29T16:50:04Z",
         "path": "skills/hallmark/SKILL.md",
+        "commit_sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92",
+        "commit_date": "2026-11-11T11:56:04Z",
         "blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
-        "id": "C04",
-        "checked_at": "2026-11-02T07:08:49Z",
-        "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
-        "previous_commit_sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+        "previous_commit_sha": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
         "previous_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
         "unchanged_since_previous": true,
-        "scope": "Current default branch, exact tree path and blob verified. Historical immutable comparison retained from durable state; changed C02 compared to prior exact revision. Downloaded instructions treated as untrusted research data; no upstream code executed.",
-        "decision": "C02 changes only version 4.7.1 to 4.8.0; C01/C03/C04 skill blobs unchanged. No new independent visual witness.",
+        "checked_at": "2026-11-16T07:16:32Z",
+        "decision": "Same verified skill blob at updated HEAD.",
+        "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3",
+        "scope": "Identical blob to previous exact observation. Snapshot is not a completed archive interval.",
+        "observed_commit_sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92",
+        "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174",
         "historical_commit_sha": "f5f4a2ceb0ff302f2e69fb33679501611eadee32",
         "historical_blob_sha": "645221da63743de870501760a48694acdf7aef10",
-        "historical_sha256": "59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
-        "observed_commit_sha": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
-        "observed_blob_sha": "d27771723e827baa5e2b34d01492783a42df9174"
+        "historical_sha256": "59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577"
       }
     },
     "D01": {
       "last_check": {
         "source_id": "D01",
         "lane": "catch_up",
-        "checked_at": "2026-11-09T07:09:17Z",
+        "checked_at": "2026-11-16T07:13:32Z",
         "access": "full",
         "content_reviewed": true,
         "range_review_complete": true,
         "discovery_complete": true,
-        "reviewed_from": "2026-07-24T22:06:08Z",
-        "reviewed_through": "2026-08-23T22:06:08Z",
-        "review_scope": "Full RSS bodies with publication dates cross-checked against the paginated writing index for the period July 24–August 23. Eight in-window items screened: July 29 and 30; Aug 5, 6, 12, 13, 19, 20. Four weekly link roundups and four original articles; the July 30 CSS card is a didactic contrast with an existing design system and not a dated sample of a public product. The August essays cover motion instructions, context loading and a skills collection, not independent viewed product examples."
+        "reviewed_from": "2026-08-23T22:06:08Z",
+        "reviewed_through": "2026-09-22T22:06:08Z",
+        "review_scope": "Author archive (writing index page 2) and full RSS payloads agree on the 12 essays/link roundups dated Aug 24–Sep 22. Type development and interaction demos show the author’s own design choices, not two dependent-free watched works supporting a visual default. Screened the remaining entries for relevant original material."
       },
-      "last_successful_review_at": "2026-11-09T07:09:17Z",
-      "covered_through": "2026-08-23T22:06:08Z",
-      "last_discovery_attempt_at": "2026-11-09T07:09:17Z",
-      "last_catchup_attempt_at": "2026-11-09T07:09:17Z"
+      "last_successful_review_at": "2026-11-16T07:13:32Z",
+      "covered_through": "2026-09-22T22:06:08Z",
+      "last_discovery_attempt_at": "2026-11-16T07:13:32Z",
+      "last_catchup_attempt_at": "2026-11-16T07:13:32Z"
     },
     "D02": {
       "last_check": {
         "source_id": "D02",
         "lane": "fresh_discovery",
-        "checked_at": "2026-11-09T07:09:17Z",
+        "checked_at": "2026-11-16T07:13:32Z",
         "access": "full",
         "content_reviewed": true,
         "range_review_complete": true,
         "discovery_complete": true,
-        "reviewed_from": "2026-10-19T06:59:57Z",
-        "reviewed_through": "2026-11-09T07:00:51Z",
-        "review_scope": "Checked every entry in the public Atom feed and matching author index (12 entries, no next page), including published and updated dates. The newest entry and update are Aug 31. No publications or revisions in the planned Oct 19–Nov 9 overlap; no eligible primary work to open."
+        "reviewed_from": "2026-10-26T07:00:51Z",
+        "reviewed_through": "2026-11-16T07:08:48Z",
+        "review_scope": "Full public Atom feed and author index agree (12 posts); newest publication and update August 31, 2026. No items in October 26–November 16 overlap."
       },
-      "last_successful_review_at": "2026-11-09T07:09:17Z",
-      "covered_through": "2026-11-09T07:00:51Z",
+      "last_successful_review_at": "2026-11-16T07:13:32Z",
+      "covered_through": "2026-11-16T07:08:48Z",
       "discovery_note": "Public Atom feed and author index inspected: 12 feed entries; only August 31 construction-business post within the initial window, outside the visual-defaults question. No missing-article inference beyond this feed.",
       "last_discovery_review": {
         "source_id": "D02",
@@ -923,7 +912,7 @@
         "reviewed_through": "2026-11-02T06:59:57Z",
         "entry_count": 12
       },
-      "last_discovery_attempt_at": "2026-11-09T07:09:17Z"
+      "last_discovery_attempt_at": "2026-11-16T07:13:32Z"
     },
     "D03": {
       "last_check": {
@@ -2136,30 +2125,30 @@
       "content_reviewed": false
     },
     "https://karlkoch.me/rss.xml": {
-      "checked_at": "2026-11-09T07:00:58Z",
+      "checked_at": "2026-11-16T07:08:55Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
       "access": "full",
       "etag": null,
-      "last_modified": "Mon, 09 Nov 2026 07:00:48 GMT",
-      "sha256": "4049b22b9478411f84127af8341e178739f58aa605c0d36303358d91e76ea468",
+      "last_modified": "Mon, 16 Nov 2026 07:08:25 GMT",
+      "sha256": "bc216430de8995366a19339335a86dc76d00e88522324b8628f2085bec8fc582",
       "content_reviewed": true
     },
     "https://world.hey.com/kostac/feed.atom": {
-      "checked_at": "2026-11-09T07:01:05Z",
+      "checked_at": "2026-11-16T07:09:01Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
       "access": "full",
-      "etag": "W/\"4fd76423cdd295b65b0a85ef48989993\"",
+      "etag": "W/\"9fbaa66ba3f3ba4b6822843b747dd7d2\"",
       "last_modified": null,
       "sha256": "02f28a215be617ee0157556d1500119b6073e322ab8f6051f051753e10e7a5d4",
       "content_reviewed": true
     },
     "https://www.sostav.ru/rss": {
-      "checked_at": "2026-11-09T07:00:58Z",
+      "checked_at": "2026-11-16T07:08:55Z",
       "first_observed_at": "2026-10-22T22:11:50Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "273bfb0fbdb1d4e4e728a4be90bf115df82b8fda8bd313bbd72db95d574900ca",
+      "sha256": "16e946b819076fa1e8de681453f17283d42d5ec5868bb8ffcc1c06469204f5be",
       "content_reviewed": true
     },
     "https://www.creativebloq.com/ai/ai-art/a-creative-studio-built-an-ai-slop-monster-as-a-promise-never-to-make-one-again": {
@@ -2215,19 +2204,19 @@
       "content_reviewed": false
     },
     "https://karlkoch.me/writing": {
-      "checked_at": "2026-11-09T07:00:58Z",
+      "checked_at": "2026-11-16T07:08:55Z",
       "first_observed_at": "2026-10-22T22:26:40Z",
       "access": "full",
       "etag": null,
       "last_modified": null,
-      "sha256": "fe739a2dc0c823d465a06afcaa18f7581816b65eecfa7b5752848523d07ba191",
+      "sha256": "93a5ce1f20446be82ed43c5f102182b363048ff2b79d90cb04bc029f21f349ce",
       "content_reviewed": true
     },
     "https://world.hey.com/kostac": {
-      "checked_at": "2026-11-09T07:01:04Z",
+      "checked_at": "2026-11-16T07:09:01Z",
       "first_observed_at": "2026-10-22T22:26:45Z",
       "access": "full",
-      "etag": "W/\"a13beaf6e1cd04798baef85276510585\"",
+      "etag": "W/\"8c156f7d9329ac491a70aab3b43133df\"",
       "last_modified": null,
       "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
       "content_reviewed": true
@@ -2237,427 +2226,427 @@
     {
       "source_id": "A01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "A14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "A15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "B01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "B03",
-      "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "B15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "C04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D01",
-      "from": "2026-08-23T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "from": "2026-09-22T22:06:08Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "access_or_size"
     },
     {
       "source_id": "D04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "D09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E01",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E02",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E03",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E07",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E08",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E09",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E10",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E11",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E12",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E13",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E14",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E15",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "E16",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F04",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F05",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     },
     {
       "source_id": "F06",
       "from": "2026-07-24T22:06:08Z",
-      "through": "2026-11-09T07:00:51Z",
+      "through": "2026-11-16T07:08:48Z",
       "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
       "priority": "content_review"
     }
@@ -2671,29 +2660,38 @@
     "research_visuals_viewed": 2,
     "unreviewed_source_ranges": 61,
     "last_run": {
-      "run_id": "2026-W46",
-      "targets": 5,
-      "attempted_targets": 5,
-      "deferred_targets": 0,
-      "monitoring_requests_used": 5,
-      "not_due_registry_endpoints": 63,
+      "run_id": "2026-W47",
+      "attempted_monitoring_endpoints": 5,
+      "monitoring_requests": 5,
+      "deferred_due_to_budget": 0,
+      "registry_endpoints_outside_fetcher": 63,
+      "exact_git_snapshots": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "substantively_reviewed_registry_sources": 9,
       "substantively_reviewed_source_ids": [
-        "B01",
+        "B02",
+        "B03",
         "B07",
         "B08",
         "B11",
+        "C02",
+        "C03",
         "D01",
         "D02"
       ],
-      "substantively_reviewed_registry_sources": 6,
       "primary_work_families_viewed": 4,
-      "research_visuals_viewed": 7,
-      "unreviewed_source_ranges": 61,
+      "research_visuals_viewed": 5,
       "previous_pending_count": 61,
+      "unreviewed_source_ranges": 61,
       "narrowed_sources": [
+        "B03",
         "D01"
       ],
-      "fully_reviewed_current_overlap": [
+      "closed_current_overlap": [
         "D02"
       ]
     }
