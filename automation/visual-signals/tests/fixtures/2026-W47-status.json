@@ -1,0 +1,33 @@
+{
+  "_provenance": {
+    "source": "https://github.com/kirillgotovtsev/visual-no-slop/blob/c15e92a5f9fbb6658e5989acf86fbe5398241d97/automation/visual-signals/runs/2026-W47.json",
+    "note": "Exact status/time/freshness excerpt of the published report, plus its consumer projection from signals.json at the same commit. Unpublished watchlist/evidence payload omitted; no values synthesized."
+  },
+  "report": {
+    "schema_version": 1,
+    "run_id": "2026-W47",
+    "status": "partial_reference_stale",
+    "started_at": "2026-11-16T07:08:29Z",
+    "reviewed_through": "2026-11-16T07:08:48Z",
+    "finished_research_at": "2026-11-16T07:16:32Z",
+    "preserved_consumer": {
+      "sha256": "4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543",
+      "updated_at": "2026-10-22T22:16:37Z",
+      "review_after": "2026-11-12T22:16:37Z",
+      "freshness": "stale"
+    }
+  },
+  "consumer_data": {
+    "schema_version": 1,
+    "revision": {
+      "status": "active",
+      "updated_at": "2026-10-22T22:16:37Z",
+      "review_after": "2026-11-12T22:16:37Z",
+      "reviewed_active_ids": [],
+      "included_active_ids": [],
+      "coverage_note": "This first review inspected the registered monitoring endpoints and selected current publications. Coverage is partial: several sources were blocked or incomplete, and most historical baselines have not received a substantive range review. No combination has two independent, directly viewed recent works. Unconfirmed candidates remain in the producer data; they are not current instructions."
+    },
+    "signals": [],
+    "evidence": []
+  }
+}

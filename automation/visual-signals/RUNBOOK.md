@@ -79,7 +79,7 @@ For colors, report names/roles; add HEX only from an identified CSS/source measu
 
 ### 5. Record check status, then render and validate
 
-Before validation, finish the run JSON with its actual `started_at`, `finished_research_at`, `run_id` and `status` (`partial`, `completed` or `failed`). Record the completed attempt independently of dictionary freshness:
+Before validation, finish the run JSON with its actual `started_at`, `finished_research_at`, `run_id` and `status` (`partial`, `completed` or `failed`). The published W47 legacy status `partial_reference_stale` is also accepted: it records a `partial` check and preserves the original label in `last_check_report_status`. Dictionary freshness remains determined separately by the consumer's `review_after`; the legacy label cannot renew it. Do not rewrite historical reports. Record the completed attempt independently of dictionary freshness:
 
 ```bash
 python automation/visual-signals/scripts/workflow.py record-status --report automation/visual-signals/runs/<run_id>.json --output automation/visual-signals/state.json

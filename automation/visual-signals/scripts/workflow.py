@@ -19,6 +19,8 @@ SHA_RE = re.compile(r'^[0-9a-f]{40}$')
 RUN_RE = re.compile(r'^(?:setup-)?\d{4}-W\d{2}(?:-[a-z0-9-]+)?$')
 LOCAL_PATH_RE = re.compile('/' + r'Users/|/' + r'private/tmp/|/' + r'home/[^ /]+/')
 DISCOVERY_KINDS = {'rss', 'atom', 'author_index'}
+REPORT_CHECK_STATUSES = {'partial': 'partial', 'completed': 'completed', 'failed': 'failed',
+                         'partial_reference_stale': 'partial'}
 
 class Invalid(ValueError):
     pass
@@ -221,6 +223,8 @@ def validate(config, registry, data, state=None, at=None, publication=False):
         if status is not None:
             require(RUN_RE.fullmatch(status['last_check_run_id']), 'invalid status run ID')
             require(status['last_check_status'] in ['partial', 'completed', 'failed'], 'invalid check status')
+            raw_status = status.get('last_check_report_status', status['last_check_status'])
+            require(REPORT_CHECK_STATUSES.get(raw_status) == status['last_check_status'], 'report/check status mismatch')
             require(moment(status['last_checked_at']) <= at, 'future check time')
             changed = moment(status.get('dictionary_last_changed_at'), True)
             require(changed is None or changed <= moment(status['last_checked_at']), 'change after check')
@@ -405,8 +409,8 @@ def record_status(state, data, report, at=None):
     at = at or now()
     run_id = report['run_id']
     require(RUN_RE.fullmatch(run_id), 'invalid run_id')
-    outcome = report['status']
-    require(outcome in ['partial', 'completed', 'failed'], 'unfinished/no-op status cannot advance check time')
+    outcome = REPORT_CHECK_STATUSES.get(report['status'])
+    require(outcome is not None, 'unfinished/no-op status cannot advance check time')
     checked_at = report['finished_research_at']
     require(moment(report['started_at']) <= moment(checked_at) <= at, 'invalid check time')
     previous = state.get('update_status', {})
@@ -424,6 +428,7 @@ def record_status(state, data, report, at=None):
         'last_checked_at': checked_at,
         'last_check_run_id': run_id,
         'last_check_status': outcome,
+        'last_check_report_status': report['status'],
         'dictionary_last_changed_at': changed_at,
         'dictionary_content_sha256': digest,
     }
