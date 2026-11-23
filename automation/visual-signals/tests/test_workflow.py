@@ -1,10 +1,11 @@
-"""Synthetic fixtures test failure gates; they are not research observations."""
+"""Synthetic failure gates and published-report status regressions; no new research."""
 import copy
 import datetime as dt
 import email.message
 import io
 import json
 import pathlib
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -352,5 +353,162 @@ class ResearchQueues(unittest.TestCase):
                                        'last_git_observation': {'checked_at': '2026-10-09T23:59:00Z'}}
         self.assertEqual(self.plan()['git_checks'], [])
         self.assertEqual(self.plan(AT + dt.timedelta(days=1))['git_checks'], ['C02'])
+
+class UpdateStatus(unittest.TestCase):
+    def setUp(self):
+        self.c, self.registry, self.data = fixture()
+        self.report = {'run_id': '2026-W43', 'status': 'partial',
+                       'started_at': '2026-10-22T21:00:00Z',
+                       'finished_research_at': '2026-10-22T21:59:00Z'}
+        self.state = {'pending': [{'source_id': 'D01'}], 'completed_runs': [],
+                      'update_status': {'dictionary_last_changed_at': '2026-10-22T21:00:00Z',
+                                        'dictionary_content_sha256': w.dictionary_digest(self.data)}}
+    def record(self):
+        return w.record_status(self.state, self.data, self.report, at=AT)['update_status']
+    def test_partial_records_check_without_renewal_or_coverage_change(self):
+        before = copy.deepcopy(self.data)
+        self.assertEqual(self.record()['last_checked_at'], self.report['finished_research_at'])
+        self.assertEqual(self.state['pending'], [{'source_id': 'D01'}])
+        self.assertEqual(self.state['completed_runs'], [])
+        self.assertEqual(self.data, before)
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:00:00Z')
+    def test_failed_attempt_and_replay(self):
+        self.report['status'] = 'failed'
+        self.record()
+        before = copy.deepcopy(self.state)
+        self.record()
+        self.assertEqual(self.state, before)
+    def test_metadata_only_renewal_is_not_content_change(self):
+        self.data['revision']['updated_at'] = '2026-10-22T21:30:00Z'
+        self.data['revision']['review_after'] = '2026-11-02T21:00:00Z'
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:00:00Z')
+    def test_body_change_tracks_reviewed_revision(self):
+        self.data['revision']['coverage_note'] += ' Changed coverage explanation.'
+        self.data['revision']['updated_at'] = '2026-10-22T21:30:00Z'
+        self.assertEqual(self.record()['dictionary_last_changed_at'], '2026-10-22T21:30:00Z')
+    def test_body_change_without_new_review_rejected(self):
+        self.data['revision']['coverage_note'] += ' Changed.'
+        with self.assertRaises(w.Invalid): self.record()
+    def test_old_freshness_renewal_cannot_date_new_body_change(self):
+        self.data['revision']['updated_at'] = '2026-10-22T21:10:00Z'
+        self.report['started_at'] = '2026-10-22T21:20:00Z'
+        self.data['revision']['coverage_note'] += ' Changed later.'
+        with self.assertRaises(w.Invalid): self.record()
+    def test_watchlist_research_does_not_change_consumer_identity(self):
+        before = w.dictionary_digest(self.data)
+        self.data['signals'].append({'id': 'watch', 'status': 'watchlist'})
+        self.assertEqual(w.dictionary_digest(self.data), before)
+    def test_body_metadata_like_lines_are_not_excluded(self):
+        self.data['revision']['coverage_note'] = 'review_after: first'
+        before = w.dictionary_digest(self.data)
+        self.data['revision']['coverage_note'] = 'review_after: second'
+        self.assertNotEqual(w.dictionary_digest(self.data), before)
+    def test_unknown_history_stays_unknown(self):
+        del self.state['update_status']
+        self.assertIsNone(self.record()['dictionary_last_changed_at'])
+    def test_noop_future_and_stale_rejected(self):
+        for field, value in [('status', 'no-op'), ('finished_research_at', '2026-10-23T00:00:00Z')]:
+            with self.subTest(field=field):
+                old = self.report[field]; self.report[field] = value
+                with self.assertRaises(w.Invalid): self.record()
+                self.report[field] = old
+        self.record()
+        self.report['finished_research_at'] = '2026-10-22T21:50:00Z'
+        with self.assertRaises(w.Invalid): self.record()
+
+class HistoricalUpdateStatus(unittest.TestCase):
+    def setUp(self):
+        self.c = w.read(BASE/'config.json')
+        self.registry = w.read(BASE/'sources.json')
+        self.w46 = w.read(BASE/'runs/2026-W46.json')
+        historical = w.read(BASE/'tests/fixtures/2026-W47-status.json')
+        self.w47 = historical['report']
+        self.data = historical['consumer_data']
+        self.at = w.moment('2026-11-22T06:00:00Z')
+        self.state = w.read(BASE/'state.json')
+        # The PR's initial migration is grounded in the first published revision.
+        self.state['update_status'] = {
+            'last_checked_at': self.w46['finished_research_at'],
+            'last_check_run_id': self.w46['run_id'], 'last_check_status': 'partial',
+            'dictionary_last_changed_at': '2026-10-22T22:16:37Z',
+            'dictionary_content_sha256': '0f9219a5f0c491192b22f5d7d77f60153ee1603d4aef0672de8bf21955732947',
+        }
+    def record(self, report):
+        return w.record_status(self.state, self.data, report, at=self.at)['update_status']
+    def test_w46_and_w47_preserve_report_consumer_and_all_coverage_state(self):
+        before_data = copy.deepcopy(self.data)
+        before_state = {k: copy.deepcopy(v) for k, v in self.state.items() if k != 'update_status'}
+        for report in [self.w46, self.w47]:
+            with self.subTest(run=report['run_id']):
+                before_report = copy.deepcopy(report)
+                status = self.record(report)
+                self.assertEqual(status['last_check_status'], 'partial')
+                self.assertEqual(status['last_check_report_status'], report['status'])
+                self.assertEqual(status['last_checked_at'], report['finished_research_at'])
+                self.assertEqual(status['dictionary_last_changed_at'], '2026-10-22T22:16:37Z')
+                self.assertEqual(status['dictionary_content_sha256'],
+                                 '0f9219a5f0c491192b22f5d7d77f60153ee1603d4aef0672de8bf21955732947')
+                self.assertEqual(w.sha256(w.render(self.data).encode()), report['preserved_consumer']['sha256'])
+                self.assertEqual(self.data, before_data)
+                self.assertEqual(report, before_report)
+                self.assertEqual({k: v for k, v in self.state.items() if k != 'update_status'}, before_state)
+        self.assertEqual(self.w47['preserved_consumer']['freshness'], 'stale')
+    def test_expiry_remains_independent_of_check_time(self):
+        self.record(self.w46)
+        w.validate(self.c, self.registry, self.data, self.state,
+                   at=w.moment(self.w46['finished_research_at']), publication=True)
+        self.record(self.w47)
+        w.validate(self.c, self.registry, self.data, self.state, at=self.at)
+        self.assertEqual(self.data['revision']['updated_at'], '2026-10-22T22:16:37Z')
+        self.assertEqual(self.data['revision']['review_after'], '2026-11-12T22:16:37Z')
+        for at in [w.moment(self.w47['finished_research_at']), self.at]:
+            with self.subTest(at=at), self.assertRaisesRegex(w.Invalid, 'revision future/expired'):
+                w.validate(self.c, self.registry, self.data, self.state, at=at, publication=True)
+    def test_replay_at_a_later_time_is_identical(self):
+        self.record(self.w47)
+        before = copy.deepcopy(self.state)
+        self.at += dt.timedelta(days=1)
+        self.record(self.w47)
+        self.assertEqual(self.state, before)
+    def test_cli_imports_historical_reports_and_replays_without_changing_inputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            inputs = {'config.json': self.c, 'sources.json': self.registry,
+                      'signals.json': self.data, 'state.json': self.state}
+            for name, value in inputs.items(): w.write(root/w.BASE/name, value)
+            state_path = root/w.BASE/'state.json'
+            for report in [self.w46, self.w47, self.w47]:
+                report_path = root/(report['run_id']+'.json')
+                w.write(report_path, report)
+                before_report = report_path.read_bytes()
+                subprocess.run([sys.executable, str(BASE/'scripts/workflow.py'), 'record-status',
+                                '--root', str(root), '--report', str(report_path),
+                                '--output', str(state_path)], check=True, capture_output=True)
+                self.record(report)
+                self.assertEqual(w.read(state_path), self.state)
+                self.assertEqual(report_path.read_bytes(), before_report)
+            for name in ['config.json', 'sources.json', 'signals.json']:
+                self.assertEqual(w.read(root/w.BASE/name), inputs[name])
+    def test_older_report_cannot_roll_back_latest_check(self):
+        self.record(self.w47)
+        before = copy.deepcopy(self.state)
+        with self.assertRaisesRegex(w.Invalid, 'backwards'): self.record(self.w46)
+        self.assertEqual(self.state, before)
+    def test_legacy_state_without_raw_status_remains_valid(self):
+        w.validate(self.c, self.registry, self.data, self.state, at=self.at)
+        del self.state['update_status']
+        self.assertIsNone(self.record(self.w47)['dictionary_last_changed_at'])
+        w.validate(self.c, self.registry, self.data, self.state, at=self.at)
+    def test_raw_status_cannot_contradict_canonical_check_status(self):
+        self.record(self.w47)
+        self.state['update_status']['last_check_status'] = 'completed'
+        with self.assertRaisesRegex(w.Invalid, 'report/check status mismatch'):
+            w.validate(self.c, self.registry, self.data, self.state, at=self.at)
+    def test_unknown_and_unfinished_statuses_are_not_guessed(self):
+        before = copy.deepcopy(self.state)
+        for outcome in ['partial_unknown', 'completed_reference_stale', 'no-op', 'running']:
+            with self.subTest(outcome=outcome), self.assertRaises(w.Invalid):
+                self.record({**self.w47, 'status': outcome})
+            self.assertEqual(self.state, before)
 
 if __name__=='__main__':unittest.main()
