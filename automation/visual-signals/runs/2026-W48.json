@@ -1,0 +1,1957 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-W48",
+  "status": "partial",
+  "reference_status": "preserved_expired",
+  "executor": "ChatGPT Work cloud",
+  "base_git_sha": "c15e92a5f9fbb6658e5989acf86fbe5398241d97",
+  "started_at": "2026-11-23T07:03:17Z",
+  "reviewed_through": "2026-11-23T07:03:56Z",
+  "finished_research_at": "2026-11-23T07:13:04Z",
+  "input_sha256": {
+    "automation/visual-signals/RUNBOOK.md": "ef425ef404892d8f09eb001c7b926abe3e30db0a81fb3a00604a05e3c543b180",
+    "automation/visual-signals/SCHEDULED_PROMPT.txt": "4295357264272cc297af9d5378fc89797290aa10115acc7f69bb82661a3cd3bf",
+    "automation/visual-signals/config.json": "ba7fc79dfaaefa3b68e2ea54c96bb9ea6966b66b9e9d70b189073aa475eb2225",
+    "automation/visual-signals/scripts/fetch_sources.py": "bda24d1b35d2ed4cd4b56112380e0f711f1ea5a87c3119ef4131a34d30cf7653",
+    "automation/visual-signals/scripts/verify_consumer.mjs": "65e86bb09de5b04b5e6814abf6f3090061a0002b3fc3d2d3657af95bc6e6f035",
+    "automation/visual-signals/scripts/workflow.py": "ab5ccdef4548718e0053c01ce8490e15a8ad9174c98853702a714f869eb5b616",
+    "automation/visual-signals/sources.json": "a94d9603c945527e0f7a64d42879fe592c231805d1d100c4303e85cfa22c68c4",
+    "automation/visual-signals/tests/test_workflow.py": "dfae36cc9e92e736acc769bb2a6d2385dce0e0454c905641a8230abbad7ee005"
+  },
+  "research_windows": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-09-22T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-09-22T22:06:08Z",
+      "through": "2026-10-22T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D02",
+      "from": "2026-11-02T07:08:48Z",
+      "through": "2026-11-23T07:03:56Z",
+      "remainder_through": null,
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "static_baseline_conditional"
+    }
+  ],
+  "research_reviews": [
+    {
+      "source_id": "D02",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-11-02T07:08:48Z",
+      "reviewed_through": "2026-11-23T07:03:56Z",
+      "review_scope": "Read the current author index and all 12 Atom entry dates; both end at August 31, 2026, before the planned November 2–23 overlap. No new eligible public author entries in this complete current index/feed. A fresh scoped web search returned no additional current entry. Old July 23 examples were not redated or treated as current works."
+    },
+    {
+      "source_id": "D01",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-09T07:03:56Z",
+      "reviewed_through": "2026-11-23T07:03:56Z",
+      "review_scope": "Read the current writing index and RSS full bodies for the November 22 workflow article and November 18 link roundup, screened November 9–23 titles and relevant design-engineering excerpts. They discuss implementation/typographic judgment and handoff, not independent paired current works for the watchlist. Not all current linked primary examples or interactive demos inspected; fresh range remains partial beyond the older gap."
+    },
+    {
+      "source_id": "B07",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-09T07:03:56Z",
+      "reviewed_through": "2026-11-23T07:03:56Z",
+      "review_scope": "Read the current 100-item Sostav RSS as a limited discovery index (not a complete November 9–23 archive). Followed a dated article by the registered author organization: Nikolay Nikishin, Shchi Production, AdIndex November 16, about five hybrid/AI campaigns. Publication dates do not establish dates of the cited films; those full films and motion were not inspected. No broad archive completion."
+    },
+    {
+      "source_id": "B08",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-09T07:03:56Z",
+      "reviewed_through": "2026-11-23T07:03:56Z",
+      "review_scope": "Fresh scoped search of registered publisher, full reads of November 21 Artificial-poster article and November 21 website-template article; directly inspected the credited poster crop plus two Bluehost illustrations. Not a full publisher archive. Two crops of Artificial count as one work, and two Bluehost images as one vendor family; no current independent pair supports cream/serif/clay or left-edge stripe candidates."
+    },
+    {
+      "source_id": "B11",
+      "lane": "fresh_discovery",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-11-09T07:03:56Z",
+      "reviewed_through": "2026-11-23T07:03:56Z",
+      "review_scope": "Read the campaign record for There’s No Home Like a SharkNinja Home, with month-only November 2026 work dating and Creative Labs/Studio 99 credits. Inspected its exact embedded-video thumbnail X32vNyx5qfM. A generic related-campaign image initially fetched from the page was excluded from campaign evidence after association checking. Thumbnail is only a portrait and does not prove the full domestic composition or motion. Publisher range partial."
+    },
+    {
+      "source_id": "D01",
+      "lane": "catch_up",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-09-22T22:06:08Z",
+      "reviewed_through": "2026-10-22T22:06:08Z",
+      "review_scope": "Cross-checked the cumulative writing index page 2 against all 14 RSS entries dated September 23–October 20 within the exact September 22 22:06:08–October 22 22:06:08 interval. Read all 14 full text payloads: essays on optical alignment, hiring portfolios, symbolic context, sparse controls, fluid anchors, personal type development, coding fundamentals, ownership, and four dated link roundups. This closes review of this author’s written archive chunk only. Linked third-party works and interactive/video demonstrations are not claimed visually reviewed and supply no admitted visual pair."
+    },
+    {
+      "source_id": "B03",
+      "lane": "catch_up",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": true,
+      "discovery_complete": true,
+      "reviewed_from": "2026-08-23T22:06:08Z",
+      "reviewed_through": "2026-09-22T22:06:08Z",
+      "review_scope": "Read both August archive pages and both populated September pages; September page 3 explicitly has no results and no next page. Screened all dated entries for the registered anti-spam/scam visual-content scope. Read the relevant August 28 and September 18 Polish anti-scam statements and September 22 Singapore statement (page also discloses September 23 modification). Inspected the supplied e-commerce scam-example collage; vendor enforcement claims remain attributed and original ad dates/authorship are unknown. No new independent recurring visual combination established. Coverage is public newsroom material in the registered topic, not Facebook-platform content or a census of Meta products."
+    },
+    {
+      "source_id": "B04",
+      "lane": "catch_up",
+      "checked_at": "2026-11-23T07:10:02Z",
+      "access": "full",
+      "content_reviewed": true,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "reviewed_from": "2026-07-24T22:06:08Z",
+      "reviewed_through": "2026-08-23T22:06:08Z",
+      "review_scope": "Read current arXiv record: only v1 submitted December 23, 2025; followed coauthor laboratory project index. Publisher record dates differ (ACM March 26, repository March 31) and are not fresh work dates. Current lab index has undated/in-progress projects and cannot establish all July 24–August 23 author output. Partial author search is not exhaustive; preserve lower boundary."
+    }
+  ],
+  "catch_up_queue": [
+    {
+      "source_id": "D01",
+      "from": "2026-09-22T22:06:08Z",
+      "through": "2026-10-22T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-08-23T22:06:08Z",
+      "through": "2026-09-22T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-08-23T22:06:08Z",
+      "remainder_through": "2026-11-23T07:03:56Z",
+      "role": "discovery_and_comparison"
+    }
+  ],
+  "catch_up_support": {
+    "D01": [
+      {
+        "title": "On alignment that looks wrong",
+        "date": "Tue, 20 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-alignment-that-looks-wrong",
+        "in_index": true
+      },
+      {
+        "title": "Updating the hiring manager bar",
+        "date": "Sat, 17 Oct 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/updating-the-hiring-manager-bar",
+        "in_index": true
+      },
+      {
+        "title": "On the meanings we carry",
+        "date": "Fri, 16 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-the-meanings-we-carry",
+        "in_index": true
+      },
+      {
+        "title": "Weekly Links — 14th October 2026",
+        "date": "Wed, 14 Oct 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/weekly-links-14th-october-2026",
+        "in_index": true
+      },
+      {
+        "title": "On what a clean interface hides",
+        "date": "Tue, 13 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-what-a-clean-interface-hides",
+        "in_index": true
+      },
+      {
+        "title": "On giving fluid interfaces an anchor",
+        "date": "Sun, 11 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-giving-fluid-interfaces-an-anchor",
+        "in_index": true
+      },
+      {
+        "title": "On wanting to keep making it",
+        "date": "Fri, 09 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-wanting-to-keep-making-it",
+        "in_index": true
+      },
+      {
+        "title": "On knowing enough to read the code",
+        "date": "Thu, 08 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-knowing-enough-to-read-the-code",
+        "in_index": true
+      },
+      {
+        "title": "Weekly Links — 7th October 2026",
+        "date": "Wed, 07 Oct 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/weekly-links-7th-october-2026",
+        "in_index": true
+      },
+      {
+        "title": "End to end, enablement, and polish",
+        "date": "Tue, 06 Oct 2026 09:00:00 GMT",
+        "url": "https://karlkoch.me/writing/end-to-end-enablement-and-polish",
+        "in_index": true
+      },
+      {
+        "title": "Weekly Links — 30th September 2026",
+        "date": "Wed, 30 Sep 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/weekly-links-30th-september-2026",
+        "in_index": true
+      },
+      {
+        "title": "The hiring manager is your user",
+        "date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/the-hiring-manager-is-your-user",
+        "in_index": true
+      },
+      {
+        "title": "On keeping the door open",
+        "date": "Sun, 27 Sep 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/on-keeping-the-door-open",
+        "in_index": true
+      },
+      {
+        "title": "Weekly Links — 23rd September 2026",
+        "date": "Wed, 23 Sep 2026 00:00:00 GMT",
+        "url": "https://karlkoch.me/writing/weekly-links-23rd-september-2026",
+        "in_index": true
+      }
+    ],
+    "B03": {
+      "archive_scope": "Two August pages, two populated September pages and an explicit empty September page 3; policy/scam topic screened across exact planned interval.",
+      "read_policy_publications": [
+        "2026-08-28",
+        "2026-09-18",
+        "2026-09-22"
+      ],
+      "modification_date_separate": "Singapore page also displays September 23; not used to redate original example ads."
+    },
+    "B04": "No complete dated author archive; initial boundary retained."
+  },
+  "context_days": 90,
+  "budgets": {
+    "shared_started_at": "2026-11-23T07:03:17Z",
+    "content_requests": 31,
+    "monitoring_requests": 5,
+    "fresh_direct_content_requests": 12,
+    "fresh_web_page_opens": 2,
+    "catchup_content_requests": 12,
+    "search_queries": 12,
+    "visual_materials": 7,
+    "max_concurrent_requests": 3,
+    "temporary_error_retries_used": 0,
+    "github_service_requests": {
+      "observed_connector_reads_before_publication": 9,
+      "conservative_total_estimate_with_clone_and_publication_readbacks": 50,
+      "cap": 160
+    },
+    "publication_attempts_planned": 1,
+    "limits": {
+      "minutes": 45,
+      "content_requests": 120,
+      "search_queries": 24,
+      "visual_materials": 40,
+      "catchup_content_requests": 12
+    }
+  },
+  "search_queries": [
+    "site.creativebloq.com \"2026\" \"November\" \"AI\" design",
+    "site.adsoftheworld.com/campaigns \"2026\" \"November\" Christmas",
+    "site.sostav.ru \"нейрослоп\" ноябрь 2026",
+    "site.karlkoch.me \"cream\" \"2026\"",
+    "site.creativebloq.com \"website\" \"serif\" \"November 2026\"",
+    "\"Cody Kommers\" \"Why Slop Matters\" July August 2026",
+    "site.impeccable.style \"2026\" \"side\" \"stripe\"",
+    "site.creativebloq.com \"website\" \"cream\" \"serif\"",
+    "site.sostav.ru \"ИИ\" \"дом\" \"реклама\" ноябрь 2026",
+    "site.world.hey.com/kostac after:2026-11-02 before:2026-11-24",
+    "site.creativebloq.com \"How to pick the right website template for your creative business\"",
+    "site.sostav.ru \"Щи Продакшен\" ноябрь 2026"
+  ],
+  "coverage": {
+    "run_id": "2026-W48",
+    "attempted_monitoring_endpoints": 5,
+    "monitoring_requests": 5,
+    "deferred_due_to_budget": 0,
+    "registry_endpoints_outside_fetcher": 63,
+    "exact_git_snapshots": [],
+    "git_checks_due": 0,
+    "substantively_reviewed_registry_sources": 7,
+    "substantively_reviewed_source_ids": [
+      "B03",
+      "B04",
+      "B07",
+      "B08",
+      "B11",
+      "D01",
+      "D02"
+    ],
+    "primary_work_families_viewed": 3,
+    "additional_source_collages_viewed": 1,
+    "excluded_unassociated_visuals": 1,
+    "research_visuals_viewed": 7,
+    "previous_pending_count": 61,
+    "unreviewed_source_ranges": 61,
+    "narrowed_sources": [
+      "B03",
+      "D01"
+    ],
+    "closed_current_overlap": [
+      "D02"
+    ]
+  },
+  "source_receipts": [
+    {
+      "source_id": "B07",
+      "url": "https://www.sostav.ru/rss",
+      "checked_at": "2026-11-23T07:04:11Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://www.sostav.ru/rss",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "application/rss+xml; charset=utf-8",
+      "sha256": "463071acbc2c8d2fe8a8d1a8c57c6bec8e5d6f0088ebfaccebc1500be3b97b1f",
+      "changed": true
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/rss.xml",
+      "checked_at": "2026-11-23T07:04:11Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/rss.xml",
+      "etag": null,
+      "last_modified": "Mon, 23 Nov 2026 06:47:50 GMT",
+      "content_type": "application/xml; charset=utf-8",
+      "sha256": "09da61d6b811a3a18eeb6602f769f7a98a0828ab7aba129a09b5628a116a65bf",
+      "changed": true
+    },
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/writing",
+      "checked_at": "2026-11-23T07:04:11Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:40Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "4240d4413379864a60af4675775cc7d35c1a16c89ebad7240eecfb74f040e4fd",
+      "changed": true
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac",
+      "checked_at": "2026-11-23T07:04:16Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:26:45Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac",
+      "etag": "W/\"8c156f7d9329ac491a70aab3b43133df\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e61de34d3e48f3039f0e2936da3b856bb29d0e3067d3cb0094c8f1f632384924",
+      "changed": false
+    },
+    {
+      "source_id": "D02",
+      "url": "https://world.hey.com/kostac/feed.atom",
+      "checked_at": "2026-11-23T07:04:16Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-10-22T22:11:50Z",
+      "http_status": 200,
+      "final_url": "https://world.hey.com/kostac/feed.atom",
+      "etag": "W/\"9fbaa66ba3f3ba4b6822843b747dd7d2\"",
+      "last_modified": null,
+      "content_type": "application/atom+xml; charset=utf-8",
+      "sha256": "02f28a215be617ee0157556d1500119b6073e322ab8f6051f051753e10e7a5d4",
+      "changed": false
+    }
+  ],
+  "fresh_retrieval_receipts": [
+    {
+      "source_id": "B11",
+      "url": "https://www.adsoftheworld.com/campaigns/there-s-no-home-like-a-sharkninja-home",
+      "checked_at": "2026-11-23T07:04:50Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:04:50Z",
+      "http_status": 200,
+      "final_url": "https://www.adsoftheworld.com/campaigns/there-s-no-home-like-a-sharkninja-home",
+      "etag": "W/\"eb3ca089931ed7933747e5cbd064d35a\"",
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "eb3ca089931ed7933747e5cbd064d35a8ac6b30b27ecca1d9b4fc177d57a05e8",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+      "checked_at": "2026-11-23T07:04:50Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:04:50Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+      "etag": null,
+      "last_modified": "Sat, 21 Nov 2026 10:00:49 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "3d27928a2706aa694b2fc5514c461406f8e4f2e8c8f6414f238995ddb439b3e5",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS-1920-80.jpg",
+      "checked_at": "2026-11-23T07:05:35Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:35Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS-1920-80.jpg",
+      "etag": "0d994f151f15fd6dbbe7068018a9a3d4",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "c99846c1ed8f6a98060644fac7e1ebc6bdc4e8d44069e2d4929589c1c3736c15",
+      "changed": true
+    },
+    {
+      "source_id": "B11",
+      "url": "https://image.adsoftheworld.com/jqejvazhkbtt9xz9lelkkqrwtzrk",
+      "checked_at": "2026-11-23T07:05:35Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:35Z",
+      "http_status": 200,
+      "final_url": "https://image.adsoftheworld.com/jqejvazhkbtt9xz9lelkkqrwtzrk",
+      "etag": "\"3ecbd83eb1235cc75f23cf53cfb49e2a\"",
+      "last_modified": "Thu, 05 Nov 2026 13:28:07 GMT",
+      "content_type": "image/jpeg",
+      "sha256": "da66e44045899a2e408cc4990b9ef64dd4d10a557e760bad89978274bd80c34a",
+      "changed": true
+    },
+    {
+      "source_id": "B11",
+      "url": "https://i.ytimg.com/vi/X32vNyx5qfM/maxresdefault.jpg",
+      "checked_at": "2026-11-23T07:06:07Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:07Z",
+      "http_status": 200,
+      "final_url": "https://i.ytimg.com/vi/X32vNyx5qfM/maxresdefault.jpg",
+      "etag": "\"0\"",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "c3117de59d63d535d27cf8125e5f6cf5345fc63703884e4304f021170bb8c9cb",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS.jpg",
+      "checked_at": "2026-11-23T07:06:07Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:07Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS.jpg",
+      "etag": "0d994f151f15fd6dbbe7068018a9a3d4",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "666f1bf0f9591a13e13a485c3a4d5cbbf27725e06be0e8ead379d0455e49f7f3",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+      "checked_at": "2026-11-23T07:07:48Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:07:48Z",
+      "http_status": 200,
+      "final_url": "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+      "etag": null,
+      "last_modified": "Sat, 21 Nov 2026 08:01:04 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "2ddd5d20ed3da6cb8acc2d7952080e28fccd2affa74147b976c474cc672ca779",
+      "changed": true
+    },
+    {
+      "source_id": "B07",
+      "url": "https://adindex.ru/publication/opinion/creative/2026/11/16/351252.phtml",
+      "checked_at": "2026-11-23T07:07:48Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:07:48Z",
+      "http_status": 200,
+      "final_url": "https://adindex.ru/publication/opinion/creative/2026/11/16/351252.phtml",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "2255c8e0203e4b4f7c5f24721a97a31e1481caf4490a757c6b8b29f6726882bc",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/L6Qk5MjTQZBMZtqfaWPLwB.jpg",
+      "checked_at": "2026-11-23T07:08:45Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:08:45Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/L6Qk5MjTQZBMZtqfaWPLwB.jpg",
+      "etag": "a7b66a9a08781d37eaa122832399b4d5",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "635bc17cd46806c602fd2055ecdefcbe895984ff777376925fa0093c4d4e2d1f",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/M7B64KDJqXbhq5AYqBqSMJ.jpg",
+      "checked_at": "2026-11-23T07:08:45Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:08:45Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/M7B64KDJqXbhq5AYqBqSMJ.jpg",
+      "etag": "f8e536ade55cc429057b48e7efed8544",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "a69845636cba7989496a9659a4a51d84654d5e697293042047c79d4635da182c",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/9ydNJoEoP6jqyyoqdPn2e8.jpg",
+      "checked_at": "2026-11-23T07:08:59Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:08:59Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/9ydNJoEoP6jqyyoqdPn2e8.jpg",
+      "etag": "f21b1c88fdf9b9e25db35eccb86e878b",
+      "last_modified": null,
+      "content_type": "image/jpeg",
+      "sha256": "a29eecff4f6d85942c55e086b1ede028b960bb3ed5322e6de2213653e11fca9f",
+      "changed": true
+    },
+    {
+      "source_id": "B08",
+      "url": "https://cdn.mos.cms.futurecdn.net/59hQNiq8oVjwFkeopLwqa8.png",
+      "checked_at": "2026-11-23T07:08:59Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:08:59Z",
+      "http_status": 200,
+      "final_url": "https://cdn.mos.cms.futurecdn.net/59hQNiq8oVjwFkeopLwqa8.png",
+      "etag": "d0905ca37eefe2ea59f08a5d063b5f2f",
+      "last_modified": null,
+      "content_type": "image/png",
+      "sha256": "a189769551a11ff92d807380c3340af43bbd376e58292cf6fca9d3236841281e",
+      "changed": true
+    }
+  ],
+  "catchup_retrieval_receipts": [
+    {
+      "source_id": "D01",
+      "url": "https://karlkoch.me/writing?page=2",
+      "checked_at": "2026-11-23T07:05:06Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-09T07:03:36Z",
+      "http_status": 200,
+      "final_url": "https://karlkoch.me/writing?page=2",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a9b1ee76011b88433ac402a9f0c487ccf5889ec376ed58031fd61ed13e3de116",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/08/",
+      "checked_at": "2026-11-23T07:05:06Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:10:43Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/08/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "c59365956c9e3b0e7d187f0997c082b9875feb7c01722f42d763a656aa279ae5",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/",
+      "checked_at": "2026-11-23T07:05:06Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:06Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/09/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "8c50f958165d2dfc191505f4dc78a4c9552759f65547c09f52379567ef38715a",
+      "changed": true
+    },
+    {
+      "source_id": "B04",
+      "url": "https://arxiv.org/abs/2601.06060",
+      "checked_at": "2026-11-23T07:05:13Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:13Z",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2601.06060",
+      "etag": null,
+      "last_modified": "Mon, 24 Aug 2026 20:52:45 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "2dae325dd62ad73dbf9049515f5b78671eed424c83b6d87366f1c78f1b07ba17",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/08/page/2/",
+      "checked_at": "2026-11-23T07:05:47Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-16T07:11:14Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/08/page/2/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "af305af69ecbae92f625810c08aeaab2169bbfd79040931f6c9972462c5ae11b",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/page/2/",
+      "checked_at": "2026-11-23T07:05:47Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:47Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/09/page/2/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "de17ebbd8cb15d00fab0c4ff58d5c638a24454196f26e79547a846b1bb7379b2",
+      "changed": true
+    },
+    {
+      "source_id": "B04",
+      "url": "https://culturalailab.github.io/projects.html",
+      "checked_at": "2026-11-23T07:05:47Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:05:47Z",
+      "http_status": 200,
+      "final_url": "https://culturalailab.github.io/projects.html",
+      "etag": "\"6aff271e-2058\"",
+      "last_modified": "Thu, 19 Nov 2026 16:43:10 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "689cc4663d379a78e984ddd053a879b0c5fb39921427704cbef95cddcd391110",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/page/3/",
+      "checked_at": "2026-11-23T07:06:23Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:23Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/09/page/3/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "8d2dd61d90f528da6a3ce0a94fbcd5c30b4e629c4e7f6de5f8afb7712e441b8e",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
+      "checked_at": "2026-11-23T07:06:23Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:23Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "7b11b0493dada1a5d8a38536ce94e3aa50a668e6fb37c2eb454f047e24009525",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/prostujemy-fakty-o-walce-z-oszukanczymi-reklamami-w-polsce/",
+      "checked_at": "2026-11-23T07:06:23Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:23Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/09/prostujemy-fakty-o-walce-z-oszukanczymi-reklamami-w-polsce/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "a1ac366649485e3fc5a3ea875cdf03c1ed99e4d3ff286b16d877fa2e0a09a793",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/08/wzmacniamy-w-polsce-ochrone-przed-oszustwami/",
+      "checked_at": "2026-11-23T07:06:32Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:06:32Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/news/2026/08/wzmacniamy-w-polsce-ochrone-przed-oszustwami/",
+      "etag": null,
+      "last_modified": null,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "e0dd9e92106886f98b3c4d477eb2c907a15eae86977cb34897d967828b04acd2",
+      "changed": true
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/wp-content/uploads/2026/09/Ecommerce-Scam-Examples.png?w=960&resize=960%2C528",
+      "checked_at": "2026-11-23T07:07:34Z",
+      "access": "full",
+      "attempts": 1,
+      "content_reviewed": false,
+      "range_review_complete": false,
+      "discovery_complete": false,
+      "first_observed_at": "2026-11-23T07:07:34Z",
+      "http_status": 200,
+      "final_url": "https://about.fb.com/wp-content/uploads/2026/09/Ecommerce-Scam-Examples.png?w=960&resize=960%2C528",
+      "etag": "\"ce340d772dde4e34\"",
+      "last_modified": "Mon, 23 Nov 2026 07:07:40 GMT",
+      "content_type": "image/png",
+      "sha256": "ceddec7e4061aefc8be4e0e591c7c1327eaa6774e65540f413599f68e317aa7a",
+      "changed": true
+    }
+  ],
+  "web_retrieval_receipts": [
+    {
+      "url": "https://www.adsoftheworld.com/campaigns/there-s-no-home-like-a-sharkninja-home",
+      "tool_receipt": "turn712254518view0",
+      "scope": "campaign text"
+    },
+    {
+      "url": "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+      "scope": "article text; same content subsequently retrieved directly",
+      "tool": "search_service_web_run.open"
+    }
+  ],
+  "git_observations": {
+    "checks_due": [],
+    "reason": "C01–C04 exact snapshots observed November 16; fourteen-calendar-day interval not due. No specific early-check lead or copied instruction used."
+  },
+  "visuals": [
+    {
+      "id": "V-2026W48-01",
+      "source_id": "B08",
+      "visual_url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS-1920-80.jpg",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "c99846c1ed8f6a98060644fac7e1ebc6bdc4e8d44069e2d4929589c1c3736c15",
+        "observation": "Landscape crop: a man with backpack reaches a hand towards the viewer; tree trunks and dark foliage frame his face, a smaller face is integrated into a trunk, and a distant coastal city sits at left. Full poster text and all details reported by the article are outside this crop."
+      },
+      "scope": "static pixels only",
+      "work_family": "Artificial-poster",
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-02",
+      "source_id": "B11",
+      "visual_url": "https://image.adsoftheworld.com/jqejvazhkbtt9xz9lelkkqrwtzrk",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "da66e44045899a2e408cc4990b9ef64dd4d10a557e760bad89978274bd80c34a",
+        "observation": "Related-page thumbnail: two people exchange a gift in front of a lit Christmas tree between sofas. The page image list did not associate this raster with the SharkNinja campaign; excluded from that campaign and all candidate corroboration."
+      },
+      "scope": "static pixels only",
+      "work_family": null,
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-03",
+      "source_id": "B11",
+      "visual_url": "https://i.ytimg.com/vi/X32vNyx5qfM/maxresdefault.jpg",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "c3117de59d63d535d27cf8125e5f6cf5345fc63703884e4304f021170bb8c9cb",
+        "observation": "Exact campaign embedded-video thumbnail: close portrait of a bearded man wearing a dark robe with white piping; white shirt, holiday-light bokeh and house railings behind. No whole-room/product arrangement is visible. Static frame only."
+      },
+      "scope": "static pixels only",
+      "work_family": "SharkNinja-Holiday-2026",
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-04",
+      "source_id": "B08",
+      "visual_url": "https://cdn.mos.cms.futurecdn.net/E3bkoBqXseASfcNnxTHPhS.jpg",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "666f1bf0f9591a13e13a485c3a4d5cbbf27725e06be0e8ead379d0455e49f7f3",
+        "observation": "Second size of the same Artificial crop; visibly the same hand/backpack/trees/coastal view. One work, no additional independent witness."
+      },
+      "scope": "static pixels only",
+      "work_family": "Artificial-poster",
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-05",
+      "source_id": "B03",
+      "visual_url": "https://about.fb.com/wp-content/uploads/2026/09/Ecommerce-Scam-Examples.png?w=960&resize=960%2C528",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "ceddec7e4061aefc8be4e0e591c7c1327eaa6774e65540f413599f68e317aa7a",
+        "observation": "Publisher-supplied collage: a watch advertisement in Facebook chrome, a vertical household-goods promotion with See details, and black/white shirt product cards. Source labels them scam examples; pixels alone establish neither fraud nor AI authorship. Ad originals, original dates and common origins are unverified."
+      },
+      "scope": "static pixels only",
+      "work_family": null,
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-06",
+      "source_id": "B08",
+      "visual_url": "https://cdn.mos.cms.futurecdn.net/9ydNJoEoP6jqyyoqdPn2e8.jpg",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "a29eecff4f6d85942c55e086b1ede028b960bb3ed5322e6de2213653e11fca9f",
+        "observation": "Bluehost-credited Northline.example mockup: heavy black sans-serif stacked heading on a white ground; angular crop of a modern building/water landscape; saturated blue rectangular CTA; three image-led dark tiles and a phone overlay. This lacks the cream/high-contrast-serif/clay combination. Mockup, not a verified live business or responsive test."
+      },
+      "scope": "static pixels only",
+      "work_family": "Bluehost-promotional-examples",
+      "admission_corroboration": false
+    },
+    {
+      "id": "V-2026W48-07",
+      "source_id": "B08",
+      "visual_url": "https://cdn.mos.cms.futurecdn.net/59hQNiq8oVjwFkeopLwqa8.png",
+      "visual_inspected": true,
+      "viewed_during_run": "2026-W48",
+      "visual_method": "Actual public raster downloaded and displayed with tools.view_image in functions.exec during this pass.",
+      "visual_receipt": {
+        "tool": "view_image",
+        "sha256": "a189769551a11ff92d807380c3340af43bbd376e58292cf6fca9d3236841281e",
+        "observation": "Bluehost-credited prompt form: large centered black sans-serif heading over a pale cool background; a rounded input container with a multicolor border around all edges; outlined textarea, broad pale-blue CTA and example chips. It is an input affordance, not an ordinary statusless panel with a colored left stripe. Same vendor family as the other Bluehost image; no interaction tested."
+      },
+      "scope": "static pixels only",
+      "work_family": "Bluehost-promotional-examples",
+      "admission_corroboration": false
+    }
+  ],
+  "dated_observations": [
+    {
+      "source_id": "B08",
+      "url": "https://www.creativebloq.com/news/this-movie-poster-is-one-big-ai-slop-easter-egg-hunt",
+      "published_at": "2026-11-21",
+      "original_work_date": null,
+      "reported_release_date": "2026-11-19",
+      "limitations": "Article reproduces a dated announcement and attributes artwork to Gravillis Inc./Mike Thompson; primary announcement not independently retrieved. Only its crop inspected, no AI provenance inference."
+    },
+    {
+      "source_id": "B11",
+      "url": "https://www.adsoftheworld.com/campaigns/there-s-no-home-like-a-sharkninja-home",
+      "published_at": null,
+      "original_work_date": "2026-11",
+      "limitations": "Campaign page supplies month-only publication/work dating. Submission age and image HTTP timestamps are not work dates."
+    },
+    {
+      "source_id": "B08",
+      "url": "https://www.creativebloq.com/features/how-to-pick-the-right-website-template-for-your-creative-business",
+      "published_at": "2026-11-21",
+      "original_work_date": null,
+      "limitations": "Bluehost vendor illustrations, one family; publication date does not date their underlying designs."
+    },
+    {
+      "source_id": "B03",
+      "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/",
+      "published_at": "2026-09-22",
+      "modified_at": "2026-09-23",
+      "original_work_date": null,
+      "limitations": "Vendor statement and supplied collage, unknown original ad dates/authorship; claims not generalized."
+    },
+    {
+      "source_id": "B07",
+      "url": "https://adindex.ru/publication/opinion/creative/2026/11/16/351252.phtml",
+      "published_at": "2026-11-16",
+      "original_work_date": null,
+      "limitations": "Registered organization author on another publisher; same author group, not independent corroboration. Five cited films not played or re-dated by this publication."
+    }
+  ],
+  "editorial_review": {
+    "decision": "no_admissions_preserve_last_good",
+    "active_added": 0,
+    "active_changed": 0,
+    "active_retired": 0,
+    "watchlist_retained": 3,
+    "candidates": [
+      {
+        "id": "VNS-W001",
+        "decision": "watchlist",
+        "reason": "SharkNinja portrait thumbnail lacks a visible whole domestic scene; Artificial crop is another context. No two independent dated works establish the specific immaculate-home/idealized-person combination."
+      },
+      {
+        "id": "VNS-W002",
+        "decision": "watchlist",
+        "reason": "Directly viewed Northline promotional mockup has white ground, heavy sans serif, blue CTA and architectural imagery. It does not support the cream/serif/clay combination; no second independently dated matching primary work found."
+      },
+      {
+        "id": "VNS-W003",
+        "decision": "watchlist",
+        "reason": "Bluehost rounded prompt form has a border around the whole functional input container, not a left-edge status-like stripe. Previous Impeccable teaching example is one origin and not a newly dated primary pair."
+      }
+    ],
+    "rationale": "Visible composition, type roles, grouping and subject specificity were assessed. Common controls, a portrait, pale surfaces or large type alone do not justify a signal. No population-frequency or AI-authorship claim. Public images viewed in this executor; no motion or interaction capability claimed. Partial registered-source coverage is insufficient to renew the reference.",
+    "consumer_and_signals_unchanged": true
+  },
+  "errors_and_limits": [
+    "Current reference review_after 2026-11-12T22:16:37Z has expired; preserve bytes and both dates.",
+    "Fresh and historical review remain partial across the registry; 61 pending ranges remain, two lower boundaries narrowed.",
+    "B04 lacks a complete dated author archive for the old interval.",
+    "D01 third-party linked examples and interactive/video demos were not inspected; their appearance/behavior is unverified.",
+    "One unrelated Ads of the World image was actually viewed and excluded after source association checking; two additional illustrative/branding rasters were downloaded but not viewed or used.",
+    "Artificial image variants are the same crop and one work; the full poster and primary authorship announcement were not inspected.",
+    "Unknown original work dates, vendor samples and common work families do not meet independent admission requirements."
+  ],
+  "tests": [
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py render --publication",
+      "exit_code": 1,
+      "reason": "Invalid: revision future/expired; expected last-good preservation path, not successful fresh publication validation."
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py validate --publication",
+      "exit_code": 1,
+      "reason": "Invalid: revision future/expired; expected last-good preservation path, not successful fresh publication validation."
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py render",
+      "exit_code": 0
+    },
+    {
+      "command": "python automation/visual-signals/scripts/workflow.py validate",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest discover -s automation/visual-signals/tests -v",
+      "exit_code": 0,
+      "passed": 53
+    },
+    {
+      "command": "node --test scripts/test_current_signals.mjs",
+      "exit_code": 0,
+      "passed": 18
+    },
+    {
+      "command": "python scripts/check_package.py",
+      "exit_code": 0,
+      "version": "1.4.0",
+      "relative_links_checked": 85
+    }
+  ],
+  "pending": [
+    {
+      "source_id": "A01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "A14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "A15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "B03",
+      "from": "2026-09-22T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "B15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "C04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D01",
+      "from": "2026-10-22T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "access_or_size"
+    },
+    {
+      "source_id": "D04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "D09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E01",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E02",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E03",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E07",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E08",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E09",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E10",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E11",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E12",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E13",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E14",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E15",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "E16",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F04",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F05",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    },
+    {
+      "source_id": "F06",
+      "from": "2026-07-24T22:06:08Z",
+      "through": "2026-11-23T07:03:56Z",
+      "reason": "Complete date-range and primary-visual review remains pending; preserve this interval.",
+      "priority": "content_review"
+    }
+  ],
+  "preserved_consumer": {
+    "sha256": "4878bd4fc9ca70854cb6a19219691f3ef9243b1b2fbf20813f7c8b791602a543",
+    "updated_at": "2026-10-22T22:16:37Z",
+    "review_after": "2026-11-12T22:16:37Z",
+    "freshness": "expired",
+    "body_sha256": "4aea09289ab0d3d63f2b21cbda9eeefec94c103f17d501b21677edd1c069dd31"
+  },
+  "publication": {
+    "intent": "One atomic commit with state and current run JSON/Markdown only.",
+    "readback": "Pending post-commit exact-SHA tree, bytes and preserved-file verification.",
+    "consumer_probe": "Pending post-commit one verifier invocation; if stale assertion occurs before helper fetch, invoke unchanged helper once with a fresh temporary cache at normal canonical URL. Expired content cannot pass freshness."
+  }
+}
